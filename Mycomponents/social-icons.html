@@ -1,0 +1,50 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-icons/iconsets/social-icons.html">
+
+<polymer-element name="social-icons" attributes="rating name description">
+    <template>
+        <style>
+            paper-fab{
+                background-color: #4C92CE;
+            }
+            .socialIcons div{
+                text-align: center;
+            }
+        </style>
+        <div layout horizontal class="socialIcons">
+            <div flex><paper-fab onclick="window.open('https://nl.linkedin.com/in/martgraaf/en')" icon="social:linkedin" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('skype:martdegraaf?chat')" icon="social:skype" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://plus.google.com/+MartdeGraaf')" icon="social:gplus" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://facebook.com/graafm')" icon="social:facebook" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://github.com/martdegraaf')" icon="social:github" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://twitter.com/martdegraaf')" icon="social:twitter" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://www.youtube.com/channel/UCLuzGMzUnDrwo-Neo_LrWGw')" icon="social:youtube" mini></paper-fab></div>
+            <div flex><paper-fab onclick="window.open('https://open.spotify.com/user/graafm')" icon="social:spotify" mini></paper-fab></div>
+        </div>
+        <!--
+        
+    <paper-button raised onclick="window.open('http://nl.linkedin.com/in/martgraaf')"><core-icon icon="social:post-linkedin"></core-icon> Linkedin</paper-button>
+    <paper-button raised onclick="window.open('https://plus.google.com/+MartdeGraaf')"><core-icon icon="social:post-gplus"></core-icon> Google+</paper-button>
+    <paper-button raised onclick="window.open('https://facebook.com/graafm')"><core-icon icon="social:post-facebook"></core-icon> Facebook</paper-button>
+    <paper-button raised onclick="window.open('https://github.com/martdegraaf')"><core-icon icon="social:post-github"></core-icon> GitHub</paper-button>
+    <paper-button raised onclick="window.open('https://twitter.com/martdegraaf')"><core-icon icon="social:post-twitter"></core-icon> Twitter</paper-button>
+        -->
+    </template>
+    <script>
+        Polymer({
+            ready: function () {
+                var root = this.shadowRoot;
+                document.addEventListener('core-media-change', function(e) {
+                    var fabList = root.querySelectorAll('paper-fab');
+                    for (var i = 0; i <	fabList.length; i++) {
+                        if(e.detail.matches){
+                            fabList[i].setAttribute("mini","true");
+                        }else{
+                            fabList[i].removeAttribute("mini");
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</polymer-element>

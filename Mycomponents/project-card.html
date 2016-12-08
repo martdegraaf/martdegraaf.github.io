@@ -1,0 +1,104 @@
+<link rel="import" href="../components/paper-fab/paper-fab.html">
+<link rel="import" href="base-card.html"/>
+<link rel="import" href="skill-tag.html"/>
+
+<polymer-element name="project-card" attributes="projectName projectDescription projectUrl projectImage companyImage tags highlight">
+    <template>
+        <style>
+            img.projectImage{
+                float: right;
+                max-height: 100%;
+                max-width: 100px;
+            }
+            h2 {
+                margin:0;
+                margin-bottom: 5px;
+                font-size:16px;
+            }
+            base-card {
+                height: 300px;
+            }
+            @media (min-width: 1200px) {
+                base-card {
+                    width: 33.333%;
+                }
+            }
+
+            @media (min-width: 992px) and (max-width: 1199px) {
+                base-card {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 991px) and (min-width: 801px) {
+                base-card {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 800px) {
+                base-card {
+                    width: 100%;
+                }
+            }
+            :host(.highlight) > base-card{
+                width: 100%;
+            }
+            #container {
+                width: 100%;
+                height: 100px;
+                -ms-border-radius: 2px;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+            paper-fab {
+                position: absolute;
+                right: 10px;
+                bottom: 0px;
+                background-color: #4C92CE;
+            }
+            .tagWrapper{
+                position: absolute;
+                bottom: 10px;
+            }
+        </style>
+        <base-card>
+            <img class="projectImage" src="{{projectImage}}">
+            <img class="companyImage" title="{{projectName}}" src="{{companyImage}}">
+            <h2 class="projectName">{{projectName}}</h2>
+            <p>{{projectDescription}}</p>
+            <paper-fab id="{{paperFab}}" onclick="window.open('{{projectUrl}}')" icon="link" mini></paper-fab>
+            <div style='clear:both'></div>
+            <div class="tagWrapper">
+                <content select="#tags"></content>
+            </div>
+        </base-card>
+    </template>
+    <script>
+        function IsImageOk(img) {
+            if (!img.complete) {
+                return false;
+            }
+            if (typeof img.naturalWidth!= "undefined" && img.naturalWidth == 0) {
+                return false;
+            }
+            return true;
+        }
+        Polymer({
+            GotoProjectUrl: function () {
+                window.open(this.projectUrl, '_blank');
+            },
+            ready: function () {
+                if(this.companyImage == null || this.companyImage == ""){
+                    this.shadowRoot.querySelector(".companyImage").style.display = "none";
+                }else{
+                    this.shadowRoot.querySelector(".projectName").style.display = "none";
+                }
+                if(this.projectUrl !== null && this.projectUrl.indexOf("downloads") === 0){
+                    this.shadowRoot.querySelector("paper-fab").icon = "file-download";
+                }
+                
+            }
+        });
+    </script>
+</polymer-element>

@@ -1,0 +1,39 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-tooltip/core-tooltip.html">
+
+<polymer-element name="skill-tag" attributes="skillname">
+    <template>
+        <style>
+            core-tooltip{
+                border-radius: 3px;
+                padding: 5px;
+                background-color: #b7d3eb;
+                color: white;
+                cursor: default;
+            }
+            core-tooltip:hover{
+                background-color: #4C92CE;
+            }
+            core-tooltip::shadow .core-tooltip {
+                white-space: normal;
+                line-height: 1.3em;
+            }
+            #Tooltip{
+                width: 200px;
+            }
+        </style>
+        <core-tooltip position="top" large role="tooltip" tabindex="0">
+            <span>{{skillname}}</span>
+            <div id="Tooltip" tip>
+                <content></content>
+            </div>
+        </core-tooltip>
+    </template>
+    <script>
+        Polymer({
+            ready: function () {
+                
+            }
+        });
+    </script>
+</polymer-element>

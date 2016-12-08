@@ -1,0 +1,11 @@
+
+
+#ErrorDocument 404 /fouten/niet-gevonden.html
+
+
+RewriteEngine On
+
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_URI} ^/(.*)
+RewriteRule . /index.php?page=%1 [L,QSA]

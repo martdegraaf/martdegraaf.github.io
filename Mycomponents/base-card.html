@@ -1,0 +1,60 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="base-card" attributes="">
+    <template>
+        <style>
+            :host {
+                position: relative;
+                display: block;
+                float: left;
+                margin: 0;
+                padding: 5px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                font-size: 15px;
+            }
+
+            @media (min-width: 1200px) {
+                :host {
+                    width: 25%;
+                }
+            }
+
+            @media (min-width: 992px) and (max-width: 1199px) {
+                :host {
+                    width: 33.333%;
+                }
+            }
+
+            @media (max-width: 991px) and (min-width: 768px) {
+                :host {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 767px) {
+                :host {
+                    width: 100%;
+                }
+            }
+
+            #Card {
+                height:100%;
+                width: 100%;
+                padding: 10px;
+                background: white;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+        </style>
+        <div id="Card">
+            <paper-shadow z="1"></paper-shadow>
+            <content></content>
+        </div>
+    </template>
+    <script>
+        Polymer({});
+    </script>
+</polymer-element>

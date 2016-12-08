@@ -1,0 +1,131 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="content-container">
+    <template>
+        <style>
+            :host {
+            }
+
+            #Wrapper {
+                position: relative;
+            }
+
+            #Wrapper .container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transition: none;
+            }
+            #Wrapper.transition .container {
+                transition: all 0.3s linear;
+            }
+
+            .current-content {
+                margin-left: 0%;
+            }
+
+            #Wrapper.toLeft .new-content{
+                margin-left: 110%;
+            }
+            #Wrapper.toRight .new-content{
+                margin-left: -110%;
+            }
+
+            #Wrapper.transition .current-content {
+                opacity: 0;
+            }
+            #Wrapper.transition.toLeft .current-content {
+                margin-left: -110%;
+            }
+            #Wrapper.transition.toRight .current-content {
+                margin-left: 110%;
+            }
+            #Wrapper.transition .new-content {
+                margin-left: 0%;
+            }
+        </style>
+
+        <!-- CARD CONTENTS GO HERE -->
+        <div id="Wrapper" flex>
+            <div class="container current-content" id="CurrentContent">
+                <content></content>
+            </div>
+            <div class="container new-content" id="NewContent"></div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            publish: {
+                show: {
+                    value: false,
+                    reflect: true
+                }
+            },
+            busy: false,
+            next: null,
+            transition: function (animationClass) {
+                var _this = this;
+                //SELECT left or right
+                _this.$.Wrapper.classList.add(animationClass);
+                setTimeout(function () {
+                    _this.$.Wrapper.classList.add('transition');
+                    setTimeout(function () {
+                        _this.$.CurrentContent.innerHTML = _this.$.NewContent.innerHTML;
+                        _this.$.NewContent.innerHTML = "";
+                        _this.$.Wrapper.classList.remove('transition', animationClass);
+                        _this.done.call(_this);
+                    }, 300);
+                }, 10);
+            },
+            loadHtml: function (html, animation) {
+                console.log(this, content, currentContent, newContent);
+                this.$.NewContent.innerHTML = content;
+                this.transition(animation);
+            },
+            loadCards: function (cardtype, data, animation) {
+                var card = "";
+                for (var i = 0; i < data.length; i++) {
+                    card = '<' + cardtype;
+                    for (var key in data[i]) {
+                        card += ' ' + key + "='" + data[i][key] + "'";
+                    }
+                    card += '></' + cardtype + '>';
+                    this.$.NewContent.innerHTML += card;
+                }
+                this.transition(animation);
+            },
+            load: function (content, animation, fromQueue) {
+                if (typeof animation === "undefined") {
+                    animation = "toLeft";
+                }
+                if (typeof fromQueue === "undefined") {
+                    fromQueue = false;
+                }
+
+                if (this.busy && !fromQueue) {
+                    this.next = { content: content, animation: animation };
+                    return;
+                }
+                this.busy = true;
+
+                if (content.ContentType === "html") {
+                    return this.loadHtml(content.Data, animation);
+                }
+                else if (content.ContentType === "Cards") {
+                    return this.loadCards(content.CardType, content.Cards, animation);
+                }
+            },
+            done: function () {
+                if (this.next === null) {
+                    this.busy = false;
+                    return;
+                }
+
+                var task = this.next;
+                this.next = null;
+                this.load.call(this, task.content, task.animation, true);
+            }
+      });
+    </script>
+</polymer-element>

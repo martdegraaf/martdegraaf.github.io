@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Mart Software</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+		
+		<!-- Scripts -->
+        <script type="text/javascript" src="/components/webcomponentsjs/webcomponents.js"></script>
+		
+		
+		 <!-- HTML Imports -->
+        <link rel="import" href="/components/font-roboto/roboto.html">
+        <link rel="import" href="/components/core-header-panel/core-header-panel.html">
+        <link rel="import" href="/components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="/components/paper-tabs/paper-tabs.html">
+        <link rel="import" href="/components/core-media-query/core-media-query.html">
+        <link rel="import" href="/components/paper-item/paper-item.html">
+        <link rel="import" href="/components/paper-shadow/paper-shadow.html">
+
+        <link rel="import" href="/components/core-menu/core-menu.html">
+        <link rel="import" href="/components/core-item/core-item.html">
+        <link rel="import" href="/components/core-header-panel/core-header-panel.html">
+        <link rel="import" href="/components/core-pages/core-pages.html">
+        <link rel="import" href="/components/core-scaffold/core-scaffold.html">
+
+		<link rel="import" href="/components/core-icons/social-icons.html">
+		<link rel="import" href="/components/google-map/google-map.html">
+		<link rel="import" href="/components/paper-button/paper-button.html">
+		
+        <link rel="import" href="/Mycomponents/ContentContainer.html">
+        <link rel="import" href="/Mycomponents/project-card.html">
+		<link rel="import" href="/Mycomponents/social-icons.html">
+		<link rel="import" href="/Mycomponents/skill.html">
+
+        <style>
+            html,body {
+                height: 100%;
+                margin: 0;
+                background-color: #E5E5E5;
+                font-family: 'RobotoDraft', sans-serif;
+                font-size: 14px;
+            }
+            core-toolbar {
+                background-color: #4C92CE;
+                color: white;
+            }
+            #tabs {
+                width: 100%;
+                margin: 0;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                text-transform: uppercase;
+            }
+            paper-tab::shadow #ink{
+                color: #b7d3eb;
+            }
+            .container {
+                width: 80%;
+                margin: 50px auto;
+            }
+            @media (min-width: 481px) {
+                .container {
+                    width: 400px;
+                }
+            }
+            @media (max-width: 800px) {
+                #tabs{
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    top: auto;
+                }
+                #header-toolbar{
+                    height: 128px;
+                }
+            }
+            @media (min-width: 801px) {
+                #tabs, content-container, .toolbar-tools {
+                    width: 1140px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            #tabs{
+                left: auto;
+            }
+            core-toolbar.bottom {
+                position: fixed;
+                z-index: 10;
+                bottom: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, 0.16), 0 -2px 5px 0 rgba(0, 0, 0, 0.26);
+            }
+            paper-item{
+                background-color: #FFF;
+                margin-bottom: 10px;
+            }
+            core-header-panel {
+                position: absolute;
+                top: 0;
+                bottom: 64px;
+                left: 0;
+                width: 100%;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            core-menu{
+                text-transform: uppercase;
+            }
+            #page-title{
+                text-transform: uppercase;
+            }
+            paper-fab{
+                background-color: #4C92CE;
+            }
+            paper-tab a{
+                color: #FFF;
+                text-decoration: none;
+            }
+            content-container a{
+                color: #000;
+                border-bottom: 2px solid #b7d3eb;
+                text-decoration: none;
+            }
+            content-container a:hover{
+                color: #4C92CE;
+                border-bottom: 2px solid #4C92CE;
+            }
+        </style>
+
+    </head>
+    <?php
+    $pages = array("contact", "portfolio", "home", "agenda");
+    $page = $_GET['page'];
+    if (!in_array($page, $pages)) {
+        $page = "home";
+    }
+    ?>
+    <body unresolved>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-57143312-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+
+    <template is="auto-binding" id="app">
+        <core-scaffold>
+
+            <core-header-panel navigation flex>
+                <core-toolbar id="navheader">
+                    <span>Mart Software</span>
+                </core-toolbar>
+                <core-menu selected="{{page}}" valueattr="data-category">
+                    <core-item data-category="home" label="Home"></core-item>
+                    <core-item data-category="portfolio" label="Portfolio"></core-item>
+                    <core-item data-category="contact" label="Contact"></core-item>
+                    <core-item data-category="blog" label="Blog"></core-item>
+                </core-menu>
+            </core-header-panel>
+
+            <span tool id="page-title">{{ page }}</span>
+
+            <div class="content" unresolved>
+                
+                    <core-pages selected="{{page}}" valueattr="data-category">
+                        <section data-category="home">
+                            <?php
+                            include 'pages/home.php';
+                            ?>
+                        </section>
+                        <section data-category="portfolio">
+                            <?php
+                            include 'pages/portfolio2.php';
+                            ?>
+                        </section>
+                        <section data-category="contact">
+                            <?php
+                            include 'pages/contact.php';
+                            ?>
+                        </section>
+                        <section data-category="blog">
+                            <p>Blog not here yet.</p>
+                        </section>
+                        <section data-category="agenda">
+                            <?php
+                            include 'pages/agenda.php';
+                            ?>
+                        </section>
+                        <section data-category="hihaho">
+                            <?php
+                            include 'pages/test.php';
+                            ?>
+                        </section>
+                        <section data-category="wheel">
+                            <?php
+                            include 'pages/wheel.php';
+                            ?>
+                        </section>
+                    </core-pages>
+                
+            </div>
+        </core-scaffold>
+		<script>
+			var app = document.getElementById('app');
+			app.page = 'home';
+			
+			app.page = window.location.pathname.substring(1);	
+		</script>
+    </template>
+    
+</body>
+</html>
