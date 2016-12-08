@@ -207,6 +207,12 @@
 			app.page = 'home';
 			
 			app.page = window.location.pathname.substring(1);	
+			
+			var sections = document.getElementsByTagName("section");
+			for(var i in sections){
+				var section = section[i];
+				section.innerHtml = "Hoi";
+			}
 		</script>
     </template>
     
