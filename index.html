@@ -210,8 +210,8 @@
 			
 			var sections = document.getElementsByTagName("section");
 			for(var i in sections){
-				var section = section[i];
-				section.innerHTML = section["data-category"];
+				var section = sections[i];
+				section.innerHTML = section.getAttribute("data-category");
 			}
 		</script>
     </template>
