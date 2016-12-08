@@ -211,7 +211,7 @@
 			var sections = document.getElementsByTagName("section");
 			for(var i in sections){
 				var section = section[i];
-				section.innerHtml = "Hoi";
+				section.innerHTML = section["data-category"];
 			}
 		</script>
     </template>
