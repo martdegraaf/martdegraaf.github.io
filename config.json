@@ -1,0 +1,49 @@
+{
+   "baseURL": "https://martdegraaf.github.io",
+   "languageCode": "en-us",
+   "title": "Mart de Graaf",
+   "theme": "PaperMod",
+   "params": {
+      "showPostNavLinks": true,
+      "showCodeCopyButtons": true,
+      "showShareButtons": true,
+      "showReadingTime": true,
+      "homeInfoParams": {
+         "title": "Full-stack developer @ 4Dotnet",
+         "content": "Blogging about Azure, .NET and architecture."
+      },
+      "socialIcons": [
+         {
+            "name": "github",
+            "url": "https://github.com/martdegraaf"
+         },
+         {
+            "name": "linkedin",
+            "url": "https://www.linkedin.com/in/mart-de-graaf/"
+         }
+      ]
+   },
+   "outputs": {
+      "home": [
+         "HTML",
+         "RSS",
+         "JSON"
+      ]
+   },
+   "menu": {
+      "main": [
+         {
+            "url": "/tags",
+            "name": "Tags"
+         },
+         {
+            "url": "/archive",
+            "name": "Archive"
+         },
+         {
+            "url": "/search",
+            "name": "Search"
+         }
+      ]
+   }
+}
