@@ -72,7 +72,7 @@ using System;
 using System.Linq;
 using Xunit.Sdk;
 
-namespace SomeCoolNamespace
+namespace SomeCoolNamespace;
 public static class LoggerExtensions
 {
     public static void VerifyLogged<T>(this ILogger<T> logger, LogLevel level, string logMessage)
