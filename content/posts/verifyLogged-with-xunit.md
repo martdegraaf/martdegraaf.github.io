@@ -1,6 +1,6 @@
 ---
 title: "VerifyLogged with Xunit"
-date: 2022-07-27T15:00:00+02:00
+date: 2022-07-28T18:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "Xunit", "FakeItEasy"]
@@ -9,8 +9,8 @@ ShowToc: true
 ---
 
 # Introduction
-For a client i wanted to test that logError was called.
-Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behaviour, but still would like to know the logError is being called.
+For a client, i wanted to test that logError was called.
+Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behavior, but still would like to know the logError is being called.
 
 ## The system under test
 ```cs {linenos=table}
@@ -32,8 +32,8 @@ public async Task Delete(long sequenceNumber)
 
 # Verify that LogError is called
 
-Have you ever tried to verify your logInformation using xUnit. It does not seem to work out of the box as other FakeItEasy.
-I tried this code for example, but it just would not work. the throwing of exception has been left out to keep the code sample small.
+Have you ever tried to verify your logInformation using xUnit? It does not seem to work out of the box as other FakeItEasy.
+I tried this code for example, but it just would not work. The mock that throws the exception has been left out to keep the code sample small.
 ```cs {linenos=table}
 //Arrange
 var logger = A.Fake<ILogger<SystemUnderTest>>();
@@ -48,7 +48,7 @@ A.CallTo(() => logger.LogError(A<string>.Ignored, A<object[]>.Ignored))
 ```
 
 # The LoggerExtensions class
-The solution was right at hand beacuse my coworker had taught this one out. With his approval i made this blog post. Use the extension as described below.
+The solution was right at hand because my coworker had already figured it out. With his approval, i made this blog post, many thanks Marnix. Use the extension class as described below.
 ```cs {linenos=table}
 //Arrange
 var logger = A.Fake<ILogger<SystemUnderTest>>();
