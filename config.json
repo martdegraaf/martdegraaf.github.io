@@ -2,6 +2,7 @@
    "baseURL": "https://martdegraaf.github.io",
    "languageCode": "en-us",
    "title": "Mart de Graaf",
+   "googleAnalytics": "G-ZFQGR29JJQ",
    "theme": "PaperMod",
    "params": {
       "showPostNavLinks": true,
@@ -10,7 +11,7 @@
       "showReadingTime": true,
       "homeInfoParams": {
          "title": "Full-stack developer @ 4Dotnet",
-         "content": "Blogging about Azure, .NET and architecture."
+         "content": "Blogging about Azure, .NET, Git and architecture."
       },
       "socialIcons": [
          {
