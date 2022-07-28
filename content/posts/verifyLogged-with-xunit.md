@@ -16,19 +16,16 @@ Consider for example this piece of code below. The catch operation was added to 
 ```cs {linenos=table}
 public async Task Delete(long sequenceNumber)
 {
-    _logger.LogInformation("Deleting scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
-    try
-    {
-        await _client.Delete(
-            _serviceBusSettings.Endpoint,
-            _serviceBusSettings.ScheduledErisMessageQueueName,
-            sequenceNumber);
-        _logger.LogInformation("Deleted scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
-    }
-    catch (InvalidOperationException ex) when (ex.Message.Equals($"The scheduled message with SequenceNumber = {sequenceNumber} is already being cancelled."))
-    {
-        _logger.LogError(ex, "Ignored InvalidOperationException for when the message {sequenceNumber} already has been cancelled.", sequenceNumber);
-    }
+  _logger.LogInformation("Deleting scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
+  try
+  {
+    await _client.Delete(..);
+    _logger.LogInformation("Deleted scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
+  }
+  catch (InvalidOperationException ex) when (ex.Message.Equals($"The scheduled message with SequenceNumber = {sequenceNumber} is already being cancelled."))
+  {
+    _logger.LogError(ex, "Ignored InvalidOperationException for when the message {sequenceNumber} already has been cancelled.", sequenceNumber);
+  }
 }
 ```
 
