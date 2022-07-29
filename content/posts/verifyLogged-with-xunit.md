@@ -1,6 +1,7 @@
 ---
 title: "VerifyLogged with Xunit"
 date: 2022-07-28T18:00:00+02:00
+publishdate: 2022-07-29T00:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "Xunit", "FakeItEasy"]
@@ -16,15 +17,16 @@ Consider for example this piece of code below. The catch operation was added to 
 ```cs {linenos=table}
 public async Task Delete(long sequenceNumber)
 {
-  _logger.LogInformation("Deleting scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
+  _logger.LogInformation("Deleting `{sequenceNumber}`.", sequenceNumber);
   try
   {
     await _client.Delete(..);
-    _logger.LogInformation("Deleted scheduled message with sequence number `{sequenceNumber}`.", sequenceNumber);
+    _logger.LogInformation("Delete completed `{sequenceNumber}`.", sequenceNumber);
   }
-  catch (InvalidOperationException ex) when (ex.Message.Equals($"The scheduled message with SequenceNumber = {sequenceNumber} is already being cancelled."))
+  catch (InvalidOperationException ex)
+    when (ex.Message.Equals($"The scheduled message with SequenceNumber = {sequenceNumber} is already being cancelled."))
   {
-    _logger.LogError(ex, "Ignored InvalidOperationException for when the message {sequenceNumber} already has been cancelled.", sequenceNumber);
+    _logger.LogError(ex, "Already cancelled {sequenceNumber}.", sequenceNumber);
   }
 }
 ```
@@ -48,7 +50,7 @@ A.CallTo(() => logger.LogError(A<string>.Ignored, A<object[]>.Ignored))
 ```
 
 # The LoggerExtensions class
-The solution was right at hand because my coworker had already figured it out. With his approval, i made this blog post, many thanks Marnix. Use the extension class as described below.
+The solution was right at hand because my coworker had already figured it out. Thanks Marnix. I made this blog post, with his approval. Cheout his blog: [Marnix' blog](https://alanta.nl/). Use the extension class as described below.
 ```cs {linenos=table}
 //Arrange
 var logger = A.Fake<ILogger<SystemUnderTest>>();
@@ -58,8 +60,8 @@ var sut = new SystemUnderTest(logger);
 await sut.Delete(1);
 
 //Assert
-logger.VerifyLogged(LogLevel.Information, "This log message should have been called");
-logger.VerifyLogged(LogLevel.Error, "Failed to send e-mail");
+logger.VerifyLogged(LogLevel.Information, "Deleting 1");
+logger.VerifyLogged(LogLevel.Error, "Already cancelled 1");
 ```
 ## LoggerExtensions.cs
 ```cs {linenos=table}
@@ -82,7 +84,8 @@ public static class LoggerExtensions
 
         if (actualLevel != level)
         {
-            throw new AssertActualExpectedException($"[{level}] {logMessage}", $"[{actualLevel}] {actualMessage}",
+            throw new AssertActualExpectedException(
+                $"[{level}] {logMessage}", $"[{actualLevel}] {actualMessage}",
                 $"Unexpected log level for log message");
         }
     }
@@ -92,7 +95,9 @@ public static class LoggerExtensions
         var (found, actualLevel, actualMessage) = logger.VerifyLog(logMessage);
         if (found && actualLevel == level)
         {
-            throw new XunitException($"Log message found containing '{logMessage}' at level {level}{Environment.NewLine}Message: {actualMessage}");
+            throw new XunitException(
+                @$"Log message found containing '{logMessage}'
+                    at level {level}{Environment.NewLine}Message: {actualMessage}");
         }
     }
 
@@ -103,7 +108,9 @@ public static class LoggerExtensions
 
         if (call != null)
         {
-            throw new XunitException($"Log message found at level {level}{Environment.NewLine}Message: {call.Arguments[2]}");
+            throw new XunitException(
+                @$"Log message found at level {level}{Environment.NewLine}
+                    Message: {call.Arguments[2]}");
         }
     }
     public static void VerifyLoggedAtLevel<T>(this ILogger<T> logger, LogLevel level)

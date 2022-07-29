@@ -1,6 +1,8 @@
 {
    "baseURL": "https://martdegraaf.github.io",
    "languageCode": "en-us",
+   "defaultContentLanguage": "en-us",
+   "timeZone": "Europe/Amsterdam",
    "title": "Mart de Graaf",
    "googleAnalytics": "G-ZFQGR29JJQ",
    "theme": "PaperMod",
@@ -9,10 +11,14 @@
       "showCodeCopyButtons": true,
       "showShareButtons": true,
       "showReadingTime": true,
+      "enableGitInfo": true,
+      
       "homeInfoParams": {
-         "title": "Full-stack developer @ 4Dotnet",
+         "title": "Software Engineer @ 4Dotnet",
          "content": "Blogging about Azure, .NET, Git and architecture."
       },
+      "avatar": "mart@martdegraaf.nl",
+      "name": "Mart de Graaf",
       "socialIcons": [
          {
             "name": "github",
