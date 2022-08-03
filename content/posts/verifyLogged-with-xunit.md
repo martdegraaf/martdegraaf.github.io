@@ -1,5 +1,5 @@
 ---
-title: "VerifyLogged with Xunit"
+title: "How to verify that ILogger actually logged something?"
 date: 2022-07-28T18:00:00+02:00
 publishdate: 2022-07-29T00:00:00+02:00
 draft: false
@@ -10,7 +10,7 @@ ShowToc: true
 ---
 
 # Introduction
-For a client, i wanted to test that logError was called.
+For a recent project, i wanted to test that logError was called.
 Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behavior, but still would like to know the logError is being called.
 
 ## The system under test
