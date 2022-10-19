@@ -1,17 +1,17 @@
 ---
-title: "Add properties for consuming apps to a nuget package"
+title: "Add project properties for consuming apps to a nuget package"
 date: 2022-10-19T18:00:00+02:00
 publishdate: 2022-10-19T00:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Nuget", ".NET"]
-summary: This article explains how to make a 
+tags: ["Nuget", ".NET", "csproj"]
+summary: This article explains how to add consuming project properties to a nuget package. Those project properties will be used in the consuming apps.
 ShowToc: true
 ---
 # Introduction
-For a recent project, I wanted to add a property to the consumers from within my nuget package.
+For a recent project, I wanted to add a property to the consuming applications from within my nuget package. This prevents  making a pull request for every consuming application with a .csproj change.
 
-For this case i am making a Nuget package with the ID: `MyProject.ExampleNuget`, so replace that value for your project.
+Please note in this example the Nuget package has the ID: `MyProject.ExampleNuget`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
 
 ## Nuget file structure
 ```
@@ -20,14 +20,13 @@ MyProject.ExampleNuget  (Repository level)
  ┃ ┣ Extensions
  ┃ ┃ ┗ MySpecialThing.cs
  ┃ ┣ MyProject.ExampleNuget.csproj
- ┃ ┣ MyProject.ExampleNuget.csproj.user
  ┃ ┗ MyProject.ExampleNuget.props
- ┣ AMyProject.ExampleNuget.sln
+ ┣ MyProject.ExampleNuget.sln
  ┗ nuget.config
 ```
 
 ## MyProject.ExampleNuget.props
-To enforce some property's to the consumers of my Nuget package.
+The nuget package has a .props-file to enforce some property's to the consumers of my Nuget package.
 ```xml {linenos=table}
 <Project>
   <PropertyGroup>
@@ -54,6 +53,11 @@ Important is to set the build action of the `MyProject.ExampleNuget.props` file 
 
 </Project>
 ```
+
+## Conclusion
+When installing this package on for example `MyProject.ConsumingWebApi` a file is generated in de build folder `MyProject.ConsumingWebApi.csproj.nuget.g.targets`.
+This ensures the setting is on when building `MyProject.ConsumingWebApi`.
+
 
 ## References
 I used the following resources to fix my problem.
