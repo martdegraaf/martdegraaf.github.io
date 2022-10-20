@@ -1,32 +1,32 @@
 ---
-title: "Add project properties for consuming apps to a nuget package"
+title: "Add project properties for consuming apps to a NuGet package"
 date: 2022-10-19T18:00:00+02:00
 publishdate: 2022-10-19T00:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Nuget", ".NET", "csproj"]
-summary: This article explains how to add consuming project properties to a nuget package. Those project properties will be used in the consuming apps.
+tags: ["NuGet", ".NET", "csproj"]
+summary: This article explains how to add consuming project properties to a NuGet package. Those project properties will be used in the consuming apps.
 ShowToc: true
 ---
 # Introduction
-For a recent project, I wanted to add a property to the consuming applications from within my nuget package. This prevents  making a pull request for every consuming application with a .csproj change.
+For a recent project, I wanted to add a property to the consuming applications from within my NuGet package. This prevents  making a pull request for every consuming application with a .csproj change.
 
-Please note in this example the Nuget package has the ID: `MyProject.ExampleNuget`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
+Please note in this example the NuGet package has the ID: `MyProject.ExampleNuGet`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
 
-## Nuget file structure
+## NuGet file structure
 ```
-MyProject.ExampleNuget  (Repository level)
- ┣ MyProject.ExampleNuget
+MyProject.ExampleNuGet  (Repository level)
+ ┣ MyProject.ExampleNuGet
  ┃ ┣ Extensions
  ┃ ┃ ┗ MySpecialThing.cs
- ┃ ┣ MyProject.ExampleNuget.csproj
- ┃ ┗ MyProject.ExampleNuget.props
- ┣ MyProject.ExampleNuget.sln
+ ┃ ┣ MyProject.ExampleNuGet.csproj
+ ┃ ┗ MyProject.ExampleNuGet.props
+ ┣ MyProject.ExampleNuGet.sln
  ┗ nuget.config
 ```
 
-## MyProject.ExampleNuget.props
-The nuget package has a .props-file to enforce some property's to the consumers of my Nuget package.
+## MyProject.ExampleNuGet.props
+The NuGet package has a .props-file to enforce some property's to the consumers.
 ```xml {linenos=table}
 <Project>
   <PropertyGroup>
@@ -37,8 +37,8 @@ The nuget package has a .props-file to enforce some property's to the consumers 
   </PropertyGroup>
 </Project>
 ```
-## MyProject.ExampleNuget.csproj
-Important is to set the build action of the `MyProject.ExampleNuget.props` file to package it to the build directory. See the example below:
+## MyProject.ExampleNuGet.csproj
+Important is to set the build action of the `MyProject.ExampleNuGet.props` file to package it to the build directory. See the example below:
 ```xml {linenos=table}
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -47,7 +47,7 @@ Important is to set the build action of the `MyProject.ExampleNuget.props` file 
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="MyProject.ExampleNuget.props" Pack="true" PackagePath="build">
+    <None Update="MyProject.ExampleNuGet.props" Pack="true" PackagePath="build">
     </None>
   </ItemGroup>
 
