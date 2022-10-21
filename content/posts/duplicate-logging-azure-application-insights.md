@@ -1,7 +1,7 @@
 ---
 title: "Duplicate Logging Azure Application Insights"
-date: 2022-10-30T17:35:37+02:00
-publishdate: 2022-10-30T17:35:37+02:00
+date: 2022-10-20T17:35:37+02:00
+publishdate: 2022-10-20T17:35:37+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["application insights", "Azure", "logging", "monitoring", "problemsolving"]
