@@ -4,7 +4,7 @@ date: 2022-10-20T17:35:37+02:00
 publishdate: 2022-10-20T17:35:37+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["application insights", "Azure", "logging", "monitoring", "problemsolving"]
+tags: ["application insights", "loganalytics workspace", "Azure", "logging", "monitoring", "problemsolving"]
 summary: "In this article a problem is solved where in Application insights we encountered duplicate logging."
 ShowToc: true
 ShowReadingTime: true
@@ -34,14 +34,29 @@ Why was the Application insights workspace configured duplicate in seperate sett
 For the, in my eyes correct, implementation of the properties it was filled by ARM the Infrastructure as code made sure we set the right application insights workspace.
 
 ```json
-TODO ARM CODE EXAMPLE APPLICATION INSIGHTS + WORKSPACE
+{
+    "type": "microsoft.insights/components",
+    "kind": "other",
+    "name": "ai-[YOUR-APPLICATION-INSIGHTS-NAME]",
+    "apiVersion": "2020-02-02-preview",
+    "location": "West Europe",
+    "properties": {
+        "Application_Type": "web",
+        "ApplicationId": "ai-[YOUR-APPLICATION-INSIGHTS-NAME]",
+        "WorkspaceResourceId": "law-[YOUR-LOG-ANALYTICS-WORKSPACE-NAME]"
+    }
+}
 ```
 ### 2. Azure Policy was enforced on 'Diagnostic settings'
 There also was a Azure policy checking that there was a diagnostic setting for sending data to the workspace. Whenever we checked and enforced the Azure Policy we would have duplicate data in our Application Insights Workspace.
 
+## Difference Application insights and Log Analytics workspace
+
+TODO fill out
+
 ## Benefits and Cost analysis
 
-This change saved the client where i fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying feature of having duplicate logging in timelines. I hope that makes many colegea developers happy.
+This change saved the client where i fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying feature of having duplicate logging in timelines. When you are also having this problem, i hope this article helps. Good logging makes all developers happy.
 
 ## Wrap up
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. 
