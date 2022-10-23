@@ -33,7 +33,7 @@ Why was the Application insights workspace configured duplicate in seperate sett
 ### 1. The correct way - ARM > Workspace property
 For the, in my eyes correct, implementation of the properties it was filled by ARM the Infrastructure as code made sure we set the right application insights workspace.
 
-```json
+```json {linenos=table}
 {
     "type": "microsoft.insights/components",
     "kind": "other",
