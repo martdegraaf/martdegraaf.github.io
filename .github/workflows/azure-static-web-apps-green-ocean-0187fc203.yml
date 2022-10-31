@@ -32,7 +32,8 @@ jobs:
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          HUGO_ENVIRONMENT: "staging"
+          HUGO_ENVIRONMENT: "production"
+          BASE_URL: "${{ github.event_name == 'push' && 'https://blog.martdegraaf.nl/' || 'https://green-ocean-0187fc203-' + github.event.number + '.westeurope.2.azurestaticapps.net/' }}" 
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
