@@ -33,7 +33,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env:
           HUGO_ENVIRONMENT: "production"
-          HUGO_BASE_URL: "${{ github.event_name == 'push' && 'https://blog.martdegraaf.nl/' || format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}" 
+          HUGO_BASEURL: "${{ github.event_name == 'push' && 'https://blog.martdegraaf.nl/' || format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}" 
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
