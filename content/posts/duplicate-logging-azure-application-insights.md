@@ -12,6 +12,7 @@ ShowReadingTime: true
 
 **On a recent project we encountered duplicate logging in Azure Application insights.**
 
+{{< quoteblock text="BLURALERT: The information in the screenshots are blurred for some obvious reasons.">}}
 ## The issue
 As seen in below screenshot we suffered on the ACC environment with duplicate exceptions, information and dependencies. On the DEV environment, the left screen, we did not expirence this issue.
 ![Duplicate logging](/images/duplicate-logging.png)
