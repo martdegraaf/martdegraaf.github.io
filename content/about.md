@@ -10,3 +10,5 @@ Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and h
 
 ![Mart](/images/mart_square.jpg)
 
+A cool gist to test my gist as well as the shortcode:
+{{< gist spf13 7896402 >}}
