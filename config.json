@@ -23,7 +23,7 @@
       "avatar": "mart@martdegraaf.nl",
       "name": "Mart de Graaf",
       "profileMode": {
-         "enabled": true,
+         "enabled": false,
          "imageUrl": "https://en.gravatar.com/userimage/91624600/299941bdca005e043f382073dfb1d71c.jpg?size=200",
          "imageWidth": 200,
          "imageHeight": 200,
@@ -66,7 +66,10 @@
          {
             "url": "/search",
             "name": "Search"
+         },
+         {
+            "url": "/about",
+            "name": "About"
          }
-      ]
    }
 }
