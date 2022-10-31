@@ -6,6 +6,7 @@
    "googleAnalytics": "G-ZFQGR29JJQ",
    "theme": "PaperMod",
    "enableRobotsTXT": true,
+   "disqusShortname": "yourDisqusShortname",
    "params": {
       "env": "production",
       "showPostNavLinks": true,
