@@ -35,8 +35,10 @@ jobs:
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          HUGO_ENVIRONMENT: "production"
-          HUGO_BASEURL: "${{ github.event_name == 'push' && env.PRODUCTION_URL || env.STAGING_URL }}" 
+          IS_PRODUCTION: "${{ github.event_name == 'push' }}"
+          HUGO_ENVIRONMENT: "${{ env.IS_PRODUCTION && 'production' || 'staging' }}"
+          HUGO_BASEURL: "${{ github.event_name == 'push' && env.PRODUCTION_URL || env.STAGING_URL }}"
+          HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == false }}"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
