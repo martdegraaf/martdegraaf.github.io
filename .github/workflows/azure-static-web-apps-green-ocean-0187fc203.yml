@@ -36,7 +36,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env:
           HUGO_ENVIRONMENT: "production"
-          HUGO_BASEURL: "${{ github.event_name == 'push' && PRODUCTION_URL || STAGING_URL }}" 
+          HUGO_BASEURL: "${{ github.event_name == 'push' && env.PRODUCTION_URL || env.STAGING_URL }}" 
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
