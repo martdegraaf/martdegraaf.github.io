@@ -10,5 +10,5 @@ Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and h
 
 ![Mart](/images/mart_square.jpg)
 
-A cool gist to test my gist as well as the shortcode:
+A cool gist to test my gist as well as the shortcode: :clap:
 {{< gist martdegraaf ef6cc940df7f302291f84fb88fa489d3 >}}

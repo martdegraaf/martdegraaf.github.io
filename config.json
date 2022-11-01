@@ -7,13 +7,14 @@
    "theme": "PaperMod",
    "enableRobotsTXT": true,
    "disqusShortname": "martdegraaf",
+   "enableEmoji": true,
+   "enableGitInfo": true,
    "params": {
       "env": "production",
       "showPostNavLinks": true,
       "showCodeCopyButtons": true,
       "showShareButtons": true,
       "showReadingTime": true,
-      "enableGitInfo": true,
       "defaultTheme": "dark",
       "comments": true,
       
