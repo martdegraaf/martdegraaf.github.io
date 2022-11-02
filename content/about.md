@@ -10,8 +10,10 @@ draft: false
 Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and hobbies. He is enthusiastic about .NET solutions, Azure DevOps, and Azure solutions. Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home he is a father for his four children.
 {{</ profile >}}
 
+## Carreer
 
+I am still very proud at the achievements i set in my previous clients. Togheter with my dad we started a new concept in interactive video. See an example below:
 
+{{< hihaho >}}
 
-A cool gist to test my gist as well as the shortcode: :clap:
-{{< gist martdegraaf ef6cc940df7f302291f84fb88fa489d3 >}}
+My full careerpath with clients and employees is available on LinkedIn. 
