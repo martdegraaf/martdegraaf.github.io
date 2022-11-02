@@ -5,10 +5,16 @@ draft: false
 ---
 
 
+{{< profile >}}
+{{< profile-image >}}
+![Mart](/images/mart_square.jpg)
+{{</ profile-image >}}
 
 Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and hobbies. He is enthusiastic about .NET solutions, Azure DevOps, and Azure solutions. Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home he is a father for his four children.
+{{</ profile >}}
 
-![Mart](/images/mart_square.jpg)
+
+
 
 A cool gist to test my gist as well as the shortcode: :clap:
 {{< gist martdegraaf ef6cc940df7f302291f84fb88fa489d3 >}}
