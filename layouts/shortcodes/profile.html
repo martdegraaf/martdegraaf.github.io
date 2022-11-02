@@ -3,6 +3,6 @@
    {{ $image := $image.Resize "200x200" }}
    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 100%; margin:1rem; border: 3px solid #0078d4;">
    <div style="vertical-align: middle; justify-content: center; align-content: center; flex-direction: column; display: flex; padding: 1.3rem; font-size: 1.3rem;">
-      {{ .Inner | markdownify }}
+      <p>{{ .Inner | markdownify }}</p>
    </div>
 </div>
