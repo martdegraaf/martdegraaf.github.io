@@ -1,5 +1,0 @@
-<div style="width: 200px; height: 200px; border-radius: 100%;">
-   {{ $image := resources.Get "images/mart_square.jpg" }}
-   {{ $image := $image.Resize "200x200" }}
-   <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
-</div>
