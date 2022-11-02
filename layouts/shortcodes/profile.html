@@ -7,8 +7,8 @@
       align-content: stretch;
    }
    .profile-image{
-      border-radius: 100%;
-      margin:1rem;
+      border-radius: 100%!important;
+      margin:1rem!important;
       border: 3px solid #0078d4;
    }
    .profile-content{
@@ -20,27 +20,9 @@
       padding: 1.3rem;
       font-size: 1.3rem;
    }
-@media (min-width: 800px) {
+@media (max-width: 800px) {
    .profile-box{
-      background-color: var(--entry);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: row-reverse;
-      align-content: stretch;
-   }
-   .profile-image{
-      border-radius: 100%;
-      margin:1rem;
-      border: 3px solid #0078d4;
-   }
-   .profile-content{
-      vertical-align: middle;
-      justify-content: center;
-      align-content: center;
       flex-direction: column;
-      display: flex;
-      padding: 1.3rem;
-      font-size: 1.3rem;
    }
   }
 </style>
