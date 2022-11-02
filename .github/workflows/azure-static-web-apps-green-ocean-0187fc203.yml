@@ -18,9 +18,10 @@ jobs:
       PRODUCTION_URL: "https://blog.martdegraaf.nl/"
       STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
+          fetch-depth: 0
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

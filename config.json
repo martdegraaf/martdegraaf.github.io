@@ -17,6 +17,7 @@
       "showReadingTime": true,
       "defaultTheme": "dark",
       "comments": true,
+      "enableGitInfo": true,
       
       "homeInfoParams": {
          "title": "Software Engineer @ 4Dotnet",
