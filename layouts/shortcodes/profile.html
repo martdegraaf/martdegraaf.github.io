@@ -1,7 +1,7 @@
-<div style="background-color: var(--entry); border-radius: var(--radius); display: flex; flex-direction: row; align-content: stretch;">
+<div style="background-color: var(--entry); border-radius: var(--radius); display: flex; flex-direction: row-reverse; align-content: stretch;">
    {{ $image := resources.Get "images/mart_square.jpg" }}
    {{ $image := $image.Resize "200x200" }}
-   <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 100%;margin-right:15px;">
+   <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 100%; margin:1rem; border: 3px solid #0078d4;">
    <div style="vertical-align: middle;">
       {{ .Inner | markdownify }}
    </div>
