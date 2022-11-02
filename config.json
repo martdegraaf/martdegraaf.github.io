@@ -9,6 +9,18 @@
    "disqusShortname": "martdegraaf",
    "enableEmoji": true,
    "enableGitInfo": true,
+   "copyright": "Mart de Graaf",
+   "defaultContentLanguage": "en",
+   "languages": {
+      "en": {
+         "title": "My blog",
+         "weight": 1
+      },
+      "nl": {
+         "title": "Nederlandse blog",
+         "weight": 2
+      }
+   },
    "params": {
       "env": "production",
       "showPostNavLinks": true,

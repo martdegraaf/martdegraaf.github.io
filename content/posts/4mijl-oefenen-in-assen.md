@@ -1,9 +1,10 @@
 ---
-title: "Running 4 mile in Assen"
-date: 2020-09-15T11:30:03+00:00
+title: "4 mijl oefenen in Assen"
+date: 2022-06-09T11:30:03+00:00
+
 # weight: 1
 # aliases: ["/first"]
-tags: ["running"]
+tags: ["hardlopen", "strava"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
@@ -11,8 +12,7 @@ TocOpen: false
 draft: true
 hidemeta: false
 comments: false
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
+description: "Alle 4mijl routes in Assen uitgelegd."
 disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
