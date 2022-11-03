@@ -40,6 +40,7 @@ The Log Analytics Workspace was configured in diagnostic settings as well it was
 ![Properties Application Insights workspace setting](/images/properties-ai-workspace.png)
 
 **The actual root cause** 
+
 So when we concluded the configuration was duplicate, we asked ourselves:
 Why was it duplicate configured, couldn't that have been spotted in an existing ARM template?
 
@@ -77,6 +78,7 @@ Whenever the IT operations checked and enforced the Azure Policy, we would have 
 ### Difference Application Insights and Log Analytics workspace
 
 ```mermaid
+graph TD
 AI1[Application Insights instance 1]
 AI2[Application Insights instance 2]
 LA1[Log Analytics Workspace]
