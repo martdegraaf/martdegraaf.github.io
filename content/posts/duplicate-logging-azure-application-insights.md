@@ -97,9 +97,9 @@ In the screenshot below is seen that when you create a new Application Insights 
 {{</ quoteblock >}}
 
 
-### :moneybag: Benefits and Cost analysis
+### Cost analysis :moneybag: 
 
-This change saved the client over &euro;1000 monthly in Azure Log Analytic costs. It also saves the annoying bug of having duplicate logging. If you also are experiencing this problem, I hope this article helps. Good logging makes all developers happy.
+This change saved the client over &euro;1000 monthly in Azure Log Analytic costs. The euros won't tell you how much of the total it was. After fixing all duplicate configurations, the total costs of the Application Insights resources were reduced by roughly 40-50%. If you also are experiencing this problem, I hope this article helps. Good logging makes all developers happy.
 
 ## Wrap up
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. Also, make sure that you're not forcing a policy on the diagnostic settings when you configure it in the properties. Only one upstream to the Log Analytic workspace is required :wink:.
