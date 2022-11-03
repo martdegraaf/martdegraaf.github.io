@@ -12,12 +12,22 @@
    "copyright": "Mart de Graaf",
    "languages": {
       "en-us": {
-         "title": "My blog",
-         "weight": 1
+         "title": "Mart's blog",
+         "weight": 1,
+         "params":{
+            "languageAltTitle": "English"
+         }
       },
       "nl": {
-         "title": "Nederlandse blog",
-         "weight": 2
+         "title": "Mart's blog",
+         "weight": 2,
+         "params":{
+            "languageAltTitle": "Nederlands",
+            "homeInfoParams": {
+               "title": "Software ontwikkelaar @ 4Dotnet",
+               "content": "Voor content over Azure, .NET, Git en architectuur ga dan naar mijn Engelse blog. Voor Nederlandse overdenkingen, wees welkom!"
+            }
+         }
       }
    },
    "params": {
