@@ -50,6 +50,10 @@ For the, in my eyes correct, implementation of the properties it was filled by A
     }
 }
 ```
+{{< quoteblock >}}
+The naming of Azure resources is done using the [Azure abbreviations guide](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations).
+{{</ quoteblock >}}
+
 ### 2. Azure Policy was enforced on 'Diagnostic settings'
 There also was a Azure policy checking that there was a diagnostic setting for sending data to the workspace. Whenever we checked and enforced the Azure Policy we would have duplicate data in our Application Insights Workspace.
 
