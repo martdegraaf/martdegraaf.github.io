@@ -93,7 +93,7 @@ In the screenshot below is seen that when you create a new Application Insights 
 ![Create Application Insights workspace based](/images/create-ai-workspace-based.png)
 
 {{< quoteblock >}}
-The Log Analytics workspace is part of the [Azure Monitor](https://learn.microsoft.com/en-gb/azure/azure-monitor/overview) component in Azure.
+:information_source: The Log Analytics workspace is part of the [Azure Monitor](https://learn.microsoft.com/en-gb/azure/azure-monitor/overview) component in Azure.
 {{</ quoteblock >}}
 
 
