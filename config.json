@@ -10,9 +10,8 @@
    "enableEmoji": true,
    "enableGitInfo": true,
    "copyright": "Mart de Graaf",
-   "defaultContentLanguage": "en",
    "languages": {
-      "en": {
+      "en-us": {
          "title": "My blog",
          "weight": 1
       },
