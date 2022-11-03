@@ -5,19 +5,23 @@ publishdate: 2022-10-20T17:35:37+02:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["application insights", "loganalytics workspace", "Azure", "logging", "monitoring", "problemsolving"]
-summary: "In this article a problem is solved where in Application insights we encountered duplicate logging."
+summary: "Save troubles and money fixing duplicate logging in your Azure Application Insights, and Log Analytics Workspace."
 ShowToc: true
 TocOpen: true
-draft: false
-ShowReadingTime: true
 UseHugoToc: false
+draft: false
+
+ShowReadingTime: true
+ShowLastModified: true
+ShowWordCount: true
 ---
 
 **On a recent project we encountered duplicate logging in Azure Application insights.**
 
 {{< quoteblock >}}
-:sunglasses: Sensitive information in the screenshots is blurred for some obvious reasons.
+:sunglasses: Sensitive information in the screenshots is blurred for obvious reasons.
 {{</ quoteblock >}}
+
 ## Problem introduction scope, and context
 As seen in the screenshot we suffered in the acceptance environment with duplicate exceptions, information, and dependencies. In the development environment, on the left screen, we did not experience this issue.
 ![Duplicate logging](/images/duplicate-logging.png)
@@ -31,15 +35,19 @@ To exclude the possibility of a software error we excluded these assumptions:
 1. We tested web apps with a single instance. If a single instance generates duplicate logging, it's surely not the instance count.
 
 ### The cause
-The Application Insights Workspace was configured in diagnostic settings as well it was in the properties the workspace property. See the screenshot for the view from the Azure portal.
+The Log Analytics Workspace was configured in diagnostic settings as well it was in the properties of the Application Insights. See the screenshots of the Azure portal.
 ![Diagnostic settings](/images/diagnostic-settings.png)
+![Properties Application Insights workspace setting](/images/properties-ai-workspace.png)
 
 **The actual root cause** 
+So when we concluded the configuration was duplicate, we asked ourselves:
+Why was it duplicate configured, couldn't that have been spotted in an existing ARM template?
 
-Why was the Application insights workspace configured duplicate in separate settings and not earlier seen?
+The answer consists in multiple factors, and solutions.  around Azure including the ARM and the Azure Policies.
 
 #### 1. The correct way - ARM > Workspace property
-For the, in my eyes correct, implementation of the properties it was filled by ARM the Infrastructure as code made sure we set the right application insights workspace.
+For the, in my eyes correct, implementation of the properties it was filled by an ARM-template.
+The infrastructure as code makes sure we're configuring the right Log Analytics Workspace.
 
 ```json {linenos=table}
 {
@@ -56,21 +64,30 @@ For the, in my eyes correct, implementation of the properties it was filled by A
 }
 ```
 {{< quoteblock >}}
-The naming of Azure resources is done using the [Azure abbreviations guide](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations).
+:bulb: The naming of Azure resources is done using the [Azure abbreviations guide](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations).
 {{</ quoteblock >}}
 
-![Properties Application Insights workspace setting](/images/properties-ai-workspace.png)
 
 #### 2. Azure Policy was enforced on 'Diagnostic settings'
-There also was an Azure policy checking that there was a diagnostic setting for sending data to the workspace. Whenever we checked and enforced the Azure Policy we would have duplicate data in our Application Insights Workspace.
+There also was an Azure policy checking that there was a diagnostic setting for sending data to the Log Analytics Workspace.
+Whenever the IT operations checked and enforced the Azure Policy, we would have duplicated the upstream to our Log Analytics Workspace.
 
 ## Conclusion
 
 ### Difference Application Insights and Log Analytics workspace
 
+```mermaid
+AI1[Application Insights instance 1]
+AI2[Application Insights instance 2]
+LA1[Log Analytics Workspace]
+
+LA1 <--- AI1
+LA1 <--- AI2
+```
+
 Application Insights gives 'insights' into application logging, exceptions, and such. You can use the Kudo query language to fetch data intelligently from Application Insights. The Log Analytics workspace is a set of tables. For the client in this article, the data of the Application insights was forwarded to the Log Analytics workspace. The advantage of the Log Analytics workspace is to query over multiple Application insights as well as data about other resources in azure, such as API management, application gateways, service busses, or firewalls.
 
-In the screenshot below is seen that when you create a new Application Insights resource the Log Analytics Workspace 
+In the screenshot below is seen that when you create a new Application Insights resource the Log Analytics Workspace is configured automatically.
 ![Create Application Insights workspace based](/images/create-ai-workspace-based.png)
 
 {{< quoteblock >}}
@@ -80,7 +97,7 @@ The Log Analytics workspace is part of the [Azure Monitor](https://learn.microso
 
 ### Benefits and Cost analysis
 
-This change saved the client where I fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying bug of having duplicate logging. If you are also having this problem, I hope this article helps. Good logging makes all developers happy.
+This change saved the client where I fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying bug of having duplicate logging. If you also are experiencing this problem, I hope this article helps. Good logging makes all developers happy.
 
 ## Wrap up
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. Also, make sure that you're not forcing a policy on the diagnostic settings when you configure it in the properties. Only one upstream to the Log Analytic workspace is required :wink:.
