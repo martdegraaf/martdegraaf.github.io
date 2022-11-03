@@ -7,7 +7,10 @@ author: ["Mart de Graaf"]
 tags: ["application insights", "loganalytics workspace", "Azure", "logging", "monitoring", "problemsolving"]
 summary: "In this article a problem is solved where in Application insights we encountered duplicate logging."
 ShowToc: true
+TocOpen: true
+draft: false
 ShowReadingTime: true
+UseHugoToc: false
 ---
 
 **On a recent project we encountered duplicate logging in Azure Application insights.**
