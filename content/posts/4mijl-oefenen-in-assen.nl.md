@@ -5,14 +5,14 @@ date: 2022-06-09T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["hardlopen", "strava"]
-author: "Me"
+author: "Mart de Graaf"
 # author: ["Me", "You"] # multiple authors
 showToc: true
-TocOpen: false
-draft: true
+TocOpen: true
+draft: false
 hidemeta: false
 comments: false
-description: "Alle 4mijl routes in Assen uitgelegd."
+description: "Alle 4mijl routes in Assen uitgelegd met routes."
 disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
@@ -23,17 +23,13 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ShowWordCount: true
 ShowRssButtonInSectionTermList: true
-UseHugoToc: true
+UseHugoToc: false
 cover:
     image: "<image path/url>" # image path/url
     alt: "<alt text>" # alt text
     caption: "<text>" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
 ---
 
 # 4 MIJL
@@ -43,25 +39,25 @@ De organisatie van de vier mijl in Assen heeft extra routes uitgelegd in Assen, 
 ## Startpunten
 Ik heb de startpunten verzameld in een Google maps lijst [Google maps Lijst van startpunten](https://goo.gl/maps/bBnfnvrUnU2qR2PQA). Zie hieronder de routes.
 
-## Route in Kloosterveen
+### Route in Kloosterveen
 
 De route in kloosterveen begint midden in de Kloosterveste en gaat daarna over het grindpad bij FC Assen. Vervolgens kun je genieten van de route om de schapenheuvel en zie je de nieuwe speeltuin van Kloosterveen. De rest van de route gaat door delen van de woonwijk heen waarbij er genoeg water is te zien. Let op dat in de Ribeshage pijlen op de weg staan waar ook autos geparkeerd staan. Je moet hier voor de speeltuin langs naar rechts.
 
 {{< strava 7198868379 >}}
 
-## Route Assen Oost
+### Route Assen Oost
 
 De route van Assen Oost begint aan de rand van de wijk aan het einde van de Vredeveldse weg.
 
 {{< strava 7583273408 >}}
 
-## Route Lariks
+### Route Lariks
 
 De route in Lariks begint bij de Delft 73, 1 straat van de Vaart N.Z vandaan. Let op bij de straat Stroom, daar is een punt waar pijlen samen komen, als je ze goed volgt en op het voetbad blijft, heb je er geen last van.
 
 {{< strava 7616571956 >}}
 
-## Route Pittelo
+### Route Pittelo
 
 De route in Pittelo start bij de voormalige Kinderopvang Pinokkio, die nu Kids First heet. Zoals in de route hieronder te zien hebben we een keer de verkeerde afslag genomen in de pittelose bossen. De driesprong miste een pijl of bordje, waar je dus verwacht wordt om links te gaan.
 
