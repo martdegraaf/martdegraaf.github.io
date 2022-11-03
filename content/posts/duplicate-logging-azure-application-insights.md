@@ -43,7 +43,7 @@ The Log Analytics Workspace was configured in diagnostic settings as well it was
 So when we concluded the configuration was duplicate, we asked ourselves:
 Why was it duplicate configured, couldn't that have been spotted in an existing ARM template?
 
-The answer consists in multiple factors, and solutions.  around Azure including the ARM and the Azure Policies.
+The answer consists of multiple factors and solutions. The two main components were an ARM-template and an Azure Policy.
 
 #### 1. The correct way - ARM > Workspace property
 For the, in my eyes correct, implementation of the properties it was filled by an ARM-template.
