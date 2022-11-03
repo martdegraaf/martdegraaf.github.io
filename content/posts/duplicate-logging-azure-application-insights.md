@@ -15,11 +15,11 @@ ShowReadingTime: true
 {{< quoteblock >}}
 BLURALERT: The information in the screenshots are blurred for some obvious reasons.
 {{</ quoteblock >}}
-## The issue
+## Problem introduction scope and context
 As seen in below screenshot we suffered on the ACC environment with duplicate exceptions, information and dependencies. On the DEV environment, the left screen, we did not expirence this issue.
 ![Duplicate logging](/images/duplicate-logging.png)
 
-## The steps to exclude
+### The steps to exclude
 
 To exclude the possibility of a software error we exlcuded these steps.
 
@@ -27,13 +27,15 @@ To exclude the possibility of a software error we exlcuded these steps.
 1. The Azure webapp / Azure function is misconfigured
 1. We could think of that every instance logs something of their own and thus that would be the problem. We checked this with the first.
 
-## The cause
+### The cause
 The Application Insights Workspace was configured in diagnostic settings aswell it was in the properties the workspace property. See the screenshot for the view from the Azure portal.
 ![Diagnostic settings](/images/diagnostic-settings.png)
 
-## The actual root cause
+**The actual root cause** 
+
 Why was the Application insights workspace configured duplicate in seperate settings and not earlier seen?
-### 1. The correct way - ARM > Workspace property
+
+#### 1. The correct way - ARM > Workspace property
 For the, in my eyes correct, implementation of the properties it was filled by ARM the Infrastructure as code made sure we set the right application insights workspace.
 
 ```json {linenos=table}
@@ -54,10 +56,12 @@ For the, in my eyes correct, implementation of the properties it was filled by A
 The naming of Azure resources is done using the [Azure abbreviations guide](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations).
 {{</ quoteblock >}}
 
-### 2. Azure Policy was enforced on 'Diagnostic settings'
+#### 2. Azure Policy was enforced on 'Diagnostic settings'
 There also was a Azure policy checking that there was a diagnostic setting for sending data to the workspace. Whenever we checked and enforced the Azure Policy we would have duplicate data in our Application Insights Workspace.
 
-## Difference Application insights and Log Analytics workspace
+## Conclusion
+
+### Difference Application insights and Log Analytics workspace
 
 Application Insights gives 'insights' in application logging, exceptions and such. You can use the Kudo query language to fetch data intelligent from Application Insights. The Log Analytics workspace is a set of tables. For the client in this article the data of the Application insights was forwarded to the Log Analytics workspace. The advantage of the Log Analytics workspace is to query over multiple Application insights aswell as data about other resources in azure, such as API management, application gateways, servicebusses or firewalls.
 
@@ -65,7 +69,7 @@ Application Insights gives 'insights' in application logging, exceptions and suc
 The Log Analytics workspace is part of the [Azure Monitor](https://learn.microsoft.com/en-gb/azure/azure-monitor/overview) component in Azure.
 {{</ quoteblock >}}
 
-## Where to put the Azure Policy
+### Where to put the Azure Policy
 
 ```json {linenos=table}
 {
