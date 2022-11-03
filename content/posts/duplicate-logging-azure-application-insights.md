@@ -312,7 +312,7 @@ The Log Analytics workspace is part of the [Azure Monitor](https://learn.microso
 }
 ```
 
-## Benefits and Cost analysis
+### Benefits and Cost analysis
 
 This change saved the client where i fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying feature of having duplicate logging in timelines. When you are also having this problem, i hope this article helps. Good logging makes all developers happy.
 
@@ -320,7 +320,7 @@ This change saved the client where i fixed this saved over &euro;1000 in Azure L
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. Only one upstream to the Log Analytic workspace is required :wink:.
 
 
-## References
+### References
 
 - [Microsoft Learn - Application Insights Duplicate Telemetry](https://learn.microsoft.com/en-us/answers/questions/883344/application-insights-duplicate-telemetry.html)
 - [Converting table ApplicationInsights LogAnalytics ](https://learn.microsoft.com/en-us/azure/azure-monitor/app/convert-classic-resource#apptraces)
