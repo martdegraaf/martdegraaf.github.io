@@ -18,7 +18,7 @@ UseHugoToc: false
 {{< quoteblock >}}
 BLURALERT: The information in the screenshots is blurred for some obvious reasons.
 {{</ quoteblock >}}
-## Problem introduction scope and context
+## Problem introduction scope, and context
 As seen in the screenshot we suffered in the acceptance environment with duplicate exceptions, information, and dependencies. In the development environment, on the left screen, we did not experience this issue.
 ![Duplicate logging](/images/duplicate-logging.png)
 
