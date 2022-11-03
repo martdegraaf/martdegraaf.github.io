@@ -97,9 +97,9 @@ The Log Analytics workspace is part of the [Azure Monitor](https://learn.microso
 {{</ quoteblock >}}
 
 
-### Benefits and Cost analysis
+### :moneybag: Benefits and Cost analysis
 
-This change saved the client where I fixed this saved over &euro;1000 in Azure Log Analytic costs. It also saves the annoying bug of having duplicate logging. If you also are experiencing this problem, I hope this article helps. Good logging makes all developers happy.
+This change saved the client over &euro;1000 monthly in Azure Log Analytic costs. It also saves the annoying bug of having duplicate logging. If you also are experiencing this problem, I hope this article helps. Good logging makes all developers happy.
 
 ## Wrap up
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. Also, make sure that you're not forcing a policy on the diagnostic settings when you configure it in the properties. Only one upstream to the Log Analytic workspace is required :wink:.
