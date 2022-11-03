@@ -16,7 +16,7 @@ UseHugoToc: false
 **On a recent project we encountered duplicate logging in Azure Application insights.**
 
 {{< quoteblock >}}
-BLURALERT: The information in the screenshots is blurred for some obvious reasons.
+:sunglasses: Sensitive information in the screenshots is blurred for some obvious reasons.
 {{</ quoteblock >}}
 ## Problem introduction scope, and context
 As seen in the screenshot we suffered in the acceptance environment with duplicate exceptions, information, and dependencies. In the development environment, on the left screen, we did not experience this issue.
