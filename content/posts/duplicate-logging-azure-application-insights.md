@@ -31,7 +31,7 @@ As seen in the screenshot we suffered in the acceptance environment with duplica
 To exclude the possibility of a software error we excluded these assumptions:
 
 1. Debugging the application and looking at the outgoing application insights tab.
-1. The Azure webapp / Azure function is misconfigured
+1. The Azure webapp / Azure function is misconfigured.
 1. We tested web apps with a single instance. If a single instance generates duplicate logging, it's surely not the instance count.
 
 ### The cause

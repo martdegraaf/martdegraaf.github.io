@@ -8,6 +8,7 @@ draft: false
 {{< profile >}}
 
 Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and hobbies. He is enthusiastic about .NET solutions, Azure DevOps, and Azure solutions. Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home he is a father for his four children.
+{{< credly >}}
 {{</ profile >}}
 
 ## Carreer
