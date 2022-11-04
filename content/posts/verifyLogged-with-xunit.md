@@ -7,6 +7,10 @@ author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "Xunit", "FakeItEasy"]
 summary: Explains how to test LogError with Xunit.
 ShowToc: true
+
+ShowReadingTime: true
+ShowLastModified: true
+ShowWordCount: true
 ---
 
 # Introduction

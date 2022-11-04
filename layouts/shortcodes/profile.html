@@ -1,0 +1,36 @@
+<style>
+   .profile-box{
+      background-color: var(--entry);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: row-reverse;
+      align-content: stretch;
+   }
+   .profile-image{
+      border-radius: 100%!important;
+      margin:1rem!important;
+      border: 3px solid #0078d4;
+   }
+   .profile-content{
+      vertical-align: middle;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      display: flex;
+      padding: 1.3rem;
+      font-size: 1.3rem;
+   }
+@media (max-width: 800px) {
+   .profile-box{
+      flex-direction: column;
+   }
+  }
+</style>
+<div class="profile-box">
+   {{ $image := resources.Get "images/mart_square.jpg" }}
+   {{ $image := $image.Resize "200x200" }}
+   <img class="profile-image" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+   <div class="profile-content">
+      <p>{{ .Inner | markdownify }}</p>
+   </div>
+</div>

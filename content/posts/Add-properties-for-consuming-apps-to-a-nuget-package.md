@@ -7,11 +7,18 @@ author: ["Mart de Graaf"]
 tags: ["NuGet", ".NET", "csproj"]
 summary: This article explains how to add consuming project properties to a NuGet package. Those project properties will be used in the consuming apps.
 ShowToc: true
+
+ShowReadingTime: true
+ShowLastModified: true
+ShowWordCount: true
 ---
 # Introduction
 For a recent project, I wanted to add a property to the consuming applications from within my NuGet package. This prevents  making a pull request for every consuming application with a .csproj change.
 
-Please note in this example the NuGet package has the ID: `MyProject.ExampleNuGet`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
+{{< quoteblock >}}
+:notebook: Please note in this example the NuGet package has the ID: `MyProject.ExampleNuGet`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
+{{</ quoteblock >}}
+
 
 ## NuGet file structure
 ```

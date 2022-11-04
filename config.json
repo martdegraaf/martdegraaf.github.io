@@ -1,16 +1,43 @@
 {
-   "baseURL": "https://martdegraaf.github.io",
    "languageCode": "en-us",
    "defaultContentLanguage": "en-us",
    "timeZone": "Europe/Amsterdam",
    "title": "Mart de Graaf",
    "googleAnalytics": "G-ZFQGR29JJQ",
    "theme": "PaperMod",
+   "enableRobotsTXT": true,
+   "disqusShortname": "martdegraaf",
+   "enableEmoji": true,
+   "enableGitInfo": true,
+   "copyright": "Mart de Graaf",
+   "languages": {
+      "en-us": {
+         "title": "Mart's blog",
+         "weight": 1,
+         "params":{
+            "languageAltTitle": "English"
+         }
+      },
+      "nl": {
+         "title": "Mart's blog",
+         "weight": 2,
+         "params":{
+            "languageAltTitle": "Nederlands",
+            "homeInfoParams": {
+               "title": "Software ontwikkelaar @ 4Dotnet",
+               "content": "Voor content over Azure, .NET, Git en architectuur ga dan naar mijn Engelse blog. Voor Nederlandse overdenkingen, wees welkom!"
+            }
+         }
+      }
+   },
    "params": {
+      "env": "production",
       "showPostNavLinks": true,
       "showCodeCopyButtons": true,
       "showShareButtons": true,
       "showReadingTime": true,
+      "defaultTheme": "dark",
+      "comments": true,
       "enableGitInfo": true,
       
       "homeInfoParams": {
@@ -19,6 +46,15 @@
       },
       "avatar": "mart@martdegraaf.nl",
       "name": "Mart de Graaf",
+      "profileMode": {
+         "enabled": false,
+         "imageUrl": "https://en.gravatar.com/userimage/91624600/299941bdca005e043f382073dfb1d71c.jpg?size=200",
+         "imageWidth": 200,
+         "imageHeight": 200,
+         "buttons": [
+            {"name": "Archive", "url":"/archive"}
+         ]
+      },
       "socialIcons": [
          {
             "name": "github",
@@ -27,6 +63,10 @@
          {
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/mart-de-graaf/"
+         },
+         {
+            "name": "twitter",
+            "url": "https://twitter.com/martdegraaf"
          }
       ]
    },
@@ -50,6 +90,10 @@
          {
             "url": "/search",
             "name": "Search"
+         },
+         {
+            "url": "/about",
+            "name": "About"
          }
       ]
    }
