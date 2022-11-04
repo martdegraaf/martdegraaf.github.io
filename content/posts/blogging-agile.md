@@ -42,6 +42,7 @@ That means that these things are **OUT OF SCOPE** for your **first** release to 
 1. A funky-looking theme
 1. A fitting Favicon
 1. An about page.
+1. Comment section
 1. 
 
 
