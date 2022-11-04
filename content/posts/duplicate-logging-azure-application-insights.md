@@ -47,7 +47,7 @@ Why was it duplicate configured, couldn't that have been spotted in an existing 
 The answer consists of multiple factors and solutions. The two main components were an ARM-template and an Azure Policy.
 
 #### 1. The correct way - ARM > Workspace property
-For the, in my eyes correct, implementation of the properties it was filled by an ARM-template.
+For the, in my opinion correct, implementation of the properties it was filled by an ARM-template.
 The infrastructure as code makes sure we're configuring the right Log Analytics Workspace.
 
 ```json {linenos=table}
