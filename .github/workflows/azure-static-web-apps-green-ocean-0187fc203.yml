@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     env:
+      IS_PRODUCTION: "${{ github.event_name == 'push' }}"
       PRODUCTION_URL: "https://blog.martdegraaf.nl/"
       STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
     steps:
@@ -36,11 +37,10 @@ jobs:
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          IS_PRODUCTION: "${{ github.event_name == 'push' }}"
-          HUGO_ENVIRONMENT: "${{ env.IS_PRODUCTION && 'production' || 'staging' }}"
-          HUGO_BASEURL: "${{ env.IS_PRODUCTION && env.PRODUCTION_URL || env.STAGING_URL }}"
-          HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == false }}"
-          HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == false }}"
+          HUGO_ENVIRONMENT: "${{ env.IS_PRODUCTION == 'true' && 'production' || 'staging' }}"
+          HUGO_BASEURL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
+          HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == 'false' }}"
+          HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == 'false' }}"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
