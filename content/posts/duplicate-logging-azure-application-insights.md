@@ -28,7 +28,7 @@ As seen in the screenshot we suffered in the acceptance environment with duplica
 
 ### Plan to solve
 
-To exclude the possibility of a software error we excluded these assumptions:
+To exclude the possibility of a software error we mitigated these assumptions:
 
 1. Debugging the application and looking at the outgoing application insights tab.
 1. The Azure webapp / Azure function is misconfigured.
