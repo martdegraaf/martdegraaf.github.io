@@ -14,7 +14,15 @@ draft: false
 ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
+
+cover:
+    image: "/images/duplicate_logging_cover.png" # image path/url
+    alt: "Azure Apllication insights with a duplicate stamp." # alt text
+    #caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
 ---
+#duplicate_logging_cover.png
 
 **On a recent project we encountered duplicate logging in Azure Application insights.**
 
