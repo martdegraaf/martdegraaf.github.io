@@ -74,5 +74,7 @@ Questions to help you prioritize:
 1. What story do you tell about what you do for a living?
 1. What do colleagues admire about you
 
+GRAMMARLY in VS CODE????
+
 # Hounarable references
 Please check out [Arno Peters' Blog](https://www.arnopeters.nl/). He is very intelligent. I am confident you could learn from his perspective on Agile, Azure DevOps, and Azure Automation.

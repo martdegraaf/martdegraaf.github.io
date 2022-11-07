@@ -14,7 +14,15 @@ draft: false
 ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
+
+cover:
+    image: "/images/duplicate_logging_cover.png" # image path/url
+    alt: "Azure Apllication insights with a duplicate stamp." # alt text
+    #caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
 ---
+#duplicate_logging_cover.png
 
 **On a recent project we encountered duplicate logging in Azure Application insights.**
 
@@ -28,7 +36,7 @@ As seen in the screenshot we suffered in the acceptance environment with duplica
 
 ### Plan to solve
 
-To exclude the possibility of a software error we excluded these assumptions:
+To exclude the possibility of a software error we mitigated these assumptions:
 
 1. Debugging the application and looking at the outgoing application insights tab.
 1. The Azure webapp / Azure function is misconfigured.
