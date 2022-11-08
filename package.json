@@ -1,0 +1,21 @@
+{
+  "name": "martdegraaf.github.io",
+  "version": "1.0.0",
+  "description": "[Visit https://blog.martdegraaf.nl/](https://blog.martdegraaf.nl/)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martdegraaf/martdegraaf.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martdegraaf/martdegraaf.github.io/issues"
+  },
+  "homepage": "https://github.com/martdegraaf/martdegraaf.github.io#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.27.1"
+  }
+}
