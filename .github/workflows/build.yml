@@ -23,6 +23,7 @@ jobs:
           # extended: true
 
       - name: Build
+        working-directory: ./src/blog
         run: hugo --minify --baseURL 'https://martdegraaf.github.io/'
 
       - name: Deploy
