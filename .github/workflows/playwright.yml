@@ -1,7 +1,8 @@
 name: Playwright Tests
 on:
   workflow_run:
-    workflows: ["Azure Static Web Apps CI/CD"]
+    workflows:
+      - Azure Static Web Apps CI/CD
     types:
       - completed
 jobs:
