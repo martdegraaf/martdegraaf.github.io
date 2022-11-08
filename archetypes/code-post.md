@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-slug: "{{ title }}"
+slug: "{{lower (replace .Name " " "-") }}"
 date: {{ .Date }}
 publishdate: {{ .Date }}
 draft: true
