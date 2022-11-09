@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://martdegraaf.github.io/sitemap.xml
