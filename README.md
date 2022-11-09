@@ -33,4 +33,4 @@ A commit on the main branch will (also) be deployed to GitHub pages.
 
 
 Ideas for blog:
-1. 
+1. SonarCloud?
