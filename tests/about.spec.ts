@@ -8,5 +8,5 @@ test('about page', async ({ page }) => {
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/About Mart/);
 
-  await page.screenshot({ path: 'screenshot.png', fullPage: true });
+  await page.screenshot({ path: 'about.png', fullPage: true });
 });
