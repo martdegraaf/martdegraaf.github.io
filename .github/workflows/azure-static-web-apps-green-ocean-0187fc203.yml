@@ -8,16 +8,16 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+env:
+  IS_PRODUCTION: "${{ github.event_name == 'push' }}"
+  PRODUCTION_URL: "https://blog.martdegraaf.nl/"
+  STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
 
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
-    env:
-      IS_PRODUCTION: "${{ github.event_name == 'push' }}"
-      PRODUCTION_URL: "https://blog.martdegraaf.nl/"
-      STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -41,7 +41,30 @@ jobs:
           HUGO_BASEURL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
           HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == 'false' }}"
           HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == 'false' }}"
-
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    name: Test Stage
+    needs: build_and_deploy_job
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test
+      env:
+        PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
