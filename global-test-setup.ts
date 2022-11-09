@@ -5,8 +5,8 @@ async function globalSetup(config: FullConfig) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-
-  await page.goto('/');
+  const BASE_URL = config.env.URL as string;
+  await page.goto(BASE_URL);
   const passwordField = page.getByPlaceholder('Enter password');
   await passwordField.fill('Thanks4Testing!');
   await passwordField.press('Enter');
