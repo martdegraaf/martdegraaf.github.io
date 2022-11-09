@@ -26,8 +26,8 @@ The focus for starting your blog should be creating the first post. To break the
 ## Eat that frog
 One of the famous time management books is 'Eat that frog'. This book states that you should prioritize your tasks, and do the thing with the most impact first. You should be acting like there is no tomorrow.
 
-To apply this theory to 'blogging agile' I think you should 
-[Book review]()
+To apply this theory to 'blogging agile' I think you should read my 
+[Book review] ( {{< ref "books/eat-that-frog-book-review" >}})
 
 ## One-time setup
 
