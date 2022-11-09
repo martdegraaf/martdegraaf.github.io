@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
-      IS_PRODUCTION: "${{ github.ref == 'main' }}"
+      IS_PRODUCTION: "${{ github.ref_name == 'main' }}"
       PRODUCTION_URL: "https://blog.martdegraaf.nl/"
       STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
     steps:
