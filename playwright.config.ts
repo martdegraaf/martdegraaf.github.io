@@ -41,7 +41,8 @@ const config: PlaywrightTestConfig = {
     // https://snyk.io/blog/how-to-add-playwright-tests-pr-ci-github-actions/
     // https://stackoverflow.com/questions/68210919/in-playwright-how-to-pass-a-baseurl-via-command-line-so-my-spec-files-dont-have
     baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'https://blog.martdegraaf.nl',
-
+    /* Use Storage State for login staging env https://playwright.dev/docs/auth#reuse-signed-in-state */
+    storageState: 'storageState.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
