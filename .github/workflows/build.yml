@@ -23,12 +23,11 @@ jobs:
           # extended: true
 
       - name: Build
-        working-directory: ./src/blog
-        run: hugo --minify --baseURL 'https://martdegraaf.github.io/'
+        run: hugo --minify --source src/blog --baseURL 'https://martdegraaf.github.io/'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./src/blog/public
