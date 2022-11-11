@@ -34,9 +34,9 @@ cover:
 As seen in the screenshot we suffered in the acceptance environment with duplicate exceptions, information, and dependencies. In the development environment, on the left screen, we did not experience this issue.
 ![Duplicate logging](/images/duplicate-logging.png)
 
-### Plan to solve
+### Exclude the software error
 
-To exclude the possibility of a software error we mitigated these assumptions:
+To exclude the possibility of a software error, we executed these actions:
 
 1. Debugging the application and looking at the outgoing application insights tab.
 1. The Azure webapp / Azure function is misconfigured.
@@ -112,9 +112,11 @@ This change saved the client over &euro;1000 monthly in Azure Log Analytic costs
 ## Wrap up
 Whenever you see duplicate logging in your application insights make sure the configuration is correct. Also, make sure that you're not forcing a policy on the diagnostic settings when you configure it in the properties. Only one upstream to the Log Analytic workspace is required :wink:.
 
-
 ### References
 
 - [Microsoft Learn - Application Insights Duplicate Telemetry](https://learn.microsoft.com/en-us/answers/questions/883344/application-insights-duplicate-telemetry.html)
 - [Converting table ApplicationInsights LogAnalytics ](https://learn.microsoft.com/en-us/azure/azure-monitor/app/convert-classic-resource#apptraces)
 - [Azure Monitor](https://learn.microsoft.com/en-gb/azure/azure-monitor/overview)
+
+# TLDR
+The Application Insights was configured to send the data twice to the Log Analytics workspace. One of them was done by ARM, the other was enforced by an Azure Policy.
