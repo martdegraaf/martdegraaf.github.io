@@ -1,4 +1,4 @@
-// https://playwright.dev/docs/test-auth#sign-in-with-beforeeach
+// https://playwright.dev/docs/auth#reuse-signed-in-state
 import { chromium, FullConfig } from '@playwright/test';
 
 async function globalSetup(config: FullConfig) {
