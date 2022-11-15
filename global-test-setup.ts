@@ -11,7 +11,7 @@ async function globalSetup(config: FullConfig) {
   await page.getByPlaceholder('Enter password').fill(process.env.PASSWORD as string);
   await page.getByRole('button', { name: 'Submit' }).click();
   
-  await page.waitForSelector('div.logo');
+  await page.waitForSelector('div.logo a');
 
   await page.context().storageState({ path: config.projects[0].use.storageState as string });
   await browser.close();
