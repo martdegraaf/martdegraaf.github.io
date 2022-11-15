@@ -11,6 +11,8 @@ async function globalSetup(config: FullConfig) {
   await passwordField.fill(process.env.PASSWORD as string);
   await passwordField.press('Enter');
   
+  await page.waitForNavigation();
+
   await page.context().storageState({ path: config.projects[0].use.storageState as string });
   await browser.close();
 }
