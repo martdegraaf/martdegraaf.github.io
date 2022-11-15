@@ -1,5 +1,5 @@
 // https://playwright.dev/docs/auth#reuse-signed-in-state
-import { chromium, FullConfig } from '@playwright/test';
+import { chromium, expect, FullConfig } from '@playwright/test';
 
 async function globalSetup(config: FullConfig) {
   const browser = await chromium.launch();
@@ -11,7 +11,7 @@ async function globalSetup(config: FullConfig) {
   await passwordField.fill(process.env.PASSWORD as string);
   await passwordField.press('Enter');
   
-  await page.waitForNavigation();
+  await expect(page).toHaveTitle(/Mart's blog/);
 
   await page.context().storageState({ path: config.projects[0].use.storageState as string });
   await browser.close();
