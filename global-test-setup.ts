@@ -7,12 +7,11 @@ async function globalSetup(config: FullConfig) {
 
   const BASE_URL = config.projects[0].use.baseURL as string;
   await page.goto(BASE_URL);
-  const passwordField = page.getByPlaceholder('Enter password');
-  await passwordField.fill(process.env.PASSWORD as string);
-  await passwordField.press('Enter');
   
-  await expect(page).toHaveTitle(/Mart's blog/);
-
+  await page.getByPlaceholder('Enter password').click();
+  await page.getByPlaceholder('Enter password').fill(process.env.PASSWORD as string);
+  await page.getByRole('button', { name: 'Submit' }).click();
+  
   await page.context().storageState({ path: config.projects[0].use.storageState as string });
   await browser.close();
 }
