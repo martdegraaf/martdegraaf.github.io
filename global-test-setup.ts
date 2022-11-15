@@ -2,17 +2,16 @@
 import { chromium, FullConfig } from '@playwright/test';
 
 async function globalSetup(config: FullConfig) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
 
   const BASE_URL = config.projects[0].use.baseURL as string;
   await page.goto(BASE_URL);
   const passwordField = page.getByPlaceholder('Enter password');
-  await passwordField.fill('Thanks4Testing!');
+  await passwordField.fill(process.env.PASSWORD as string);
   await passwordField.press('Enter');
   
-  // Save signed-in state to 'storageState.json'.
-  await page.context().storageState({ path: 'storageState.json' });
+  await page.context().storageState({ path: config.projects[0].use.storageState as string });
   await browser.close();
 }
 
