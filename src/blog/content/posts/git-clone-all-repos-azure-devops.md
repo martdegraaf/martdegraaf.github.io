@@ -6,7 +6,7 @@ publishdate: 2022-11-09T01:14:56+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["Git"]
-summary: "LEarn how to get all Repos from Azure DevOps using"
+summary: "Learn how to get all Repos from Azure DevOps using"
 # Toc
 ShowToc: true
 TocOpen: true
@@ -16,6 +16,8 @@ UseHugoToc: false
 ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
+
+series: ['Consultant tips']
 ---
 
 When you are a consultant and switching to a new client. It seems handy to clone all the repos on your first day. When you have every repo cloned, you can do whatever you're paid for.

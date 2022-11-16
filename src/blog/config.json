@@ -96,5 +96,8 @@
             "name": "About"
          }
       ]
+   },
+   "taxonomies":{
+      "series": "series"
    }
 }
