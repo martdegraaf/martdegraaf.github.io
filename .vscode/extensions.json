@@ -5,6 +5,7 @@
         "christian-kohler.npm-intellisense",
         "ms-playwright.playwright",
         "redhat.vscode-yaml",
-        "shinotatwu-ds.file-tree-generator"
+        "shinotatwu-ds.file-tree-generator",
+        "davidanson.vscode-markdownlint"
     ]
 }

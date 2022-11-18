@@ -7,12 +7,12 @@ draft: true
 author: ["Mart de Graaf"]
 tags: ["Git"]
 summary: "Learn how to get all Repos from Azure DevOps using"
-# Toc
+## Toc
 ShowToc: true
 TocOpen: true
 UseHugoToc: false
 
-# Meta settings
+## Meta settings
 ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
@@ -20,10 +20,11 @@ ShowWordCount: true
 series: ['Consultant tips']
 ---
 
-When you are a consultant and switching to a new client. It seems handy to clone all the repos on your first day. When you have every repo cloned, you can do whatever you're paid for.
+When you are a consultant and switching to a new client. It seems handy to clone all the repositories on your first day. When you have every repo cloned, you can do whatever you're paid for.
 
 ## Configuration
-```
+
+```text
 [General]
 Url=https://dev.azure.com/MART/project
 Username=me@example.com
@@ -38,9 +39,9 @@ PruneLocalBranches=true
 ```
 
 ## The script
-The powershell script below does a `git pull` for existing repos, and performs `git clone` on untracked repos.
 
-__System explained__
+The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories. __System explained__
+
 ```ps1 {linenos=table}  
 # Read configuration file
 Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process { 
@@ -99,6 +100,7 @@ foreach ($entry in $json.value) {
 (az repos list --query '[].{Name:name, Url:remoteUrl}' -o json | ConvertFrom-Json) | %{ git clone $_.Url }
 ```
 
-# Conclusion and discussion
+## Conclusion and discussion
+
 __Solution explained__
-Make your workflow faster using scripting and your knowledge of the Git CLI. When you have to do repetitive tasks such as updating a single package on multiple (micoservice like) repositories, try to automate it. It may for the first occurance not be profitable, but after three times, you will be faster than doing it manually.
+Make your workflow faster using scripting and your knowledge of the Git CLI. When you have to do repetitive tasks such as updating a single package on multiple (microservice-like) repositories, try to automate it. It may for the first occurrence not be profitable, but after three times, you will be faster than doing it manually.

@@ -1,5 +1,5 @@
 ---
-title: "How to verify that ILogger actually logged an error?"
+title: "How to verify that ILogger logged an error?"
 date: 2022-07-28T18:00:00+02:00
 publishdate: 2022-07-29T00:00:00+02:00
 draft: false
@@ -9,14 +9,14 @@ summary: Explains how to test LogError with Xunit.
 ShowToc: true
 
 ShowReadingTime: true
-ShowLastModified: true
+ShowLastModified: false
 ShowWordCount: true
 ---
 
 ## Introduction
 
-For a recent project, I wanted to test that `LogError` was called.
-Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behavior, but still would like to know the `LogError` is being called.
+For a recent project, I wanted to create a test that verified that `LogError` was called.
+Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behavior but still would like to know if the `LogError` is being called.
 
 ## The system under test
 
@@ -55,9 +55,9 @@ A.CallTo(() => logger.LogError(A<string>.Ignored, A<object[]>.Ignored))
     .MustHaveHappenedOnceExactly();
 ```
 
-### The LoggerExtensions class
+## The LoggerExtensions class
 
-The solution was right at hand because my coworker had already figured it out. Thanks Marnix. Chekout his blog: [Marnix' blog](https://alanta.nl/). Use the extension class as described below.
+The solution was right at hand because my coworker had already figured it out. Thanks, Marnix. Chekout his blog: [Marnix' blog](https://alanta.nl/). Use the extension class as described below.
 
 ```cs {linenos=table}
 //Arrange
