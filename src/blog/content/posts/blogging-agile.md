@@ -14,7 +14,8 @@ ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
 ---
-# Blog in an hour.
+
+# Blog in an hour
 
 My coworker said to me; "In the past time there was someone who did the things I dreamed of in just 4 days.". The person he referred to was me. He praised me for my dedication and courage to go fast and agile. I went fast to production with my blog and iterated from there. My coworker planned things out like the theme until he chose another theme.
 
@@ -22,8 +23,8 @@ My coworker said to me; "In the past time there was someone who did the things I
 
 The focus for starting your blog should be creating the first post. To break the chicken-egg problem. If there is no content why should you make a blog? If there is no blog why should you make content?
 
-
 ## Eat that frog
+
 One of the famous time management books is 'Eat that frog'. This book states that you should prioritize your tasks, and do the thing with the most impact first. You should be acting like there is no tomorrow.
 
 To apply this theory to 'blogging agile' I think you should read my 
@@ -76,5 +77,5 @@ Questions to help you prioritize:
 
 GRAMMARLY in VS CODE????
 
-# Hounarable references
+## Hounarable references
 Please check out [Arno Peters' Blog](https://www.arnopeters.nl/). He is very intelligent. I am confident you could learn from his perspective on Agile, Azure DevOps, and Azure Automation.
