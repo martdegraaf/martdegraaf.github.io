@@ -6,6 +6,9 @@
         "**/content/*.md",
         "**/content/**/*.md"
     ],
+    "grammarly.files.exclude": [
+        "**/*nl.md"
+    ],
     "grammarly.config.suggestions.PassiveVoice": true,
     "grammarly.config.suggestions.InformalPronounsAcademic": false,
     "grammarly.config.suggestions.ConjunctionAtStartOfSentence": true,

@@ -50,7 +50,7 @@ To exclude the possibility of a software error, we executed these actions:
 
 The Log Analytics Workspace was configured in diagnostic settings as well it was in the properties of the Application Insights. See the screenshots of the Azure portal.
 ![Diagnostic settings](/images/diagnostic-settings.png)
-The screenshot below shows how the application insights resource is configured as upstream.
+The screenshot below shows how the application insights resource is configured upstream.
 ![Properties Application Insights workspace setting](/images/properties-ai-workspace.png)
 
 So when we concluded the configuration was duplicate, we asked ourselves:
