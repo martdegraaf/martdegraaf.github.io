@@ -78,14 +78,13 @@ Some questions to help you prioritize:
 The mermaid JavaScript plugin builds some cool diagrams. Get started with your mindmap for blogging subjects right now with the [Mermaid Live Editor](https://mermaid.live/edit#pako:eNpdUk1PAjEQ_SuTniDBeN8YE1BvEojgxexl6M7uNm5naj9IVsJ_t7AsKj3N--jLy7QHpaUiVShruLLoSgbwInEyuRDT6YkCWHnTGA4DAHgVbqA1IYrvR64ojBae1Ag13u1EPqejshaXOvQmYDTCIwuw8Caa0IIbdHCh16100vSAKbbiYSvcwyJ94-XWGwVCr9sxY8VAdU06mj1TCA87f_-IXEFNGJOn8Mc3T1FsLqBBe7op8h5-rcN5Onv2BJF0y-Yr3Ro20WOkJse5DpkNN__1uW-SJY6Ql-iu6lakuwatieFU1qEjP5JL8hZNpWbKXqZCHU5iqWJLlkpV5LGiGlMXS1XyMVuTq3KZl8rk91BF9IlmKm9QNj3rEQ-eZ4ONRzuSDvlDJMMau5AxnSOWw584f43jDxofsC0). Below is an example mindmap of my blogging subjects.
 
 ```mermaid
- mindmap
+mindmap
   root((Blog mindmap))
     Testing
       Playwright
       ::icon(fa fa-play)
       Builder pattern
-
-    Lige as consultant
+    Life as consultant
       Clone and go
         Clone script
         Git folder structure
