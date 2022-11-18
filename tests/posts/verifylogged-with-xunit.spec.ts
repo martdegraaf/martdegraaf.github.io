@@ -5,7 +5,7 @@ test('posts verifylogged-with-xunit', async ({ page }) => {
 
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/How to verify that ILogger actually logged an error?/);
+  await expect(page).toHaveTitle(/How to verify that ILogger logged an error?/);
 
   await page.screenshot({ path: 'verifylogged-with-xunit.png', fullPage: true });
 });
