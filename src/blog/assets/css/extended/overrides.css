@@ -1,3 +1,24 @@
 main {
     --main-width: 1024px;
 }
+
+
+.series{
+    border: 1px solid #0078D3;
+    border-radius: 5px;
+}
+.series ul{
+    padding-inline-start: 0px;
+}
+.series .list-group-item{
+    list-style: none;
+    padding: 15px;
+    border-top:#0078D3 1px solid;
+}
+.series .list-group-item a{
+    display: block;
+}
+.series .list-group-item.active{
+    background-color: #0078D3;
+    color: white;
+}
