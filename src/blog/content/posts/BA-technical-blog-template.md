@@ -1,6 +1,6 @@
 ---
-title: "Technical Blogging"
-slug: "technical-blogging"
+title: "Technical Blog template using Hugo"
+slug: "technical-blog-template-using-hugo"
 date: 2022-11-22T17:35:37+02:00
 draft: true
 author: ["Mart de Graaf"]
@@ -24,7 +24,8 @@ series: ['Blogging Agile']
 
 ## Recommended tooling
 
-I recommend using [Visual Studio Code](https://code.visualstudio.com/) to edit your blog. VS Code has many extensions that help me write fast.
+- [Install Hugo](https://gohugo.io/installation/)
+- I recommend using [Visual Studio Code](https://code.visualstudio.com/) to edit your blog. VS Code has many extensions that help me write fast.
 
 ## Technical steps to deploy
 

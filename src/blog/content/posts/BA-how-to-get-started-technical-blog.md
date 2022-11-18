@@ -82,7 +82,6 @@ mindmap
   root((Blog mindmap))
     Testing
       Playwright
-      ::icon(fa fa-play)
       Builder pattern
     Life as consultant
       Clone and go
