@@ -12,16 +12,18 @@ ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
 ---
+
 # Introduction
+
 For a recent project, I wanted to add a property to the consuming applications from within my NuGet package. This prevents  making a pull request for every consuming application with a .csproj change.
 
 {{< quoteblock >}}
 :notebook: Please note in this example the NuGet package has the ID: `MyProject.ExampleNuGet`, so replace that value for your nuget package. The consuming application is `MyProject.ConsumingWebApi`.
 {{</ quoteblock >}}
 
-
 ## NuGet file structure
-```
+
+```text
 MyProject.ExampleNuGet  (Repository level)
  ┣ MyProject.ExampleNuGet
  ┃ ┣ Extensions
@@ -33,7 +35,9 @@ MyProject.ExampleNuGet  (Repository level)
 ```
 
 ## MyProject.ExampleNuGet.props
-The NuGet package has a .props-file to enforce some property's to the consumers.
+
+The NuGet package has a .props-file to enforce some properties to the consumers.
+
 ```xml {linenos=table}
 <Project>
   <PropertyGroup>
@@ -44,8 +48,11 @@ The NuGet package has a .props-file to enforce some property's to the consumers.
   </PropertyGroup>
 </Project>
 ```
+
 ## MyProject.ExampleNuGet.csproj
+
 Important is to set the build action of the `MyProject.ExampleNuGet.props` file to package it to the build directory. See the example below:
+
 ```xml {linenos=table}
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -62,11 +69,13 @@ Important is to set the build action of the `MyProject.ExampleNuGet.props` file 
 ```
 
 ## Conclusion
+
 When installing this package on for example `MyProject.ConsumingWebApi` a file is generated in de build folder `MyProject.ConsumingWebApi.csproj.nuget.g.targets`.
 This ensures the setting is on when building `MyProject.ConsumingWebApi`.
 
-
 ## References
+
 I used the following resources to fix my problem.
+
 - https://stackoverflow.com/questions/67263924/create-nuget-containing-shared-project-properties-automatic-references
 - https://learn.microsoft.com/en-us/nuget/concepts/msbuild-props-and-targets#packagereference-projects
