@@ -17,13 +17,15 @@ main {
     padding-inline-start: 0px;
 }
 .series .list-group-item{
+    margin: 0px;
     list-style: none;
-    padding: 15px;
     border-top:#0078D3 1px solid;
     border-bottom:#0078D3 1px solid;
 }
 .series .list-group-item a{
+    padding: 15px;
     display: block;
+    box-shadow: none;
 }
 .series .list-group-item.active{
     color: #0078D3;
