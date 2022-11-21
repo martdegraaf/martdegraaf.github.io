@@ -9,7 +9,7 @@ summary: "How to start with your blog. The main focus should be content, startin
 ShowToc: true
 TocOpen: true
 UseHugoToc: false
-draft: true
+draft: false
 
 ShowReadingTime: true
 ShowLastModified: true
