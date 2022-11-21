@@ -20,7 +20,7 @@ This year I read and listened to 'Eat that frog!' by Brian Tracy. I tried to app
 
 Eat that frog is a practical book on how to "get more of the important things done today". It focuses on doing key tasks first and procrastinating the unimportant tasks.
 
-The author gives 21 principles to getting more things done faster:
+The author gives 21 principles for getting more things done faster:
 
 01. Set the table (spend some time writing out your goals for year, month, and week). Prioritize those and concentrate on the most important ones.
 02. Plan every day in advance (on paper).
