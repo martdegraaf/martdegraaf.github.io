@@ -28,7 +28,7 @@ My coworker said to me; "In the past time there was someone who did the things I
 
 ## Focus on your first post
 
-The focus for starting your blog should be creating the first post. To break the chicken-egg problem. If there is no content why should you make a blog? If there is no blog why should you make content?
+To break the chicken-egg problem, the focus for starting your blog should be creating the first post. If there is no content why should you make a blog? If there is no blog why should you make content? Break trough and start creating your first article.
 
 ## Eat that frog
 
@@ -72,7 +72,7 @@ Make a list of items you want to blog about. When you get new ideas put them on 
 
 Some questions to help you prioritize:
 
-1. What blog item/subject has the most impact on your career? For example, if you write about a subject you work on daily, you will learn and become better. Another example is: you want to help companies using a certain technology. Writing about a subject helps your branding.
+1. What blog item/subject has the most impact on your career? For example, if you write about a subject you work on daily, you will learn and become better. Another example is: you want to help companies using a certain technology. Writing about a subject helps your branding and the teacher learns the most.
 1. What blog item/subject is hardest to solve?
 1. What blog item/subject is not yet available easily when you searched for your problem?
 1. What blog item/subject gives you the most joy?
