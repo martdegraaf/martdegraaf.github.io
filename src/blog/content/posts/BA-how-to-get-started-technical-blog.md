@@ -18,6 +18,10 @@ ShowWordCount: true
 series: ['Blogging Agile']
 ---
 
+## TL;DR
+
+Just start your creating your first page if you want to blog. Come back if you need motivation, then go back to writing/typing.
+
 ## Blog in an hour
 
 My coworker said to me; "In the past time there was someone who did the things I dreamed of in just 4 days.". The person he referred to was me. He praised me for my dedication and courage to go fast and agile. I went fast to production with my blog and iterated new articles and new features. My coworker planned things out like the theme. When he was not fully satisfied with his theme he chose another theme but still had no active blog post. This blog is written to help others to get started.

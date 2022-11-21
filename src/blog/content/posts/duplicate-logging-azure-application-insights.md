@@ -23,6 +23,10 @@ cover:
     hidden: true # only hide on current single page
 ---
 
+## TL;DR
+
+The Application Insights was configured to send the data twice to the Log Analytics workspace. One of them was done by ARM, the other was enforced by an Azure Policy.
+We turned off the Azure Policy and removed all upstream diagnostics settings on all Application Insights resources. This saved 100 euros montl
 
 **On a recent project, we encountered duplicate logging in Azure Application insights.**
 
@@ -125,8 +129,3 @@ Whenever you see duplicate logging in your application insights make sure the co
 - [Microsoft Learn - Application Insights Duplicate Telemetry](https://learn.microsoft.com/en-us/answers/questions/883344/application-insights-duplicate-telemetry.html)
 - [Converting table ApplicationInsights LogAnalytics](https://learn.microsoft.com/en-us/azure/azure-monitor/app/convert-classic-resource#apptraces)
 - [Azure Monitor](https://learn.microsoft.com/en-gb/azure/azure-monitor/overview)
-
-## TLDR
-
-The Application Insights was configured to send the data twice to the Log Analytics workspace. One of them was done by ARM, the other was enforced by an Azure Policy.
-We turned off this Azure Policy and removed all upstream diagnostics settings on all Application Insights resources.
