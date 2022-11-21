@@ -20,6 +20,7 @@ series: ['Blogging Agile']
 
 ## Hugo Template
 
+Hugo is a static site generator. You write your articles in MarkDown files. For most developers, this format is familiar and easy to use. I created a template using Hugo and the 'Hugo-PaperMod' theme.
 [Getting Started Template on GitHub](https://github.com/martdegraaf/blogging-template)
 
 ## Recommended tooling
