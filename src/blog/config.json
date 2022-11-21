@@ -73,6 +73,10 @@
             "name": "twitter",
             "url": "https://twitter.com/martdegraaf"
          }
+      ],
+      "mainSections": [
+         "posts",
+         "books"
       ]
    },
    "outputs": {

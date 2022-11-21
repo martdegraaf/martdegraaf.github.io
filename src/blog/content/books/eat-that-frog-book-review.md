@@ -18,7 +18,7 @@ This year I read and listened to 'Eat that frog!' by Brian Tracy. I tried to app
 
 ## Summary
 
-Eat that frog is a practical book on how to "get more of the important things done today".
+Eat that frog is a practical book on how to "get more of the important things done today". It focuses on doing key tasks first and procrastinating the unimportant tasks.
 
 ## Comparing Agile and the lecture in Eat that frog
 
@@ -45,7 +45,7 @@ __Quote from the book__
 
 1. Getting certified
 1. Become a public speaker
-1. Get healthier and lighter
+1. Get healthier and lose weight
 
 ## Recommendations
 
