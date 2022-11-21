@@ -38,7 +38,9 @@ To apply this theory to 'blogging agile', you should read my [Book review]({{< r
 
 ## One-time setup
 
-I recommend using a blog builder that uses git versioning like Hugo. Hugo can be easily deployed. This blog runs on Azure Static Webapps and GitHub Pages. Just because this blog iterated to Azure Static Webapps, didn't stop me from producing the actual blog content. The blog content is the most valuable. It's the core reason for your blog to exist. People are coming to read what you have written not for your cool styling.
+I recommend using a blog builder that uses git versioning like Hugo. Hugo can be easily deployed. This blog runs on Azure Static Webapps and GitHub Pages. Other alternatives like Wix or WordPress will be more painful to maintain.
+
+Just because this blog iterated to Azure Static Webapps, didn't stop me from producing the actual blog content. The blog content is the most valuable. It's the core reason for your blog to exist. People are coming to read what you have written not for your cool styling.
 
 To make it agile I have made these acceptance criteria for your blog.
 
@@ -75,7 +77,7 @@ Some questions to help you prioritize:
 1. What blog item/subject is not yet available easily when you searched for your problem?
 1. What blog item/subject gives you the most joy?
 1. What story do you tell about what you do for a living?
-1. What do colleagues admire about you
+1. What do colleagues admire about you?
 
 ## Use a mindmap to organize your ideas
 
@@ -83,19 +85,23 @@ The mermaid JavaScript plugin builds some cool diagrams. Get started with your m
 
 ```mermaid
 mindmap
-  root((Blog mindmap))
-    Testing
+  root)Blog mindmap(
+    T[Testing]
       Playwright
       Builder pattern
-    Life as consultant
-      Clone and go
+      UI scraping
+    LaC((Life as<br>consultant))
+      C[Clone and go]
         Clone script
         Git folder structure
       Personal development planinng
       Client conventions
       Clear all traces
-    Azure
+    A[Azure]
       Application insights
+    BA[Blogging Agile]
+      Getting started
+      Template
 ```
 
 ## Conclusion
