@@ -44,6 +44,11 @@
          "title": "Software Engineer @ 4Dotnet",
          "content": "Blogging about Azure, .NET, Git and architecture."
       },
+      "cover":{
+         "hidden": true,
+         "hiddenInList": true,
+         "hiddenInSingle": true
+      },
       "avatar": "mart@martdegraaf.nl",
       "name": "Mart de Graaf",
       "profileMode": {
