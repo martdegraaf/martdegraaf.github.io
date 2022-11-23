@@ -4,7 +4,7 @@ date: 2022-06-30T13:41:39+02:00
 draft: false
 ---
 
-TODO Link to Sessionize profile
+TODO Link/embed to Sessionize profile
 
 ## Upcoming engagements
 
