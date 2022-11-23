@@ -2,6 +2,7 @@
 title: "About Mart"
 date: 2022-06-30T13:41:39+02:00
 draft: false
+comments: false
 ---
 
 
@@ -18,5 +19,6 @@ I am still very proud of the achievements I set in my previous clients. Together
 
 My full career path with clients and employees is available on LinkedIn.
 
-# Certifications
+## Certifications
+
 {{< credly >}}
