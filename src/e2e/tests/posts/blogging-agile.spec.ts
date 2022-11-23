@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('posts agile blogging', async ({ page }) => {
-  await page.goto('posts/how-to-get-started-with-technical-blogging/');
+  await page.goto('posts/blogging-agile/how-to-get-started-with-technical-blogging/');
 
 
   // Expect a title "to contain" a substring.
