@@ -76,11 +76,10 @@ Important is to write your goals in the present tense, positive voice, and in th
 
 For each of these goals, create a list of work you have to do to achieve your goal. When you break down your goal into tasks it will be easier to do.
 
-I did this for example for my speaking goals. This gantt chart below was my planning for 2022. The main goal was to be prepared for DevNetNoord, a Dutch tech event.
-When I determined my goal I placed tasks that could help me prepare for this event, such as training or smaller sessions.
+I did this for example for my speaking goals. The Gantt chart below was my plan for 2022. The main goal was to be prepared for DevNetNoord, a Dutch tech event.
+When I determined my goal I placed tasks that could help me prepare for this event, such as training or smaller sessions. To be transparent to my client I included the sprints, that way I can easily communicate when I am busy.
 
 ```mermaid
-%%{init: {"theme": "corperate", "logLevel": 1, "gantt": {"axisFormat": "%m-%d"} }}%%
 gantt
     title Marts Speaking path
     dateFormat  YYYY-MM-DD
