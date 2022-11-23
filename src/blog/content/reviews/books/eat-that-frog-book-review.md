@@ -84,7 +84,7 @@ gantt
     title Marts Speaking path
     dateFormat  YYYY-MM-DD
     section Private
-    Vakantie :v1, 2022-08-08, 3w
+    Holidays :v1, 2022-08-08, 3w
     section Client sprints
     Sprint 14 :s14, 2022-07-11, 2w
     Sprint 15 :s15, after s14, 2w
