@@ -28,13 +28,13 @@ My coworker said to me; "In the past time there was someone who did the things I
 
 ## Focus on your first post
 
-To break the chicken-egg problem, the focus for starting your blog should be creating the first post. If there is no content why should you make a blog? If there is no blog why should you make content? Break trough and start creating your first article.
+To break the chicken-egg problem, the focus for starting your blog should be creating the first post. If there is no content why should you make a blog? If there is no blog why should you make content? Break through the cycle and start creating your first article.
 
 ## Eat that frog
 
-One of the famous time management books is 'Eat that frog'. This book states that you should prioritize your tasks, and do the thing with the most impact first. You should be acting like there is no tomorrow.
+'Eat that frog' states that you should prioritize your tasks, and do the thing with the most impact first. You should be acting like there is no tomorrow and start working on your blog today, except when you don't want a blog. If you do not want a blog then why are you reading this article, are you procrastinating other tasks?
 
-To apply this theory to 'blogging agile', you should read my [Book review]({{< ref "books/eat-that-frog-book-review" >}})
+To apply this theory to 'blogging agile', you should read my [Book review on Eat that frog]({{< ref "reviews/books/eat-that-frog-book-review" >}}).
 
 ## One-time setup
 
@@ -106,4 +106,8 @@ mindmap
 
 ## Conclusion
 
-When starting a blog focus on your content first. That's the thing that will be truly yours.
+When starting your blog, focus on your content first. That's the thing that will be truly yours.
+
+## References
+
+- Please check out: [@ArnoPeters' blog](https://arnopeters.nl/)
