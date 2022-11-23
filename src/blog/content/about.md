@@ -3,6 +3,8 @@ title: "About Mart"
 date: 2022-06-30T13:41:39+02:00
 draft: false
 comments: false
+
+disableShare: true
 ---
 
 

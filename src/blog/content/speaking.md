@@ -4,7 +4,7 @@ date: 2022-06-30T13:41:39+02:00
 draft: false
 
 comments: false
-ShowPostNavLinks: false
+disableShare: true
 ---
 
 My current sessions are on [Mart's Sessionize profile](https://sessionize.com/mart-de-graaf/).
