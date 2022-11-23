@@ -44,6 +44,11 @@ jobs:
           HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == 'false' }}"
           HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == 'false' }}"
   test:
+    env:
+      working-directory: ./src/e2e
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
     timeout-minutes: 60
     runs-on: ubuntu-latest
     name: Test Stage
