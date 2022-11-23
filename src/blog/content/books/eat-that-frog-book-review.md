@@ -58,6 +58,7 @@ I see many aspects that are similar in working Agile as what is stated in 'Eat t
 
 Think about your daily, weekly, monthly, and long-term goals.
 Make sure you check your daily goals with your long-term goals.
+I did write down my long-term goals on paper and am trying to work with daily TODO lists.
 
 {{< quoteblock >}}
 :speech_balloon: "Find out what successful people do, and do the same things until you get results."
@@ -67,9 +68,46 @@ __Quote from the book__
 
 ### Example long-term goals
 
-1. Getting certified
-1. Become a public speaker
-1. Get healthier and lose weight
+1. I am certified in security in 2023.
+1. I am speaking on stage as a public speaker in 2023.
+1. I am 90kg or less in November 2023.
+
+Important is to write your goals in the present tense, positive voice, and in the first person singular. This way your mind will accept it as a clear goal.
+
+For each of these goals, create a list of work you have to do to achieve your goal. When you break down your goal into tasks it will be easier to do.
+
+I did this for example for my speaking goals. This gantt chart below was my planning for 2022. The main goal was to be prepared for DevNetNoord, a Dutch tech event.
+When I determined my goal I placed tasks that could help me prepare for this event, such as training or smaller sessions.
+
+```mermaid
+%%{init: {"theme": "corperate", "logLevel": 1, "gantt": {"axisFormat": "%m-%d"} }}%%
+gantt
+    title Marts Speaking path
+    dateFormat  YYYY-MM-DD
+    section Private
+    Vakantie :v1, 2022-08-08, 3w
+    section Client sprints
+    Sprint 14 :s14, 2022-07-11, 2w
+    Sprint 15 :s15, after s14, 2w
+    Sprint 16 :s16, after s15, 2w
+    Sprint 17 :s17, after s16, 2w
+    Sprint 18 :s18, after s17, 2w
+    Sprint 19 :s19, after s18, 2w
+    Sprint 20 :s20, after s19, 2w
+    
+    section Other consultancy days
+    Consultancy client 1 : 2022-07-27, 2d
+    Consultancy client 2 : 2022-08-02, 1d
+    
+    section Speaking Training
+    Speaking in public (training) 1         :a1, 2022-09-16, 1d
+    Speaking in public (training) 2         :a1, 2022-09-23, 1d
+    section Events
+    Pizza session 4dotnet Dashboards : milestone, m1, 2022-06-02, 2min
+    Pizza session 4dotnet Advanced Git : milestone, m1, 2022-09-02, 2min
+    DevNetNoord : milestone, m1, 2022-09-29, 2min
+    DotNetFriday : milestone, m1, 2022-11-04, 2min
+```
 
 ## Recommendations
 
