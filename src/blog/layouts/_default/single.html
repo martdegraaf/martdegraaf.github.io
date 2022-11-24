@@ -69,7 +69,7 @@
             flowchart:{
                 useMaxWidth:false,
             },
-            theme: document.body.className.includes("dark") ? 'corperate' : 'dark',
+            theme: document.body.className.includes("dark") ?  'dark' : 'corperate',
             logLevel: {{ cond (hugo.IsProduction | default false) "5" "1" }},
 
             gantt: {
