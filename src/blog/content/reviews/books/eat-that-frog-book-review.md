@@ -102,11 +102,19 @@ gantt
     Speaking in public (training) 1         :a1, 2022-09-16, 1d
     Speaking in public (training) 2         :a1, 2022-09-23, 1d
     section Events
-    Pizza session 4dotnet Dashboards : milestone, m1, 2022-06-02, 2min
+    Pizza session 4dotnet Application insights : milestone, m1, 2022-06-02, 2min
     Pizza session 4dotnet Advanced Git : milestone, m1, 2022-09-02, 2min
     DevNetNoord : milestone, m1, 2022-09-29, 2min
     DotNetFriday : milestone, m1, 2022-11-04, 2min
 ```
+
+## Multiple TODO lists
+
+Imagine you are in a team using a kanban board, but besides that, you have an on-paper TODO list. That does seem like you are creating a black market of work on paper next to your board of work, right? Some work may be investigating issues to refine for example an upcoming feature. How do you keep your board work and on-paper lists in sync?
+
+### Use procrastination as your friend
+
+Some things you rate as unimportant can be procrastinated on. Try to procrastinate the unimportant tasks in your daily work to get the important work and tasks done.
 
 ## Recommendations
 

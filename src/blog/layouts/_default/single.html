@@ -63,7 +63,7 @@
   import mermaid from 'https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs';
   import mindmap from 'https://unpkg.com/@mermaid-js/mermaid-mindmap@9/dist/mermaid-mindmap.esm.min.mjs';
   await mermaid.registerExternalDiagrams([mindmap]);
-  var config = {
+    var config = {
             startOnLoad:true,
             htmlLabels:true,
             flowchart:{
@@ -71,13 +71,20 @@
             },
             theme: document.body.className.includes("dark") ?  'dark' : 'corperate',
             logLevel: {{ cond (hugo.IsProduction | default false) "5" "1" }},
-
+            themeVariables:{
+              darkMode: document.body.className.includes("dark")
+            },
             gantt: {
               axisFormat: "%m-%d"
             }
 
         };
         mermaid.initialize(config);
+
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+          location.reload();
+
+        });
 </script>
 {{ end }}
 
