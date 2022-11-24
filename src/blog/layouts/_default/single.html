@@ -70,7 +70,7 @@
                 useMaxWidth:false,
             },
             theme: document.body.className.includes("dark") ? 'corperate' : 'dark',
-            logLevel: {{ cond(hugo.IsProduction) "5" "1" }},
+            logLevel: {{ cond (hugo.IsProduction | default false) "5" "1" }},
 
             gantt: {
               axisFormat: "%m-%d"
