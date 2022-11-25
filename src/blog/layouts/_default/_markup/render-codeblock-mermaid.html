@@ -1,4 +1,7 @@
-<div class="mermaid">
+<pre class="mermaid">
     {{- .Inner | safeHTML }}
-  </div>
-  {{ .Page.Store.Set "hasMermaid" true }}
+</pre>
+{{ if (in .Inner "mindmap") }}
+{{ .Page.Store.Set "hasMermaidMindmap" true }}
+{{ end }}
+{{ .Page.Store.Set "hasMermaid" true }}

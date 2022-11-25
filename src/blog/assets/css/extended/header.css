@@ -1,0 +1,14 @@
+header.header{
+    background-color: var(--martblue);
+}
+.header a,
+.header button,
+.header body,
+.header h1,
+.header h2,
+.header h3,
+.header h4,
+.header h5,
+.header h6{
+    color:  white;
+}

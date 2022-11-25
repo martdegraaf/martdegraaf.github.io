@@ -1,0 +1,6 @@
+.credly{
+    background-color: var(--entry);
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+}

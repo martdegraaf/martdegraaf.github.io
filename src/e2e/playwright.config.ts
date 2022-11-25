@@ -1,17 +1,19 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
+import dotenv from 'dotenv';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+require('dotenv').config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
   testDir: './tests',
+  globalSetup: require.resolve('./global-test-setup'),
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -40,7 +42,8 @@ const config: PlaywrightTestConfig = {
     // https://snyk.io/blog/how-to-add-playwright-tests-pr-ci-github-actions/
     // https://stackoverflow.com/questions/68210919/in-playwright-how-to-pass-a-baseurl-via-command-line-so-my-spec-files-dont-have
     baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'https://blog.martdegraaf.nl',
-
+    /* Use Storage State for login staging env https://playwright.dev/docs/auth#reuse-signed-in-state */
+    storageState: 'storageState.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -54,19 +57,19 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
@@ -98,7 +101,7 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'test-results/',
+  outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
   // webServer: {

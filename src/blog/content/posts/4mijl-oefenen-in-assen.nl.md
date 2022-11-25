@@ -2,18 +2,18 @@
 title: "4 mijl oefenen in Assen"
 date: 2022-06-09T11:30:03+00:00
 
-# weight: 1
-# aliases: ["/first"]
+### weight: 1
+### aliases: ["/first"]
 tags: ["hardlopen", "strava"]
 author: "Mart de Graaf"
-# author: ["Me", "You"] # multiple authors
+### author: ["Me", "You"] ## multiple authors
 showToc: true
 TocOpen: true
 draft: false
 hidemeta: false
 comments: false
 description: "Alle 4mijl routes in Assen uitgelegd met routes."
-disableHLJS: true # to disable highlightjs
+disableHLJS: true ## to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -26,18 +26,19 @@ ShowPostNavLinks: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: false
 cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    image: "<image path/url>" ## image path/url
+    alt: "<alt text>" ## alt text
+    caption: "<text>" ## display caption under cover
+    relative: false ## when using page bundles set this to true
+    hidden: true ## only hide on current single page
 ---
 
-# 4 MIJL
+## 4 MIJL
 
 De organisatie van de vier mijl in Assen heeft extra routes uitgelegd in Assen, te zien op [FAQ - 4 Mijl van Assen](https://www.4mijlvanassen.nl/faq/). Omdat sommige routes lastig te vinden zijn heb ik dit artikel gemaakt. In de volgende wijken zijn extra oefenroutes aangebracht: Assen-Oost, Baggelhuizen, Kloosterveen, Lariks & Pittelo.
 
 ## Startpunten
+
 Ik heb de startpunten verzameld in een Google maps lijst [Google maps Lijst van startpunten](https://goo.gl/maps/bBnfnvrUnU2qR2PQA). Zie hieronder de routes.
 
 ### Route in Kloosterveen

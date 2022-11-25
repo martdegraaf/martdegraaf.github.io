@@ -1,3 +1,34 @@
 main {
     --main-width: 1024px;
 }
+
+
+.series{
+    border: 1px solid #0078D3;
+    border-radius: 5px;
+}
+.series h4{
+    padding: 15px 25px 15px 15px;
+    margin: 0px;
+    background-color: #0078D3;
+    color: white;
+}
+.series ul.list-group{
+    padding-inline-start: 0px;
+    margin-bottom: 0px;
+}
+.series .list-group-item{
+    margin: 0px;
+    list-style: none;
+    border-top:#0078D3 1px solid;
+    border-bottom:#0078D3 1px solid;
+}
+.series .list-group-item a, .series .list-group-item.active{
+    padding: 15px;
+    display: block;
+    box-shadow: none;
+}
+.series .list-group-item.active{
+    color: #0078D3;
+    font-weight: bold;
+}

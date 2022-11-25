@@ -36,13 +36,17 @@
       "showCodeCopyButtons": true,
       "showShareButtons": true,
       "showReadingTime": true,
-      "defaultTheme": "dark",
       "comments": true,
       "enableGitInfo": true,
       
       "homeInfoParams": {
          "title": "Software Engineer @ 4Dotnet",
          "content": "Blogging about Azure, .NET, Git and architecture."
+      },
+      "cover":{
+         "hidden": true,
+         "hiddenInList": true,
+         "hiddenInSingle": true
       },
       "avatar": "mart@martdegraaf.nl",
       "name": "Mart de Graaf",
@@ -68,6 +72,10 @@
             "name": "twitter",
             "url": "https://twitter.com/martdegraaf"
          }
+      ],
+      "mainSections": [
+         "posts",
+         "reviews"
       ]
    },
    "outputs": {
@@ -96,5 +104,8 @@
             "name": "About"
          }
       ]
+   },
+   "taxonomies":{
+      "series": "series"
    }
 }
