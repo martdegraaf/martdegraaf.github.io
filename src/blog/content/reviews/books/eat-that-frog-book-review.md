@@ -120,6 +120,8 @@ Some things you rate as unimportant can be procrastinated on. Try to procrastina
 
 I recommend reading or listening to this book and practicing some of the given habits. One that will highly depend on the individual is: 'Upgrade your key skills'. I think you should be making goals to keep learning next to your daily work. Sometimes even before doing any daily work. The learning will increase your efficiency especially when you focus on a key skill.
 
-### Listen on Spotify
+### Read Eat that frog
+
+Buy the book via [Amazon](https://amzn.to/3OAhfFY) or listen via Spotify:
 
 {{< spotify 6Y0VHrqfbvq6XskYNV0Cnu >}}
