@@ -1,4 +1,4 @@
-{{ if .Params.series }}
+{{ if and (.Params.series)  (gt (len ((index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages)) 1) }}
 <div class="series">
     <h4>This article is part of the series '{{ index .Params.series 0 }}'.</h4>
     <ul class="list-group">
