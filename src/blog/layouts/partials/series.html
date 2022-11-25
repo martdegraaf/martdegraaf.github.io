@@ -10,7 +10,7 @@
             {{ else }}
                 <li class="list-group-item">
                     <a href="{{$post.Permalink}}">
-                        Part {{ add $num 1 }}: {{ $post.Params.title}}
+                        Part {{ add $num 1 }}: {{ $post.Params.title}} {{- if $post.Params.Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
                     </a>
                 </li>
             {{end}}
