@@ -34,7 +34,9 @@ To break the chicken-egg problem, the focus for starting your blog should be cre
 
 'Eat that frog' states that you should prioritize your tasks, and do the thing with the most impact first. You should be acting like there is no tomorrow and start working on your blog today, except when you don't want a blog. If you do not want a blog then why are you reading this article, are you procrastinating other tasks?
 
-To apply this theory to 'blogging agile', you should read my [Book review on Eat that frog]({{< ref "reviews/books/eat-that-frog-book-review" >}}).
+See your first article or blog post as the first checkpoint of your blogging world. From there you can check off multiple other checkpoints.
+
+To read more about why you should do this now and not later, read my [Book review on Eat that frog]({{< ref "reviews/books/eat-that-frog-book-review" >}}).
 
 ## One-time setup
 
