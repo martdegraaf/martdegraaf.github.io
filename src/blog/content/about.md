@@ -13,14 +13,16 @@ disableShare: true
 Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and hobbies. He is enthusiastic about .NET solutions, Azure DevOps, and Azure solutions. Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home, he is a father to his four children.
 {{</ profile >}}
 
-## Career
+## Core values
 
-I am still very proud of the achievements I set in my previous clients. Together with my dad, we started a new concept in interactive video. See an example below:
+If you ask some of my previous coworkers, what defines Mart? They will tell you that I'm a determined and hardworking person. I will prove in my blog that it's true. One of the things I wanted for this blog is to show in my blog are Mermaid diagrams. I used for example a Gantt chart and a mindmap to share my ideas. Press the moon or sun icon in the menu to switch from light to dark or vice versa and see that the mermaid theme will also change. Pro tip: use `Alt + T` to switch themes. But as you can see I did not yet fix the certification part as the title has the same color as the background.
 
-{{< hihaho >}}
+## Speaking
 
-My full career path with clients and employees is available on LinkedIn.
+Sharing makes me so happy that I try to share my knowledge through [speaking](/speaking). See how I planned for that using some lessons I learned from the book: [Eat that frog](/reviews/books/eat-that-frog).
 
 ## Certifications
+
+Here are some of my active certifications I am very proud of:
 
 {{< credly >}}

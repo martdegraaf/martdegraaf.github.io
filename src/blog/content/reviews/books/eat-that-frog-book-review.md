@@ -1,6 +1,6 @@
 ---
 title: "Eat that frog! - Book review by a developer"
-slug: "eat-that-frog-book-review"
+slug: "eat-that-frog"
 date: 2022-11-21T00:24:00+02:00
 publishdate: 2022-11-21T00:24:00+02:00
 draft: false
