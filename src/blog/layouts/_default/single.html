@@ -69,7 +69,11 @@
             flowchart:{
                 useMaxWidth:false,
             },
+            {{ if ( not (.Page.Store.Get "hasMermaidMindmap") ) }}
             theme: document.body.className.includes("dark") ?  'dark' : 'corperate',
+            {{ else }}
+            theme: 'base',
+            {{ end }}
             logLevel: {{ cond (hugo.IsProduction | default false) "5" "1" }},
             themeVariables:{
               darkMode: document.body.className.includes("dark")
