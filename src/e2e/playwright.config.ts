@@ -1,6 +1,10 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 import dotenv from 'dotenv';
+var dotenvExpand = require('dotenv-expand');
+
+var myEnv = dotenv.config();
+dotenvExpand.expand(myEnv);
 
 /**
  * Read environment variables from file.

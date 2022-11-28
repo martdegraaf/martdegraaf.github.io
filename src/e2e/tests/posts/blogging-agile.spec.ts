@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
 test('posts agile blogging', async ({ page }) => {
-  await page.goto('posts/blogging-agile/how-to-get-started-with-technical-blogging/');
+  await page.goto('posts/blogging-agile/start-blogging-today/');
 
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/How to get started with technical blogging/);
+  await expect(page).toHaveTitle(/Beat your excuses and start blogging/);
 
   await page.screenshot({ path: 'blogging-agile.png', fullPage: true });
 
