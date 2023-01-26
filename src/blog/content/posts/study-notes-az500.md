@@ -22,9 +22,11 @@ I studied for AZ-500 using the MS Learning paths referenced on the [AZ-500 page]
 
 On the 5th of December, I took the AZ-500 exam and failed. I scored 588 points, 700 points will get you to pass. So it was not close, I needed to study and know more. Many questions were too difficult for me. This article is a notebook of my extra learnings and study material I needed to complete for AZ-500.
 
+On the 19th of January, I retook the AZ-500 exam and failed again. Now I scored 684 points. This was closer and very frustrating. But, on the positive side, I have a positive trend in my results.
+
 ## First things first
 
-I am a developer scoped to PaaS services so things like Azure storage and Azure Keyvault make sense to me. Azure AD and Virtual machines are not my daily work, but I would like to know the ins and outs.
+I am a developer scoped to PaaS services so things like Azure storage and Azure KeyVault make sense to me. Azure AD and Virtual machines are not my daily work, but I would like to know the ins and outs.
 
 ## Online resources
 
@@ -101,3 +103,16 @@ az aks update \
     --name myAKSCluster \
     --enable-pod-security-policy
 ```
+
+# Network watcher
+
+https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-packet-capture-overview
+
+
+STRIDE framework
+
+
+Contributer role geeft je geen toegang tot het beheren van RBAC
+`Security Admin` role geeft rechten tot Microsoft Defender for Cloud.
+
+

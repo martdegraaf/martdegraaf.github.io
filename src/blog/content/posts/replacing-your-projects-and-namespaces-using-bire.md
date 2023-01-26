@@ -24,25 +24,25 @@ So a few years ago I worked with jlamfers. Jlamfers showed me a tool to easily r
 
 Renaming files is hard. When renaming Projects in Visual Studio the Folder does not change and keeps its original name. The project path is declared in the Solution file (.sln). Not a problem when working in Visual Studio, but a minor annoyance when reviewing a pull request.
 
-Also when renaming projects, not all namespaces will change as well.
+Also when renaming projects via Visual Studio, not all namespaces will change as well. And when renaming manually you need to change the references as well in the contents of the .csproject file.
 
 ## Bire
 
-Jlamfers encountered a problem where with microservices he needed to build and the namespaces could be changed afterwards. The company used abbreviations for services, with bire he just could build and change the name afterward with a single command.
+Jlamfers encountered a problem where with microservices he needed to build and the namespaces could be changed afterward. The company used abbreviations for services, with bire he just could build and change the name afterward with a single command.
 
 The tool of jlamfers is available at [Github jlamfers/bire](https://github.com/jlamfers/bire).
 
 I Thought his tool was brilliant, but it missed the crucial documentation to make it understandable for the whole company.
 
 {{< quoteblock >}}
-:beer: Bire is pronaunced as the Dutch word 'Bier'. Bier is Dutch for beer. BiRe is an abbrivation for 'binary replace'.
+:beer: Bire is pronounced as the Dutch word 'Bier'. Bier is Dutch for beer. BiRe is an abbreviation for 'binary replace'.
 {{</ quoteblock >}}
 
 ### Using Bire
 
 `bire -from C:\git\source -to C:\git\target -replace this=that Something=Anything`
 
-This is an example I wrote in the Readme file. But i want to give you a more concrete example lets imagine this folder structure. The project is in `C:\git\MyCoolProject\source`.
+This is an example I wrote in the Readme file. But I want to give you a more concrete example let's imagine this folder structure. The project is in `C:\git\MyCoolProject\source`.
 
 ```text
 source
