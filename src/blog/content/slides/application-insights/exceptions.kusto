@@ -12,14 +12,7 @@ AppExceptions
     OuterMethod
 )
 | where ServiceName in (
-    "ar-p-ai-reservation",
-    "ar-p-ai-retailportal",
-    "ar-p-ai-payment",
-    "ar-p-ai-mijn",
-    "ar-p-ai-giftcard",
-    "ar-p-ai-extrareservationinfo",
-    "ar-p-ai-dashboard",
-    "ar-p-ai-codex"
+    "mart-ai"
     )
 | summarize
     AnyOuterMessage = take_any(OuterMessage),
