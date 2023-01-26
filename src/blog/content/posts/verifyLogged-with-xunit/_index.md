@@ -1,5 +1,6 @@
 ---
 title: "How to verify that ILogger logged an error?"
+slug: "verifyLogged-with-xunit"
 date: 2022-07-28T18:00:00+02:00
 publishdate: 2022-07-29T00:00:00+02:00
 draft: false
