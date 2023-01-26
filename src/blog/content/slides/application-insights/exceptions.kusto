@@ -1,0 +1,38 @@
+(
+AppExceptions
+| parse _ResourceId with * '/components/' ServiceName
+| project
+    OperationId,
+    AppRoleName,
+    ProblemId,
+    OuterMessage,
+    ServiceName,
+    _SubscriptionId,
+    ClientType,
+    OuterMethod
+)
+| where ServiceName in (
+    "ar-p-ai-reservation",
+    "ar-p-ai-retailportal",
+    "ar-p-ai-payment",
+    "ar-p-ai-mijn",
+    "ar-p-ai-giftcard",
+    "ar-p-ai-extrareservationinfo",
+    "ar-p-ai-dashboard",
+    "ar-p-ai-codex"
+    )
+| summarize
+    AnyOuterMessage = take_any(OuterMessage),
+    AnyOuterMethod = take_any(OuterMethod),
+    OperationIds= make_list(OperationId, 5),
+    uniqueOperations=dcount(OperationId)
+    by ServiceName, AppRoleName, ProblemId
+| order by uniqueOperations desc, ServiceName, AppRoleName
+| project
+    uniqueOperations,
+    ServiceName,
+    AppRoleName,
+    AnyOuterMessage,
+    AnyOuterMethod,
+    ProblemId,
+    OperationIds
