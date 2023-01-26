@@ -1,0 +1,17 @@
+# Defaults for reveal_hugo
+[reveal_hugo]
+history = true
+#custom_theme = "reveal-hugo/themes/robot-lung.css"
+theme = "black"
+margin = 0.2
+highlight_theme = "color-brewer"
+slide_number = true
+transition = "convex"
+transition_speed = "fast"
+reveal_cdn = "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0"
+highlight_cdn = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0"
+
+# used in content/template-example
+[reveal_hugo.templates.grey]
+background = "#424242"
+transition = "convex"
