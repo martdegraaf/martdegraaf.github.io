@@ -10,6 +10,10 @@
          create layouts/partials/{section}/reveal-hugo/head.html -->
     {{- $sectionHeadPartial := printf "reveal-hugo/%s/head" (.Page.Section | default "home") -}}
     {{- if fileExists (printf "layouts/partials/%s.html" $sectionHeadPartial) -}}{{ partial $sectionHeadPartial . }}{{- end }}
+
+    {{ if .Params.Private }}
+      <meta name="robots" content="noindex" />
+    {{ end }}
   </head>
   <body>
     {{ if .Param "logo.src" }}
