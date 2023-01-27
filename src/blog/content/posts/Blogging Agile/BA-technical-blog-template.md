@@ -9,7 +9,7 @@ summary: "A template with a guided step by step tutorial to getting started with
 ShowToc: true
 TocOpen: true
 UseHugoToc: false
-draft: false
+draft: true
 
 ShowReadingTime: true
 ShowLastModified: true
