@@ -5,7 +5,7 @@ author = "Mart de Graaf"
 # Taal
 +++
 
-# Git in het Nederlands
+# Git in het Nederlands!!
 
 Een commit is een snapshot. Een opname van de code op een moment in de tijd.
 
