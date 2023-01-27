@@ -1,0 +1,106 @@
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+timeZone = "Europe/Amsterdam"
+title = "Mart de Graaf"
+googleAnalytics = "G-ZFQGR29JJQ"
+theme = "PaperMod"
+enableRobotsTXT = true
+disqusShortname = "martdegraaf"
+enableEmoji = true
+enableGitInfo = true
+copyright = "Mart de Graaf"
+baseUrl = "http://localhost:1313"
+
+[languages.en-us]
+title = "Mart's blog"
+weight = 1
+
+  [languages.en-us.params]
+  languageAltTitle = "English"
+
+[languages.nl]
+title = "Mart's blog"
+weight = 2
+
+  [languages.nl.params]
+  languageAltTitle = "Nederlands"
+
+    [languages.nl.params.homeInfoParams]
+    title = "Software ontwikkelaar @ 4Dotnet"
+    content = "Voor content over Azure, .NET, Git en architectuur ga dan naar mijn Engelse blog. Voor Nederlandse overdenkingen, wees welkom!"
+
+[params]
+env = "production"
+showPostNavLinks = true
+showCodeCopyButtons = true
+showShareButtons = true
+showReadingTime = true
+comments = true
+enableGitInfo = true
+avatar = "mart@martdegraaf.nl"
+name = "Mart de Graaf"
+mainSections = [ "posts", "reviews" ]
+
+  [params.homeInfoParams]
+  title = "Software Engineer @ 4Dotnet"
+  content = "Blogging about Azure, .NET, Git and architecture."
+
+  [params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = true
+
+  [params.profileMode]
+  enabled = false
+  imageUrl = "https://en.gravatar.com/userimage/91624600/299941bdca005e043f382073dfb1d71c.jpg?size=200"
+  imageWidth = 200
+  imageHeight = 200
+
+    [[params.profileMode.buttons]]
+    name = "Archive"
+    url = "/archive"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/martdegraaf"
+
+  [[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/mart-de-graaf/"
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/martdegraaf"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+[[menu.main]]
+url = "/tags"
+name = "Tags"
+
+[[menu.main]]
+url = "/archive"
+name = "Archive"
+
+[[menu.main]]
+url = "/search"
+name = "Search"
+
+[[menu.main]]
+url = "/about"
+name = "About"
+
+[taxonomies]
+series = "series"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+[markup.highlight]
+codeFences = true

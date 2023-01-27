@@ -1,0 +1,72 @@
+{{- /* 
+	file            : The code file to display, reference to a file path
+	dataLineNumbers     : A highlight.js compatible highlight range. 1,2-3|4-5 -> | is for animation.
+	fileLines       : Range. Starting line, optional ending line (or eof by default) string "linenumber" / "linenumber-linenumber"
+*/ -}}
+{{- $filePath:= "" -}}
+{{- $adjustedOptions:= .Options -}}
+{{- $startIndex:= 1 -}}
+{{- $prefaceLen:= 0 -}}
+{{- if .Inner -}}
+{{-   $prefaceLen = ((split .Inner "\n") | len) -}}
+{{- end -}}
+{{- $data:= .Inner -}}  
+{{- if .Attributes.file -}}
+{{-   $filePath = .Attributes.file -}} 
+{{-   $matchedFile := .Page.Resources.GetMatch $filePath -}}
+{{-   if and (not $matchedFile) .Page.File -}}
+{{-     $filePath = path.Join .Page.File.Dir $filePath -}}
+{{-     $data = ($filePath | readFile) -}}
+{{-   else -}}
+{{-     $data = $matchedFile.Content -}}
+{{-   end -}}
+{{-   if .Attributes.filelines -}}
+{{-     $datalines :=  split $data "\n" -}}
+{{-     $values:= split .Attributes.filelines "-" -}}
+{{-     $start:=  (int (index $values 0)) -}}
+{{-     $startIndex = sub $start 1 -}}
+{{-     $end:= ($datalines | len) -}}
+{{-     if gt ($values | len) 1 -}}
+{{-       $end = int (index $values 1) -}}
+{{-     end -}}
+{{-     $data = delimit (first  (sub  $end  $startIndex) (after   $startIndex  $datalines)) "\n" -}}
+{{-     $adjustedOptions = merge $adjustedOptions (dict "linenostart" (sub $start $prefaceLen)) -}}
+{{-   end -}}
+{{-   if ne $prefaceLen 0 -}}
+{{-     $data = printf "%s\n%s" .Inner $data -}}
+{{-   end -}}
+{{- end -}}
+{{- $adjusted_hl_lines:= "" -}}
+{{- $highlightLineShift:= sub $prefaceLen $startIndex -}}
+{{- if .Attributes.highlightjs -}}
+{{- $textPipe:= "" -}}
+{{- $sepPipe:= "" -}}
+{{- range (split .Attributes.highlightjs  "|") -}}
+{{- $sepComma:= "" -}}
+{{- $textComma:= "" -}}
+{{-   range (split .  ",") -}}
+{{-     $sepMinus:= "" -}}
+{{-     $textMinus:= "" -}}
+{{-     range (split .  "-") -}}
+{{-       $var:= (add  (int . ) $highlightLineShift) -}}
+{{-       $textMinus = printf "%s%s%d" $textMinus $sepMinus $var -}}
+{{-       $sepMinus = "-" -}} 
+{{-     end -}}
+{{      $textComma = printf "%s%s%s" $textComma $sepComma $textMinus -}}
+{{-     $sepComma = "," -}} 
+{{-   end -}}
+{{      $textPipe = printf "%s%s%s" $textPipe $sepPipe $textComma -}}
+{{-     $sepPipe = "|" -}} 
+{{- end -}}
+{{- $adjusted_hl_lines = $textPipe -}}
+{{- else if $adjustedOptions.hl_lines -}}
+{{-   $sep:= "" -}}
+{{-   range  $adjustedOptions.hl_lines -}} 
+{{-     $adjusted_hl_lines = printf "%s%s%d-%d"  $adjusted_hl_lines $sep (add (index . 0) $highlightLineShift) (add (index . 1) $highlightLineShift) -}}
+{{-     $sep = "," -}}
+{{-   end -}}
+{{- end -}}
+{{- $adjustedOptions = merge $adjustedOptions (dict "hl_lines" $adjusted_hl_lines) -}}
+{{- $class := .Attributes.class | default "" -}}
+{{- $lang  := .Attributes.lang  | default .Type -}}
+<pre><code class="language-{{ .Type }} {{- $class -}}" data-line-numbers="{{ $adjusted_hl_lines }}" data-ln-start-from="{{ $startIndex }}">{{- $data -}}</code></pre>

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "reveal.js": "^4.4.0"
+  },
+  "scripts": {
+    "build": "hugo"
+  }
+}

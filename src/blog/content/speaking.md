@@ -7,9 +7,17 @@ comments: false
 disableShare: true
 ---
 
-My current sessions are on [Mart's Sessionize profile](https://sessionize.com/mart-de-graaf/).
 
 ## Upcoming engagements
+
+None at this time.
+
+### Current sessions
+
+Contact me through any of the social channels or via Sessionize. My current sessions that I can give on short-term notice:
+
+1. Advanced git and git workflows
+1. Observability of your cloud Software - Application Insights deep dive
 
 ## Previous engagements
 
