@@ -62,53 +62,7 @@ demo_series2
 | render  scatterchart  with(xcolumn=x)
 ```
 
-
 {{% /reveal/section %}}
-
-
----
-
-# Sample Kusto query (KQL)
-
-```sql {file="exceptions.kusto",highlightjs="1-10|11,15,16|18"}
-```
-
----
-
-{{% reveal/section %}}
-
-# Demo application
-
-<!-- Do here a image with context of the Azure resources -->
----
-
-[Deep link to Azure Application Insights](https://portal.azure.com)
-
----
-
-# Log 
-
-```cs
-//Code to log to Application insights
-
-```
-
----
-
-# Unit test your logging
-
-```cs {file="../../posts/verifyLogged-with-xunit/unitTestSolution.cs", highlightjs="1,2|3,4"}
-//UNIT TEST CODE
-```
-
-{{% /reveal/section %}}
-
-
-{{% reveal/note %}}
-Allemaal notities
-{{% /reveal/note %}}
-
-
 
 ---
 
@@ -117,7 +71,3 @@ Allemaal notities
 ---
 
 # Async Azure durable function fan out
-
----
-
-# 
