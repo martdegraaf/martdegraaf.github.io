@@ -3,7 +3,7 @@ title: "Replacing Your Projects and Namespaces Using Bire"
 slug: "replacing-your-projects-and-namespaces-using-bire"
 date: 2023-01-26T22:45:56+01:00
 publishdate: 2023-01-26T22:45:56+01:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: []
 summary: "We all sometimes want to rename projects and or namespaces but VS makes it hard, why can't we just take one command to replace all? We can with bire."
@@ -18,7 +18,7 @@ ShowLastModified: true
 ShowWordCount: true
 ---
 
-So a few years ago I worked with jlamfers. Jlamfers showed me a tool to easily replace .csproject names and namespaces. This tool is named Bire.
+So a few years ago I worked with Jaap Lamfers. Jaap showed me a tool to easily replace .csproject names and namespaces. This tool is named Bire.
 
 ## Why you should care
 
@@ -28,9 +28,9 @@ Also when renaming projects via Visual Studio, not all namespaces will change as
 
 ## Bire
 
-Jlamfers encountered a problem where with microservices he needed to build and the namespaces could be changed afterward. The company used abbreviations for services, with bire he just could build and change the name afterward with a single command.
+Jaap encountered a problem where with microservices he needed to build and the namespaces could be changed afterward. The company used abbreviations for services, with bire he just could build and change the name afterward with a single command.
 
-The tool of jlamfers is available at [Github jlamfers/bire](https://github.com/jlamfers/bire).
+The tool of Jaap is available at [Github jlamfers/bire](https://github.com/jlamfers/bire).
 
 I thought his tool was brilliant, but it missed the crucial documentation to make it understandable for the whole company.
 
@@ -82,4 +82,4 @@ bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP
 
 ## Conclusion
 
-Bire helped me a lot at some companies. Let tools help you and get grip on your time back. Let me know if you have used bire and liked it.
+Bire helped me a lot at some companies. Let tools help you and get grip on your time back. Let it be another tool in your toolbox. Let me know if you have used bire and liked it.
