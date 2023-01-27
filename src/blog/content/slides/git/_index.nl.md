@@ -2,7 +2,7 @@
 title = "Git"
 outputs = ["Reveal"]
 author = "Mart de Graaf"
-# Taal
+Private = true
 +++
 
 # Git in het Nederlands!!

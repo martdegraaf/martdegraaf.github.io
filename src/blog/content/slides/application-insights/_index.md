@@ -2,7 +2,7 @@
 title = "Observability of your cloud software using Azure Application Insights"
 outputs = ["Reveal"]
 author = "Mart de Graaf"
-# Taal
+Private = true
 +++
 
 # Basic Azure Application Insights

@@ -7,6 +7,9 @@ A PR will trigger a deployment to Azure Static Web Apps for staging purposes.
 A commit on the main branch will (also) be deployed to GitHub pages.
 [Visit https://martdegraaf.github.io/](https://martdegraaf.github.io/)
 
+## Navigate to the blog
+`cd .\src\blog`
+
 ## New code post
 
 `hugo new --kind code-post posts/your-new-blog.md`
