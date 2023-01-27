@@ -1,0 +1,49 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Observability of your cloud software using Azure Application Insights</title><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css id=theme><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/color-brewer.min.css></head><body><div class=reveal><div class=slides><section><h1 id=basic-azure-application-insights>Basic Azure Application Insights</h1><ol><li>Requests</li><li>Traces</li><li>Exceptions</li><li>Dependencies</li><li>PageViews</li></ol><aside class=notes><p>Do some linking to Microsoft Learn.</p><p>&rsquo;s&rsquo; - type &rsquo;s&rsquo; to enter speaker mode, which opens a separate window with a time and speaker notes
+&lsquo;o&rsquo; - type &lsquo;o&rsquo; to enter overview mode and scroll through slide thumbnails
+&lsquo;f&rsquo; - type &lsquo;f&rsquo; to go into full-screen mode</p></aside></section><section><h1 id=sample-kusto-query-kql>Sample Kusto query (KQL)</h1><pre><code class=language-sql data-line-numbers=0-9|10,14,15|17 data-ln-start-from=1>(
+AppExceptions
+| parse _ResourceId with * &#39;/components/&#39; ServiceName
+| project
+    OperationId,
+    AppRoleName,
+    ProblemId,
+    OuterMessage,
+    ServiceName,
+    _SubscriptionId,
+    ClientType,
+    OuterMethod
+)
+| where ServiceName in (
+    &#34;mart-ai&#34;
+    )
+| summarize
+    AnyOuterMessage = take_any(OuterMessage),
+    AnyOuterMethod = take_any(OuterMethod),
+    OperationIds= make_list(OperationId, 5),
+    uniqueOperations=dcount(OperationId)
+    by ServiceName, AppRoleName, ProblemId
+| order by uniqueOperations desc, ServiceName, AppRoleName
+| project
+    uniqueOperations,
+    ServiceName,
+    AppRoleName,
+    AnyOuterMessage,
+    AnyOuterMethod,
+    ProblemId,
+    OperationIds</code></pre></section><section><section data-shortcode-section><h1 id=demo-application>Demo application</h1></section><section><p><a href=https://portal.azure.com>Deep link to Azure Application Insights</a></p></section><section><h1 id=log>Log</h1><pre><code class=language-cs data-line-numbers data-ln-start-from=1>//Code to log to Application insights</code></pre></section><section><h1 id=unit-test-your-logging>Unit test your logging</h1><pre><code class=language-cs data-line-numbers=1,2|3,4 data-ln-start-from=1>//UNIT TEST CODE
+//Arrange
+var logger = A.Fake&lt;ILogger&lt;SystemUnderTest&gt;&gt;();
+var sut = new SystemUnderTest(logger);
+
+//Act
+await sut.Delete(1);
+
+//Assert
+logger.VerifyLogged(LogLevel.Information, &#34;Deleting 1&#34;);
+logger.VerifyLogged(LogLevel.Error, &#34;Already cancelled 1&#34;);</code></pre></section><aside class=notes><p>Allemaal notities</p></aside></section><section><h1 id=business-cases>Business cases</h1><section data-shortcode-section><h1 id=azure-async-signalr-flow>Azure ASync SignalR flow</h1></section><section><h1 id=async-azure-durable-function-fan-out>Async Azure durable function fan out</h1></section><section><h1 id=heading></h1></section></section></div></div><script type=text/javascript src=/reveal-hugo/object-assign.js></script>
+<a href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/print/ id=print-location style=display:none></a>
+<script type=text/javascript>var printLocationElement=document.getElementById("print-location"),link=document.createElement("link");link.rel="stylesheet",link.type="text/css",link.href=printLocationElement.href+(window.location.search.match(/print-pdf/gi)?"pdf.css":"paper.css"),document.getElementsByTagName("head")[0].appendChild(link)</script><script type=application/json id=reveal-hugo-site-params>{"highlight_cdn":"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0","highlight_theme":"color-brewer","history":true,"margin":0.2,"reveal_cdn":"https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0","slide_number":true,"templates":{"grey":{"background":"#424242","transition":"convex"}},"theme":"black","transition":"convex","transition_speed":"fast"}</script><script type=application/json id=reveal-hugo-page-params>null</script><script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js></script>
+<script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/zoom/zoom.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/search/search.js></script>
+<script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.js></script>
+<script type=text/javascript>function camelize(e){return e&&Object.keys(e).forEach(function(t){newK=t.replace(/(_\w)/g,function(e){return e[1].toUpperCase()}),newK!=t&&(e[newK]=e[t],delete e[t])}),e}var revealHugoDefaults={center:!0,controls:!0,history:!0,progress:!0,transition:"slide"},revealHugoSiteParams=JSON.parse(document.getElementById("reveal-hugo-site-params").innerHTML),revealHugoPageParams=JSON.parse(document.getElementById("reveal-hugo-page-params").innerHTML),options=Object.assign({hash:!0,plugins:[RevealMarkdown,RevealNotes,RevealHighlight,RevealZoom,RevealSearch]},camelize(revealHugoDefaults),camelize(revealHugoSiteParams),camelize(revealHugoPageParams));Reveal.initialize(options)</script><script type=text/javascript src=/mermaid.min_6838052300336322795.js></script>
+<script type=text/javascript>mermaid.initialize({startOnLoad:!1});let render=e=>{let t=e.currentSlide.querySelectorAll(".mermaid");if(!t.length)return;t.forEach(e=>{let t=e.getAttribute("data-processed");t||mermaid.init(void 0,e)})};render({currentSlide:Reveal.getCurrentSlide()}),Reveal.addEventListener("slidechanged",render),Reveal.addEventListener("ready",render)</script></body></html>
