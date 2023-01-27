@@ -32,7 +32,7 @@ Jlamfers encountered a problem where with microservices he needed to build and t
 
 The tool of jlamfers is available at [Github jlamfers/bire](https://github.com/jlamfers/bire).
 
-I Thought his tool was brilliant, but it missed the crucial documentation to make it understandable for the whole company.
+I thought his tool was brilliant, but it missed the crucial documentation to make it understandable for the whole company.
 
 {{< quoteblock >}}
 :beer: Bire is pronounced as the Dutch word 'Bier'. Bier is Dutch for beer. BiRe is an abbreviation for 'binary replace'.
@@ -66,7 +66,7 @@ Then we can use Bire. Download the bire.exe from my [GitHub release 1](https://g
 Use the following command to get MyCoolProject abbreviated to MCP.
 
 ```cmd
-`bire -from C:\git\MyCoolProject\source -replace this=that Something=Anything`
+bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP 
 ```
 
 We're not copying the project we don't need the `-to` param. You should have your repo in git to do this change safely right?
@@ -76,7 +76,7 @@ We're not copying the project we don't need the `-to` param. You should have you
 What if we would have certain files that would refer to MyCoolProject and we want them to stay that way instead of renaming `MyCoolProject` to `MCP`. For example a `MyCoolProjectClient.cs` class.
 
 ```cmd
-`bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP -ignore "MyCoolProjectClient.cs|(.*(\.|\/|\\)(exe|dll|obj|bin|pdb|zip|\.git|\.vs|cache|packages))$"`
+bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP -ignore "MyCoolProjectClient.cs|(.*(\.|\/|\\)(exe|dll|obj|bin|pdb|zip|\.git|\.vs|cache|packages))$"
 ```
 
 ## Conclusion
