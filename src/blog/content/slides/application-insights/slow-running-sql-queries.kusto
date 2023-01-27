@@ -1,0 +1,12 @@
+dependencies
+| where type == "SQL"
+| where duration > 25000
+| summarize Occurances=count(), OperationIds=make_list(operation_Id,5), MaxPerformanceBucket=max(performanceBucket), AvgDuration=avg(duration) by data
+| project Occurances, MaxPerformanceBucket, AvgDuration, OperationIds, data
+
+// gives every SQL-query that took longer than 25s
+// Occurances               Times a query slowed in given period
+// MaxPerformanceBucket     ex: 30sec-1min
+// AvgDuration              ex: 29,753.374 time in ms
+// OperationIds             List of example operationIds to dive in
+// data                     The actual query executed

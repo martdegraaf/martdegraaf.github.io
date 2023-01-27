@@ -19,7 +19,37 @@ Do some linking to Microsoft Learn.
 's' - type 's' to enter speaker mode, which opens a separate window with a time and speaker notes
 'o' - type 'o' to enter overview mode and scroll through slide thumbnails
 'f' - type 'f' to go into full-screen mode
+
+Practice via Azure Data Explorer. see https://dataexplorer.azure.com/
+
 {{% /reveal/note %}}
+
+---
+
+# Rendering KQL
+
+
+{{% reveal/note %}}
+
+https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer
+
+{{% /reveal/note %}}
+
+{{% reveal/section %}}
+
+## linechart
+
+```sql
+exceptions
+| summarize Count()
+| render linechart
+```
+
+---
+
+
+{{% /reveal/section %}}
+
 
 ---
 

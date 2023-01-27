@@ -1,0 +1,13 @@
+traces
+| where operation_Name == "BookingPlaced" or message has "Sent e-mail BookingReceived for reservation"
+| extend reservationNumber = iff(isnull(customDimensions.prop__bookingNumber), customDimensions.prop__reservation, customDimensions.prop__bookingNumber)
+| where not(isnull(reservationNumber))
+| summarize Min = min(timestamp), Max = max(timestamp), Duration = (max(timestamp) - min(timestamp))  by tostring(reservationNumber)
+| order by Duration asc
+| extend ResponseTijd = tolong(Duration) / 10000000
+| extend ResponseTijdMinuten = ResponseTijd / 60
+| render scatterchart 
+
+
+// renders stipjesdiagram
+// Important is the tostring() op customDimensions en andere nested properties.

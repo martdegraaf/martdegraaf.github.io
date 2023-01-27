@@ -1,0 +1,13 @@
+dependencies
+| where type == "SQL"
+| where data contains "1 = 0"
+| summarize Occurances=count(), OpertationIds=make_list(operation_Id,5) by data
+| project  Occurances, OpertationIds, data
+
+
+// gives every SQL-query that contains 1 = 0, which is insane.
+// Occurances               Times a query slowed in given period
+// OperationIds             List of example operationIds to dive in
+// data                     The actual query executed
+
+//Example what type of Dapper query this would happen?
