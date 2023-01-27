@@ -76,7 +76,8 @@ We're not copying the project we don't need the `-to` param. You should have you
 What if we would have certain files that would refer to MyCoolProject and we want them to stay that way instead of renaming `MyCoolProject` to `MCP`. For example a `MyCoolProjectClient.cs` class.
 
 ```cmd
-bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP -ignore "MyCoolProjectClient.cs|(.*(\.|\/|\\)(exe|dll|obj|bin|pdb|zip|\.git|\.vs|cache|packages))$"
+bire -from C:\git\MyCoolProject\source -replace MyCoolProject=MCP 
+   -ignore "MyCoolProjectClient.cs|(.*(\.|\/|\\)(exe|dll|obj|bin|pdb|zip|\.git|\.vs|cache|packages))$"
 ```
 
 ## Conclusion
