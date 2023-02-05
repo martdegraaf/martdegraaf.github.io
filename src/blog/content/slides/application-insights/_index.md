@@ -5,13 +5,7 @@ author = "Mart de Graaf"
 Private = true
 +++
 
-# Basic Azure Application Insights
-
-1. Requests
-1. Traces
-1. Exceptions
-1. Dependencies
-1. PageViews
+# Application insights and Kusto deep dive
 
 {{% reveal/note %}}
 Do some linking to Microsoft Learn.
@@ -21,53 +15,18 @@ Do some linking to Microsoft Learn.
 'f' - type 'f' to go into full-screen mode
 
 Practice via Azure Data Explorer. see https://dataexplorer.azure.com/
+https://dataexplorer.azure.com/clusters/help/databases/Samples
+https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation
+https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true
 
 {{% /reveal/note %}}
 
----
+<!-- ---
+Notes
 
-# Rendering KQL
 
-{{% reveal/note %}}
-https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer
-{{% /reveal/note %}}
-
-{{% reveal/section %}}
-
-## linechart
-
-```sql
-exceptions
-| summarize Count()
-| render linechart
-```
+# Azure Async SignalR flow
 
 ---
 
-## stackedareachart
-
-```sql
-exceptions
-| summarize Count()
-| render stackedareachart
-```
-
----
-
-## scatterchart
-
-```sql
-demo_series2
-| extend series_fit_2lines(y), series_fit_line(y)
-| render  scatterchart  with(xcolumn=x)
-```
-
-{{% /reveal/section %}}
-
----
-
-# Azure ASync SignalR flow
-
----
-
-# Async Azure durable function fan out
+# Async Azure durable function fan out -->

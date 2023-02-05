@@ -14,7 +14,7 @@ Business cases where KQL mega helped me.
 
 ## Find broken queries
 
-```sql {file="broken-dapper-sql-queries.kusto"}
+```sql {file="business-cases/broken-dapper-sql-queries.kusto"}
 ```
 
 {{% reveal/note %}}
@@ -25,7 +25,7 @@ Kusto level 1
 
 ## Count traces per hour
 
-```sql {file="count-log-messages-by-hour.kusto"}
+```sql {file="business-cases/count-log-messages-by-hour.kusto"}
 ```
 
 {{% reveal/note %}}
@@ -36,7 +36,7 @@ Kusto level 2
 
 ## Exceptions distinct by outerMessage
 
-```sql {file="exception-distinct-by-requestpath.kusto"}
+```sql {file="business-cases/exception-distinct-by-requestpath.kusto"}
 ```
 
 {{% reveal/note %}}
@@ -49,7 +49,7 @@ Business case: Data is wrong, some ids fail, which ones?
 
 ## Exceptions by occurrence with multiple AI-resources
 
-```sql {file="exceptions.kusto",highlightjs="1-10|11,15,16|18"}
+```sql {file="business-cases/exceptions.kusto",highlightjs="1-13|14-16|17-22|23-31"}
 ```
 
 {{% reveal/note %}}
@@ -62,7 +62,7 @@ Business case: What exceptions occur the most where?
 
 ## Performance by callname
 
-```sql {file="performance.kusto"}
+```sql {file="business-cases/performance.kusto"}
 ```
 
 {{% reveal/note %}}
@@ -75,7 +75,7 @@ Business case: What exceptions occur the most where?
 
 ## Slow running SQL queries
 
-```sql {file="slow-running-sql-queries.kusto"}
+```sql {file="business-cases/slow-running-sql-queries.kusto"}
 ```
 
 {{% reveal/note %}}
@@ -88,7 +88,7 @@ Business case: What SQL-queries do not perform?
 
 ## Show chain response times
 
-```sql {file="chain-responsetime-chart.kusto"}
+```sql {file="business-cases/chain-responsetime-chart.kusto"}
 ```
 
 {{% reveal/note %}}
