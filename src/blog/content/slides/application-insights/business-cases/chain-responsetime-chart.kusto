@@ -4,10 +4,10 @@ traces
 | where not(isnull(reservationNumber))
 | summarize Min = min(timestamp), Max = max(timestamp), Duration = (max(timestamp) - min(timestamp))  by tostring(reservationNumber)
 | order by Duration asc
-| extend ResponseTijd = tolong(Duration) / 10000000
-| extend ResponseTijdMinuten = ResponseTijd / 60
+| extend ResponseTime = tolong(Duration) / 10000000
+| extend ResponseTimeMinutes = ResponseTime / 60
 | render scatterchart 
 
 
-// renders stipjesdiagram
+// renders scatterchart with dots and information.
 // Important is the tostring() op customDimensions en andere nested properties.
