@@ -1,0 +1,7 @@
+requests
+| where cloud_RoleName == "p-wapp-mart"
+| where duration > 5000
+| summarize amount=dcount(operation_Id), operationIds = make_list(operation_Id, 5) by name, Date=bin( timestamp, 1h)
+| order by name
+| render columnchart with (title = "Performance van MartApp, Starting from 5sec per callname"  )
+

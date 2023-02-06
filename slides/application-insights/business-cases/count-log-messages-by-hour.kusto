@@ -1,0 +1,9 @@
+traces
+| where message has "Executed MartTimerFunction"
+    or message has "Executed MartHttpFunction"
+    or message has "Executed MartQueueFunction"
+| summarize count() by Date = bin(timestamp, 1h) 
+| render columnchart
+
+// Extra info that could be added
+// Operation_Id, AppRoleName, Date=bin(TimeGenerated, 1h),service, _SubscriptionId

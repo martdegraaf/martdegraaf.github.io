@@ -1,6 +1,92 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><title>Observability of your cloud software using Azure Application Insights</title><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css id=theme><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/color-brewer.min.css><meta name=robots content="noindex"></head><body><div class=reveal><div class=slides><section><h1 id=basic-azure-application-insights>Basic Azure Application Insights</h1><ol><li>Requests</li><li>Traces</li><li>Exceptions</li><li>Dependencies</li><li>PageViews</li></ol><aside class=notes><p>Do some linking to Microsoft Learn.</p><p>&rsquo;s&rsquo; - type &rsquo;s&rsquo; to enter speaker mode, which opens a separate window with a time and speaker notes
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Observability of your cloud software using Azure Application Insights</title><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css id=theme><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/color-brewer.min.css><meta name=robots content="noindex"></head><body><div class=reveal><div class=slides><section><h1 id=application-insights-and-kusto-deep-dive>Application insights and Kusto deep dive</h1><aside class=notes><p>Do some linking to Microsoft Learn.</p><p>&rsquo;s&rsquo; - type &rsquo;s&rsquo; to enter speaker mode, which opens a separate window with a time and speaker notes
 &lsquo;o&rsquo; - type &lsquo;o&rsquo; to enter overview mode and scroll through slide thumbnails
-&lsquo;f&rsquo; - type &lsquo;f&rsquo; to go into full-screen mode</p></aside></section><section><h1 id=sample-kusto-query-kql>Sample Kusto query (KQL)</h1><pre><code class=language-sql data-line-numbers=0-9|10,14,15|17 data-ln-start-from=1>(
+&lsquo;f&rsquo; - type &lsquo;f&rsquo; to go into full-screen mode</p><p>Practice via Azure Data Explorer. see <a href=https://dataexplorer.azure.com/>https://dataexplorer.azure.com/</a>
+<a href=https://dataexplorer.azure.com/clusters/help/databases/Samples>https://dataexplorer.azure.com/clusters/help/databases/Samples</a>
+<a href=https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation>https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation</a>
+<a href=https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true>https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true</a></p></aside></section><section><section data-shortcode-section><h1 id=basic-azure-application-insights>Basic Azure Application Insights</h1><ol><li>Requests</li><li>Traces</li><li>Exceptions</li><li>Dependencies</li><li>PageViews</li></ol></section><section><h1 id=kusto-in-microsoft-azure>Kusto in Microsoft Azure</h1><ol><li>Azure Application Insights and Log Analytics</li><li>Azure Monitor</li><li>Azure Resource Graph Explorer</li></ol><aside class=notes><p><a href=https://en.wikipedia.org/wiki/Azure_Data_Explorer>https://en.wikipedia.org/wiki/Azure_Data_Explorer</a>
+Wikipedia says Kusto from 2014, and names after the person Cousteau, as a reference to searching in the ocean of data.</p></aside></section><section><h1 id=azure-data-explorer>Azure Data Explorer</h1><h2 id=kusto-query-language-kql>Kusto Query Language (KQL)</h2><ol><li><a href=https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/>https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/</a></li><li><a href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet?source=recommendations">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet?source=recommendations</a></li></ol></section></section><section><section data-shortcode-section><h1 id=rendering-kql>Rendering KQL</h1><aside class=notes><p><a href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer</a></p></aside></section><section><h2 id=linechart>linechart</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
+| summarize Count()
+| render linechart</code></pre></section><section><h2 id=stackedareachart>stackedareachart</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
+| summarize Count()
+| render stackedareachart</code></pre></section><section><h2 id=scatterchart>scatterchart</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>demo_series2
+| extend series_fit_2lines(y), series_fit_line(y)
+| render scatterchart with(xcolumn=x)</code></pre></section></section><section><section data-shortcode-section><h1 id=demo-application>Demo application</h1></section><section><ul><li><a href=https://portal.azure.com>Azure Portal</a></li><li>GitHub: <a href=https://github.com/martdegraaf/kql-demo>martdegraaf/kql-demo</a></li></ul><aside class=notes><p>Where to link to depends on audience.</p></aside></section><section><h1 id=write-logs>Write Logs</h1><pre><code class=language-cs data-line-numbers=4-8|9-13|10,12 data-ln-start-from=1>public async Task Delete(long sequenceNumber)
+{
+  _logger.LogInformation(&#34;Deleting `{sequenceNumber}`.&#34;, sequenceNumber);
+  try
+  {
+    await _client.Delete(..);
+    _logger.LogInformation(&#34;Delete completed `{sequenceNumber}`.&#34;, sequenceNumber);
+  }
+  catch (InvalidOperationException ex)
+    when (ex.Message.Equals($&#34;The scheduled message with SequenceNumber = {sequenceNumber} is already being cancelled.&#34;))
+  {
+    _logger.LogError(ex, &#34;Already cancelled {sequenceNumber}.&#34;, sequenceNumber);
+  }
+}</code></pre></section><section><h1 id=unit-test-your-logging>Unit test your logging</h1><pre><code class=language-cs data-line-numbers=2-3|6|9-10 data-ln-start-from=1>//Arrange
+var logger = A.Fake&lt;ILogger&lt;SystemUnderTest&gt;&gt;();
+var sut = new SystemUnderTest(logger);
+
+//Act
+await sut.Delete(1);
+
+//Assert
+logger.VerifyLogged(LogLevel.Information, &#34;Deleting 1&#34;);
+logger.VerifyLogged(LogLevel.Error, &#34;Already cancelled 1&#34;);</code></pre><aside class=notes><p>If you need more info on testing this, please read my blog about the verify.</p><p>I had a case where we needed to test the log to test a specific exception that was caught. Some services caught the global Exception type, that was bad :).</p></aside></section></section><section><section data-shortcode-section><h2 id=sampling>Sampling</h2></section><section><h1 id=hostjson>host.json</h1><pre><code class=language-json data-line-numbers=4-12|13-23 data-ln-start-from=1>{
+  &#34;version&#34;: &#34;2.0&#34;,
+  &#34;logging&#34;: {
+    &#34;logLevel&#34;: {
+      // Default settings
+      &#34;default&#34;: &#34;Warning&#34;,
+      // For all functions
+      &#34;Host.Results&#34;: &#34;Information&#34;,
+      &#34;Host.Aggregator&#34;: &#34;Information&#34;,
+      &#34;Function&#34;: &#34;Information&#34;,
+      &#34;Microsoft&#34;: &#34;Warning&#34;
+    },
+    &#34;applicationInsights&#34;: {
+      &#34;EnableDependencyTracking&#34;: true,
+      &#34;DependencyTrackingOptions&#34;: {
+        &#34;enableSqlCommandTextInstrumentation&#34;: true
+      },
+      &#34;samplingSettings&#34;: {
+        &#34;isEnabled&#34;: true,
+        &#34;excludedTypes&#34;: &#34;Request, Exception&#34;
+      }
+    }
+  }
+}
+</code></pre></section><section><h1 id=disable-sampling>Disable sampling</h1><pre><code class=language-text data-line-numbers data-ln-start-from=1>AzureFunctionsJobHost__logging__applicationInsights__samplingSettings__isEnabled: false</code></pre></section></section><section><section data-shortcode-section><h1 id=business-cases>Business cases</h1><aside class=notes><p>Business cases where KQL mega helped me.</p></aside></section><section><h2 id=find-broken-queries>Find broken queries</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>dependencies
+| where type == &#34;SQL&#34;
+| where data contains &#34;1 = 0&#34;
+| summarize Occurances=count(), OpertationIds=make_list(operation_Id,5) by data
+| project  Occurances, OpertationIds, data
+
+
+// gives every SQL-query that contains 1 = 0, which is insane.
+// Occurances               Times a query slowed in given period
+// OperationIds             List of example operationIds to dive in
+// data                     The actual query executed
+
+//Example what type of Dapper query this would happen?
+</code></pre><aside class=notes><p>Kusto level 1</p></aside></section><section><h2 id=count-traces-per-hour>Count traces per hour</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>traces
+| where message has &#34;Executed MartTimerFunction&#34;
+    or message has &#34;Executed MartHttpFunction&#34;
+    or message has &#34;Executed MartQueueFunction&#34;
+| summarize count() by Date = bin(timestamp, 1h) 
+| render columnchart
+
+// Extra info that could be added
+// Operation_Id, AppRoleName, Date=bin(TimeGenerated, 1h),service, _SubscriptionId</code></pre><aside class=notes><p>Kusto level 2</p></aside></section><section><h2 id=exceptions-distinct-by-outermessage>Exceptions distinct by outerMessage</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
+| extend reservation = tostring(customDimensions.RequestPath)
+| distinct reservation, outerMessage
+| project reservation, outerMessage
+
+
+// tostring is important on customDimensions
+// I wanted to know what endpoints GET /{id} where called with an error.
+// Then i communicated those Ids to the person who could fix the data.
+</code></pre><aside class=notes><p>Kusto level 2</p><p>Business case: Data is wrong, some ids fail, which ones?</p></aside></section><section><h2 id=exceptions-by-occurrence-with-multiple-ai-resources>Exceptions by occurrence with multiple AI-resources</h2><pre><code class=language-sql data-line-numbers=1-13|14-16|17-22|23-31 data-ln-start-from=1>(
 AppExceptions
 | parse _ResourceId with * &#39;/components/&#39; ServiceName
 | project
@@ -30,20 +116,48 @@ AppExceptions
     AnyOuterMessage,
     AnyOuterMethod,
     ProblemId,
-    OperationIds</code></pre></section><section><section data-shortcode-section><h1 id=demo-application>Demo application</h1></section><section><p><a href=https://portal.azure.com>Deep link to Azure Application Insights</a></p></section><section><h1 id=log>Log</h1><pre><code class=language-cs data-line-numbers data-ln-start-from=1>//Code to log to Application insights</code></pre></section><section><h1 id=unit-test-your-logging>Unit test your logging</h1><pre><code class=language-cs data-line-numbers=1,2|3,4 data-ln-start-from=1>//UNIT TEST CODE
-//Arrange
-var logger = A.Fake&lt;ILogger&lt;SystemUnderTest&gt;&gt;();
-var sut = new SystemUnderTest(logger);
+    OperationIds</code></pre><aside class=notes><p>Kusto level 4</p><p>Business case: What exceptions occur the most where?</p></aside></section><section><h2 id=performance-by-callname>Performance by callname</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>requests
+| where cloud_RoleName == &#34;p-wapp-mart&#34;
+| where duration &gt; 5000
+| summarize amount=dcount(operation_Id), operationIds = make_list(operation_Id, 5) by name, Date=bin( timestamp, 1h)
+| order by name
+| render columnchart with (title = &#34;Performance van MartApp, Starting from 5sec per callname&#34;  )
 
-//Act
-await sut.Delete(1);
+</code></pre><aside class=notes><p>Kusto level 3</p><p>Business case: What exceptions occur the most where?</p></aside></section><section><h2 id=slow-running-sql-queries>Slow running SQL queries</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>dependencies
+| where type == &#34;SQL&#34;
+| where duration &gt; 25000
+| summarize Occurances=count(), OperationIds=make_list(operation_Id,5), MaxPerformanceBucket=max(performanceBucket), AvgDuration=avg(duration) by data
+| project Occurances, MaxPerformanceBucket, AvgDuration, OperationIds, data
 
-//Assert
-logger.VerifyLogged(LogLevel.Information, &#34;Deleting 1&#34;);
-logger.VerifyLogged(LogLevel.Error, &#34;Already cancelled 1&#34;);</code></pre></section><aside class=notes><p>Allemaal notities</p></aside></section><section><h1 id=business-cases>Business cases</h1><section data-shortcode-section><h1 id=azure-async-signalr-flow>Azure ASync SignalR flow</h1></section><section><h1 id=async-azure-durable-function-fan-out>Async Azure durable function fan out</h1></section><section><h1 id=heading></h1></section></section></div></div><script type=text/javascript src=/reveal-hugo/object-assign.js></script>
+// gives every SQL-query that took longer than 25s
+// Occurances               Times a query slowed in given period
+// MaxPerformanceBucket     ex: 30sec-1min
+// AvgDuration              ex: 29,753.374 time in ms
+// OperationIds             List of example operationIds to dive in
+// data                     The actual query executed</code></pre><aside class=notes><p>Kusto level 2</p><p>Business case: What SQL-queries do not perform?</p></aside></section><section><h2 id=show-chain-response-times>Show chain response times</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>traces
+| where operation_Name == &#34;BookingPlaced&#34; or message has &#34;Sent e-mail BookingReceived for reservation&#34;
+| extend reservationNumber = iff(isnull(customDimensions.prop__bookingNumber), customDimensions.prop__reservation, customDimensions.prop__bookingNumber)
+| where not(isnull(reservationNumber))
+| summarize Min = min(timestamp), Max = max(timestamp), Duration = (max(timestamp) - min(timestamp))  by tostring(reservationNumber)
+| order by Duration asc
+| extend ResponseTime = tolong(Duration) / 10000000
+| extend ResponseTimeMinutes = ResponseTime / 60
+| render scatterchart 
+
+
+// renders scatterchart with dots and information.
+// Important is the tostring() op customDimensions en andere nested properties.
+</code></pre><aside class=notes><p>Kusto level 4</p></aside></section></section><section><h2 id=azure-resources-with-tags>Azure resources with tags</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>resources
+    | where isnotempty(tags)
+    | extend teamTag = tostring(tags[&#34;team&#34;])
+    | extend serviceTag = tostring(tags[&#34;Service&#34;])
+    | extend serviceTag2 = tostring(tags[&#34;service&#34;])
+    | where name like &#34;prefix-p-&#34;
+    | project name, teamTag, serviceTag
+    | order by [&#39;serviceTag&#39;] desc</code></pre><aside class=notes><p>Kusto level 1</p><p>Business case: control panel alerting to correct team per resource.</p></aside></section></div></div><script type=text/javascript src=/reveal-hugo/object-assign.js></script>
 <a href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/print/ id=print-location style=display:none></a>
 <script type=text/javascript>var printLocationElement=document.getElementById("print-location"),link=document.createElement("link");link.rel="stylesheet",link.type="text/css",link.href=printLocationElement.href+(window.location.search.match(/print-pdf/gi)?"pdf.css":"paper.css"),document.getElementsByTagName("head")[0].appendChild(link)</script><script type=application/json id=reveal-hugo-site-params>{"highlight_cdn":"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0","highlight_theme":"color-brewer","history":true,"margin":0.2,"reveal_cdn":"https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0","slide_number":true,"templates":{"grey":{"background":"#424242","transition":"convex"}},"theme":"black","transition":"convex","transition_speed":"fast"}</script><script type=application/json id=reveal-hugo-page-params>null</script><script src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js></script>
 <script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/zoom/zoom.js></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/search/search.js></script>
 <script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.js></script>
-<script type=text/javascript>function camelize(e){return e&&Object.keys(e).forEach(function(t){newK=t.replace(/(_\w)/g,function(e){return e[1].toUpperCase()}),newK!=t&&(e[newK]=e[t],delete e[t])}),e}var revealHugoDefaults={center:!0,controls:!0,history:!0,progress:!0,transition:"slide"},revealHugoSiteParams=JSON.parse(document.getElementById("reveal-hugo-site-params").innerHTML),revealHugoPageParams=JSON.parse(document.getElementById("reveal-hugo-page-params").innerHTML),options=Object.assign({hash:!0,plugins:[RevealMarkdown,RevealNotes,RevealHighlight,RevealZoom,RevealSearch]},camelize(revealHugoDefaults),camelize(revealHugoSiteParams),camelize(revealHugoPageParams));Reveal.initialize(options)</script><script type=text/javascript src=/mermaid.min_6838052300336322795.js></script>
+<script type=text/javascript>function camelize(e){return e&&Object.keys(e).forEach(function(t){newK=t.replace(/(_\w)/g,function(e){return e[1].toUpperCase()}),newK!=t&&(e[newK]=e[t],delete e[t])}),e}var revealHugoDefaults={center:!0,controls:!0,history:!0,progress:!0,transition:"slide"},revealHugoSiteParams=JSON.parse(document.getElementById("reveal-hugo-site-params").innerHTML),revealHugoPageParams=JSON.parse(document.getElementById("reveal-hugo-page-params").innerHTML),options=Object.assign({hash:!0,width:"100%",height:"100%",margin:0,plugins:[RevealMarkdown,RevealNotes,RevealHighlight,RevealZoom,RevealSearch]},camelize(revealHugoDefaults),camelize(revealHugoSiteParams),camelize(revealHugoPageParams));Reveal.initialize(options)</script><script type=text/javascript src=/mermaid.min_6838052300336322795.js></script>
 <script type=text/javascript>mermaid.initialize({startOnLoad:!1});let render=e=>{let t=e.currentSlide.querySelectorAll(".mermaid");if(!t.length)return;t.forEach(e=>{let t=e.getAttribute("data-processed");t||mermaid.init(void 0,e)})};render({currentSlide:Reveal.getCurrentSlide()}),Reveal.addEventListener("slidechanged",render),Reveal.addEventListener("ready",render)</script></body></html>

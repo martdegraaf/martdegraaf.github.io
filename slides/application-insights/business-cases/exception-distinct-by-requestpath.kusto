@@ -1,0 +1,9 @@
+exceptions
+| extend reservation = tostring(customDimensions.RequestPath)
+| distinct reservation, outerMessage
+| project reservation, outerMessage
+
+
+// tostring is important on customDimensions
+// I wanted to know what endpoints GET /{id} where called with an error.
+// Then i communicated those Ids to the person who could fix the data.

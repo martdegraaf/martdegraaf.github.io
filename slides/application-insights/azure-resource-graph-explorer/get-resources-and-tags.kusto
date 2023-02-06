@@ -1,0 +1,8 @@
+resources
+    | where isnotempty(tags)
+    | extend teamTag = tostring(tags["team"])
+    | extend serviceTag = tostring(tags["Service"])
+    | extend serviceTag2 = tostring(tags["service"])
+    | where name like "prefix-p-"
+    | project name, teamTag, serviceTag
+    | order by ['serviceTag'] desc
