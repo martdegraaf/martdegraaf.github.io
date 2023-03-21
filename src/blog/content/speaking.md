@@ -10,7 +10,8 @@ disableShare: true
 
 ## Upcoming engagements
 
-None at this time.
+- 4 April 2023 - [DevCampNoord](https://devnetnoord.nl/).
+<!-- None at this time. -->
 
 ### Current sessions
 
