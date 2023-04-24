@@ -10,8 +10,14 @@ transition = "convex"
 transition_speed = "fast"
 reveal_cdn = "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0"
 highlight_cdn = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0"
+custom_theme = "custom-theme.scss"
+custom_theme_compile = true
 
 # used in content/template-example
-[reveal_hugo.templates.grey]
+[params.reveal_hugo.templates.grey]
 background = "#424242"
 transition = "convex"
+
+[params.reveal_hugo.templates.blue]
+background = "#0011DD"
+transition = "zoom"

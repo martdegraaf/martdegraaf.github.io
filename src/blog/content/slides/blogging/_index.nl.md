@@ -2,6 +2,11 @@
 title = "Blogging"
 outputs = ["Reveal"]
 author = "Mart de Graaf"
+
+[reveal_hugo]
+background_color = "#0011DD"
+#custom_theme = "custom-theme.scss"
+#custom_theme_compile = true
 +++
 
 # Blogging
@@ -40,53 +45,3 @@ Speak trough the agenda.
 - Datum waarop je gepost hebt!
 
 ---
-
-# SEO
-
-- Metadata
-- - Discription
-- -  Titel
-- Link share preview
-- Links: docs en related posts
-- 1 url per post
-
----
-
-Tekst
-	• Tone of voice (en wees daar consistent in)
-	• Cut the chitchat (Welkom op mijn blog)
-	• Gebruik spell checkers
-	• Gebruik Grammarly of iets vergelijkbaars
-
----
-
-# Do's & Don'ts
-Do's:
-- Vergeet de nadelen van je oplossing niet te vermelden
-- Vermeld duidelijk de scope: wanneer is je verhaal toepasbaar (en wanneer niet)
-- Onderbouw je mening; link naar anderen, vermeld boeken
-- Attribution : ere wie ere toekomt!
-- Demo project op Github
- 
-Don'ts:
-- Klanten of personen ongevraagd bij naam noemen
-- Secrets en resource names in code of screenshots
-- [Don't give bile a permalink](https://www.hanselman.com/blog/dont-give-bile-a-permalink-finding-balance-within-the-no-asshole-rule) (Scott Hanselman)
-
----
-
-# Soorten posts
-- Hands on
-- Conceptueel
-- Series
-
----
-
-# Onderwerp
-- Eigen ervaringen
- __Ja het is ok om te posten wat een ander al heeft beschreven.__
-- Technisch
-- Team
-- Proces
-- Career advice
-- Personal development
