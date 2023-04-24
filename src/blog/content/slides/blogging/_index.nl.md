@@ -27,7 +27,8 @@ Speak trough the agenda.
 
 ---
 
-Visueel:
+# Visueel
+
 - Fonts, kleuren en toegankelijkheid
 - Kopjes, minstens 3 levels
 - Whitespace
@@ -40,10 +41,11 @@ Visueel:
 
 ---
 
-SEO
+# SEO
+
 - Metadata
-		○ Discription
-		○ Titel
+- - Discription
+- -  Titel
 - Link share preview
 - Links: docs en related posts
 - 1 url per post
