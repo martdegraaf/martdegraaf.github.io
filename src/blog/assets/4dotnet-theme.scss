@@ -1,12 +1,12 @@
 
 // Default mixins and settings -----------------
-@import "../../../../reveal.js/css/theme/template/mixins";
-@import "../../../../reveal.js/css/theme/template/settings";
+@import "../../revealjs-theme-template/mixins.scss";
+@import "../../revealjs-theme-template/settings.scss";
 // ---------------------------------------------
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #0011DD;
+$backgroundColor: #1226AA;
 
 $mainColor: #fff;
 $headingColor: #fff;
@@ -32,5 +32,5 @@ $heading4Size: 1.0em;
 
 
 // Theme template ------------------------------
-@import "../../../../reveal.js/css/theme/template/theme";
+@import "../../revealjs-theme-template/theme.scss";
 // ---------------------------------------------
