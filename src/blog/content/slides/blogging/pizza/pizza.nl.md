@@ -8,7 +8,7 @@ transition = "zoom"
 
 {{% reveal/section %}}
 
-{{% reveal/slide background-image="images/pizza.nl.png" background-size="100px" background-repeat="repeat" %}}
+{{% reveal/slide background-image="/images/pizza.png" background-size="100px" background-repeat="repeat" %}}
 
 # 🍕.slice()
 

@@ -8,8 +8,11 @@ weight = 1
 {{% reveal/slide transition="zoom" transition-speed="fast" %}}
 
 # Whatsapp poll
+{{ $image := resources.Get "whatsapp_poll.nl.png" }}
+![Whatsapp poll]({{ $image.RelPermalink }})
 
-![Whatsapp poll](images/whatsapp_poll.nl.png)
+
+![Whatsapp poll](whatsapp_poll.nl.png)
 
 ---
 
