@@ -1,12 +1,12 @@
 +++
-weight = 4
+weight = 5
 +++
 
 {{% reveal/section %}}
 
 {{% reveal/slide id="optimalisatie" %}}
 
-# :search: Optimalisatie
+# 🔍 Optimalisatie
 
 
 ---

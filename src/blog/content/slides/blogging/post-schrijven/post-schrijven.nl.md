@@ -38,7 +38,4 @@ weight = 3
 - Gebruik spell checkers
 - Gebruik Grammarly of iets vergelijkbaars
 
----
-
-
 {{% /reveal/section %}}

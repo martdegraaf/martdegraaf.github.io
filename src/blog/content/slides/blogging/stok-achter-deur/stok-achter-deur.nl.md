@@ -12,5 +12,11 @@ weight = 3
 
 # Buddy
 
+---
+
+# Habits
+
+- Think with the end in mind - Stephen Covey
+
 
 {{% /reveal/section %}}

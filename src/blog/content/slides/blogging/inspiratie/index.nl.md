@@ -1,5 +1,5 @@
 +++
-weight = 3
+weight = 4
 +++
 
 {{% reveal/section %}}
@@ -7,7 +7,7 @@ weight = 3
 {{% reveal/slide id="inspiratie" %}}
 
 
-:chopsticks: Inspiratie!
+# :bulb: Inspiratie!
 
 ---
 
