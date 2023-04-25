@@ -20,11 +20,12 @@ weight = 1
 
 # Agenda
 
-1. [Motivatie & inspiratie](#inspiratie)
-1. [Post schrijven](#post-schrijven)
-1. [Optimalisatie](#optimalisatie)
-1. [Stok achter de deur](#stok-achter-deur)
-1. [Pizza](#pizza)
+1. [💡 Motivatie & inspiratie](#inspiratie)
+1. [📒 Post schrijven](#post-schrijven)
+1. [🔍 Optimalisatie](#optimalisatie)
+1. [🏑 Stok achter de deur](#stok-achter-deur)
+1. [🤖 Artificial intelligence](#chatgpt)
+1. [🍕 Pizza](#pizza)
 
 ---
 
