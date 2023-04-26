@@ -21,5 +21,9 @@ weight = 8
 
 # Prompts
 
+```text
+Geef mij 5 onderwerpen die mij kunnen helpen als software engineer waarover ik kan bloggen.
+```
+
 
 {{% /reveal/section %}}
