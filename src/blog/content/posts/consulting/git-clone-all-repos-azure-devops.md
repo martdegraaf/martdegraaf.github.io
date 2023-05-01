@@ -1,12 +1,12 @@
 ---
 title: "Clone All Git Repos from Azure Devops"
 slug: "git-clone-all-repos-azure-devops"
-date: 2022-11-09T01:14:56+01:00
-publishdate: 2022-11-09T01:14:56+01:00
-draft: true
+date: 2023-04-28T18:14:56+01:00
+publishdate: 2023-04-28T18:14:56+01:00
+draft: false
 author: ["Mart de Graaf"]
 tags: ["Git"]
-summary: "Learn how to get all Repos from Azure DevOps using"
+summary: "Learn how to clone all Repos from Azure DevOps using PowerShell"
 ## Toc
 ShowToc: true
 TocOpen: true
@@ -20,9 +20,62 @@ ShowWordCount: true
 series: ['Consultant tips']
 ---
 
-When you are a consultant and switching to a new client. It seems handy to clone all the repositories on your first day. When you have every repo cloned, you can do whatever you're paid for.
+As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
 
-## Configuration
+[Skip to Code](#Code)
+
+## Using scripting for common tasks
+
+In the world of microservices, we choose to duplicate some of the plumbing. When you want to change multiple repos knowledge on scripting can be helpful. In this series, I explored with the use of Powershell how to automate some tasks.
+
+Some examples are:
+
+- Updating multiple NuGet packages.
+- Enforcing certain `Nuget.config` configurations.
+- Renaming business terminology on multiple branches.
+
+## Organizing your Git repos
+
+When working for multiple clients or even just having private projects next to your client projects it can come in handy to organize your git repositories. For some Frontend repositories, the path with node_modules was too long and that forced me to place my folders on the Disk level. A path for a project for me would look like `C:\Git\`{ClientName}\{RepositoryName}`.
+
+```text
+C:\Git
+ ┣ Client1
+ ┃ ┣ Client1.Repository1
+ ┃ ┣ Client1.Repository2
+ ┃ ┗ Client1.Repository3
+ ┣ Client2
+ ┃ ┣ Client2.Repository1
+ ┃ ┗ Client2.Repository2
+ ┗ private
+ ┃ ┣ Blog
+ ┃ ┗ Demo
+```
+
+### Automating
+
+With this structure you could automate actions over multiple repositories.
+
+```cmd
+git checkout main
+git pull
+git checkout -b fix/nugetconfig
+
+# DO NECESSARY CHANGE in nuget.config.
+
+git mv -f NuGet.config nuget.config
+git add *
+
+git commit -m "Only use private Nuget upstream"
+git push --set-upstream origin fix/nugetconfig
+git checkout main
+```
+
+## Code
+
+This code example consists of a Powershell script and a configuration file with settings and Authorization.
+
+### Configuration
 
 ```text
 [General]
@@ -40,9 +93,9 @@ PruneLocalBranches=true
 
 ## The script
 
-The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories. __System explained__
+The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories.
 
-```ps1 {linenos=table}  
+{{< highlight powershell "linenos=table" >}}
 # Read configuration file
 Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process { 
     $k = [regex]::split($_,'='); 
@@ -98,7 +151,7 @@ foreach ($entry in $json.value) {
 }
 
 (az repos list --query '[].{Name:name, Url:remoteUrl}' -o json | ConvertFrom-Json) | %{ git clone $_.Url }
-```
+{{< / highlight >}}
 
 ## Conclusion and discussion
 
