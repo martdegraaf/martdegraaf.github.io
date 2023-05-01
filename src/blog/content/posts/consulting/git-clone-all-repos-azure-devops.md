@@ -54,7 +54,7 @@ C:\Git
 
 ### Automating
 
-With this structure you could automate actions over multiple repositories.
+With this structure you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out my article about the binary replacement tool.
 
 ```cmd
 git checkout main
