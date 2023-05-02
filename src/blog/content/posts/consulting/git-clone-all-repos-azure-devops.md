@@ -1,5 +1,5 @@
 ---
-title: "Clone All Git Repos from Azure Devops"
+title: "Efficiently Git Clone All Repositories from Azure DevOps using PowerShell: A Step-by-Step Guide"
 slug: "git-clone-all-repos-azure-devops"
 date: 2023-04-28T18:14:56+01:00
 publishdate: 2023-04-28T18:14:56+01:00
@@ -36,7 +36,7 @@ Some examples are:
 
 ## Organizing your Git repos
 
-When working for multiple clients or even just having private projects next to your client projects it can come in handy to organize your git repositories. For some Frontend repositories, the path with node_modules was too long and that forced me to place my folders on the Disk level. A path for a project for me would look like `C:\Git\`{ClientName}\{RepositoryName}`.
+When working for multiple clients or even just having private projects next to your client projects it can come in handy to organize your git repositories. For some Frontend repositories, the path with node_modules was too long and that forced me to place my folders on the Disk level. A path for a project for me would look like `C:\Git\{ClientName}\{RepositoryName}`.
 
 ```text
 C:\Git
@@ -56,7 +56,7 @@ C:\Git
 
 With this structure you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out my article about the binary replacement tool.
 
-```cmd
+```cmd {linenos=table}
 git checkout main
 git pull
 git checkout -b fix/nugetconfig
@@ -73,11 +73,13 @@ git checkout main
 
 ## Code
 
-This code example consists of a Powershell script and a configuration file with settings and Authorization.
+To clone all repositories in Azure DevOps we can use the REST API to find all existing repositories. The code example consists of a Powershell script and a configuration file with settings and Authorization.
 
 ### Configuration
 
-```text
+Make sure to create a file named: `CloneAllRepos.config` with the contents written below. Make sure every parameter is configured as your workspace.
+
+```text {linenos=table}
 [General]
 Url=https://dev.azure.com/MART/project
 Username=me@example.com
@@ -152,6 +154,14 @@ foreach ($entry in $json.value) {
 
 (az repos list --query '[].{Name:name, Url:remoteUrl}' -o json | ConvertFrom-Json) | %{ git clone $_.Url }
 {{< / highlight >}}
+
+### Run it
+
+Run it using a cmd prompt.
+
+```cmd
+./CloneAllRepos.ps1
+```
 
 ## Conclusion and discussion
 
