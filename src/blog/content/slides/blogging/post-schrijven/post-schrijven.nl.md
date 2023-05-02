@@ -8,7 +8,6 @@ weight = 3
 
 # Het schrijven van een post
 
-
 ---
 
 # Soorten posts
@@ -29,6 +28,35 @@ weight = 3
 - Career advice
 - Personal development
 
+---
+
+# Pakkende titels
+
+- Bicep getting started
+- Bicep vs ARM
+- Evolving your ARM to bicep
+- I will never use ARM again.
+
+
+{{% reveal/note %}}
+
+Slugs zijn ook belangrijk. Je wilt dat deze blijven werken maar ook waarde toevoegen aan de pagina inhoud. Ook voor SEO.
+
+{{% /reveal/note %}}
+
+---
+
+# Eerste paragraaf
+
+1. Probleem
+1. Empathie
+1. Oplossing
+
+{{% reveal/note %}}
+
+Mensen lezen volgens het F patroon. Zorg ervoor dat mde lezer aangetrokken is in het eerste stuk van je artikel.
+
+{{% /reveal/note %}}
 ---
 
 # Tekst
