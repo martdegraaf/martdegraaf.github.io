@@ -22,7 +22,7 @@ series: ['Consultant tips']
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
 
-[Skip to Code](#Code)
+[Skip to code sample](#code)
 
 ## Using scripting for common tasks
 
@@ -54,7 +54,7 @@ C:\Git
 
 ### Automating
 
-With this structure you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out my article about the binary replacement tool.
+With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out my article about the binary replacement tool.
 
 ```cmd {linenos=table}
 git checkout main
@@ -95,7 +95,7 @@ PruneLocalBranches=true
 
 ## The script
 
-The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories.
+The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories. This script also prunes local branches when `PruneLocalBranches` is set to true.
 
 {{< highlight powershell "linenos=table" >}}
 # Read configuration file
@@ -157,7 +157,7 @@ foreach ($entry in $json.value) {
 
 ### Run it
 
-Run it using a cmd prompt.
+Run the script it using a cmd prompt.
 
 ```cmd
 ./CloneAllRepos.ps1
@@ -165,5 +165,4 @@ Run it using a cmd prompt.
 
 ## Conclusion and discussion
 
-__Solution explained__
 Make your workflow faster with scripting and your knowledge of the Git CLI. When you have to do repetitive tasks such as updating a single package on multiple (microservice-like) repositories, try to automate it. It may for the first occurrence not be profitable, but after three times, you will be faster than doing it manually.
