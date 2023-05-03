@@ -23,6 +23,12 @@ A commit on the main branch will (also) be deployed to GitHub pages.
 `hugo new posts/nederlandse-blog-post.nl.md`
 
 
+## Run itt
+
+```cmd
+hugo server --buildDrafts --buildFuture
+```
+
 ## Links to start blogging
 
 1. [Emoiji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
