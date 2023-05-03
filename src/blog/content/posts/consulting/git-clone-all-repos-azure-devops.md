@@ -172,7 +172,7 @@ Some examples are:
 
 ### Automating
 
-With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out {{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}} .
+With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out [my article using binary repalce]({{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}}).
 
 ```cmd {linenos=table}
 git checkout main
