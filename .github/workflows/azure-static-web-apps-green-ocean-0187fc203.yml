@@ -25,6 +25,7 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+          set-safe-directory: '/github/workflow'
       # - name: "npm install, build, and test"
       #   run: | 
       #     npm install
