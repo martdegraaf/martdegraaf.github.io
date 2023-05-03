@@ -15,11 +15,15 @@ weight = 8
 1. Review article
 1. Sample code
 1. Social media posts
-1. Mermaid diagrams 
+1. Mermaid diagrams
+1. Suggestions
+1. Summaries
 
 ---
 
-# Prompts
+{{% reveal/slide id="prompts" %}}
+
+ Prompts
 
 ```text
 Geef mij 5 onderwerpen om over te bloggen

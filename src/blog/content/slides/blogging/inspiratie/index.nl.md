@@ -22,7 +22,8 @@ weight = 4
 # Onderwerp
 
 - Eigen ervaringen
- _Ja het is ok om te posten wat een ander al heeft beschreven._
+ _Ja het is ok om te posten wat
+ een ander al heeft beschreven._
 - Technisch
 - Team
 - Proces
@@ -30,6 +31,8 @@ weight = 4
 - Personal development
 
 ---
+
+{{% reveal/slide id="mindmap" %}}
 
 # Maak een mindmap
 
