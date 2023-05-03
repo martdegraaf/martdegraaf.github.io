@@ -39,6 +39,7 @@ Het is belangrijk wat je exposed via je sitemap voor de zoekbaarheid en vindbaar
 - Metadata
   - Description
   - Titel
+  - Datum
 - Link share preview
 - Links: docs en related posts
 - 1 url per post
