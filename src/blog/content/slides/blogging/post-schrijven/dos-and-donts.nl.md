@@ -8,7 +8,7 @@ weight = 4
 
 ---
 
-# Do's:
+# Do's
 
 - Vergeet de nadelen van je oplossing niet te vermelden
 - Vermeld duidelijk de scope: wanneer is je verhaal toepasbaar (en wanneer niet)
@@ -18,7 +18,7 @@ weight = 4
 
 ---
 
-# Don'ts:
+# Don'ts
 
 - Klanten of personen ongevraagd bij naam noemen
 - Secrets en resource names in code of screenshots

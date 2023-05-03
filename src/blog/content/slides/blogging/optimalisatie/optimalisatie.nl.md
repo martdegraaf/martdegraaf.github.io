@@ -28,10 +28,9 @@ Wat laat je zien?
 
 
 {{% reveal/note %}}
-
 Het is belangrijk wat je exposed via je sitemap voor de zoekbaarheid en vindbaarheid van je pagina's. en zeker of ze de juiste content tonen.
-
 {{% /reveal/note %}}
+
 ---
 
 # SEO

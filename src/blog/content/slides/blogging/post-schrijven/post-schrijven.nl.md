@@ -37,7 +37,6 @@ weight = 3
 - Evolving your ARM to bicep
 - I will never use ARM again.
 
-
 {{% reveal/note %}}
 
 Slugs zijn ook belangrijk. Je wilt dat deze blijven werken maar ook waarde toevoegen aan de pagina inhoud. Ook voor SEO.
@@ -54,7 +53,9 @@ Slugs zijn ook belangrijk. Je wilt dat deze blijven werken maar ook waarde toevo
 
 {{% reveal/note %}}
 
-Mensen lezen volgens het F patroon. Zorg ervoor dat mde lezer aangetrokken is in het eerste stuk van je artikel.
+Mensen lezen volgens het F patroon. Zorg ervoor dat de lezer aangetrokken is in het eerste stuk van je artikel.
+
+De Formule om in de eerste paragraaf om deze 3 punten toe te passen wordt besproken in 'Technical Blogging'.
 
 {{% /reveal/note %}}
 
@@ -62,7 +63,7 @@ Mensen lezen volgens het F patroon. Zorg ervoor dat mde lezer aangetrokken is in
 
 # Tekst
 
-- Tone of voice (en wees daar consistent in)
+- Tone of voice _(en wees daar consistent in)_
 - Cut the chitchat, zoals: "Welkom op mijn blog"
 - Gebruik duidelijke taal
 - Presenteer geen mening als feit
@@ -70,10 +71,12 @@ Mensen lezen volgens het F patroon. Zorg ervoor dat mde lezer aangetrokken is in
 - Gebruik Grammarly of iets vergelijkbaars
 
 {{% reveal/note %}}
+Vermijd vage termen zoals 'veel', 'vaak', 'soms'.
 
-Vermijd vage termen zoals 'veel', 'vaak', 'soms'. 
+Scan your technical writing for words such as easy, painless, straightforward, trivial, simple and just.
+
+https://justsimply.dev/
 
 {{% /reveal/note %}}
-
 
 {{% /reveal/section %}}

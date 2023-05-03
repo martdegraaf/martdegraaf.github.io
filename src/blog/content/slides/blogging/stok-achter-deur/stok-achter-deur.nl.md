@@ -16,13 +16,13 @@ weight = 3
 
 # Ms Teams Channel
 
-![MS Teams](ms-teams.nl.png)
+![MS Teams](stok-achter-de-deur/img/ms-teams.nl.png)
 
 ---
 
 # Enable notifications
 
-![MS Teams notifications enable](ms-teams-notifications.nl.png)
+![MS Teams notifications enable](stok-achter-de-deur/img/ms-teams-notifications.nl.png)
 
 ---
 

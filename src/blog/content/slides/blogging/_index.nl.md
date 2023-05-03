@@ -1,7 +1,7 @@
 +++
 title = "Blogging"
 outputs = ["Reveal"]
-author: ["Mart de Graaf", "Marnix van Valen"]
+author = ["Mart de Graaf", "Marnix van Valen"]
 [logo]
 src = "/images/4dotnet_logo.png"
 diag = "2%"

@@ -14,7 +14,7 @@ Een blog post bestaat uit elementen die samen de informatie tot een inzichtelijk
 
 ---
 
-![Text](/slides/blogging/visual-blog-full.png)
+![Text](post-schrijven/img/visual-blog-full.nl.png)
 
 ---
 
@@ -29,7 +29,7 @@ Een blog post bestaat uit elementen die samen de informatie tot een inzichtelijk
 
 ---
 
-![Quotes](/slides/blogging/typography-text-4.png)  
+![Quotes](post-schrijven/img/typography-text-4.nl.png)  
 _Tekstblokken en stijlen_
 
 ---
@@ -49,17 +49,17 @@ Pull quotes zijn tekstkaders die buiten de hoofdtekst staan en extra toelichting
 
 ---
 
-![Quote](/slides/blogging/typography-quote.png)  
+![Quote](post-schrijven/img/typography-quote.nl.png)  
 _Quote_
 
 ---
 
-![Note](/slides/blogging/typography-note.png)  
+![Note](post-schrijven/img/typography-note.nl.png)  
 _Note_
 
 ---
 
-![Alert](/slides/blogging/typography-alerts-1.png)  
+![Alert](post-schrijven/img/typography-alerts-1.nl.png)  
 _Alerts_
 
 ---
@@ -71,7 +71,7 @@ _Alerts_
 - GitHub Gists
 
 --- 
-![Snippets](/slides/blogging/code-inline-snippet.png)  
+![Snippets](post-schrijven/img/code-inline-snippet.nl.png)  
 _Inline en snippet_
 
 {{% reveal/note %}}
@@ -79,7 +79,7 @@ Let op de formatting van de code, voeg comments toe. Copy/paste moet mogelijk zi
 {{% /reveal/note %}}
 
 ---
-![Snippets](/slides/blogging/code-gist.png)  
+![Snippets](post-schrijven/img/code-gist.nl.png)  
 _Gist_
 
 {{% reveal/note %}}
@@ -96,7 +96,7 @@ Afbeeldingen maken content aantrekkelijk. Gebruik gratis foto's of eigen materia
 {{% /reveal/note %}}
 
 ---
-![Snippets](/slides/blogging/visual-video-1.png)  
+![Snippets](post-schrijven/img/visual-video-1.nl.png)  
 _Media_
 
 {{% reveal/note %}}
@@ -105,6 +105,7 @@ Bedenk of je een functie wilt om videos en afbeeldingen groter of full screen te
 
 ---
 ## Witruimte
+
 - Het verschil tussen rommelig en overzichtelijk
 - Vrije ruimte rondom tekst en media
 - Ruimte tussen de regels  
@@ -113,7 +114,7 @@ Bedenk of je een functie wilt om videos en afbeeldingen groter of full screen te
   💡 _Kortere tekstregels lezen makkelijker_
 
 ---
-![Snippets](/slides/blogging/visual-image-1.png)  
+![Snippets](post-schrijven/img/visual-image-1.nl.png)  
 _Whitespace_
 
 {{% reveal/note %}}
@@ -136,12 +137,15 @@ Let op de ruimte tussen header, paragraaf en afbeelding. Tekst kade vult niet ui
   ```
 - Alt tekst bij afbeeldingen en figuren  
   ```html
-  <img src="A black and white cat">
+  <img alt="A black and white cat" src="cats.png">
   ```
 
 {{% reveal/note %}}
 Tekst moet niet wegvallen tegen de achtergrond. Links moeten herkenbaar zijn.
 Denk ook aan touch devices waar geen hover is.
+
+Probeer eens de tab index van jouw posts uit, klopt deze met wat je verwacht?
+Zijn links "_blank" of niet? (Open in new tab)
 {{% /reveal/note %}}
 
 {{% /reveal/section %}}
