@@ -20,8 +20,8 @@ weight = 3
 
 # Onderwerp
 
-- Eigen ervaringen
- _Ja het is ok om te posten wat een ander al heeft beschreven._
+- Eigen ervaringen  
+ _Ja, het is ok om te posten wat een ander al heeft beschreven._
 - Technisch
 - Team
 - Proces
@@ -57,13 +57,23 @@ Slugs zijn ook belangrijk. Je wilt dat deze blijven werken maar ook waarde toevo
 Mensen lezen volgens het F patroon. Zorg ervoor dat mde lezer aangetrokken is in het eerste stuk van je artikel.
 
 {{% /reveal/note %}}
+
 ---
 
 # Tekst
 
 - Tone of voice (en wees daar consistent in)
-- Cut the chitchat (Welkom op mijn blog)
+- Cut the chitchat, zoals: "Welkom op mijn blog"
+- Gebruik duidelijke taal
+- Presenteer geen mening als feit
 - Gebruik spell checkers
 - Gebruik Grammarly of iets vergelijkbaars
+
+{{% reveal/note %}}
+
+Vermijd vage termen zoals 'veel', 'vaak', 'soms'. 
+
+{{% /reveal/note %}}
+
 
 {{% /reveal/section %}}
