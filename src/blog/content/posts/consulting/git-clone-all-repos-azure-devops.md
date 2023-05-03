@@ -22,17 +22,7 @@ series: ['Consultant tips']
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
 
-[Skip to code sample](#code)
-
-## Using scripting for common tasks
-
-In the world of microservices, we choose to duplicate some of the plumbing. When you want to change multiple repos knowledge on scripting can be helpful. In this series, I explored with the use of Powershell how to automate some tasks.
-
-Some examples are:
-
-- Updating multiple NuGet packages.
-- Enforcing certain `Nuget.config` configurations.
-- Renaming business terminology on multiple branches.
+[Skip to the code sample](#code)
 
 ## Organizing your Git repos
 
@@ -52,24 +42,21 @@ C:\Git
  ┃ ┗ Demo
 ```
 
-### Automating
+### Using workspaces in Git Fork
 
-With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out my article about the binary replacement tool.
+TODO write about Fork workspaces with above structure
 
-```cmd {linenos=table}
-git checkout main
-git pull
-git checkout -b fix/nugetconfig
+### Configure your git username
 
-# DO NECESSARY CHANGE in nuget.config.
+Depending on the network infra, you will need to configure your commit username to the email of your client.
+Some instances block all git pushes from committers with a different domain.
 
-git mv -f NuGet.config nuget.config
-git add *
-
-git commit -m "Only use private Nuget upstream"
-git push --set-upstream origin fix/nugetconfig
-git checkout main
+```console
+git config [--global] user.email "username@corperate.com"
 ```
+
+TODO write about conditional usernames
+TODO write about later in article in script.
 
 ## Code
 
@@ -92,10 +79,20 @@ OrgName=MART
 [GitOptions]
 PruneLocalBranches=true
 ```
+TODO Add GitUsername setting per repo
 
-## The script
 
-The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories. This script also prunes local branches when `PruneLocalBranches` is set to true.
+### CloneAllRepos.ps1
+
+When I first encountered the idea to clone all repos idea it was on a corporate wiki. After some backtracing, I found the source: [Script to clone all Git repositories from your Azure DevOps collection](https://blog.rsuter.com/script-to-clone-all-git-repositories-from-your-vsts-collection/).
+
+The PowerShell script below does a `git pull` for existing repositories and performs a `git clone` on untracked repositories.
+
+I edited the script to fit my needs with some extra parameters.
+
+1. It puts the repos in the given directory in settings.
+1. It prunes local branches when `PruneLocalBranches` is set to true.
+1. It sets the git username email to the configured `GitUsername` under GitOptions, it's ignored when empty.
 
 {{< highlight powershell "linenos=table" >}}
 # Read configuration file
@@ -161,6 +158,35 @@ Run the script it using a cmd prompt.
 
 ```cmd
 ./CloneAllRepos.ps1
+```
+
+## Using scripting for common tasks
+
+In the world of microservices, we choose to duplicate some of the plumbing. When you want to change multiple repos knowledge on scripting can be helpful. In this series, I explored how to automate git tasks with PowerShell.
+
+Some examples are:
+
+- Updating multiple NuGet packages.
+- Enforcing certain `Nuget.config` configurations.
+- Renaming business terminology on multiple branches.
+
+### Automating
+
+With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out {{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}} .
+
+```cmd {linenos=table}
+git checkout main
+git pull
+git checkout -b fix/nugetconfig
+
+# DO NECESSARY CHANGE in nuget.config.
+
+git mv -f NuGet.config nuget.config
+git add *
+
+git commit -m "Only use private Nuget upstream"
+git push --set-upstream origin fix/nugetconfig
+git checkout main
 ```
 
 ## Conclusion and discussion
