@@ -26,8 +26,8 @@ jobs:
           submodules: true
           fetch-depth: 0
           set-safe-directory: true
-       - name: "git set safe directory"
-         run: | 
+      - name: "git set safe directory"
+        run: | 
           git config --global --add safe.directory *
       #   working-directory: "src/blog/"
       - name: Build And Deploy
