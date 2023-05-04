@@ -28,7 +28,7 @@ jobs:
           set-safe-directory: true
       - name: "git set safe directory"
         run: | 
-          git config --global --add safe.directory *
+          git config --global --add safe.directory '*'
       #   working-directory: "src/blog/"
       - name: Build And Deploy
         id: builddeploy
