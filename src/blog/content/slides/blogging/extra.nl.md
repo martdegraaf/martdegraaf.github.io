@@ -2,6 +2,32 @@
 weight = 20
 +++
 
+# Idea bin
+
+1. Screen to GIF
+1. Disclaimer?
+1. Traffic meten
+1. Traffic genereren
+1. How to overcome Imposter syndrome while blogging.
+
+---
+
+# Hosting
+
+1. Self-hosting
+1. Netlify
+1. Azure Static Web Apps
+1. Github Pages
+1. Medium
+
+{{% reveal/note %}}
+Om je blog naar de wereld te krijgen moet de blog ergens draaien.
+
+Elk platform heeft eigen voor en nadelen.
+{{% /reveal/note %}}
+
+---
+
 # Document and plan your workflow:
 
 1. New article: `hugo new posts/your-cool-article.md`
