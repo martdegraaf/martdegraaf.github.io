@@ -3,9 +3,9 @@ title: "Efficiently Git Clone All Repositories from Azure DevOps using PowerShel
 slug: "git-clone-all-repos-azure-devops"
 date: 2023-04-28T18:14:56+01:00
 publishdate: 2023-04-28T18:14:56+01:00
-draft: false
+draft: true
 author: ["Mart de Graaf"]
-tags: ["Git"]
+tags: ["Git", "Powershell", "Azure DevOps"]
 summary: "Learn how to clone all Repos from Azure DevOps using PowerShell"
 ## Toc
 ShowToc: true
@@ -45,6 +45,9 @@ C:\Git
 ### Using workspaces in Git Fork
 
 TODO write about Fork workspaces with above structure
+Fork is a tool that will help you.
+
+TODO Workspaces FORK image
 
 ### Configure your git username
 
@@ -55,8 +58,7 @@ Some instances block all git pushes from committers with a different domain.
 git config [--global] user.email "username@corperate.com"
 ```
 
-TODO write about conditional usernames
-TODO write about later in article in script.
+In the script to clone all repositories you can also enable the script to set the committer email for every repository.
 
 ## Code
 
@@ -77,9 +79,10 @@ GitPath=C:\Git\
 OrgName=MART
 
 [GitOptions]
-PruneLocalBranches=true
+PruneRemoteBranches=false # Optional defaults to false
+PruneLocalBranches=false # Optional defaults to false
+GitEmail=username@corperate.com
 ```
-TODO Add GitUsername setting per repo
 
 
 ### CloneAllRepos.ps1
@@ -110,6 +113,7 @@ $password = $h.Get_Item("Password")
 $gitPath = $h.Get_Item("GitPath")
 $orgName = $h.Get_Item("OrgName")
 $pruneLocalBranches = $h.Get_Item("PruneLocalBranches") -eq "true"
+$gitEmail = $h.Get_Item("GitEmail")
 
 # Retrieve list of all repositories
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
@@ -140,10 +144,17 @@ foreach ($entry in $json.value) {
 
         $branchname = git remote show origin | grep 'HEAD branch' | cut -d' ' -f5
 
-        if($pruneLocalBranches){
+        if($pruneRemoteBranches){
+			Write-Host "Pruning remote $name"
             git remote prune origin
+		}
+        if($pruneLocalBranches){
+			Write-Host "Pruning local branches $name"
             # this command removes all merged local branches
-            git branch --merged | grep -v "master" >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
+            git branch --merged | ? { $_ -notlike "*master" } | Out-File -FilePath "/tmp/merged-branches" -Encoding utf8; vi /tmp/merged-branches; Get-Content "/tmp/merged-branches" | %{ git branch -d $_ }
+        }
+        if($gitEmail){
+            git config user.email "$gitEmail"
         }
         set-location $initpath
     }
@@ -154,9 +165,9 @@ foreach ($entry in $json.value) {
 
 ### Run it
 
-Run the script it using a cmd prompt.
+Run the script it using a PowerShell prompt for example using Windows Terminal.
 
-```cmd
+```PowerShell
 ./CloneAllRepos.ps1
 ```
 
