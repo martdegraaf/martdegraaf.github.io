@@ -14,7 +14,7 @@ Een blog post bestaat uit elementen die samen de informatie tot een inzichtelijk
 
 ---
 
-![Text](post-schrijven/img/visual-blog-full.nl.png)
+![Text](post-schrijven/img/visual-blog-full.nl.jpg)
 
 ---
 
@@ -96,7 +96,7 @@ Afbeeldingen maken content aantrekkelijk. Gebruik gratis foto's of eigen materia
 {{% /reveal/note %}}
 
 ---
-![Snippets](post-schrijven/img/visual-video-1.nl.png)  
+![Snippets](post-schrijven/img/visual-video-1.nl.jpg)  
 _Media_
 
 {{% reveal/note %}}
@@ -114,7 +114,7 @@ Bedenk of je een functie wilt om videos en afbeeldingen groter of full screen te
   💡 _Kortere tekstregels lezen makkelijker_
 
 ---
-![Snippets](post-schrijven/img/visual-image-1.nl.png)  
+![Snippets](post-schrijven/img/visual-image-1.nl.jpg)  
 _Whitespace_
 
 {{% reveal/note %}}
