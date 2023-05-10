@@ -46,32 +46,14 @@
 {{- if $template -}}
   {{- range $key, $value := ($scratch.Get "template") }}
     {{- $attrName := cond (in $noPrefix $key) $key (delimit (slice "data" $key) "-") }}
-	 {{ $path:= $value }}
-	 {{- if eq $attrName "data-background-image" -}} 
-	 {{-   if $path -}}
-	 {{-     $matchedFile := $.Page.Resources.GetMatch $path -}}
-	 {{-     if $matchedFile  -}}
-	 {{-       $path = path.Join "/" ($.Page.File.Dir | lower) $path -}}
-	 {{-     end -}}
-	 {{-   end -}}
-	 {{- end -}}
-	 {{ $attrName | safeHTMLAttr }}="/{{ $path }}"
+    {{ $attrName | safeHTMLAttr }}="{{ $value }}"
   {{- end }}
     data-template="{{ $template }}"
 {{- end -}}
   {{- range $key, $value := $.Params -}}
     {{- if not (in $noOutput $key) -}}
       {{- $attrName := cond (in $noPrefix $key) $key (delimit (slice "data" $key) "-") }}
-		{{ $path:= $value }}
-		{{- if eq $attrName "data-background-image" -}} 
-		{{-   if $path -}}
-      {{-     $matchedFile := $.Page.Resources.GetMatch $path -}}
-      {{-     if $matchedFile  -}}
-      {{-       $path = path.Join "/" ($.Page.File.Dir | lower)  $path -}}
-      {{-     end -}}
-      {{-   end -}}
-		{{- end -}}
-      {{ $attrName | safeHTMLAttr }}="{{ $path }}"
+      {{ $attrName | safeHTMLAttr }}="{{ $value }}"
     {{- end -}}
   {{- end -}}>
   {{ $svalue | safeHTML }}

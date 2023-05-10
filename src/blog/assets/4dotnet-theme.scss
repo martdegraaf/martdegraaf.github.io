@@ -1,0 +1,41 @@
+
+// Default mixins and settings -----------------
+@import "../../revealjs-theme-template/mixins.scss";
+@import "../../revealjs-theme-template/settings.scss";
+// ---------------------------------------------
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #1226AA;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 42px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: rgba( $linkColor, 0.75 );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+
+// Theme template ------------------------------
+@import "../../revealjs-theme-template/theme.scss";
+// ---------------------------------------------
+
+.reveal ul li {
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}

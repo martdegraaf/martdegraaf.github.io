@@ -10,8 +10,7 @@ disableShare: true
 
 ## Upcoming engagements
 
-- 4 April 2023 - [DevCampNoord](https://devnetnoord.nl/).
-<!-- None at this time. -->
+None at this time.
 
 ### Current sessions
 
@@ -22,6 +21,7 @@ Contact me through any of the social channels or via Sessionize. My current sess
 
 ## Previous engagements
 
+- 4 April 2023 - [DevCampNoord](https://devnetnoord.nl/).
 - 4 November 2022 - [DotNetFriday](https://www.dotnetfriday.nl) [Recording](https://www.youtube.com/watch?v=_xgN-NAPZXo)
 - 29 September 2022 - [DevNetNoord (The Revival)](https://devnetnoord.nl/)
 - 17 October 2019 - [NoorderTest](https://noordertest.nl/)

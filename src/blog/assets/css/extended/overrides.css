@@ -6,6 +6,7 @@ main {
 .series{
     border: 1px solid #0078D3;
     border-radius: 5px;
+    margin-bottom: 2em;
 }
 .series h4{
     padding: 15px 25px 15px 15px;
@@ -28,7 +29,7 @@ main {
     display: block;
     box-shadow: none;
 }
-.series .list-group-item.active{
+.series .list-group-item.active .title{
     color: #0078D3;
     font-weight: bold;
 }
