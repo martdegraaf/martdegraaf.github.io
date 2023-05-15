@@ -43,5 +43,15 @@ Het is belangrijk wat je exposed via je sitemap voor de zoekbaarheid en vindbaar
 - Links: docs en related posts
 - 1 url per post
 
+---
+
+![Whatsapp image default](optimalisatie/img/whatsapp.nl.png)  
+![Whatsapp image](optimalisatie/img/whatsapp_2.nl.png)  
+
+_Sharing is caring_
+
+{{% reveal/note %}}
+Bij het delen is het ideaal om een ondersteunende afbeelding te gebruiken. Zorg in ieder geval voor een default.
+{{% /reveal/note %}}
 
 {{% /reveal/section %}}

@@ -11,24 +11,19 @@ weight = 4
 
 ---
 
-# Soorten posts
+# The teacher learns the most
 
-- Hands-on
-- Conceptueel
-- Series
+{{% reveal/note %}}
+Als je andere mensen moet uitleggen hoe iets werkt, moet je er altijd net iets meer vanaf weten. Het voordeel van bloggen of presenteren geeft dan ook dat je jezelf forceert om meer over een onderwerp te weten te komen door het zo op te schrijven dat lezers jouw ideeen ook begrijpen.
+{{% /reveal/note %}}
 
 ---
 
-# Onderwerp
+# Wie ben jij?
 
-- Eigen ervaringen
- _Ja het is ok om te posten wat
- een ander al heeft beschreven._
-- Technisch
-- Team
-- Proces
-- Career advice
-- Personal development
+- Waar ben je goed in?
+- Wat vind je interessant?
+- Waar zou je goed in willen worden?
 
 ---
 

@@ -9,13 +9,15 @@ weight = 11
 
 # Aan de slag
 
-- [📒 Mind map maken](#mindmap)
+- [📒 Een mindmap maken](#mindmap)
 - [👨‍💻 Getting started with Hugo](https://gohugo.io/)
-- [🤖 Use ChatGPT to get started](#prompts)
-- 💙 Help others
+  - [Hugo on Azure Static web apps](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-hugo)
+- [🤖 Vraag ChatGPT om ideen of hulp](#prompts)
+- 💙 Help anderen
 
 
 {{% reveal/note %}}
+Er zijn een aantal entry points om direct aan de slag te gaan.
 
 {{% /reveal/note %}}
 

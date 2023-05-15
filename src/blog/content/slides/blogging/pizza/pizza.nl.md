@@ -16,12 +16,5 @@ src=""
 
 # 🍕.slice()
 
----
-
-# PIza
-
-```ts
-let pi = 3.41;
-```
 
 {{% /reveal/section %}}

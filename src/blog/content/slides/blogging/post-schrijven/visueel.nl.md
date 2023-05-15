@@ -110,11 +110,15 @@ Bedenk of je een functie wilt om videos en afbeeldingen groter of full screen te
 - Vrije ruimte rondom tekst en media
 - Ruimte tussen de regels  
   💡 _Iets meer regelafstand leest makkelijker_
-- Bladspeigel - breedte van tekstblokken  
+- Bladspiegel - breedte van tekstblokken  
   💡 _Kortere tekstregels lezen makkelijker_
 
+{{% reveal/note %}}
+Jokes aside: Is in een dark theme het dan ook Zwartruimte?
+{{% /reveal/note %}}
+
 ---
-![Snippets](post-schrijven/img/visual-image-1.nl.jpg)  
+![Whitespace post voorbeeld](post-schrijven/img/visual-image-1.nl.jpg)  
 _Whitespace_
 
 {{% reveal/note %}}

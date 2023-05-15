@@ -1,12 +1,13 @@
 ---
 title: "Efficiently Git Clone All Repositories from Azure DevOps using PowerShell: A Step-by-Step Guide"
 slug: "git-clone-all-repos-azure-devops"
-date: 2023-04-28T18:14:56+01:00
-publishdate: 2023-04-28T18:14:56+01:00
-draft: true
+date: 2023-05-15T18:14:56+01:00
+publishdate: 2023-05-15T18:14:56+01:00
+draft: false
 author: ["Mart de Graaf"]
 tags: ["Git", "Powershell", "Azure DevOps"]
-summary: "Learn how to clone all Repos from Azure DevOps using PowerShell"
+#ummary: "The text should be under 160 chars and therefore no longer than this string. Two senteces is the most effective. Or some shorter sentences after each other.1234"
+summary: "Learn how to efficiently clone all Git repos in Azure DevOps with our comprehensive consulting guide. Streamline your development workflow today!"
 ## Toc
 ShowToc: true
 TocOpen: true
@@ -28,7 +29,7 @@ As a consultant, starting a new project with a client can be a daunting task. On
 
 When working for multiple clients or even just having private projects next to your client projects it can come in handy to organize your git repositories. For some Frontend repositories, the path with node_modules was too long and that forced me to place my folders on the Disk level. A path for a project for me would look like `C:\Git\{ClientName}\{RepositoryName}`.
 
-```text
+```plaintext {linenos=table}
 C:\Git
  ┣ Client1
  ┃ ┣ Client1.Repository1
@@ -44,21 +45,24 @@ C:\Git
 
 ### Using workspaces in Git Fork
 
-TODO write about Fork workspaces with above structure
-Fork is a tool that will help you.
+Fork is a tool that will help you focus on the right workload. Using the structure as discussed with Fork, you can focus on the right repositories. Cloned new repositories but not seen by Fork? Reload the whole folder using right-click and 'Rescan repositories'. Get Git Fork from [git-fork.com](https://git-fork.com/).
 
-TODO Workspaces FORK image
+![Fork Repository Manager](fork_repository_manager.png#center "Fork Repository Manager")
+
+Use Fork Workspaces to focus on the current environment. It will also help you work on private projects outside of work hours on the same workstation.
+
+![Fork Workspaces](fork_workspaces.png#center "Fork workspaces")
 
 ### Configure your git username
 
 Depending on the network infra, you will need to configure your commit username to the email of your client.
 Some instances block all git pushes from committers with a different domain.
 
-```console
+```console {linenos=table}
 git config [--global] user.email "username@corperate.com"
 ```
 
-In the script to clone all repositories you can also enable the script to set the committer email for every repository.
+In the script to clone all repositories, you can also enable the script to set the committer email for every repository.
 
 ## Code
 
@@ -68,7 +72,7 @@ To clone all repositories in Azure DevOps we can use the REST API to find all ex
 
 Make sure to create a file named: `CloneAllRepos.config` with the contents written below. Make sure every parameter is configured as your workspace.
 
-```text {linenos=table}
+```plaintext {linenos=table}
 [General]
 Url=https://dev.azure.com/MART/project
 Username=me@example.com
@@ -79,11 +83,9 @@ GitPath=C:\Git\
 OrgName=MART
 
 [GitOptions]
-PruneRemoteBranches=false # Optional defaults to false
 PruneLocalBranches=false # Optional defaults to false
 GitEmail=username@corperate.com
 ```
-
 
 ### CloneAllRepos.ps1
 
@@ -97,7 +99,7 @@ I edited the script to fit my needs with some extra parameters.
 1. It prunes local branches when `PruneLocalBranches` is set to true.
 1. It sets the git username email to the configured `GitUsername` under GitOptions, it's ignored when empty.
 
-{{< highlight powershell "linenos=table" >}}
+```PowerShell {linenos=table}
 # Read configuration file
 Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process { 
     $k = [regex]::split($_,'='); 
@@ -132,42 +134,54 @@ $json = convertFrom-JSON $resp.Content
 $initpath =  ("{0}:{1}" -f  $gitPath,$orgName)
 
 foreach ($entry in $json.value) { 
+	set-location $initpath
     $name = $entry.name 
-    Write-Host $name
+    Write-Host $name -ForegroundColor Green
+
+	if($entry.isDisabled){
+		Write-Host "Skipping disabled repo: '$name'" -ForegroundColor Yellow
+		continue;
+	}
 
     $url = $entry.remoteUrl #-replace "://", ("://{0}@" -f $gitcred)
     if(!(Test-Path -Path $name)) {
         git clone $url
     } else {
+		Write-Host "Directory '$name' exists lets pull"
         set-location $name
         git pull
+		$defaultBranch = git symbolic-ref --short HEAD
 
-        $branchname = git remote show origin | grep 'HEAD branch' | cut -d' ' -f5
-
-        if($pruneRemoteBranches){
-			Write-Host "Pruning remote $name"
-            git remote prune origin
-		}
         if($pruneLocalBranches){
-			Write-Host "Pruning local branches $name"
-            # this command removes all merged local branches
-            git branch --merged | ? { $_ -notlike "*master" } | Out-File -FilePath "/tmp/merged-branches" -Encoding utf8; vi /tmp/merged-branches; Get-Content "/tmp/merged-branches" | %{ git branch -d $_ }
+			Write-Host "Pruning local branches $name" -ForegroundColor Yellow
+            $branches = git branch -vv | Where-Object { $_ -notmatch "::" } | ForEach-Object { ($_ -split '\s+')[1] }
+
+			foreach ($branch in $branches) {
+				if ($branch -eq $defaultBranch) {
+					Write-Host "Skipping default branch '$branch'."
+					continue
+				}
+				if ((git branch -vv | Where-Object { $_ -match "$branch\s+\[origin\/" })) {
+					Write-Host "Skipping branch '$branch' as it has a remote reference."
+				}
+				else {
+					git branch -D $branch
+					Write-Host "Deleted local branch '$branch'." -ForegroundColor Green
+				}
+			}
         }
         if($gitEmail){
             git config user.email "$gitEmail"
         }
-        set-location $initpath
     }
 }
-
-(az repos list --query '[].{Name:name, Url:remoteUrl}' -o json | ConvertFrom-Json) | %{ git clone $_.Url }
-{{< / highlight >}}
+```
 
 ### Run it
 
 Run the script it using a PowerShell prompt for example using Windows Terminal.
 
-```PowerShell
+```PowerShell {linenos=table}
 ./CloneAllRepos.ps1
 ```
 
@@ -178,19 +192,19 @@ In the world of microservices, we choose to duplicate some of the plumbing. When
 Some examples are:
 
 - Updating multiple NuGet packages.
-- Enforcing certain `Nuget.config` configurations.
+- Enforcing certain `Nuget.` `config` configurations.
 - Renaming business terminology on multiple branches.
 
 ### Automating
 
-With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out [my article using binary repalce]({{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}}).
+With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out [my article using binary replace]({{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}}).
 
-```cmd {linenos=table}
+```PowerShell {linenos=table}
 git checkout main
 git pull
 git checkout -b fix/nugetconfig
 
-# DO NECESSARY CHANGE in nuget.config.
+# DO THE NECESSARY CHANGE in nuget.config.
 
 git mv -f NuGet.config nuget.config
 git add *
@@ -202,4 +216,4 @@ git checkout main
 
 ## Conclusion and discussion
 
-Make your workflow faster with scripting and your knowledge of the Git CLI. When you have to do repetitive tasks such as updating a single package on multiple (microservice-like) repositories, try to automate it. It may for the first occurrence not be profitable, but after three times, you will be faster than doing it manually.
+Make your workflow faster with scripting and your knowledge of the Git CLI. When you have to do repetitive tasks such as updating a single package on multiple (microservice-like) repositories, try to automate it. It may for the first occurrence not be profitable, but after three times, you will be faster than doing it manually. It can also help you clean up your workspace and be more tidy.

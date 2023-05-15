@@ -27,6 +27,11 @@ weight = 3
 - Proces
 - Career advice
 - Personal development
+- (Book) Reviews
+
+{{% reveal/note %}}
+Book reviews kunnen nuttig zijn wanneer je theoretische kennis direct omzet in de praktijk.
+{{% /reveal/note %}}
 
 ---
 
