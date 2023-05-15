@@ -29,7 +29,7 @@ As a consultant, starting a new project with a client can be a daunting task. On
 
 When working for multiple clients or even just having private projects next to your client projects it can come in handy to organize your git repositories. For some Frontend repositories, the path with node_modules was too long and that forced me to place my folders on the Disk level. A path for a project for me would look like `C:\Git\{ClientName}\{RepositoryName}`.
 
-```text
+```plaintext {linenos=table}
 C:\Git
  ┣ Client1
  ┃ ┣ Client1.Repository1
@@ -58,7 +58,7 @@ Use Fork Workspaces to focus on the current environment. It will also help you w
 Depending on the network infra, you will need to configure your commit username to the email of your client.
 Some instances block all git pushes from committers with a different domain.
 
-```console
+```console {linenos=table}
 git config [--global] user.email "username@corperate.com"
 ```
 
@@ -72,7 +72,7 @@ To clone all repositories in Azure DevOps we can use the REST API to find all ex
 
 Make sure to create a file named: `CloneAllRepos.config` with the contents written below. Make sure every parameter is configured as your workspace.
 
-```text {linenos=table}
+```plaintext {linenos=table}
 [General]
 Url=https://dev.azure.com/MART/project
 Username=me@example.com
@@ -181,7 +181,7 @@ foreach ($entry in $json.value) {
 
 Run the script it using a PowerShell prompt for example using Windows Terminal.
 
-```PowerShell
+```PowerShell {linenos=table}
 ./CloneAllRepos.ps1
 ```
 
