@@ -11,6 +11,7 @@ weight = 11
 
 - [📒 Een mindmap maken](#mindmap)
 - [👨‍💻 Getting started with Hugo](https://gohugo.io/)
+  - [Hugo on Azure Static web apps](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-hugo)
 - [🤖 Vraag ChatGPT om ideen of hulp](#prompts)
 - 💙 Help anderen
 

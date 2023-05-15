@@ -44,10 +44,13 @@ C:\Git
 
 ### Using workspaces in Git Fork
 
-TODO write about Fork workspaces with above structure
-Fork is a tool that will help you.
+Fork is a tool that will help you focus on the right workload. Using the structure as discussed with Fork, you can focus on the right repositories. Cloned new repositories but not seen by Fork? Reload the whole folder using right-click and 'Rescan repositories'. Get Git Fork from [git-fork.com](https://git-fork.com/).
 
-TODO Workspaces FORK image
+![Fork Repository Manager](fork_repository_manager.png#center "Fork Repository Manager")
+
+Use Fork Workspaces to focus on the current environment. It will also help you work on private projects outside of work hours on the same workstation.
+
+![Fork Workspaces](fork_workspaces.png#center "Fork workspaces")
 
 ### Configure your git username
 
@@ -58,7 +61,7 @@ Some instances block all git pushes from committers with a different domain.
 git config [--global] user.email "username@corperate.com"
 ```
 
-In the script to clone all repositories you can also enable the script to set the committer email for every repository.
+In the script to clone all repositories, you can also enable the script to set the committer email for every repository.
 
 ## Code
 
@@ -83,7 +86,6 @@ PruneRemoteBranches=false # Optional defaults to false
 PruneLocalBranches=false # Optional defaults to false
 GitEmail=username@corperate.com
 ```
-
 
 ### CloneAllRepos.ps1
 
@@ -183,9 +185,9 @@ Some examples are:
 
 ### Automating
 
-With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out [my article using binary repalce]({{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}}).
+With this structure, you could automate actions over multiple repositories. In the code below I wrote an example of automating script for changing the Nuget.config file in every repository. If your packages have the same layout changes can be done easier and faster. Also, please check out [my article using binary replace]({{< ref "replacing-your-projects-and-namespaces-using-bire.md" >}}).
 
-```cmd {linenos=table}
+```PowerShell {linenos=table}
 git checkout main
 git pull
 git checkout -b fix/nugetconfig

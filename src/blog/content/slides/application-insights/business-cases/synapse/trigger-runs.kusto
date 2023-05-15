@@ -1,0 +1,8 @@
+SynapseIntegrationTriggerRuns 
+| search "/company/domain/1076064/mart"
+| where TriggerName  == 'Event_EGT_Shared'
+| extend d=parse_json(Parameters)
+| extend payload=parse_json(d.EventPayload)
+| extend data=parse_json(tostring(payload))
+| extend subject=tostring(data.subject)
+| project subject
