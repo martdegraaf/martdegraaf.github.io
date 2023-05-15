@@ -1,0 +1,3 @@
+AegDeliveryFailureLogs 
+| order by TimeGenerated desc
+| search "/company/domain/1076064/mart_test_18_"
