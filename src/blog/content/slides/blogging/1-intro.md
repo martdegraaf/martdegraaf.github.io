@@ -9,7 +9,7 @@ weight = 1
 
 # Whatsapp poll
 
-![Whatsapp poll](whatsapp_poll.nl.png)
+![Whatsapp poll](whatsapp_poll.png)
 
 ---
 

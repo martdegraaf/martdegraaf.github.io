@@ -45,8 +45,8 @@ Het is belangrijk wat je exposed via je sitemap voor de zoekbaarheid en vindbaar
 
 ---
 
-![Whatsapp image default](optimalisatie/img/whatsapp.nl.png)  
-![Whatsapp image](optimalisatie/img/whatsapp_2.nl.png)  
+![Whatsapp image default](optimalisatie/img/whatsapp.png "Whatsapp default iamge")
+![Whatsapp image](optimalisatie/img/whatsapp_2.png "Whatsapp sharing iamge")  
 
 _Sharing is caring_
 

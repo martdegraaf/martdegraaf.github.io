@@ -4,6 +4,7 @@ date: 2022-06-09T11:30:03+00:00
 
 ### weight: 1
 ### aliases: ["/first"]
+slug: "4mijl-oefenen-in-assen"
 tags: ["hardlopen", "strava"]
 author: "Mart de Graaf"
 ### author: ["Me", "You"] ## multiple authors
