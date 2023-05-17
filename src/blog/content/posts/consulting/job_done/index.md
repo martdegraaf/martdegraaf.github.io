@@ -38,11 +38,15 @@ Powershell voor ophalen openstaande branches
 
 Take the time to say goodbye to your colleagues and express your gratitude for the time you spent working together. You never know when you might cross paths with them again in the future.
 
-## Checlist
+## Checklist
 
 - [ ] Hand over open work items
 - [ ] Delete open branches
 - [ ] Say Goodbye to your team and colleagues
 
 ## Conclusion
+
+### Further reading
+
+https://github.com/sven73a/Powershell-Utils-Azure
 

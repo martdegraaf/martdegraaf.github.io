@@ -23,7 +23,7 @@ series: ['Consultant tips']
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
 
-[Skip to the code sample](#code)
+[Skip to the code sample](#Configuration)
 
 ## Organizing your Git repos
 
@@ -49,7 +49,7 @@ Fork is a tool that will help you focus on the right workload. Using the structu
 
 ![Fork Repository Manager](fork_repository_manager.png#center "Fork Repository Manager")
 
-Use Fork Workspaces to focus on the current environment. It will also help you work on private projects outside of work hours on the same workstation.
+Use Fork Workspaces to focus on the current environment. It will also help you work on private projects outside of work hours on the same workstation. You can also create workspaces for different domains or teams if you are for example the lead or architect in a project.
 
 ![Fork Workspaces](fork_workspaces.png#center "Fork workspaces")
 
@@ -64,7 +64,7 @@ git config [--global] user.email "username@corperate.com"
 
 In the script to clone all repositories, you can also enable the script to set the committer email for every repository.
 
-## Code
+## Clone all repositories
 
 To clone all repositories in Azure DevOps we can use the REST API to find all existing repositories. The code example consists of a Powershell script and a configuration file with settings and Authorization.
 
@@ -86,6 +86,10 @@ OrgName=MART
 PruneLocalBranches=false # Optional defaults to false
 GitEmail=username@corperate.com
 ```
+
+{{< quoteblock >}}
+:bulb: Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+{{</ quoteblock >}}
 
 ### CloneAllRepos.ps1
 
@@ -177,9 +181,15 @@ foreach ($entry in $json.value) {
 }
 ```
 
+
+{{< quoteblock >}}
+:robot: If you have some additional ideas, let ChatGPT help you. Supply ChatGPt with the context: `Rewrite this PowerShell script to also <insert new Feature>. Here is the current version of the PowerShell script: <insert PowerShell script>.`. Let me know if you thought of a clever solution.
+{{</ quoteblock >}}
+
+
 ### Run it
 
-Run the script it using a PowerShell prompt for example using Windows Terminal.
+Run the script it using a PowerShell prompt for example using for example Windows Terminal.
 
 ```PowerShell {linenos=table}
 ./CloneAllRepos.ps1
