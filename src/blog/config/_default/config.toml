@@ -18,16 +18,16 @@ weight = 1
   [languages.en-us.params]
   languageAltTitle = "English"
 
-[languages.nl]
-title = "Mart's blog"
-weight = 2
+# [languages.nl]
+# title = "Mart's blog"
+# weight = 2
 
-  [languages.nl.params]
-  languageAltTitle = "Nederlands"
+#   [languages.nl.params]
+#   languageAltTitle = "Nederlands"
 
-    [languages.nl.params.homeInfoParams]
-    title = "Software ontwikkelaar @ 4Dotnet"
-    content = "Voor content over Azure, .NET, Git en architectuur ga dan naar mijn Engelse blog. Voor Nederlandse overdenkingen, wees welkom!"
+#     [languages.nl.params.homeInfoParams]
+#     title = "Software ontwikkelaar @ 4Dotnet"
+#     content = "Voor content over Azure, .NET, Git en architectuur ga dan naar mijn Engelse blog. Voor Nederlandse overdenkingen, wees welkom!"
 
 [params]
 env = "production"
@@ -35,7 +35,7 @@ showPostNavLinks = true
 showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
-comments = true
+comments = false
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
@@ -93,6 +93,7 @@ name = "About"
 
 [taxonomies]
 series = "series"
+tag = "tags"
 
 [markup.goldmark.renderer]
 unsafe = true
