@@ -23,7 +23,7 @@ series: ['Consultant tips']
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
 
-[Skip to the code sample](#Configuration)
+[Skip to the code sample](#configuration)
 
 ## Organizing your Git repos
 
