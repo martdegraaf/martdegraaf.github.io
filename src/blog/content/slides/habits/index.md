@@ -1,3 +1,9 @@
++++
+title = "Atomic Habits for Software Developers"
+outputs = ["Reveal"]
+author = "Mart de Graaf"
++++
+
 # Atomic Habits for Software Developers
 
 ---
