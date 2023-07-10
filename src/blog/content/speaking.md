@@ -10,7 +10,7 @@ disableShare: true
 
 ## Upcoming engagements
 
-None at this time.
+1. [16 November 2023 Move up](https://www.4dotnet.nl/move-up-with-4dotnet-16-november-2023)
 
 ### Current sessions
 
