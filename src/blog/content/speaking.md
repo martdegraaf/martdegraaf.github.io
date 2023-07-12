@@ -10,7 +10,8 @@ disableShare: true
 
 ## Upcoming engagements
 
-1. [16 November 2023 Move up](https://www.4dotnet.nl/move-up-with-4dotnet-16-november-2023)
+1. [7 September 2023 - Azure Platform Engineering meetup - Git](https://www.meetup.com/azure-platform-engineering/events/292450345/)
+1. [16 November 2023 - 4Dotnet's Move up](https://www.4dotnet.nl/move-up-with-4dotnet-16-november-2023)
 
 ### Current sessions
 
@@ -18,6 +19,7 @@ Contact me through any of the social channels or via Sessionize. My current sess
 
 1. Advanced git and git workflows
 1. Observability of your cloud Software - Application Insights deep dive
+1. Improve your daily work using habits for Software Engineers (New)
 
 ## Previous engagements
 
