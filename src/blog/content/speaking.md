@@ -15,7 +15,7 @@ disableShare: true
 
 ### Current sessions
 
-Contact me through any of the social channels or via Sessionize. My current sessions that I can give on short-term notice:
+Contact me through any of the social channels or via [Sessionize](https://sessionize.com/mart-de-graaf/). My current sessions that I can give on short-term notice:
 
 1. Advanced git and git workflows
 1. Observability of your cloud Software - Application Insights deep dive

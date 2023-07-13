@@ -91,6 +91,10 @@ name = "Search"
 url = "/about"
 name = "About"
 
+[[menu.main]]
+url = "/speaking"
+name = "Speaking"
+
 [taxonomies]
 series = "series"
 tag = "tags"
