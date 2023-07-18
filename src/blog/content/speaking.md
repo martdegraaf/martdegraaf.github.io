@@ -5,6 +5,7 @@ draft: false
 
 comments: false
 disableShare: true
+hidemeta: true
 ---
 
 I am a seasoned speaker passionate about sharing knowledge with the tech community. I've spoken at various events and specialize in topics like Git, cloud software observability, and the optimization of daily work for software engineers. If you are interested in having me as a speaker at your event, please reach out!
