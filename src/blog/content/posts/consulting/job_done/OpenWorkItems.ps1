@@ -4,9 +4,6 @@ $projectName = "ProjectName" # Replace ProjectName with project name
 $username = "you@corperate.com" # Replace email with your Az DO username
 $personalAccessToken = "[[TOKEN]]" # Get the personal access token from Azure DevOps with read access to the workitems
 
-
-
-
 # Set headers
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $personalAccessToken)))
 $headers = @{
@@ -31,7 +28,6 @@ ORDER BY [System.ChangedDate] desc
 
 $body = @{ query = $wiql } | ConvertTo-Json
 
-
 $workItemsResponse = Invoke-RestMethod -Uri $workItemsUrl -Headers $headers -Method Post -Body $body -ContentType "application/json"
 
 # use workitemsbatch api to get all SELECT values
@@ -48,10 +44,5 @@ $workItemsResponse2 = Invoke-RestMethod -Uri $workItemsUrl -Headers $headers -Me
 
 Write-Host "Workitems found '$($workItemsResponse.workItems.count)'"
 
-
 # write the response to a JSON file
 $workItemsResponse2 | ConvertTo-Json -Depth 100 | Out-File -FilePath "workitems.json" -Force
-
-
-
-
