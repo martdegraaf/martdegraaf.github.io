@@ -6,7 +6,7 @@ publishdate: 2023-08-11T01:14:56+01:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Git", "DevOps", "Azure DevOps", "Powershell"]
-summary: "Leave no technical debt, clean up after yourself when leaving a company."
+summary: "Leave no technical debt, clean up after yourself when leaving a company. The first impression is just as important as the last impression."
 # Toc
 ShowToc: true
 TocOpen: true
