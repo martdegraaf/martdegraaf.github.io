@@ -23,6 +23,8 @@ Consider for example this piece of code below. The catch operation was added to 
 
 Before you can start using Azure OpenAI you will need to be accepted by Microsoft. You need to apply for the 'Azure OpenAI Service' preview. You can do this by following the procedure to create this resource, a link to the application form is provided.
 
+![Azure Marketplace - OpenAI](marketplace-openai.png#center "Azure Marketplace - OpenAI")
+
 1. Create a new resource in Azure.
 1. Search for OpenAI
 1. Select the OpenAI resource
@@ -30,9 +32,26 @@ Before you can start using Azure OpenAI you will need to be accepted by Microsof
 
 ### OpenAI studio
 
-After creating the resource you can go to the OpenAI studio. This is a web-based tool that allows you to test the models and see the results. You can also create your own models and train them.
+After creating the resource you can go to the OpenAI studio. 
 
 ![OpenAI Studio](openai_studio.png#center "OpenAI Studio")
+
+This is a web-based tool the 'OpenAI Playground' that allows you to test the models and see the results. You can also create your own models and train them.
+
+### Create a new Model
+
+You can create a new model by clicking the 'Create Model' button. You can select the model you want to use. The default is the GPT-3 turbo model. I did my testing with the gpt-35 turbo Model. From the model you need to make a deployment. This will take a few minutes. After the deployment is done you can start using the model.
+
+### Chat Playground 
+
+![OpenAI Studio - Chat Playground](chat_playground.png#center "OpenAI Studio - Chat Playground")
+
+In screenshot above i have some features numbered. I will explain them below.
+1. Add data sources
+2. Add system prompts
+3. Clear the chat, and view the code
+4. Parameters into the model.
+5. Import and export the setup.
 
 ### Defining System Prompts
 
@@ -45,7 +64,7 @@ Provide the full schedule when the user asks for a certain date.
 End every message with "Mart knows everything". Add a mermaid diagram written in markdown to clarify your statement.
 ```
 
-This kind of prompting will result in some hilarious results. In the below screenshot is shown that my statement is visualized in markdown.
+This kind of prompting will result in some hilarious results. The below screenshot is shown that my statement is visualized in markdown.
 
 ![Chat Playground](sample-chat.png#center "Sample Chat")
 
