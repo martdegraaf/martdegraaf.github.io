@@ -36,6 +36,8 @@ showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
 comments = false
+
+TocOpen= true
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
