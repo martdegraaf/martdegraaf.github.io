@@ -52,11 +52,7 @@ Powershell voor ophalen openstaande branches
 
 The output will be visible in the console and in a JSON file. 
 
-## 3. Say goodbye
-
-Take the time to say goodbye to your colleagues and express your gratitude for the time you spent working together. You never know when you might cross paths with them again in the future.
-
-## 4. Get feedback
+## 3. Get feedback
 
 Ask for feedback from your colleagues and manager. This feedback can be used to improve yourself in the future. It can also be used to improve the company you worked for. If you don't ask for feedback, you will never know what you could have done better.
 
@@ -65,6 +61,12 @@ When asking for feedback keep in mind it's to improve yourself, not to get a com
 {{< quoteblock >}}
 💬 "What could I have done better when working together?"
 {{</ quoteblock >}}
+
+## 4. Say goodbye
+
+Take the time to say goodbye to your colleagues and express your gratitude for the time you spent working together. You never know when you might cross paths with them again in the future.
+
+Make sure you connect on social media with people you want to connect on the long term.
 
 ## Checklist
 
