@@ -20,7 +20,9 @@ ShowWordCount: true
 series: ['Consultant tips']
 ---
 
-As a consultant when a job ends you need to transition from the previous to the next. How do you efficiently clean up all open ends? The open branches that you leave behind are sort of dead code. Nobody is going to take care of it. Make sure you don't generate more work following these tips.
+As a consultant when a job ends you need to transition from the previous to the next. How do you efficiently clean up all open ends? The open branches that you leave behind are sort of dead code. Nobody is going to take care of it. Make sure you don't generate more work for ex-colleagues following these tips.
+
+Using the scripts below we can create a small to-do list, which you should do before leaving a company.
 
 {{< quoteblock >}}
 💬 "The first impression is just as important as the last impression. Make sure you leave a good impression." - Mart de Graaf
