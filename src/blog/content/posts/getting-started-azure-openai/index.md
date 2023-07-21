@@ -126,7 +126,7 @@ This resulted in the code being explained in a good flowchart. This is a great w
 
 ### Adding your own data using Cognitive Search
 
-You can also add your own data to the model. This can be done by using the Cognitive Search feature. You can upload your own data and use it to train the model. You can also use the data to create completions.
+You can also add your data to the model. This can be done by using the Cognitive Search feature. You can upload your data and use it to train the model. You can also use the data to create completions.
 
 <!--Link to Documentation about Playground adding data.-->
 <!--Link to Documentation about Cognitive Search.-->
