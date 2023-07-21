@@ -137,9 +137,9 @@ You can also add your own data to the model. This can be done by using the Cogni
 
 The OpenAI API is a REST API that allows you to use the models in your applications. You can use the API to create completions, chat, and dall-e requests.
 
-## Using openAI services trough C#
+## Using OpenAI API services through C sharp
 
-Some real power is when we can use the openAI services trough our code to 
+Some real power is when we can use the OpenAI services through our code. When we can create our business scope.
 
 ### Available Methods
 
@@ -180,7 +180,7 @@ foreach (var dier in dieren)
         {
             Messages =
             {
-            new ChatMessage(ChatRole.User, klacht),
+            new ChatMessage(ChatRole.User, dier),
             new ChatMessage(ChatRole.User, @"Geef antwoord in JSON met categorie property van het type string met als waarde een van deze categorien:
 Landdieren
 Zeedieren
@@ -232,7 +232,7 @@ I just wanted to try out the OpenAI API and see the possibilities it has. Soon c
 <!-- Quoteblock here?-->
 May the AI be with you.
 
-## References
+## Futher reading
 
 - https://blog.iusmentis.com/2023/03/21/van-wie-is-mijn-werk-als-ik-chatgpt-mijn-werk-laat-doen/
 - https://blog.iusmentis.com/2023/06/08/mag-een-iso27001-gecertificeerde-organisatie-chatgpt-gebruiken/
