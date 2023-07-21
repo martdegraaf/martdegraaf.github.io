@@ -41,7 +41,11 @@ This is a web-based tool the 'OpenAI Playground' that allows you to test the mod
 
 ### Create a new Model
 
-You can create a new model by clicking the 'Create Model' button. You can select the model you want to use. The default is the GPT-3 turbo model. I did my testing with the gpt-35 turbo Model. From the model you need to make a deployment. This will take a few minutes. After the deployment is done you can start using the model.
+You can create a new model by clicking the 'Create Model' button. You can select the model you want to use. The default is the GPT-3 turbo model. I did my testing with the gpt-35 turbo Model. From the model you need to make a deployment. This will take a few minutes. After the deployment is done you can start using the model. Other available models are:
+
+- GPT-3 turbo  (best for text generation)
+- Davinci (best for text generation)
+- Codex (best for code generation)
 
 ### Chat Playground 
 
@@ -133,37 +137,103 @@ You can also add your own data to the model. This can be done by using the Cogni
 
 The OpenAI API is a REST API that allows you to use the models in your applications. You can use the API to create completions, chat, and dall-e requests.
 
-## Creating your first completion
+## Using openAI services trough C#
 
-To create your first completion you will need to create an API key. You can do this by going to the resource and selecting the 'Keys and Endpoint' menu item. You can create a new key by clicking the 'New Key' button.
+Some real power is when we can use the openAI services trough our code to 
 
+### Available Methods
 
-
-## Available models
-
-- GPT-3 turbo  (best for text generation)
-- Davinci (best for text generation)
-- Codex (best for code generation)
-
-GPT4 is not yet available.
-
-## Available Methods
+For the use case, you should think of a strategy before just concluding that it does not suit your needs. DaVinci could be a better fit for completions or getting data out of text.
 
 - Chat
 - Completions
 - Dall-E
 
+### Sample case
+
+Make sure you have `Include prerelease` enabled when searching for the NuGet package.
+
+```csharp
+// Note: The Azure OpenAI client library for .NET is in preview.
+// Install the .NET library via NuGet: dotnet add package Azure.AI.OpenAI --version 1.0.0-beta.5 
+
+using Azure;
+using Azure.AI.OpenAI;
+
+var dieren = new[] {
+    "Penguins",
+    "Giraffes",
+    "Smurfen",
+    // more
+    };
+
+OpenAIClient client = new OpenAIClient(
+    new Uri("https://martgpt-openai.openai.azure.com/"),
+    new AzureKeyCredential("HERE COMES YOUR API KEY"));
+
+// ### If streaming is not selected
+foreach (var dier in dieren)
+{
+    Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
+        "MartGPT", //<= This is the deployment name
+        new ChatCompletionsOptions()
+        {
+            Messages =
+            {
+            new ChatMessage(ChatRole.User, klacht),
+            new ChatMessage(ChatRole.User, @"Geef antwoord in JSON met categorie property van het type string met als waarde een van deze categorien:
+Landdieren
+Zeedieren
+
+In welke categorie valt deze diersoort en geef een omschrijving met maximaal 5 woorden en geef ook de naam van het dier terug."),
+            },
+            Temperature = (float)1,
+            MaxTokens = 800,
+            NucleusSamplingFactor = (float)1,
+            FrequencyPenalty = 0,
+            PresencePenalty = 0,
+        });
+    ChatCompletions completions = responseWithoutStream.Value;
+    foreach (var choice in completions.Choices)
+    {
+        Console.WriteLine(choice.Message.Content);
+    }
+
+}
+```
+
+The output I got from this. I laughed a lot about the response I hope you can do too.
+
+```json
+{
+  "categorie": "Zeedieren",
+  "omschrijving": "Vogels die niet vliegen",
+  "naam": "Pinguïns"
+}
+{
+ "naam": "Giraffe",
+ "categorie": "Landdieren",
+ "omschrijving": "Hoge nek, gevlekte vacht"
+}
+{
+  "categorie": "Landdieren",
+  "omschrijving": "Blauwe wezentjes in het bos",
+  "naam": "Smurfen"
+}
+```
+
+Think of the possibilities by lowering the temperature and making materialized categories of some huge text inputs, for example in an Azure Function reacting to business events.
 
 ## Conclusion
 
-I just wanted to try out the OpenAI API and see the possibilities it has. Soon clients will be ready to use AI for their use cases and I as a consultant wanted to be able to advise them on the possibilities. I learned that the GPT model 
+I just wanted to try out the OpenAI API and see the possibilities it has. Soon clients will be ready to use AI for their use cases and I as a consultant wanted to be able to advise them on the possibilities. I learned that the GPT model is statistically choosing output, and the response needs to be verified. That's why Microsoft calls its products `Copilot``. It helps you but isn't perfect.
 
 <!-- Quoteblock here?-->
 May the AI be with you.
 
 ## References
 
-https://blog.iusmentis.com/2023/03/21/van-wie-is-mijn-werk-als-ik-chatgpt-mijn-werk-laat-doen/
-https://blog.iusmentis.com/2023/06/08/mag-een-iso27001-gecertificeerde-organisatie-chatgpt-gebruiken/
-https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
-https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+- https://blog.iusmentis.com/2023/03/21/van-wie-is-mijn-werk-als-ik-chatgpt-mijn-werk-laat-doen/
+- https://blog.iusmentis.com/2023/06/08/mag-een-iso27001-gecertificeerde-organisatie-chatgpt-gebruiken/
+- https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
+- https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
