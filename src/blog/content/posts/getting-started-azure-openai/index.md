@@ -95,7 +95,7 @@ A --> E[Virtual Networks]
 Mart knows everything.
 ```
 
-This was more what I expected. Only the mermaid diagram connections don't make sense. \
+This was more what I expected. Only the mermaid diagram connections don't make sense.
 
 ## Properties
 
@@ -202,7 +202,7 @@ In welke categorie valt deze diersoort en geef een omschrijving met maximaal 5 w
 }
 ```
 
-The output I got from this. I laughed a lot about the response I hope you can do too.
+The output I got from this. I laughed a lot about the response I hope you can do too. What is shown that even `Smurfen` are placed in the `Landdieren` category. Even when you don't edit the parameters or temperature it will give you a different response every time. You have to be very precise if you want to standardize the output.
 
 ```json
 {
@@ -221,6 +221,7 @@ The output I got from this. I laughed a lot about the response I hope you can do
   "naam": "Smurfen"
 }
 ```
+
 
 Think of the possibilities by lowering the temperature and making materialized categories of some huge text inputs, for example in an Azure Function reacting to business events.
 
