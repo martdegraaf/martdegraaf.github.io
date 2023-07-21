@@ -16,8 +16,9 @@ ShowWordCount: true
 
 ## Introduction
 
-For a recent project, I wanted to create a test that verified that `LogError` was called.
-Consider for example this piece of code below. The catch operation was added to swallow the exception of the delete action. We want to test this behavior but still would like to know if the `LogError` is being called.
+Artificial intelligence is hip and happeng. Everyone can use ChatGPT right now easily. But there are some worries of where your chats will go. Is it safe? Is the model trained by my conversations?
+
+Azure OpenAI services promises that the data stays in your environment in the cloud. In this blog post, I will show you how to get started with Azure OpenAI.
 
 ## Creating your OpenAI resource
 
@@ -32,7 +33,7 @@ Before you can start using Azure OpenAI you will need to be accepted by Microsof
 
 ### OpenAI studio
 
-After creating the resource you can go to the OpenAI studio. 
+After creating the resource you can go to the OpenAI studio.
 
 ![OpenAI Studio](openai_studio.png#center "OpenAI Studio")
 
@@ -46,7 +47,8 @@ You can create a new model by clicking the 'Create Model' button. You can select
 
 ![OpenAI Studio - Chat Playground](chat_playground.png#center "OpenAI Studio - Chat Playground")
 
-In screenshot above i have some features numbered. I will explain them below.
+In the screenshot above there are some features numbered:
+
 1. Add data sources
 2. Add system prompts
 3. Clear the chat, and view the code
