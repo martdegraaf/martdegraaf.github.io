@@ -31,7 +31,7 @@ Before you can start using Azure OpenAI you will need to be accepted by Microsof
 1. Select the OpenAI resource
 1. Create the resource
 
-### OpenAI studio
+## Using OpenAI studio
 
 After creating the resource you can go to the OpenAI studio.
 
@@ -45,15 +45,15 @@ You can create a new model by clicking the 'Create Model' button. You can select
 
 ### Chat Playground 
 
-![OpenAI Studio - Chat Playground](chat_playground.png#center "OpenAI Studio - Chat Playground")
-
-In the screenshot above there are some features numbered:
+In the chat playground there are some cool features:
 
 1. Add data sources
 2. Add system prompts
 3. Clear the chat, and view the code
 4. Parameters into the model.
 5. Import and export the setup.
+
+![OpenAI Studio - Chat Playground](chat_playground.png#center "OpenAI Studio - Chat Playground")
 
 ### Defining System Prompts
 
@@ -93,9 +93,23 @@ Mart knows everything.
 
 This was more what I expected. Only the mermaid diagram connections don't make sense. \
 
+## Properties
+
+In the parameters tab, you can play with some settings. You will need to know about those to get the best results.
+
+### Max response
+
+The `Max reponse` setting sets a limit on tokens that can be used per response. I found better results with complex prompts with the Max response just above 2000.
+
+### Temperature
+
+The temperature is a setting that controls the randomness of the model. The higher the temperature the more random the results will be. For more theoretical information see: https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/.
+
+The `Top P` setting works like the temperature setting, 0 is low probability and 1 is high probability. The higher the value, the more diverse probabilities will be allowed.
+
 <!-- Date and privacy explained Azure vs GPT-->
 <!-- Date and privacy explained-->
-### Document your code with GPT
+## Some ideas to use OpenAI
 
 ```text
 create a mermaid diagram for the flow that is done in this c# code 
@@ -135,17 +149,21 @@ GPT4 is not yet available.
 
 ## Available Methods
 
-1. Chat
-1. Completions
-1. Dall-E
+- Chat
+- Completions
+- Dall-E
 
 
 ## Conclusion
 
-I have no idea what the conclusion is. I just wanted to try out the OpenAI API and see the possibilities it has. Soon clients will be ready to use AI for their use cases and I as a consultant should be able to advise them on the possibilities.
+I just wanted to try out the OpenAI API and see the possibilities it has. Soon clients will be ready to use AI for their use cases and I as a consultant wanted to be able to advise them on the possibilities. I learned that the GPT model 
 
 <!-- Quoteblock here?-->
 May the AI be with you.
 
-## References in Azure
+## References
 
+https://blog.iusmentis.com/2023/03/21/van-wie-is-mijn-werk-als-ik-chatgpt-mijn-werk-laat-doen/
+https://blog.iusmentis.com/2023/06/08/mag-een-iso27001-gecertificeerde-organisatie-chatgpt-gebruiken/
+https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
+https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
