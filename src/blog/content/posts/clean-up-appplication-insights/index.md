@@ -48,6 +48,8 @@ On many Azure resources, you can configure Log Analytics Workspace as an upstrea
 
 Traces are good to hunt bugs. But when a system is running, do you need all Debug logs? Do you even think every log is important?
 
+In this query below I will sort unique logging metrics by Resource and Costs. The most expensive logs are on top. The magic number `2,52` was the price per Gb ingested for Log Analytics. When u insert more than 100Gb wich is a lot, you can get discounted pricing. Make sure when you query you think of your scope and environments that also log this trace.
+
 Make sure you configure your loglevels correctly. In `appsettings.json` of `host.json`.
 
 ```csl {linenos=table,file=AppTracesByCosts.kusto}
@@ -60,6 +62,13 @@ Dependencies are really important. But when saving too much or calling too frequ
 ```csl {linenos=table,file=AppDependenciesByCosts.kusto}
 ```
 
+## Dashboard
+
+By putting the data in a dashboard you will provide your team a easy way to access this metrics. In my screenshot below there are two of the most important queries, the application traces and the tables.
+
+Make sure to set your dashboard time to a good time scope.
+
+![Tracing costs dasboard](tracing-dashboard.png#center "Tracing costs dashboard")
 ## Conclusion
 
 When turning on diagnostics make sure it helps the business. Revisit diagnostic settings and make sure you are in control of your costs. Also make sure that when in development, you are critical about the diagnostic settings. When turned on, it won't be turned off soon, because you're the expert!
