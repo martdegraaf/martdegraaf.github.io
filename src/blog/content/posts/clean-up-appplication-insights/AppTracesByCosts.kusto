@@ -1,11 +1,11 @@
 AppTraces
-| extend SizeInBytes = strlen(Message)
-| order by SizeInBytes desc
+| extend MessageSize = strlen(Message)
+| order by MessageSize desc
 | summarize
     Count=count(),
     BilledTotalSize = sum(_BilledSize),
-    MessageTotalSize = sum(SizeInBytes)
-    by AppRoleName, OperationName, SizeInBytes, Message, SeverityLevel, _ResourceId
+    MessageTotalSize = sum(MessageSize)
+    by AppRoleName, OperationName, MessageSize, Message, SeverityLevel, _ResourceId
 | extend GbSize = BilledTotalSize / 1024 /1024 / 1024
 | extend EuroCost = GbSize * 2,52
 | extend ResourceName = tostring(split(_ResourceId, "/")[-1])

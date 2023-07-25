@@ -1,11 +1,11 @@
 AppDependencies
-| extend SizeInBytes = strlen(Data) 
-| order by SizeInBytes desc
+| extend DataSize = strlen(Data) 
+| order by DataSize desc
 | summarize
     Count=count(),
     BilledTotalSize = sum(_BilledSize),
-    MessageTotalSize = sum(SizeInBytes)
-    by AppRoleName, OperationName, SizeInBytes, Data, _ResourceId, Type
+    DataTotalSize = sum(DataSize)
+    by AppRoleName, OperationName, DataSize, Data, _ResourceId, Type
 | extend GbSize = BilledTotalSize / 1024 / 1024 / 1024
 | extend EuroCost = GbSize * 2, 52
 | extend ResourceName = tostring(split(_ResourceId, "/")[-1])
