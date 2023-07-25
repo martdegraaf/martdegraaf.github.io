@@ -36,7 +36,7 @@ The first step is to identify the biggest cost tables. You can do this by runnin
 
 ![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
 
-```csl {linenos=table,file=QueryByTable.kusto}
+```sql {linenos=table,file=QueryByTable.kusto}
 ```
 
 With knowledge about the biggest cost tables, you can start optimizing your logging. In the next sections, I will show you example queries to give insights into logging costs.
@@ -45,8 +45,9 @@ With knowledge about the biggest cost tables, you can start optimizing your logg
 
 On many Azure resources, you can configure Log Analytics Workspace as an upstream source. But did you know that this can lead to many logs you have to pay for? A colleague of mine used this query to identify 90% of their costs. By disabling the Azure Diagnostic Logs for Power BI, they saved a lot of money. By running this query you will gain insights into the **amount** of logs ingested per resource.
 
-```csl {linenos=table,file=QueryTableByResourceId.kusto}
+```sql {linenos=table,file=QueryTableByResourceId.kusto, hl_lines=[4]}
 ```
+
 
 ## Application traces
 
@@ -56,23 +57,24 @@ In this query below I will sort unique logging metrics by Resource and Costs. Th
 
 Make sure you configure your log levels correctly. In `appsettings.json` of `host.json`.
 
-```csl {linenos=table,file=AppTracesByCosts.kusto}
+```sql {linenos=table,file=AppTracesByCosts.kusto}
 ```
 
 ## Application dependencies
 
 Dependencies are really important. But when saving too much or calling too frequently it can lead up to a lot of money. This query will give you insights into the biggest dependencies, it is a multiply of the number of calls and the size of all dependencies, the same as with traces.
 
-```csl {linenos=table,file=AppDependenciesByCosts.kusto}
+```sql {linenos=table,file=AppDependenciesByCosts.kusto}
 ```
 
 ## Dashboard
 
-By putting the data in a dashboard you will provide your team with a easy way to access these metrics. In my screenshot below there are two of the most important queries, the application traces and the tables.
+By putting the data in a dashboard you will provide your team with an easy way to access these metrics. In my screenshot below there are two of the most important queries, the application traces and the tables.
 
 Make sure to set your dashboard time to a good time scope.
 
 ![Tracing costs dashboard](tracing-dashboard.png#center "Tracing costs dashboard")
+
 ## Conclusion
 
 When turning on diagnostics make sure it helps the business. Revisit diagnostic settings and make sure you are in control of your costs. Also make sure that when in development, you are critical about the diagnostic settings. When turned on, it won't be turned off soon, because you're the expert!

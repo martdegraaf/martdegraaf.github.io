@@ -1,0 +1,101 @@
+{{- /* 
+	Attributes: 
+      file            : The code file to display
+	  highlightjs     : A highlight.js compatible highlight range. 1,2-3|4-5 -> | is for animation.
+      downloadAs      : The name that the file should be given on download
+      allowdownload   : True if a download link should be shown 
+      fileLines       : Range. Starting line, optional ending line (or eof by default) string "linenumber" / "linenumber-linenumber"
+		Docs about hugo code block render hooks: https://gohugo.io/templates/render-hooks/#render-hooks-for-code-blocks
+*/ -}}
+{{- $filePath:= "" -}}
+{{- $adjustedOptions:= .Options -}}
+{{- $startIndex:= 1 -}}
+{{- $prefaceLen:= 0 -}}
+{{- $lineStart:= 1 -}}
+{{- if .Attributes.filelines -}}
+{{-   if  .Inner  -}}
+{{-     $prefaceLen = ((split .Inner "\n") | len) -}}
+{{-   else -}}
+{{-     $prefaceLen = 0 -}}
+{{-   end -}}
+{{- end -}}
+{{- $data:= .Inner -}}  
+{{- $fileShift:= 1 -}}  
+{{- if .Attributes.file -}}
+{{-   $filePath = .Attributes.file -}} 
+{{-   $matchedFile := .Page.Resources.GetMatch $filePath -}}
+{{-   if and (not $matchedFile) .Page.File -}}
+{{-     $filePath = path.Join .Page.File.Dir $filePath -}}
+{{-     $data = ($filePath | readFile) -}}
+{{-   else -}}
+{{-     $data = $matchedFile.Content -}}
+{{-   end -}}
+{{-   if .Attributes.filelines -}}
+{{-     $fileShift = 0 -}}  
+{{-     $datalines :=  split $data "\n" -}}
+{{-     $values:= split .Attributes.filelines "-" -}}
+{{-     $start:=  (int (index $values 0)) -}}
+{{-     $startIndex = sub $start 1 -}}
+{{-     $end:= ($datalines | len) -}}
+{{-     if gt ($values | len) 1 -}}
+{{-       $end = int (index $values 1) -}}
+{{-     end -}}
+{{-     $data = delimit (first  (sub  $end  $startIndex) (after   $startIndex  $datalines)) "\n" -}}
+{{-     $adjustedOptions = merge $adjustedOptions (dict "linenostart" (sub $start $prefaceLen)) -}}
+{{-   end -}}
+{{-   if ne $prefaceLen 0 -}}
+{{-     $data = printf "%s\n%s" .Inner $data -}}
+{{-   end -}}
+{{- else -}}
+{{-   if .Options.linenostart -}}
+{{-     $startIndex = int .Options.linenostart -}}
+{{-   end -}}
+{{- end -}}
+{{- $adjusted_hl_lines:= "" -}}
+{{- if .Attributes.highlightjs -}}
+{{-   $highlightLineShift:= sub (add $prefaceLen $fileShift ) $startIndex -}}
+{{-   $textPipe:= "" -}}
+{{-   $sepPipe:= "" -}}
+{{-   range (split .Attributes.highlightjs  "|") -}}
+{{-   $sepComma:= "" -}}
+{{-   $textComma:= "" -}}
+{{-     range (split .  ",") -}}
+{{-       $sepMinus:= "" -}}
+{{-       $textMinus:= "" -}}
+{{-       range (split .  "-") -}}
+{{-         $var:= (add  (int . ) $highlightLineShift) -}}
+{{-         $textMinus = printf "%s%s%d" $textMinus $sepMinus $var -}}
+{{-         $sepMinus = "-" -}} 
+{{-       end -}}
+{{        $textComma = printf "%s%s%s" $textComma $sepComma $textMinus -}}
+{{-       $sepComma = "," -}} 
+{{-     end -}}
+{{        $textPipe = printf "%s%s%s" $textPipe $sepPipe $textComma -}}
+{{-       $sepPipe = "|" -}} 
+{{-   end -}}
+{{-   $adjusted_hl_lines = $textPipe -}}
+{{-   $lineStart = add (sub $startIndex  $prefaceLen) (sub 1 $fileShift) }}
+{{- else if $adjustedOptions.hl_lines -}}
+{{-   $highlightLineShift:= sub (add $fileShift ( add $prefaceLen 1) ) $startIndex -}}
+{{-   $lineStart = $startIndex -}}
+{{-   $sep:= "" -}}
+{{-   range  $adjustedOptions.hl_lines -}} 
+{{-     $adjusted_hl_lines = printf "%s%s%d-%d"  $adjusted_hl_lines $sep (add (index . 0) $highlightLineShift) (add (index . 1) $highlightLineShift) -}}
+{{-     $sep = " " -}}
+{{-   end -}}
+{{- end -}}
+{{- $adjustedOptions = merge $adjustedOptions (dict "hl_lines" $adjusted_hl_lines) -}}
+{{- $class := .Attributes.class | default "" -}}
+{{- $lang  := .Attributes.lang  | default .Type -}}
+{{- if transform.CanHighlight $lang -}}
+  <div class="{{- $class -}} {{- $lang -}}" hi="mart">
+{{-   highlight $data $lang $adjustedOptions -}}
+  </div>
+{{- else -}}
+{{- /* highlight.js compatible */ -}}
+<pre><code class="language-{{ .Type }} {{- $class -}}" data-line-numbers="{{ $adjusted_hl_lines }}" data-ln-start-from="{{ $startIndex }}">{{- $data -}}</code></pre>  
+{{- end -}}
+{{- if and .Attributes.file (eq .Attributes.allowdownload true) -}}
+<a href="{{- $filePath -}}" download="{{- cond (ne .Attributes.downloadas nil) .Attributes.downloadas .Attributes.file -}}">Download file</a>
+{{- end -}}
+{{- /* TODO: add "view raw" and improve download -> the block is currently just appended with an <A>, could be better */ -}}
