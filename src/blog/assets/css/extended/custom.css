@@ -1,3 +1,22 @@
 .chroma {
     background-color: unset !important;
   }
+
+.code-name {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--martblue);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    margin-top: 0px;
+    right: 60px;
+    opacity: 0.4;
+}
+
+div.codecontainer:hover .code-name,
+pre:hover .code-name {
+    opacity: 0.8;
+}

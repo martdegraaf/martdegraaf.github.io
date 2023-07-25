@@ -88,7 +88,11 @@
 {{- $class := .Attributes.class | default "" -}}
 {{- $lang  := .Attributes.lang  | default .Type -}}
 {{- if transform.CanHighlight $lang -}}
-  <div class="{{- $class -}} {{- $lang -}}" hi="mart">
+  <div class="{{- $class -}} codecontainer" hi="mart">
+    
+	{{- with .Attributes.file -}}
+    <div class="code-name">{{.}}</div>
+    {{- end -}}
 {{-   highlight $data $lang $adjustedOptions -}}
   </div>
 {{- else -}}
