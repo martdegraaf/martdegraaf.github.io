@@ -8,6 +8,8 @@ author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "KQL"]
 summary: Explains how to test LogError with Xunit.
 ShowToc: true
+TocOpen: true
+UseHugoToc: true
 
 ShowReadingTime: true
 ShowLastModified: false
@@ -23,7 +25,7 @@ Cloud costs can be real money wasters, if you log something you will never need,
 
 In an earlier post, I showed how to fix duplicate logging and explained how Log Analytics sits on top of Application Insights.
 
-Read the blog post [How to fix duplicate logging in Application Insights](/posts/duplicate-logging-azure-application-insights).
+Read the blog post on [How to fix duplicate logging in Application Insights](/posts/duplicate-logging-azure-application-insights).
 
 All KQL queries in this post are based on the Log Analytics workspace.
 {{< /quoteblock >}}
@@ -31,6 +33,8 @@ All KQL queries in this post are based on the Log Analytics workspace.
 ## Identify the biggest cost tables
 
 The first step is to identify the biggest cost tables. You can do this by running the following query:
+
+![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
 
 ```csl {linenos=table,file=QueryByTable.kusto}
 ```
@@ -48,9 +52,9 @@ On many Azure resources, you can configure Log Analytics Workspace as an upstrea
 
 Traces are good to hunt bugs. But when a system is running, do you need all Debug logs? Do you even think every log is important?
 
-In this query below I will sort unique logging metrics by Resource and Costs. The most expensive logs are on top. The magic number `2,52` was the price per Gb ingested for Log Analytics. When u insert more than 100Gb wich is a lot, you can get discounted pricing. Make sure when you query you think of your scope and environments that also log this trace.
+In this query below I will sort unique logging metrics by Resource and Costs. The most expensive logs are on top. The magic number `2,52` was the price per Gb ingested for Log Analytics. When u insert more than 100Gb which is a lot, you can get discounted pricing. Make sure when you query you think of your scope and environments that also log this trace.
 
-Make sure you configure your loglevels correctly. In `appsettings.json` of `host.json`.
+Make sure you configure your log levels correctly. In `appsettings.json` of `host.json`.
 
 ```csl {linenos=table,file=AppTracesByCosts.kusto}
 ```
@@ -64,11 +68,11 @@ Dependencies are really important. But when saving too much or calling too frequ
 
 ## Dashboard
 
-By putting the data in a dashboard you will provide your team a easy way to access this metrics. In my screenshot below there are two of the most important queries, the application traces and the tables.
+By putting the data in a dashboard you will provide your team with a easy way to access these metrics. In my screenshot below there are two of the most important queries, the application traces and the tables.
 
 Make sure to set your dashboard time to a good time scope.
 
-![Tracing costs dasboard](tracing-dashboard.png#center "Tracing costs dashboard")
+![Tracing costs dashboard](tracing-dashboard.png#center "Tracing costs dashboard")
 ## Conclusion
 
 When turning on diagnostics make sure it helps the business. Revisit diagnostic settings and make sure you are in control of your costs. Also make sure that when in development, you are critical about the diagnostic settings. When turned on, it won't be turned off soon, because you're the expert!
