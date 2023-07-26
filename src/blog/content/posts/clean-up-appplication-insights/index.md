@@ -1,8 +1,8 @@
 ---
 title: "Learn how to verify the biggest costs of your Log Analytics workspace"
 slug: "azure-application-insights-in-control-of-costs"
-date: 2023-07-18T18:00:00+02:00
-publishdate: 2023-07-18T00:00:00+02:00
+date: 2023-08-11T07:00:00+01:00
+publishdate: 2023-09-04T07:00:00+01:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "KQL"]

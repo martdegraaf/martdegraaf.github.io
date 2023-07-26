@@ -1,8 +1,8 @@
 ---
 title: "Golden Tips To Leave Companies Without A Nasty Smell"
 slug: "job-done"
-date: 2023-08-11T01:14:56+01:00
-publishdate: 2023-08-11T01:14:56+01:00
+date: 2023-08-11T12:42:00+01:00
+publishdate: 2023-08-11T12:42:00+01:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Git", "DevOps", "Azure DevOps", "Powershell"]
@@ -52,7 +52,7 @@ Powershell voor ophalen openstaande branches
 
 ### Output
 
-The output will be visible in the console and in a JSON file. 
+The output will be visible in the console and a JSON file.
 
 ## 3. Get feedback
 
@@ -83,7 +83,7 @@ When leaving a company, you want to leave no technical debt behind and clean up 
 
 ### Further reading
 
-- https://github.com/sven73a/Powershell-Utils-Azure
+- A more complex system to generate emails created by Sven: https://github.com/sven73a/Powershell-Utils-Azure
 
 
 ### Wishlist
