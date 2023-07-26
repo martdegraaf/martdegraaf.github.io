@@ -1,12 +1,12 @@
 ---
 title: "Learn how to verify the biggest costs of your Log Analytics workspace"
 slug: "azure-application-insights-in-control-of-costs"
-date: 2023-08-11T07:00:00+01:00
+date: 2023-09-04T07:00:00+01:00
 publishdate: 2023-09-04T07:00:00+01:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Azure", "Application Insights", "Monitoring", "KQL"]
-summary: Explains how to test LogError with Xunit.
+summary: Many companies have a huge money bill for application logging. In this blog post, I will show you how to get in control of your Application Insights costs.
 ShowToc: true
 TocOpen: true
 UseHugoToc: true
