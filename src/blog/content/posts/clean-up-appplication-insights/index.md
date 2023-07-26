@@ -36,10 +36,10 @@ The first step is to identify the biggest cost tables. You can do this by runnin
 
 ![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
 
+With knowledge about the biggest cost tables, you can start optimizing your logging. In the next sections, I will show you example queries to give insights into logging costs.
+
 ```sql {linenos=table,file=QueryByTable.kusto}
 ```
-
-With knowledge about the biggest cost tables, you can start optimizing your logging. In the next sections, I will show you example queries to give insights into logging costs.
 
 ## Azure Diagnostic Logs
 
