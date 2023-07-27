@@ -258,10 +258,13 @@ May the AI be with you.
 
 ## Futher reading
 
+- https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
+- https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/completions#completion
+
 - https://blog.iusmentis.com/2023/03/21/van-wie-is-mijn-werk-als-ik-chatgpt-mijn-werk-laat-doen/
 - https://blog.iusmentis.com/2023/06/08/mag-een-iso27001-gecertificeerde-organisatie-chatgpt-gebruiken/
-- https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
 - https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+
 
 <!--Link to Documentation about Playground adding data.-->
 <!--Link to Documentation about Cognitive Search.-->
