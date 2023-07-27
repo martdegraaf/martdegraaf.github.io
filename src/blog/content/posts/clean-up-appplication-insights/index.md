@@ -32,7 +32,7 @@ All KQL queries in this post are based on the Log Analytics workspace.
 
 ## Identify the biggest cost tables
 
-The first step is to identify the biggest cost tables. You can do this by running the following query in your 'Log Analytics Workspace' resource. The payment model is per Gb, so we want to identify the biggest tables.
+The first step is to identify the biggest cost tables. You can do this by running the following query in your 'Log Analytics Workspace' resource. The payment model is per Gb, so we want to identify the biggest tables. 
 
 ![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
 
@@ -47,7 +47,6 @@ On many Azure resources, you can configure Log Analytics Workspace as an upstrea
 
 ```sql {linenos=table,file=QueryTableByResourceId.kusto, hl_lines=[4]}
 ```
-
 
 ## Application traces
 
@@ -79,6 +78,6 @@ Make sure to set your dashboard time to a good time scope.
 
 When turning on diagnostics make sure it helps the business. Revisit diagnostic settings and make sure you are in control of your costs. Also make sure that when in development, you are critical about the diagnostic settings. When turned on, it won't be turned off soon, because you're the expert!
 
+## Further reading
 
-## Futher reading
 - https://azure.microsoft.com/nl-nl/pricing/details/monitor/

@@ -256,7 +256,7 @@ I just wanted to try out the OpenAI API and see the possibilities it has. Soon c
 <!-- Quoteblock here?-->
 May the AI be with you.
 
-## Futher reading
+## Further reading
 
 - https://learn.microsoft.com/en-us/legal/cognitive-services/openai/overview
 - https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/completions#completion
