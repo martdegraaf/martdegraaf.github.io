@@ -3,7 +3,7 @@ title: "Getting started with Azure OpenAI"
 slug: "getting-started-with-azure-openai"
 date: 2023-09-11T07:00:00+02:00
 publishdate: 2023-09-11T07:00:00+02:00
-draft: false
+draft: true
 author: ["Mart de Graaf"]
 tags: ["Azure", "AI", "GPT"]
 summary: AI is happening. How can you make sure your organization benefits from AI?
