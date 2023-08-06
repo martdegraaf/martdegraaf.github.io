@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			// https://stackoverflow.com/questions/54578615/vscode-open-new-terminal-as-part-of-task
+			"type": "process",
+			"label": "terminal",
+			"command": "powershell",  
+			"problemMatcher": [],
+			"presentation": {
+				 "echo": false,  // silence "Executing task ..."
+				 "focus": true,
+				 "group": "build",  // some arbitrary name for the group
+				 "panel": "dedicated"
+			},
+			"runOptions": {
+				 "runOn": "folderOpen"
+			}
+	  }
+	]
+}
