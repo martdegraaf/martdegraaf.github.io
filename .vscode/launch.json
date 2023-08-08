@@ -8,7 +8,7 @@
 			"type": "PowerShell",
 			"request": "launch",
 			"name": "Launch Hugo at localhost",
-			"script": "Hugo server -D -F --enableGitInfo --port 1313",
+			"script": "Hugo server -D -F --enableGitInfo --port 1313 --buildDrafts --buildFuture --disableFastRender",
 			"cwd": "${workspaceRoot}/src/blog",
 			"presentation": {
 				"hidden": true,

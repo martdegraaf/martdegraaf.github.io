@@ -25,10 +25,18 @@ _Not use this for findability_
 `hugo new posts/nederlandse-blog-post.nl.md`
 
 
-## Run itt
+## Run it
+
+Add `--disableFastRender` to disable the fast render of the site. This will make sure the CSS is generated correctly.
 
 ```cmd
-hugo server --buildDrafts --buildFuture
+hugo server --buildDrafts --buildFuture --disableFastRender
+```
+
+## See future posts
+
+```cmd
+hugo list future
 ```
 
 ## Links to start blogging
