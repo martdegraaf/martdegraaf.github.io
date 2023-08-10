@@ -1,8 +1,8 @@
 ---
 title: "Golden Tips To Leave Companies Without A Nasty Smell"
 slug: "job-done"
-date: 2023-08-11T12:42:00+01:00
-publishdate: 2023-08-11T12:42:00+01:00
+date: 2023-08-10T15:00:00+02:00
+publishdate: 2023-08-10T15:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Git", "DevOps", "Azure DevOps", "Powershell"]
