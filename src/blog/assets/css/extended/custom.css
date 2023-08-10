@@ -1,0 +1,28 @@
+.chroma {
+    background-color: unset !important;
+  }
+
+.code-name {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--martblue);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    z-index: 2;
+    margin-top: 0px;
+    right: 60px;
+    /* opacity: 0.4; */
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* div.codecontainer:hover .code-name,
+pre:hover .code-name {
+    opacity: 0.8;
+} */
+
+div.codecontainer .highlight{
+    margin-top: 0;
+    border-radius: 0px 0px 5px 5px;
+}

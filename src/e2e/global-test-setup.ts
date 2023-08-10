@@ -7,9 +7,9 @@ async function globalSetup(config: FullConfig) {
 
   await page.goto(process.env.PLAYWRIGHT_TEST_BASE_URL as string);
 
-  await page.getByPlaceholder('Enter password').click();
-  await page.getByPlaceholder('Enter password').fill(process.env.PASSWORD as string);
-  await page.getByRole('button', { name: 'Submit' }).click();
+  // await page.getByPlaceholder('Enter password').click();
+  // await page.getByPlaceholder('Enter password').fill(process.env.PASSWORD as string);
+  // await page.getByRole('button', { name: 'Submit' }).click();
   
   await page.waitForSelector('div.logo a');
 

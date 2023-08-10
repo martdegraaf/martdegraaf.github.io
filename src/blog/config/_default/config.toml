@@ -10,6 +10,9 @@ enableEmoji = true
 enableGitInfo = true
 copyright = "Mart de Graaf"
 baseUrl = "http://localhost:1313"
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
 
 [languages.en-us]
 title = "Mart's blog"
@@ -36,10 +39,14 @@ showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
 comments = false
+
+TocOpen= true
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
 mainSections = [ "posts", "reviews" ]
+  [params.assets]
+  disableHLJS = true
 
   [params.homeInfoParams]
   title = "Software Engineer @ 4Dotnet"
@@ -107,5 +114,12 @@ baseName = "index"
 mediaType = "text/html"
 isHTML = true
 
-[markup.highlight]
-codeFences = true
+[markup]
+  [markup.highlight]
+    noClasses=false
+    #anchorLineNos= trues
+    codeFences=true
+    guessSyntax=true
+    lineNos= true
+    lineNumbersInTable = true
+    style="github"

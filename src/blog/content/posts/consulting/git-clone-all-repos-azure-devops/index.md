@@ -72,19 +72,7 @@ To clone all repositories in Azure DevOps we can use the REST API to find all ex
 
 Make sure to create a file named: `CloneAllRepos.config` with the contents written below. Make sure every parameter is configured as your workspace.
 
-```plaintext {linenos=table}
-[General]
-Url=https://dev.azure.com/MART/project
-Username=me@example.com
-Password= ## Use Azure Devops to generate a Personal Access Token with rights: Code: Read/Write, and Packaging: Read#
-
-[LocalGitConfig]
-GitPath=C:\Git\
-OrgName=MART
-
-[GitOptions]
-PruneLocalBranches=false # Optional defaults to false
-GitEmail=username@corperate.com
+```cfg {linenos=table,file=CloneAllRepos.config}
 ```
 
 {{< quoteblock >}}
@@ -103,89 +91,12 @@ I edited the script to fit my needs with some extra parameters.
 1. It prunes local branches when `PruneLocalBranches` is set to true.
 1. It sets the git username email to the configured `GitUsername` under GitOptions, it's ignored when empty.
 
-```PowerShell {linenos=table}
-# Read configuration file
-Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process { 
-    $k = [regex]::split($_,'='); 
-    if(($k[0].CompareTo("") -ne 0) -and ($k[0].StartsWith("[") -ne $True)) { 
-        $h.Add($k[0], $k[1]) 
-    } 
-}
-#AzDO config
-$url = $h.Get_Item("Url")
-$username = $h.Get_Item("Username")
-$password = $h.Get_Item("Password")
-# LocalGitConfig
-$gitPath = $h.Get_Item("GitPath")
-$orgName = $h.Get_Item("OrgName")
-$pruneLocalBranches = $h.Get_Item("PruneLocalBranches") -eq "true"
-$gitEmail = $h.Get_Item("GitEmail")
-
-# Retrieve list of all repositories
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
-$headers = @{
-    "Authorization" = ("Basic {0}" -f $base64AuthInfo)
-    "Accept" = "application/json"
-}
-
-Add-Type -AssemblyName System.Web
-$gitcred = ("{0}:{1}" -f  [System.Web.HttpUtility]::UrlEncode($username),$password)
-
-$resp = Invoke-WebRequest -Headers $headers -Uri ("{0}/_apis/git/repositories?api-version=1.0" -f $url)
-$json = convertFrom-JSON $resp.Content
-
-# Clone or pull all repositories
-$initpath =  ("{0}:{1}" -f  $gitPath,$orgName)
-
-foreach ($entry in $json.value) { 
-	set-location $initpath
-    $name = $entry.name 
-    Write-Host $name -ForegroundColor Green
-
-	if($entry.isDisabled){
-		Write-Host "Skipping disabled repo: '$name'" -ForegroundColor Yellow
-		continue;
-	}
-
-    $url = $entry.remoteUrl #-replace "://", ("://{0}@" -f $gitcred)
-    if(!(Test-Path -Path $name)) {
-        git clone $url
-    } else {
-		Write-Host "Directory '$name' exists lets pull"
-        set-location $name
-        git pull
-		$defaultBranch = git symbolic-ref --short HEAD
-
-        if($pruneLocalBranches){
-			Write-Host "Pruning local branches $name" -ForegroundColor Yellow
-            $branches = git branch -vv | Where-Object { $_ -notmatch "::" } | ForEach-Object { ($_ -split '\s+')[1] }
-
-			foreach ($branch in $branches) {
-				if ($branch -eq $defaultBranch) {
-					Write-Host "Skipping default branch '$branch'."
-					continue
-				}
-				if ((git branch -vv | Where-Object { $_ -match "$branch\s+\[origin\/" })) {
-					Write-Host "Skipping branch '$branch' as it has a remote reference."
-				}
-				else {
-					git branch -D $branch
-					Write-Host "Deleted local branch '$branch'." -ForegroundColor Green
-				}
-			}
-        }
-        if($gitEmail){
-            git config user.email "$gitEmail"
-        }
-    }
-}
+```PowerShell {linenos=table, file=CloneAllRepos.ps1}
 ```
-
 
 {{< quoteblock >}}
 :robot: If you have some additional ideas, let ChatGPT help you. Supply ChatGPt with the context: `Rewrite this PowerShell script to also <insert new Feature>. Here is the current version of the PowerShell script: <insert PowerShell script>.`. Let me know if you thought of a clever solution.
 {{</ quoteblock >}}
-
 
 ### Run it
 
