@@ -32,7 +32,7 @@ Using the scripts below we can create a small to-do list, which you should do be
 
 Even if you would work with Trello, it would be nice to hand over open items to coworkers. When working in Azure DevOps, you can use the following Powershell script to get all open work items assigned to you.
 
-In the PowerShell script below we can easily get all open work items. This is not only handy when leaving companies but also when you want to get an overview of all open work items. You can use this script to get knowledge of all open work items or to hand over the work to a colleague.
+In the PowerShell script below we can easily get all open work items. This is not only handy when leaving companies but also when you want to get an overview of all open work items. You can use this script to get knowledge of all open work items or to hand over the work to a colleague. You could also do this in Azure DevOps, but when you already have a PAT-token, you can check this as well with this easy script.
 
 ```PowerShell {linenos=table,file="OpenWorkItems.ps1"}
 Powershell voor ophalen openstaande work items
@@ -61,7 +61,7 @@ Ask for feedback from your colleagues and manager. This feedback can be used to 
 When asking for feedback keep in mind it's to improve yourself, not to get a compliment. You can ask for feedback in the following way:
 
 {{< quoteblock >}}
-💬 "What could I have done better when working together?"
+💬 "What could I have done better while working together?"
 {{</ quoteblock >}}
 
 ## 4. Say goodbye
@@ -86,7 +86,9 @@ When leaving a company, you want to leave no technical debt behind and clean up 
 - A more complex system to generate emails created by Sven: https://github.com/sven73a/Powershell-Utils-Azure
 
 
+<!-- 
 ### Wishlist
 - Branch has PR open?
 - Work Item has PR open?
 - can we make DORA metrics using Powershell AZ DO API?
+-->
