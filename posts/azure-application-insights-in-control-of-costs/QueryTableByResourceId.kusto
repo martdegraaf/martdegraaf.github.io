@@ -1,0 +1,4 @@
+AzureDiagnostics
+| where TimeGenerated > ago(32d)
+| summarize sum (1)  by bin(TimeGenerated, 1d), _ResourceId
+| render columnchart
