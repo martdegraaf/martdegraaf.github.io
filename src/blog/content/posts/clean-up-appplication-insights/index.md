@@ -43,7 +43,7 @@ With knowledge about the biggest cost tables, you can start optimizing your logg
 
 ## Azure Diagnostic Logs
 
-On many Azure resources, you can configure Log Analytics Workspace as an upstream source. But did you know that this can lead to many logs you have to pay for? A colleague of mine used this query to identify 90% of their costs. By disabling the Azure Diagnostic Logs for Power BI, they saved a lot of money. By running this query you will gain insights into the **amount** of logs ingested per resource.
+On many Azure resources, you can configure Log Analytics Workspace as an upstream source. But did you know that this can lead to many logs you have to pay for? A colleague of mine used this query to identify and reduce 90% of their costs. By disabling the Azure Diagnostic Logs for Power BI, they saved a lot of money. By running this query you will gain insights into the **amount** of logs ingested per resource.
 
 ```sql {linenos=table,file=QueryTableByResourceId.kusto}
 ```
