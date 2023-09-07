@@ -61,7 +61,7 @@ Make sure you configure your log levels correctly. In `appsettings.json` of `hos
 
 ## Application dependencies
 
-Dependencies are really important. But when writing too much dependency logging it can lead to unwanted costs. This query will give you insights into the dependencies that have a great economic footprint in your Log Analytics Workspace. The EuroCost is determined by the sum of `_BilledSize` size of all dependencies given in Gb, multiplied by `2,52`.
+Dependencies are really important. But when writing too much dependency logging it can lead to unwanted costs. This query will give you insights into the dependencies that have a great economic footprint in your Log Analytics Workspace. The `EuroCost` is determined by the sum of `_BilledSize` size of all dependencies given in Gb, multiplied by `2,52`.
 
 The `DataTotalSize` field indicates the data size, this can contain for example the Database query when that is enabled in your logging. If this value is big and the count of this dependency is high this might be a hotspot to act on.
 
@@ -70,7 +70,7 @@ The `DataTotalSize` field indicates the data size, this can contain for example 
 
 ## Health checks
 
-A special mention is for health checks, do you need the full trace and dependency tree for every health check call? Make sure to exclude those unwanted requests and dependencies. Only when the check fails or a 200 ok result is necessary to keep.
+A special mention is for health checks, do you need the full trace and dependency tree for every health check call? Make sure to exclude those unwanted requests and dependencies. You might only consider keeping health check logging when the health check fails and only the health check result.
 
 ## Dashboard
 
