@@ -32,7 +32,7 @@ All KQL queries in this post are based on the Log Analytics workspace.
 
 ## Identify the biggest cost tables
 
-The first step is to identify the biggest cost tables. You can do this by running the following query in your 'Log Analytics Workspace' resource. The payment model is per Gb, so we want to identify the biggest tables. 
+The first step is to identify the biggest cost tables. You can do this by running the following query in your 'Log Analytics Workspace' resource. The payment model is per Gb, so we want to identify the largest tables.
 
 ![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
 
@@ -61,10 +61,16 @@ Make sure you configure your log levels correctly. In `appsettings.json` of `hos
 
 ## Application dependencies
 
-Dependencies are really important. But when saving too much dependency logging it can lead to a lot of money. This query will give you insights into the biggest dependencies, it is a multiply of the number of calls and the size of all dependencies, the same as with traces.
+Dependencies are really important. But when writing too much dependency logging it can lead to unwanted costs. This query will give you insights into the dependencies that have a great economic footprint in your Log Analytics Workspace. The EuroCost is determined by the sum of `_BilledSize` size of all dependencies given in Gb, multiplied by `2,52`.
+
+The `DataTotalSize` field indicates the data size, this can contain for example the Database query when that is enabled in your logging. If this value is big and the count of this dependency is high this might be a hotspot to act on.
 
 ```sql {linenos=table,file=AppDependenciesByCosts.kusto}
 ```
+
+## Health checks
+
+A special mention is for health checks, do you need the full trace and dependency tree for every health check call? Make sure to exclude those unwanted requests and dependencies. Only when the check fails or a 200 ok result is necessary to keep.
 
 ## Dashboard
 
