@@ -14,6 +14,14 @@ UseHugoToc: true
 ShowReadingTime: true
 ShowLastModified: false
 ShowWordCount: true
+
+
+cover:
+    image: "pexels-pixabay-259027.jpg" # image path/url
+    alt: "Hard Cash on a Briefcase - Photo by Pixabay: https://www.pexels.com/photo/hard-cash-on-a-briefcase-259027/" # alt text
+    caption: "Hard Cash on a Briefcase  - Photo by Pixabay" # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 ## Introduction
