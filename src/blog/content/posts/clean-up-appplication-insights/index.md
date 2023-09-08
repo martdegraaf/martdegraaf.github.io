@@ -40,6 +40,8 @@ All KQL queries in this post are based on the Log Analytics workspace.
 
 ## Identify the biggest cost tables
 
+Log Analytics consists of tables, each of those with a specific target to log something. For example `AppTraces` for traces, but also tables like `SynapseIntegrationTriggerRuns` for logging Synapse triggers.
+
 The first step is to identify the biggest cost tables. You can do this by running the following query in your 'Log Analytics Workspace' resource. The payment model is per Gb, so we want to identify the largest tables.
 
 ![Log Analytics Workspace - Logs - Kusto Query Language](log-analytics-logs.png#center "Log Analytics Workspace - Logs - Kusto Query Language")
