@@ -13,7 +13,6 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 ## Upcoming engagements
 
-1. [7 September 2023 - Azure Platform Engineering meetup - Git](https://www.meetup.com/azure-platform-engineering/events/292450345/)
 1. [16 November 2023 - 4Dotnet's Move up](https://www.4dotnet.nl/move-up-with-4dotnet-16-november-2023)
 
 ## Current sessions
@@ -30,6 +29,7 @@ Here are some of the events where I had the privilege to share my knowledge:
 
 ![DevCampNoord](/images/devCampNoord.jpg#right "DevCampNoord")
 
+- 7 September 2023 - [Azure Platform Engineering meetup](https://www.meetup.com/azure-platform-engineering/events/292450345/)
 - 4 April 2023 - [DevCampNoord](https://devnetnoord.nl/).
 - 4 November 2022 - [DotNetFriday](https://www.dotnetfriday.nl) ([Recording](https://www.youtube.com/watch?v=_xgN-NAPZXo))
 - 29 September 2022 - [DevNetNoord (The Revival)](https://devnetnoord.nl/)
