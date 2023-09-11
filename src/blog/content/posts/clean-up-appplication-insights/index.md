@@ -96,4 +96,6 @@ When turning on diagnostics make sure it helps the business. Revisit diagnostic 
 
 ## Further reading
 
+For making a custom Processor in Code to make conditional logging make sure to visit my mate's blog [Thomas Vieveen](https://www.visoftsolutions.nl/index.php/2023/09/10/reducing-azure-application-insights-logging-costs/).
+
 - https://azure.microsoft.com/nl-nl/pricing/details/monitor/
