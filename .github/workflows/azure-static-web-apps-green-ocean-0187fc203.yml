@@ -11,7 +11,7 @@ on:
     branches:
       - main
 env:
-  IS_PRODUCTION: "${{ github.event_name == 'push' }}"
+  IS_PRODUCTION: "${{ github.event_name != 'pull_request' }}"
   PRODUCTION_URL: "https://blog.martdegraaf.nl/"
   STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
 
