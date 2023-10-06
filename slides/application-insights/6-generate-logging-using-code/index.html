@@ -20,7 +20,7 @@ Write Logs ../../posts/verifyLogged-with-xunit/systemUnderTest.cs 1 2 3 4 5 6 7 
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cs data-lang=cs><span class=line><span class=cl><span class=k>public</span> <span class=k>async</span> <span class=n>Task</span> <span class=n>Delete</span><span class=p>(</span><span class=kt>long</span> <span class=n>sequenceNumber</span><span class=p>)</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cs data-lang=cs><span class=line><span class=cl><span class=kd>public</span> <span class=kd>async</span> <span class=n>Task</span> <span class=n>Delete</span><span class=p>(</span><span class=kt>long</span> <span class=n>sequenceNumber</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=n>_logger</span><span class=p>.</span><span class=n>LogInformation</span><span class=p>(</span><span class=s>&#34;Deleting `{sequenceNumber}`.&#34;</span><span class=p>,</span> <span class=n>sequenceNumber</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>  <span class=k>try</span>
