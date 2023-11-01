@@ -5,6 +5,10 @@ weight = 7
 
 {{% reveal/section %}}
 
+![Log Analytics Workspace in Azure](law.drawio.png)
+
+---
+
 # Basic Azure Application Insights
 
 1. Requests
@@ -13,6 +17,9 @@ weight = 7
 1. Dependencies
 1. PageViews
 
+{{% reveal/note %}}
+Deze tabellen vertalen in Log Analytics Workspace naar andere tabelnamen.
+{{% /reveal/note %}}
 ---
 
 # Kusto in Microsoft Azure
