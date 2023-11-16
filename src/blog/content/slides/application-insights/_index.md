@@ -3,23 +3,29 @@ title = "Observability of your cloud software using Azure Application Insights"
 outputs = ["Reveal"]
 author = "Mart de Graaf"
 Private = true
+[logo]
+src = "/images/4dotnet_logo.png"
+diag = "2%"
 +++
 
-# Application insights and Kusto deep dive
+# Application insights
+#### Guide, overview, tips and tricks
+by Mart de Graaf
 
 {{% reveal/note %}}
-Do some linking to Microsoft Learn.
 
 's' - type 's' to enter speaker mode, which opens a separate window with a time and speaker notes
 'o' - type 'o' to enter overview mode and scroll through slide thumbnails
 'f' - type 'f' to go into full-screen mode
 
-Practice via Azure Data Explorer. see https://dataexplorer.azure.com/
-https://dataexplorer.azure.com/clusters/help/databases/Samples
-https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation
-https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true
+Practice via Azure Data Explorer. see
+- https://dataexplorer.azure.com/
+- https://dataexplorer.azure.com/clusters/help/databases/Samples
+- https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation
+- https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true
 
 {{% /reveal/note %}}
+
 
 <!-- ---
 Notes

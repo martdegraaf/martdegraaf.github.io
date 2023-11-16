@@ -1,5 +1,5 @@
 +++
-weight = 7
+weight = 1
 +++
 
 
@@ -7,22 +7,55 @@ weight = 7
 
 ![Log Analytics Workspace in Azure](law.drawio.png)
 
+{{% reveal/note %}}
+
+A Log Analytics Workspace has upstream connectors and can be used to write diagnostics to by Application Insights and azure resources
+
+Some upstream resources:
+- Power BI
+- Grafana
+- Azure Defender for Cloud
+- Azure Sentinel
+- Azure Dashboards
+- Azure Workbooks
+
+Costs are per Gb in the LAW, so scaling AI will not affect costs.
+
+{{% /reveal/note %}}
+
 ---
 
-# Basic Azure Application Insights
+## Basic Azure Application Insights
 
-1. Requests
-1. Traces
-1. Exceptions
-1. Dependencies
-1. PageViews
+1. requests
+1. traces
+1. exceptions
+1. dependencies
+1. pageViews
 
 {{% reveal/note %}}
 Deze tabellen vertalen in Log Analytics Workspace naar andere tabelnamen.
 {{% /reveal/note %}}
+
 ---
 
-# Kusto in Microsoft Azure
+## Azure Log Analytics workspace
+
+| AI | LAW |
+|---|---|
+| requests | AppRequests   |
+| traces | AppTraces |
+| exceptions | AppExceptions   |
+| dependencies | AppDependencies |
+| pageViews |  AppPageViews |
+
+{{% reveal/note %}}
+https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+{{% /reveal/note %}}
+
+---
+
+## Kusto in Microsoft Azure
 
 1. Azure Application Insights and Log Analytics
 2. Azure Monitor
@@ -35,9 +68,9 @@ Wikipedia says Kusto from 2014, and names after the person Cousteau, as a refere
 
 ---
 
-# Azure Data Explorer
+## Azure Data Explorer
 
-## Kusto Query Language (KQL)
+### Kusto Query Language (KQL)
 
 1. <https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/>
 2. <https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet?source=recommendations>
