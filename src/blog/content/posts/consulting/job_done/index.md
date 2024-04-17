@@ -40,7 +40,7 @@ Powershell voor ophalen openstaande work items
 
 ### Output
 
-It will be output in a JSON file, for now. I think that will be easy to read if you are leaving. It also limits to 200 work items. If you have more than 200 work items, you probably have a problem. 
+It will be output in a JSON file, for now. I think that will be easy to read if you are leaving. It also limits to 200 work items. If you have more than 200 work items, you probably have a problem.
 
 ## 2. No open branches :broccoli: or pull requests
 

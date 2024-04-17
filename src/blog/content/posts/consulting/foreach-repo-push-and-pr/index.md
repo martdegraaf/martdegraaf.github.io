@@ -35,4 +35,4 @@ In the underlying script, I can create a branch from the main branch and push th
 
 ## Conclusion
 
-I am going to use this script to update files across all of our repositories. For this client, the code review is important, so the automation would end in a set pull request.
+I am going to use this script to update files across all of our repositories. For this client, the code review is important, so the automation would end in a set pull request. In the next blog post, I am going to create a script that will create files to be pushed for every repository.
