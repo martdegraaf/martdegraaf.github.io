@@ -76,7 +76,9 @@ Make sure to create a file named: `CloneAllRepos.config` with the contents writt
 ```
 
 {{< quoteblock >}}
-:bulb: Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+:bulb: ~~Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).~~
+
+2024 april 17. I updated the script to get an access token using the current session of the az cli. see [Azure DevOps API Authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?toc=%2Fazure%2Fdevops%2Forganizations%2Fsecurity%2Ftoc.json&view=azure-devops#q-can-i-use-a-service-principal-or-managed-identity-with-azure-cli).
 {{</ quoteblock >}}
 
 ### CloneAllRepos.ps1
