@@ -43,37 +43,22 @@ $json = @($pipeline) | ConvertTo-Json -Depth 99
 # create serviceName folder
 New-Item -ItemType Directory -Force -Path "tmp\$($serviceName.ToLower())"
 
-Function ConvertTo-Yaml {
+Function ConvertTo-Yml {
     param (
         [Parameter(Mandatory=$true)]
         [object]$object,
         [Parameter(Mandatory=$true)]
         [string]$Path
     )
-    $yaml = 'variables:'
+    $yml = 'variables:'
     foreach ($variable in $object.PsObject.Properties) {
-        $yaml += "`n  $($variable.Name): $($variable.Value.Value)"
+        $yml += "`n  $($variable.Name): $($variable.Value.Value)"
     }
-    Write-Host $yaml
-    $yaml | Out-File -FilePath $Path
+    Write-Host $yml
+    $yml | Out-File -FilePath $Path
 }
 
-# write a function to check if a pipeline use json stringify contains a text.
-Function CheckPipelineContainsText {
-    param (
-        [Parameter(Mandatory=$true)]
-        [string]$pipelineJson,
-        [Parameter(Mandatory=$true)]
-        [string]$text
-    )
-    #write $pipelineString to tmp/pipeline.json
-    $pipelineJson | Out-File -FilePath "tmp\pipeline.json"
-    return $pipelineJson.Contains($text)
-}
-
-
-
-ConvertTo-Yaml $pipeline.variables "tmp\$($serviceName.ToLower())\variables.yaml"
+ConvertTo-Yml $pipeline.variables "tmp\$($serviceName.ToLower())\variables.yml"
 foreach ($environment in $pipeline.environments) {
     #transform $environment.name to o, t, a or p
     #Possible inputs: Development, Test, Acceptance, Production
@@ -84,10 +69,10 @@ foreach ($environment in $pipeline.environments) {
         "a" { "a" }
         "p" { "p" }
     }
-    ConvertTo-Yaml $environment.variables "tmp\$($serviceName.ToLower())\variables-$($environmentSuffix).yaml"
+    ConvertTo-Yml $environment.variables "tmp\$($serviceName.ToLower())\variables-$($environmentSuffix).yml"
 }
 
-$yaml = "
+$yml = "
 trigger:
   branches:
     include:
@@ -108,10 +93,10 @@ variables:
   - template: variables.yml
 
 extends:
-  template: Yaml/service.pipeline.yml@Pipelines
+  template: Yml/service.pipeline.yml@Pipelines
   parameters:"
 
-$yaml | Out-File -FilePath "tmp\$($serviceName.ToLower())\$($serviceName.ToLower())-pipeline.yaml"
+$yml | Out-File -FilePath "tmp\$($serviceName.ToLower())\$($serviceName.ToLower())-pipeline.yml"
 
 # update the release definition with the new path
 $response = Invoke-RestMethod -Uri $uri -Headers $headers -Method Put -Body $json -ContentType "application/json"

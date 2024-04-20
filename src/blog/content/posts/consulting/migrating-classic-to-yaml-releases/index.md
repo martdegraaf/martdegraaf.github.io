@@ -16,6 +16,13 @@ UseHugoToc: false
 ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
+
+cover:
+    image: "40b3e5cb-391d-406d-b27e-65b13910f298.png" # image path/url
+    alt: "A robotic hand holding a parchment scroll, which is transforming into a modern, abstract YAML file icon." # alt text
+    caption: "A robotic hand holding a parchment scroll, which is transforming into a modern, abstract YAML file icon." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 In a previous blogpost we tackled the issue to push files and creating pull requests using Powershell. In this blog post we are going to tackle the issue of migrating classic releases to YAML pipelines in Azure DevOps. We are going to use a script to fetch current classic releases and make yaml files out of it.
