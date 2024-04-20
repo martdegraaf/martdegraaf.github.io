@@ -53,9 +53,9 @@ mainSections = [ "posts", "reviews" ]
   content = "Blogging about Azure, .NET, Git and architecture."
 
   [params.cover]
-  hidden = true
-  hiddenInList = true
-  hiddenInSingle = true
+  hidden = false
+  hiddenInList = false
+  hiddenInSingle = false
 
   [params.profileMode]
   enabled = false
