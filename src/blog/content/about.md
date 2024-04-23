@@ -26,3 +26,5 @@ Sharing makes me so happy that I try to share my knowledge through [speaking](/s
 Here are some of my active certifications I am very proud of:
 
 {{< credly >}}
+
+Microsoft's certifications can be found at [Transcript - Mart de Graaf Microsoft Learn](https://learn.microsoft.com/en-us/users/martdegraaf/transcript/v2z4kf4kggnkl0e?tab=credentials-tab)
