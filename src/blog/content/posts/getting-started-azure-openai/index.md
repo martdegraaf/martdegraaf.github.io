@@ -12,6 +12,13 @@ ShowToc: true
 ShowReadingTime: true
 ShowLastModified: false
 ShowWordCount: true
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A sophisticated and modern digital-themed blog cover image for a blog about getting started with Azure OpenAI." # alt text
+    caption: "A sophisticated and modern digital-themed blog cover image for a blog about getting started with Azure OpenAI." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 ## Introduction

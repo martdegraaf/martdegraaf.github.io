@@ -19,6 +19,13 @@ ShowLastModified: true
 ShowWordCount: true
 
 series: ['Consultant tips']
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A digital workspace with multiple computer screens displaying code and command lines." # alt text
+    caption: "A digital workspace with multiple computer screens displaying code and command lines." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.

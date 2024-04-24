@@ -17,6 +17,14 @@ ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
 
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A door indicating your exit at a company." # alt text
+    caption: "A door indicating your exit at a company." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
+
 series: ['Consultant tips']
 ---
 
