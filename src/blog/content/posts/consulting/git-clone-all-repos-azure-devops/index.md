@@ -5,7 +5,7 @@ date: 2023-05-15T18:14:56+01:00
 publishdate: 2023-05-15T18:14:56+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Git", "Powershell", "Azure DevOps"]
+tags: ["Git", "Powershell", "Azure DevOps", "Consulting", "Automation"]
 #ummary: "The text should be under 160 chars and therefore no longer than this string. Two senteces is the most effective. Or some shorter sentences after each other.1234"
 summary: "Learn how to efficiently clone all Git repos in Azure DevOps with our comprehensive consulting guide. Streamline your development workflow today!"
 ## Toc

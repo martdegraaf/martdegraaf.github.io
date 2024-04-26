@@ -5,7 +5,7 @@ date: 2024-04-17T23:45:36+02:00
 publishdate: 2024-04-17T23:45:36+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: []
+tags: ["azure-devops", "powershell", "yaml", "automation", "devops"]
 summary: "Migrate your classic releases to YAML pipelines in Azure DevOps with our comprehensive guide. Streamline your deployment process today!"
 # Toc
 ShowToc: true
