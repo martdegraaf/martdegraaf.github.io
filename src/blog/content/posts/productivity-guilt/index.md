@@ -40,12 +40,14 @@ If you do not experience this feeling let me explain what this does for me. This
 
 ## Imposter syndrome
 
-We as programmers often talk about the 'Imposter syndrome'. The feeling that other people know better than you, can prevent you from taking the stage and present technologies. I think this productivity guilt is a form of imposter syndrome.
+We as programmers often talk about the 'Imposter syndrome'. The feeling that other people know more than you, can prevent you from public speaking about your expertise. I think this productivity guilt is a form of imposter syndrome.
 
-## Taling helps
+## Talking helps
 
 I have talked about this with colleagues and they scoped the problem differently. It does not mean the inner voice will stop talking. I think it is important to talk about this and share your feelings with others. It helps to get instructions to stop, or to get compliments on your results.
 
 ## Final thoughts
+
+I am still struggling with this feeling. If this is what people mean by Work-Life balance, I have to learn daily to balance this correctly.
 
 If you experience this too, I invite you to share your thoughts with me. I am curious how you cope with this feeling.
