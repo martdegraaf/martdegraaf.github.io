@@ -25,11 +25,11 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-__Intro to the problem__
+__Have you ever felt guilty for not being productive? I have. Let's talk about it.__
 
 # The office == work?
 
-With more than 10 years of work experience, I have worked in the office, hybrid, and remote. 
+With more than 10 years of work experience, I have worked in the office, hybrid, and remote.
 I want to talk about productivity guilt. When I was in the office, I never felt guilty when I was not productive. When I checked in and out of the office those were my working hours. I was there, I was working. There was no guilt, even when drinking coffee with colleagues or smashing a ping pong ball in the office.
 
 Now with hybrid and remote work, I feel more guilty. I do have a family with four children and that takes time, and that does feel like I burn time that was supposed to be for working.
