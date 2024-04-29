@@ -3,7 +3,7 @@ title: "Angular Relative Navigation"
 slug: "angular-relative-navigation"
 date: 2024-04-25T07:47:30+02:00
 publishdate: 2024-04-25T07:47:30+02:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: ["angular", "navigation", "routing", "typescript"]
 summary: "Learn how to navigate to a route relative to the current route in Angular. This is useful when you have a wizard-like flow in your application."
@@ -28,7 +28,7 @@ cover:
 
 For a project, we have routes that live in states. We wanted to navigate to a route relative to the current route. for each child route, we will be able to navigate to the previous and next route.
 
-# System context
+## System context
 
 Let's say we have a `app-routing.module.ts` with the following routes:
 
