@@ -91,3 +91,7 @@ export const getLastActivatedRouteInChain = (activatedRoute: ActivatedRoute): Ac
 ## Conclusion and discussion
 
 This way we can navigate to a route relative to the current route. This is useful when you have a wizard-like flow in your application.
+
+### Further reading
+
+- [Angular Router](https://angular.io/guide/router)

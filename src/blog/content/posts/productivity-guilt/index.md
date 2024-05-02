@@ -32,11 +32,11 @@ __Have you ever felt guilty for not being productive? I have. Let's talk about i
 With more than 10 years of work experience, I have worked in the office, hybrid, and remote.
 I want to talk about productivity guilt. When I was in the office, I never felt guilty when I was not productive. When I checked in and out of the office those were my working hours. I was there, I was working. There was no guilt, even when drinking coffee with colleagues or smashing a ping pong ball in the office.
 
-Now with hybrid and remote work, I feel more guilty. I have a family with four children and that takes time, and that does feel like I burn time that was supposed to be for working. As a result I work later in the evening to compensate for my guilty feeling.
+Now with hybrid and remote work, I feel more guilty. I have a family with four children and that takes time, and that does feel like I burn time that was supposed to be for working. As a result, I work later in the evening to compensate for my guilty feelings.
 
 ## The guilt
 
-If you do not experience this feeling let me explain what this does for me. This feeling makes me work more hours, and work more in the evening. I feel like I have to make up for the time I was not productive.
+If you do not experience this feeling let me explain what this does for me. This feeling makes me work more hours, and work more in the evening. I feel like I have to make up for the time I was not productive. For example, after a Thursday full of work, the thought comes up to work more to pre-compensate for the Friday after. But on Friday I work the full amount of hours. In the end, I am working more hours than I should.
 
 ## Imposter syndrome
 
@@ -45,6 +45,22 @@ We as programmers often talk about the 'Imposter syndrome'. The feeling that oth
 ## Talking helps
 
 I have talked about this with colleagues and they scoped the problem differently. It does not mean the inner voice will stop talking. I think it is important to talk about this and share your feelings with others. It helps to get instructions to stop, or to get compliments on your results.
+
+## Discipline
+
+Work on habits regarding your work. Habits will help you to regulate working hours and feel productive. Some tips I have gathered are:
+
+- Start and end your workday at the same time.
+- Make sure you have a dedicated workspace.
+- Shut down your computer at the end of the workday.
+
+In the book 'Tiny Habits' by BJ Fogg, he talks about the MAUI habit. This habit is saying when your feet touch the floor in the morning: "It's going to be a great day.". This helps you to start your day with a positive mindset.
+
+I suggest another habit to enclose your working day. I will try and make this my habit:
+
+{{< quoteblock >}}
+After I shut down my computer, I will say to myself: "I did a great job today."
+{{< /quoteblock >}}
 
 ## Final thoughts
 
