@@ -13,6 +13,7 @@ baseUrl = "http://localhost:1313"
 pygmentsUseClasses = true
 pygmentsCodefences = true
 
+paginate = 12 # articles per page
 
 [languages.en-us]
 title = "Mart's blog"
@@ -44,6 +45,8 @@ TocOpen= true
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
+
+
 mainSections = [ "posts", "reviews" ]
   [params.assets]
   disableHLJS = true
@@ -53,9 +56,9 @@ mainSections = [ "posts", "reviews" ]
   content = "Blogging about Azure, .NET, Git and architecture."
 
   [params.cover]
-  hidden = true
-  hiddenInList = true
-  hiddenInSingle = true
+  hidden = false
+  hiddenInList = false
+  hiddenInSingle = false
 
   [params.profileMode]
   enabled = false

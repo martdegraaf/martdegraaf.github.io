@@ -26,3 +26,50 @@ div.codecontainer .highlight{
     margin-top: 0;
     border-radius: 0px 0px 5px 5px;
 }
+
+/*media query for md screen*/
+/* @media (max-width: 768px) {
+    .entry-cover {
+        width: 120px;
+        float: left;
+        margin-right: 20px;
+    }
+}
+@media (min-width: 769px) {
+    .entry-cover {
+    }
+} */
+
+/*create a flex for #main > article.post-entry with 3 per row on desktop, 2 for mobile*/
+@media (min-width: 768px) {
+.main:has(> article.post-entry){
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.main:has(> article.post-entry) > .home-info{
+    flex: 0 0 100%;
+}
+.main:has(> article.post-entry) article.post-entry {
+    flex: 0 0 33%;
+    margin: 0 0 20px;
+    /* padding: 0;
+    display: flex; */
+}
+.main:has(> article.post-entry) article.post-entry .entry-cover{
+    margin: -24px -24px 0px -24px;
+    /* margin: 0;
+    max-width: 9rem; */
+}
+.main:has(> article.post-entry) article.post-entry .entry-cover img{
+    /* border-radius: 0; 
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+.main:has(> article.post-entry) .page-footer{
+    flex: 0 0 100%;
+}
+}

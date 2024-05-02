@@ -12,11 +12,11 @@ A commit on the main branch will (also) be deployed to GitHub pages.
 
 ## New code post
 
-`hugo new --kind code-post posts/your-new-blog.md`
+`hugo new --kind code-post posts/new`
 
 ## New book review
 
-`hugo new --kind book-review books/cool-book.md`
+`hugo new --kind book-review reviews/books/cool-book.md`
 
 ## Blog in Dutch
 

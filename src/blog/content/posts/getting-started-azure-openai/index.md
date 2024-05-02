@@ -5,13 +5,20 @@ date: 2023-10-26T07:00:00+02:00
 publishdate: 2023-10-26T07:00:00+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Azure", "AI", "GPT"]
+tags: ["Azure", "AI", "GPT", "OpenAI", "Cognitive Search"]
 summary: AI is happening. How can you make sure your organization benefits from AI?
 ShowToc: true
 
 ShowReadingTime: true
 ShowLastModified: false
 ShowWordCount: true
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A sophisticated and modern digital-themed blog cover image for a blog about getting started with Azure OpenAI." # alt text
+    caption: "A sophisticated and modern digital-themed blog cover image for a blog about getting started with Azure OpenAI." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 ## Introduction

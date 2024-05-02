@@ -5,7 +5,7 @@ date: 2023-05-15T18:14:56+01:00
 publishdate: 2023-05-15T18:14:56+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Git", "Powershell", "Azure DevOps"]
+tags: ["Git", "Powershell", "Azure DevOps", "Consulting", "Automation"]
 #ummary: "The text should be under 160 chars and therefore no longer than this string. Two senteces is the most effective. Or some shorter sentences after each other.1234"
 summary: "Learn how to efficiently clone all Git repos in Azure DevOps with our comprehensive consulting guide. Streamline your development workflow today!"
 ## Toc
@@ -19,6 +19,13 @@ ShowLastModified: true
 ShowWordCount: true
 
 series: ['Consultant tips']
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A digital workspace with multiple computer screens displaying code and command lines." # alt text
+    caption: "A digital workspace with multiple computer screens displaying code and command lines." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
@@ -76,7 +83,9 @@ Make sure to create a file named: `CloneAllRepos.config` with the contents writt
 ```
 
 {{< quoteblock >}}
-:bulb: Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+:bulb: ~~Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).~~
+
+On 2024 april 17, I updated the script to get an access token using the current session of the az cli. see [Azure DevOps API Authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?toc=%2Fazure%2Fdevops%2Forganizations%2Fsecurity%2Ftoc.json&view=azure-devops#q-can-i-use-a-service-principal-or-managed-identity-with-azure-cli).
 {{</ quoteblock >}}
 
 ### CloneAllRepos.ps1

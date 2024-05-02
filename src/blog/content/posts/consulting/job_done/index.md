@@ -17,6 +17,14 @@ ShowReadingTime: true
 ShowLastModified: true
 ShowWordCount: true
 
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A door indicating your exit at a company." # alt text
+    caption: "A door indicating your exit at a company." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
+
 series: ['Consultant tips']
 ---
 
@@ -40,7 +48,7 @@ Powershell voor ophalen openstaande work items
 
 ### Output
 
-It will be output in a JSON file, for now. I think that will be easy to read if you are leaving. It also limits to 200 work items. If you have more than 200 work items, you probably have a problem. 
+It will be output in a JSON file, for now. I think that will be easy to read if you are leaving. It also limits to 200 work items. If you have more than 200 work items, you probably have a problem.
 
 ## 2. No open branches :broccoli: or pull requests
 
