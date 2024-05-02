@@ -7,24 +7,25 @@ Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process {
 }
 #AzDO config
 $url = $h.Get_Item("Url")
-$username = $h.Get_Item("Username")
-$password = $h.Get_Item("Password")
 # LocalGitConfig
 $gitPath = $h.Get_Item("GitPath")
 $orgName = $h.Get_Item("OrgName")
 $pruneLocalBranches = $h.Get_Item("PruneLocalBranches") -eq "true"
 $gitEmail = $h.Get_Item("GitEmail")
 
-# Retrieve list of all repositories
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
+# Get the access token from current az login session
+# see https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?toc=%2Fazure%2Fdevops%2Forganizations%2Fsecurity%2Ftoc.json&view=azure-devops#q-can-i-use-a-service-principal-or-managed-identity-with-azure-cli
+$accessToken = az account get-access-token --resource 499b84ac-1321-427f-aa17-267ca6975798 --query "accessToken" --output tsv
+if ($null -eq $accessToken) {
+    exit 1
+}
+
 $headers = @{
-    "Authorization" = ("Basic {0}" -f $base64AuthInfo)
+    "Authorization" = ("Bearer {0}" -f $accessToken)
     "Accept" = "application/json"
 }
 
-Add-Type -AssemblyName System.Web
-$gitcred = ("{0}:{1}" -f  [System.Web.HttpUtility]::UrlEncode($username),$password)
-
+# Retrieve list of all repositories
 $resp = Invoke-WebRequest -Headers $headers -Uri ("{0}/_apis/git/repositories?api-version=1.0" -f $url)
 $json = convertFrom-JSON $resp.Content
 

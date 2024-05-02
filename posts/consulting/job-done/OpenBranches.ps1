@@ -1,15 +1,18 @@
 # Set variables
 $organizationUrl = "https://dev.azure.com/MART" # Replace Mart with organization name
 $projectName = "ProjectName" # Replace ProjectName with project name
-$username = "you@corperate.com" # Replace email with your Az DO username
-$personalAccessToken = "[[TOKEN]]" # Get the personal access token from Azure DevOps
 
 $dayTolerance = 14
 
+# Get the access token from current az login session
+# see https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?toc=%2Fazure%2Fdevops%2Forganizations%2Fsecurity%2Ftoc.json&view=azure-devops#q-can-i-use-a-service-principal-or-managed-identity-with-azure-cli
+$accessToken = az account get-access-token --resource 499b84ac-1321-427f-aa17-267ca6975798 --query "accessToken" --output tsv
+if ($null -eq $accessToken) {
+    exit 1
+}
 # Set headers
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $personalAccessToken)))
 $headers = @{
-    "Authorization" = ("Basic {0}" -f $base64AuthInfo)
+    "Authorization" = ("Bearer {0}" -f $accessToken)
     "Accept"        = "application/json"
 }
 
