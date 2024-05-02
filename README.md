@@ -24,6 +24,14 @@ _Not use this for findability_
 
 `hugo new posts/nederlandse-blog-post.nl.md`
 
+## Blog covers
+
+```text
+Generate a cover image with the following dimensions: 776x582
+for the blog: https://green-ocean-0187fc203-19.westeurope.2.azurestaticapps.net/posts/consulting/foreach-repo-push-and-pr/
+
+```
+
 
 ## Run it
 
