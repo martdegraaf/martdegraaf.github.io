@@ -40,15 +40,15 @@ If you do not experience this feeling let me explain what this does for me. This
 
 ## Imposter syndrome
 
-We as programmers often talk about the 'Imposter syndrome'. The feeling that other people know more than you, can prevent you from public speaking about your expertise. I think this productivity guilt is a form of imposter syndrome.
+I think this productivity guilt is a form of imposter syndrome. I think this is related because the feeling is also about feeling not good enough. We as programmers often talk about the 'Imposter syndrome'. The feeling that other people know more than you, the imposter syndrome can prevent you from public speaking about your expertise.
 
 ## Talking helps
 
-I have talked about this with colleagues and they scoped the problem differently. It does not mean the inner voice will stop talking. I think it is important to talk about this and share your feelings with others. It helps to get instructions to stop, or to get compliments on your results.
+I have talked about this with colleagues and they scoped the problem differently. Some quotes came along: "Work never ends", and  It does not mean the inner voice will stop talking. I think it is important to talk about this and share your feelings with others. It helps to get instructions to stop, or to get compliments on your results.
 
 ## Discipline
 
-Work on habits regarding your work. Habits will help you to regulate working hours and feel productive. Some tips I have gathered are:
+To get control of your productivity guilt, my approach will be to work on habits. Because i think habits will help you to regulate working hours and feel productive. Work on habits regarding your work. Habits will help you to regulate working hours and feel productive. Some tips I have gathered are:
 
 - Start and end your workday at the same time.
 - Make sure you have a dedicated workspace.
