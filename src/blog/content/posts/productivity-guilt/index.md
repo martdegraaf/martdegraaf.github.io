@@ -62,22 +62,6 @@ I suggest another habit to enclose your working day. I will try and make this my
 After I shut down my computer, I will say to myself: "I did a great job today."
 {{< /quoteblock >}}
 
-## Discipline
-
-Work on habits regarding your work. Habits will help you to regulate working hours and feel productive. Some tips I have gathered are:
-
-- Start and end your workday at the same time.
-- Make sure you have a dedicated workspace.
-- Shut down your computer at the end of the workday.
-
-In the book 'Tiny Habits' by BJ Fogg, he talks about the MAUI habit. This habit is saying when your feet touch the floor in the morning: "It's going to be a great day.". This helps you to start your day with a positive mindset.
-
-I suggest another habit to enclose your working day. I will try and make this my habit:
-
-{{< quoteblock >}}
-After I shut down my computer, I will say to myself: "I did a great job today."
-{{< /quoteblock >}}
-
 ## Final thoughts
 
 I am still struggling with this feeling. If this is what people mean by Work-Life balance, I have to learn daily to balance this correctly.
