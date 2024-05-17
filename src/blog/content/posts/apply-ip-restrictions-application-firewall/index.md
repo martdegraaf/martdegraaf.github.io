@@ -37,7 +37,7 @@ When you want to release new code to production but still want it not exposed to
 
 In the Azure portal, you can add custom rules to your WAF-policy. This can be done by navigating to the WAF-policy and selecting the `Custom rules` blade. Here you can add a new rule and select the action you want to take when the rule is matched. This gave the insights of the capabilities of the WAF-policy custom rules.
 
-<!-- todo image here -->
+![Showing custom policies of a WAF policy in the Azure Portal](application-gateway-portal.png#center "Custom policies of a WAF policy in the Azure Portal")
 
 ### Defining a custom type
 
