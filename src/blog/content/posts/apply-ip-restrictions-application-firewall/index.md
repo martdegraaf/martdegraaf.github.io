@@ -1,9 +1,9 @@
 ---
 title: "Apply Ip Restrictions Application Firewall"
 slug: "apply-ip-restrictions-application-firewall"
-date: 2024-05-15T18:09:39+02:00
-publishdate: 2024-05-15T18:09:39+02:00
-draft: true
+date: 2024-05-17T18:09:39+02:00
+publishdate: 2024-05-17T18:09:39+02:00
+draft: false
 author: ["Mart de Graaf"]
 tags: []
 summary: "How to restrict access to your backend services using an Azure Application Gateway and a Web Application Firewall policy. This post will show you how to add custom rules to your WAF-policy to restrict access to your backend services by IP address"
@@ -25,7 +25,7 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-Let's say you have an application gateway deployed in Azure. Behind the application gateway are more than one backend services acting on requests for your costumers.
+Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application has to be ready before GO-live. You want to restrict access to the new application to a set of IP addresses.
 
 ![Architecture of an application gatway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
 
@@ -96,3 +96,9 @@ And of course an example bicep parameters file.
 ## Conclusion and discussion
 
 The application gateway can be used to restrict access to your backend services. This can be done by adding custom rules to your WAF-policy. Keep in mind that this has some limits.
+
+
+### References
+
+- https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/custom-waf-rules-overview
+- 
