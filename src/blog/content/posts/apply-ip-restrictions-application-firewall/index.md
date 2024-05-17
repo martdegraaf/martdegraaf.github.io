@@ -19,13 +19,13 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    alt: "A modern, clean tech-themed cover image with a blue color scheme. The image features a digital wall composed of glowing blue circuitry patterns, symbolizing protection. Behind this digital wall, there is a crown, glowing with a soft blue light, representing an application firewall." # alt text
+    # caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
 
-Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application has to be ready before GO-live. You want to restrict access to the new application to a set of IP addresses.
+Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application needs to be ready before GO-live. You can not pre-test this on production without any sort of firewall rules. You want to restrict access to the new application to a set of IP addresses.
 
 ![Architecture of an application gatway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
 
@@ -35,7 +35,7 @@ When you want to release new code to production but still want it not exposed to
 
 ### Adding custom rules in the portal
 
-In the Azure portal, you can add custom rules to your WAF-policy. This can be done by navigating to the WAF-policy and selecting the `Custom rules` blade. Here you can add a new rule and select the action you want to take when the rule is matched. This gave the insights of the capabilities of the WAF-policy custom rules.
+In the Azure portal, you can add custom rules to your WAF-policy. This can be done by navigating to the WAF-policy and selecting the `Custom rules` blade. Here you can add a new rule and select the action you want to take when the rule is matched. This gave insights into the capabilities of the WAF-policy custom rules.
 
 ![Showing custom policies of a WAF policy in the Azure Portal](application-gateway-portal.png#center "Custom policies of a WAF policy in the Azure Portal")
 
@@ -55,16 +55,16 @@ To use the custom type we need to define a parameter using the `restrictedDomain
 
 ### Custom rules
 
-Within the WAF-policy resource we can provide custom rules. To do so we use the a for loop. The for loop loops over all `restrictedDomains` to add a custom rule for each domain.
+Within the WAF-policy resource, we can provide custom rules. To do so we use the a for loop. The for loop loops over all `restrictedDomains` to add a custom rule for each domain.
 
 The default action for this rule will be block, we want to block access to a domain _except_ for the allowed IP addresses.
 
-#### Condition 1 Domain
+#### Condition 1 - Does the domain match
 
 For the first condition, we will add a rule that matches the `Host` in the `RequestHeaders`, this has to match the given domain. I chose for `BeginsWith` because I would not want people to make mistakes and possibly take down all domains.
 
 
-#### Condition 2 RemoteAddr
+#### Condition 2 - Is the IP address in the whitelist?
 
 For the second condition, we will add a rule that matches the `RemoteAddr`, this has to **NOT** match the given IP addresses. I chose for `BeginsWith` because I would not want people to make mistakes and possibly take down all domains.
 please note the `negationConditon: true` to make sure the rule is matched when the IP address is **not** in the list.
@@ -101,4 +101,4 @@ The application gateway can be used to restrict access to your backend services.
 ### References
 
 - https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/custom-waf-rules-overview
-- 
+- https://alanta.nl/posts/2021/04/manage-waf-rules-for-appgateway

@@ -77,7 +77,7 @@ article.post-single .entry-cover img {
 }
 
 img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
-    background-color: var(--code-bg);
+    background-color: #FFF;
     border-radius: 8px;
     padding:20px;
 }
