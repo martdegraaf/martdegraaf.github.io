@@ -27,6 +27,8 @@ cover:
 
 Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application needs to be ready before GO-live. You can not pre-test this on production without any sort of firewall rules. You want to restrict access to the new application to a set of IP addresses.
 
+In this post, I will show you how to restrict access to your backend services using a Web Application Firewall policy. We will build a bicp file with my first production custom type!
+
 ![Architecture of an application gatway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
 
 ## Restricting access
@@ -63,10 +65,9 @@ The default action for this rule will be block, we want to block access to a dom
 
 For the first condition, we will add a rule that matches the `Host` in the `RequestHeaders`, this has to match the given domain. I chose for `BeginsWith` because I would not want people to make mistakes and possibly take down all domains.
 
-
 #### Condition 2 - Is the IP address in the whitelist?
 
-For the second condition, we will add a rule that matches the `RemoteAddr`, this has to **NOT** match the given IP addresses. I chose for `BeginsWith` because I would not want people to make mistakes and possibly take down all domains.
+For the second condition, we will add a rule that matches the `RemoteAddr`, this has to **NOT** match the given IP addresses.
 please note the `negationConditon: true` to make sure the rule is matched when the IP address is **not** in the list.
 
 ```bicep {linenos=table,file="WAFPolicyExclusions.bicep",fileLines="21-55"}
@@ -92,6 +93,10 @@ And of course an example bicep parameters file.
 
 ```bicep {linenos=table,file="WAFPolicyExclusions.bicepparam"}
 ```
+
+### Deploying
+
+The only thing to do now is to deploy the bicep files. When you want to enable access to a certain domain you can remove the domain from the parameters file. In this specific case, the application gateway was used for multiple domains and many web applications. Therefore it was easier to restrict access to a specific domain on the WAF-policy. This can be different for your specific use case.
 
 ## Conclusion and discussion
 
