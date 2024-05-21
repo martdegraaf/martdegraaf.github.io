@@ -27,9 +27,9 @@ cover:
 
 Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application needs to be ready before GO-live. You can not pre-test this on production without any sort of firewall rules. You want to restrict access to the new application to a set of IP addresses.
 
-In this post, I will show you how to restrict access to your backend services using a Web Application Firewall policy. We will build a bicp file with my first production custom type!
+In this post, I will show you how to restrict access to your backend services using a Web Application Firewall policy. We will build a bicep file with my first production custom type!
 
-![Architecture of an application gatway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
+![Architecture of an application gateway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
 
 ## Restricting access
 
