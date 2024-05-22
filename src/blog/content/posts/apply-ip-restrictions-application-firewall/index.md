@@ -1,11 +1,11 @@
 ---
 title: "Apply Ip Restrictions Application Firewall"
 slug: "apply-ip-restrictions-application-firewall"
-date: 2024-05-17T18:09:39+02:00
-publishdate: 2024-05-17T18:09:39+02:00
+date: 2024-05-21T18:09:39+02:00
+publishdate: 2024-05-21T18:09:39+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: []
+tags: ["Azure", "bicep", "WAF", "Application Gateway", "Security"]
 summary: "How to restrict access to your backend services using an Azure Application Gateway and a Web Application Firewall policy. This post will show you how to add custom rules to your WAF-policy to restrict access to your backend services by IP address"
 # Toc
 ShowToc: true
@@ -25,9 +25,9 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-Let's say you have an application gateway deployed in Azure. Behind the application gateway is more than one app service acting on requests. You are adding a new application and the new application needs to be ready before GO-live. You can not pre-test this on production without any sort of firewall rules. You want to restrict access to the new application to a set of IP addresses.
+Imagine you have an application gateway deployed in Azure. Behind this gateway, multiple app services handle requests. Now, you're adding a new application that needs to be ready for the GO-live moment. You can't pre-test this application in production without firewall rules. Therefore, you want to restrict access to the new application to a specific set of IP addresses.
 
-In this post, I will show you how to restrict access to your backend services using a Web Application Firewall policy. We will build a bicep file with my first production custom type!
+In this blog post, I'll show you how to restrict access to your backend services using a Web Application Firewall (WAF) policy. We'll create a Bicep file, where I'll introduce the first custom type that I have deployed to production!
 
 ![Architecture of an application gateway in front of multiple app services](appgateway.drawio.svg#center "Example Azure infrastructure")
 
