@@ -6,7 +6,7 @@ publishdate: 2024-05-21T18:09:39+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["Azure", "bicep", "WAF", "Application Gateway", "Security"]
-summary: "How to restrict access to your backend services using an Azure Application Gateway and a Web Application Firewall policy. This post will show you how to add custom rules to your WAF-policy to restrict access to your backend services by IP address"
+summary: "In this blog post, I'll show you how to restrict access by IP addresses and domain names to your backend services using a Web Application Firewall (WAF) policy. We'll create a Bicep file, where I'll introduce the first custom type that I have deployed to production!"
 # Toc
 ShowToc: true
 TocOpen: true
