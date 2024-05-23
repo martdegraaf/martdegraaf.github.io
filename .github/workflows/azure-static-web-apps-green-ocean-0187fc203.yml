@@ -44,6 +44,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+          
           deployment_environment: "${{ env.IS_PRODUCTION == 'true' && '' || 'staging' }}"
         env:
           HUGO_ENVIRONMENT: "${{ env.IS_PRODUCTION == 'true' && 'production' || 'staging' }}"
