@@ -5,3 +5,4 @@ node_modules/
 /playwright/.cache/
 .env
 src/e2e/storageState.json
+src/blog/resources/_gen/
