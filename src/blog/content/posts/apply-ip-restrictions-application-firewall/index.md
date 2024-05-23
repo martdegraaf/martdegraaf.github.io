@@ -25,7 +25,7 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-Imagine you have an application gateway deployed in Azure. Behind this gateway, multiple app services handle requests. Now, you're adding a new application that needs to be ready for the GO-live moment. You can't pre-test this application in production without firewall rules. Therefore, you want to restrict access to the new application to a specific set of IP addresses.
+Imagine you have an application gateway deployed in Azure. Behind this gateway, multiple app services handle requests for different domains. Now, you're adding a new application that needs to be ready for the GO-live moment. We want to deploy an application to production, but we want to restrict access until GO-live. We also want a select number of IP addresses to have access to the new application. Only the company or the development team should have access to the new application at this point.
 
 In this blog post, I'll show you how to restrict access to your backend services using a Web Application Firewall (WAF) policy. We'll create a Bicep file, where I'll introduce the first custom type that I have deployed to production!
 
@@ -37,7 +37,7 @@ When you want to release new code to production but still want it not exposed to
 
 ### Adding custom rules in the portal
 
-In the Azure portal, you can add custom rules to your WAF-policy. This can be done by navigating to the WAF-policy and selecting the `Custom rules` blade. Here you can add a new rule and select the action you want to take when the rule is matched. This gave insights into the capabilities of the WAF-policy custom rules.
+In the Azure portal, you can add custom rules to your WAF-policy. This can be done by navigating to the WAF-policy and selecting the `Custom rules` blade. Here you can add a new rule and select the action you want to take when the rule is matched. The portal was easy to uncover all possibilities, every field is a dropdown. This gave me insights into the capabilities of the WAF-policy custom rules. In the portal is visible that multiple conditions in a custom rule are logically using the `AND` condition. Let's put these insights into repeatable and releasable code!
 
 ![Showing custom policies of a WAF policy in the Azure Portal](application-gateway-portal.png#center "Custom policies of a WAF policy in the Azure Portal")
 
@@ -75,7 +75,7 @@ please note the `negationConditon: true` to make sure the rule is matched when t
 
 ## Lessons learned
 
-While building wasn't difficult, I learned two things that I want to share with you.
+The process of building this custom rule was done in only two days. I learned two things that I want to share with you.
 
 1. The name of the rule has to be unique.
 1. The priority must be unique and can only be a value between 1 and 100.
@@ -102,8 +102,8 @@ The only thing to do now is to deploy the bicep files. When you want to enable a
 
 The application gateway can be used to restrict access to your backend services. This can be done by adding custom rules to your WAF-policy. Keep in mind that this has some limits.
 
-
 ### References
 
 - https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/custom-waf-rules-overview
 - https://alanta.nl/posts/2021/04/manage-waf-rules-for-appgateway
+- https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/user-defined-data-types
