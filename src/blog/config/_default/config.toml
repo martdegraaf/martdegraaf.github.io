@@ -39,7 +39,7 @@ showPostNavLinks = true
 showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
-comments = false
+comments = true
 
 TocOpen= true
 enableGitInfo = true
