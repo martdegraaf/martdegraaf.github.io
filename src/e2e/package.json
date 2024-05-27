@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/martdegraaf/martdegraaf.github.io#readme",
   "devDependencies": {
-    "@playwright/test": "^1.27.1"
+    "@playwright/test": "^1.27.1",
+    "@types/node": "^20.12.12"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
