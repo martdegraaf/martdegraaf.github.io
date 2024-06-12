@@ -26,7 +26,7 @@ cover:
 ## TL;DR
 
 The Application Insights was configured to send the data twice to the Log Analytics workspace. One of them was done by ARM, the other was enforced by an Azure Policy.
-We turned off the Azure Policy and removed all upstream diagnostics settings on all Application Insights resources. This saved 100 euros montl
+We turned off the Azure Policy and removed all upstream diagnostics settings on all Application Insights resources. This saved 100 euros monthly.
 
 **On a recent project, we encountered duplicate logging in Azure Application insights.**
 
