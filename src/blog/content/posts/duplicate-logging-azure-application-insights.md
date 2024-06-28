@@ -26,7 +26,7 @@ cover:
 ## TL;DR
 
 The Application Insights was configured to send the data twice to the Log Analytics workspace. One of them was done by ARM, the other was enforced by an Azure Policy.
-We turned off the Azure Policy and removed all upstream diagnostics settings on all Application Insights resources. This saved 100 euros montl
+We turned off the Azure Policy and removed all upstream diagnostics settings on all Application Insights resources. This saved 100 euros monthly.
 
 **On a recent project, we encountered duplicate logging in Azure Application insights.**
 
@@ -107,7 +107,7 @@ LA1 <--- AI1
 LA1 <--- AI2
 ```
 
-Application Insights gives 'insights' into application logging, exceptions, and such. You can use the Kudo query language to fetch data intelligently from Application Insights. The Log Analytics workspace is a set of tables. For the client in this article, the data of the Application insights was forwarded to the Log Analytics workspace. The advantage of the Log Analytics workspace is to query over multiple Application insights as well as data about other resources in azure, such as API management, application gateways, service busses, or firewalls.
+Application Insights gives 'insights' into application logging, exceptions, and such. You can use the Kusto query language to fetch data intelligently from Application Insights. The Log Analytics workspace is a set of tables. For the client in this article, the data of the Application insights was forwarded to the Log Analytics workspace. The advantage of the Log Analytics workspace is to query over multiple Application insights as well as data about other resources in Azure, such as API management, application gateways, service busses, or firewalls.
 
 In the screenshot below is seen that when you create a new Application Insights resource the Log Analytics Workspace is configured automatically.
 ![Create Application Insights workspace based](/images/create-ai-workspace-based.png)

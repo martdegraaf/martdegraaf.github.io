@@ -33,3 +33,7 @@ main {
     color: #0078D3;
     font-weight: bold;
 }
+
+.entry-isfuture{
+    color: orange;
+}

@@ -15,7 +15,7 @@ Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and h
 
 ## Core values
 
-If you ask some of my previous coworkers, what defines Mart? They will tell you that I'm a determined and hardworking person. I will prove in my blog that it's true. One of the things I wanted for this blog is to show in my blog are Mermaid diagrams. I used for example a Gantt chart and a mindmap to share my ideas. Press the moon or sun icon in the menu to switch from light to dark or vice versa and see that the mermaid theme will also change. Pro tip: use `Alt + T` to switch themes. But as you can see I did not yet fix the certification part as the title has the same color as the background.
+If you ask some of my previous coworkers, what defines Mart? They will tell you that I'm a determined and hardworking person. I will prove in my blog that it's true. One of the things I wanted for this blog is to show in my blog are Mermaid diagrams. I used for example a Gantt chart and a mindmap to share my ideas. Press the moon or sun icon in the menu to switch from light to dark or vice versa and see that the mermaid theme will also change. Pro tip: use `Alt + T` to switch themes. But as you can see I have not yet fixed the certification part as the title has the same color as the background.
 
 ## Speaking
 
@@ -26,3 +26,5 @@ Sharing makes me so happy that I try to share my knowledge through [speaking](/s
 Here are some of my active certifications I am very proud of:
 
 {{< credly >}}
+
+Microsoft's certifications can be found at [Transcript - Mart de Graaf Microsoft Learn](https://learn.microsoft.com/en-us/users/martdegraaf/transcript/v2z4kf4kggnkl0e?tab=credentials-tab)

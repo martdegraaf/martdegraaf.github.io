@@ -1,23 +1,13 @@
 +++
-weight = 7
+weight = 5
 +++
 
 
 {{% reveal/section %}}
 
-# Demo application
 
-<!-- Do here a image with context of the Azure resources -->
----
 
-- [Azure Portal](https://portal.azure.com)
-- GitHub: [martdegraaf/kql-demo](https://github.com/martdegraaf/kql-demo)
 
-{{% reveal/note %}}
-Where to link to depends on audience.
-{{% /reveal/note %}}
-
----
 
 # Write Logs
 
@@ -32,7 +22,7 @@ Where to link to depends on audience.
 ```
 
 {{% reveal/note %}}
-If you need more info on testing this, please read my blog about the verify.
+If you need more info on testing this, please read my blog about the verify-method.
 
 I had a case where we needed to test the log to test a specific exception that was caught. Some services caught the global Exception type, that was bad :).
 {{% /reveal/note %}}

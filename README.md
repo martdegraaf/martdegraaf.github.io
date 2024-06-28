@@ -12,11 +12,11 @@ A commit on the main branch will (also) be deployed to GitHub pages.
 
 ## New code post
 
-`hugo new --kind code-post posts/your-new-blog.md`
+`hugo new --kind code-post posts/new`
 
 ## New book review
 
-`hugo new --kind book-review books/cool-book.md`
+`hugo new --kind book-review reviews/books/cool-book.md`
 
 ## Blog in Dutch
 
@@ -24,11 +24,27 @@ _Not use this for findability_
 
 `hugo new posts/nederlandse-blog-post.nl.md`
 
+## Blog covers
 
-## Run itt
+```text
+Generate a cover image with the following dimensions: 776x582
+for the blog: https://green-ocean-0187fc203-19.westeurope.2.azurestaticapps.net/posts/consulting/foreach-repo-push-and-pr/
+
+```
+
+
+## Run it
+
+Add `--disableFastRender` to disable the fast render of the site. This will make sure the CSS is generated correctly.
 
 ```cmd
-hugo server --buildDrafts --buildFuture
+hugo server --buildDrafts --buildFuture --disableFastRender
+```
+
+## See future posts
+
+```cmd
+hugo list future
 ```
 
 ## Links to start blogging

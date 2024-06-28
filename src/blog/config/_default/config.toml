@@ -10,6 +10,10 @@ enableEmoji = true
 enableGitInfo = true
 copyright = "Mart de Graaf"
 baseUrl = "http://localhost:1313"
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+paginate = 12 # articles per page
 
 [languages.en-us]
 title = "Mart's blog"
@@ -35,20 +39,26 @@ showPostNavLinks = true
 showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
-comments = false
+comments = true
+
+TocOpen= true
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
+
+
 mainSections = [ "posts", "reviews" ]
+  [params.assets]
+  disableHLJS = true
 
   [params.homeInfoParams]
   title = "Software Engineer @ 4Dotnet"
   content = "Blogging about Azure, .NET, Git and architecture."
 
   [params.cover]
-  hidden = true
-  hiddenInList = true
-  hiddenInSingle = true
+  hidden = false
+  hiddenInList = false
+  hiddenInSingle = false
 
   [params.profileMode]
   enabled = false
@@ -91,6 +101,10 @@ name = "Search"
 url = "/about"
 name = "About"
 
+[[menu.main]]
+url = "/speaking"
+name = "Speaking"
+
 [taxonomies]
 series = "series"
 tag = "tags"
@@ -103,5 +117,12 @@ baseName = "index"
 mediaType = "text/html"
 isHTML = true
 
-[markup.highlight]
-codeFences = true
+[markup]
+  [markup.highlight]
+    noClasses=false
+    #anchorLineNos= trues
+    codeFences=true
+    guessSyntax=true
+    lineNos= true
+    lineNumbersInTable = true
+    style="github"

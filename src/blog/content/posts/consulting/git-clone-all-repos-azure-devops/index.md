@@ -5,7 +5,7 @@ date: 2023-05-15T18:14:56+01:00
 publishdate: 2023-05-15T18:14:56+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Git", "Powershell", "Azure DevOps"]
+tags: ["Git", "Powershell", "Azure DevOps", "Consulting", "Automation"]
 #ummary: "The text should be under 160 chars and therefore no longer than this string. Two senteces is the most effective. Or some shorter sentences after each other.1234"
 summary: "Learn how to efficiently clone all Git repos in Azure DevOps with our comprehensive consulting guide. Streamline your development workflow today!"
 ## Toc
@@ -19,6 +19,13 @@ ShowLastModified: true
 ShowWordCount: true
 
 series: ['Consultant tips']
+
+cover:
+    image: "cover.webp" # image path/url
+    alt: "A digital workspace with multiple computer screens displaying code and command lines." # alt text
+    caption: "A digital workspace with multiple computer screens displaying code and command lines." # display caption under cover
+    relative: true # when using page bundles set this to true
+    hidden: false # only hide on current single page
 ---
 
 As a consultant, starting a new project with a client can be a daunting task. One way to make the transition smoother is by cloning all the repositories on your first day. This allows you to have quick access to all the necessary files and resources, enabling you to perform your job efficiently and effectively. In this blog post, we will explore the benefits of cloning repositories, a script for doing so, and some common pitfalls to avoid.
@@ -72,23 +79,13 @@ To clone all repositories in Azure DevOps we can use the REST API to find all ex
 
 Make sure to create a file named: `CloneAllRepos.config` with the contents written below. Make sure every parameter is configured as your workspace.
 
-```plaintext {linenos=table}
-[General]
-Url=https://dev.azure.com/MART/project
-Username=me@example.com
-Password= ## Use Azure Devops to generate a Personal Access Token with rights: Code: Read/Write, and Packaging: Read#
-
-[LocalGitConfig]
-GitPath=C:\Git\
-OrgName=MART
-
-[GitOptions]
-PruneLocalBranches=false # Optional defaults to false
-GitEmail=username@corperate.com
+```cfg {linenos=table,file=CloneAllRepos.config}
 ```
 
 {{< quoteblock >}}
-:bulb: Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+:bulb: ~~Don't know where to find a Personal Access Token in Azure DevOps? Read: [Microsoft's docs on personal access tokens](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).~~
+
+On 2024 april 17, I updated the script to get an access token using the current session of the az cli. see [Azure DevOps API Authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/service-principal-managed-identity?toc=%2Fazure%2Fdevops%2Forganizations%2Fsecurity%2Ftoc.json&view=azure-devops#q-can-i-use-a-service-principal-or-managed-identity-with-azure-cli).
 {{</ quoteblock >}}
 
 ### CloneAllRepos.ps1
@@ -103,89 +100,12 @@ I edited the script to fit my needs with some extra parameters.
 1. It prunes local branches when `PruneLocalBranches` is set to true.
 1. It sets the git username email to the configured `GitUsername` under GitOptions, it's ignored when empty.
 
-```PowerShell {linenos=table}
-# Read configuration file
-Get-Content "CloneAllRepos.config" | foreach-object -begin {$h=@{}} -process { 
-    $k = [regex]::split($_,'='); 
-    if(($k[0].CompareTo("") -ne 0) -and ($k[0].StartsWith("[") -ne $True)) { 
-        $h.Add($k[0], $k[1]) 
-    } 
-}
-#AzDO config
-$url = $h.Get_Item("Url")
-$username = $h.Get_Item("Username")
-$password = $h.Get_Item("Password")
-# LocalGitConfig
-$gitPath = $h.Get_Item("GitPath")
-$orgName = $h.Get_Item("OrgName")
-$pruneLocalBranches = $h.Get_Item("PruneLocalBranches") -eq "true"
-$gitEmail = $h.Get_Item("GitEmail")
-
-# Retrieve list of all repositories
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
-$headers = @{
-    "Authorization" = ("Basic {0}" -f $base64AuthInfo)
-    "Accept" = "application/json"
-}
-
-Add-Type -AssemblyName System.Web
-$gitcred = ("{0}:{1}" -f  [System.Web.HttpUtility]::UrlEncode($username),$password)
-
-$resp = Invoke-WebRequest -Headers $headers -Uri ("{0}/_apis/git/repositories?api-version=1.0" -f $url)
-$json = convertFrom-JSON $resp.Content
-
-# Clone or pull all repositories
-$initpath =  ("{0}:{1}" -f  $gitPath,$orgName)
-
-foreach ($entry in $json.value) { 
-	set-location $initpath
-    $name = $entry.name 
-    Write-Host $name -ForegroundColor Green
-
-	if($entry.isDisabled){
-		Write-Host "Skipping disabled repo: '$name'" -ForegroundColor Yellow
-		continue;
-	}
-
-    $url = $entry.remoteUrl #-replace "://", ("://{0}@" -f $gitcred)
-    if(!(Test-Path -Path $name)) {
-        git clone $url
-    } else {
-		Write-Host "Directory '$name' exists lets pull"
-        set-location $name
-        git pull
-		$defaultBranch = git symbolic-ref --short HEAD
-
-        if($pruneLocalBranches){
-			Write-Host "Pruning local branches $name" -ForegroundColor Yellow
-            $branches = git branch -vv | Where-Object { $_ -notmatch "::" } | ForEach-Object { ($_ -split '\s+')[1] }
-
-			foreach ($branch in $branches) {
-				if ($branch -eq $defaultBranch) {
-					Write-Host "Skipping default branch '$branch'."
-					continue
-				}
-				if ((git branch -vv | Where-Object { $_ -match "$branch\s+\[origin\/" })) {
-					Write-Host "Skipping branch '$branch' as it has a remote reference."
-				}
-				else {
-					git branch -D $branch
-					Write-Host "Deleted local branch '$branch'." -ForegroundColor Green
-				}
-			}
-        }
-        if($gitEmail){
-            git config user.email "$gitEmail"
-        }
-    }
-}
+```PowerShell {linenos=table, file=CloneAllRepos.ps1}
 ```
-
 
 {{< quoteblock >}}
 :robot: If you have some additional ideas, let ChatGPT help you. Supply ChatGPt with the context: `Rewrite this PowerShell script to also <insert new Feature>. Here is the current version of the PowerShell script: <insert PowerShell script>.`. Let me know if you thought of a clever solution.
 {{</ quoteblock >}}
-
 
 ### Run it
 

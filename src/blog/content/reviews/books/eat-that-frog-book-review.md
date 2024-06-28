@@ -124,4 +124,4 @@ I recommend reading or listening to this book and practicing some of the given h
 
 Buy the book via [Amazon](https://amzn.to/3OAhfFY) or listen via Spotify:
 
-{{< spotify 6Y0VHrqfbvq6XskYNV0Cnu >}}
+{{< spotify 5JygKvMTPllafFaeYrkNUs >}}

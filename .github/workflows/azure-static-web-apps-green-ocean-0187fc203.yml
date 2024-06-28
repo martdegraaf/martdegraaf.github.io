@@ -11,17 +11,17 @@ on:
     branches:
       - main
 env:
-  IS_PRODUCTION: "${{ github.event_name == 'push' }}"
+  IS_PRODUCTION: "${{ github.event_name != 'pull_request' }}"
   PRODUCTION_URL: "https://blog.martdegraaf.nl/"
   STAGING_URL: "${{ format('https://green-ocean-0187fc203-{0}.westeurope.2.azurestaticapps.net/', github.event.number) }}"
-
+  
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push' || github.event_name == 'schedule' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
@@ -44,6 +44,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+          deployment_environment: "${{ env.IS_PRODUCTION == 'false' && 'staging' || ''  }}"
         env:
           HUGO_ENVIRONMENT: "${{ env.IS_PRODUCTION == 'true' && 'production' || 'staging' }}"
           HUGO_BASEURL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
@@ -60,8 +61,8 @@ jobs:
     name: Test Stage
     needs: build_and_deploy_job
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version: 16
     - name: Install dependencies
@@ -72,8 +73,9 @@ jobs:
       run: npx playwright test
       env:
         PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
+        PLAYWRIGHT_TESTS_PRODUCTION: ${{ env.IS_PRODUCTION == 'true'}}
         PASSWORD: ${{ secrets.AZURE_STATIC_WEBAPP_PASSWORD }}
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report

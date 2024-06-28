@@ -1,0 +1,83 @@
+.chroma {
+    background-color: unset !important;
+  }
+
+.code-name {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--martblue);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    z-index: 2;
+    margin-top: 0px;
+    right: 60px;
+    /* opacity: 0.4; */
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* div.codecontainer:hover .code-name,
+pre:hover .code-name {
+    opacity: 0.8;
+} */
+
+div.codecontainer .highlight{
+    margin-top: 0;
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+
+
+/* Put blog cover image left of the contents */
+.main:has(> article.post-entry){
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; */
+}
+.main:has(> article.post-entry) > .home-info{
+    /* flex: 0 0 100%; */
+}
+.main:has(> article.post-entry) article.post-entry {
+    /* flex: 0 0 33%;
+    margin: 0 0 20px; */
+    padding: 0;
+    display: flex;
+}
+.main:has(> article.post-entry) article.post-entry .entry-cover{
+    /* margin: -24px -24px 0px -24px; */
+    margin: 0;
+    max-width: 9rem;
+}
+.main:has(> article.post-entry) article.post-entry .entry-cover img{
+    /* border-radius: 0;  */
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border-radius: var(--radius) var(--radius) 0 0; */
+}
+
+
+/* Make sure the blog post is forced 16:9 */
+article.post-single .entry-cover {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding-top: 56.25%;
+    position: relative;
+}
+article.post-single .entry-cover img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
+    background-color: #FFF;
+    border-radius: 8px;
+    padding:20px;
+}
