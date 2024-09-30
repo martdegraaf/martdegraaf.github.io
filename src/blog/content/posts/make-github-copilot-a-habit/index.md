@@ -71,6 +71,7 @@ To close the chat pallete, use `Esc`.
 ### Commit message generation
 
 use the Stars to generate a commit message. It's a good way to save time thinking of a commit message.
+![Generate a commit message using GitHub Copilot](commit-generation.png)
 
 ### Reference a file/method in a prompt
 
