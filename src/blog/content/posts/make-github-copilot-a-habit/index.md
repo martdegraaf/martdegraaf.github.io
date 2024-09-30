@@ -18,9 +18,9 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Copilot helping a developer" # alt text
-    caption: "Copilot helping a developer" # display caption under cover
+    image: "matrix-4980033_1280.jpg" # image path/url
+    alt: "Matrix, Code, Netwerk Image from Andrea Toxiri via Pixabay" # alt text
+    caption: "Matrix, Code, Netwerk Image from Andrea Toxiri via Pixabay" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---

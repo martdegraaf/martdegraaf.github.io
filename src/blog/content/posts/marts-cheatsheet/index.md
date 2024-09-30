@@ -18,9 +18,9 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "trinity-college-library-5174182_1280.jpg" # image path/url
+    alt: "Trinity college library, Dublin, Image from marouh via Pixabay" # alt text
+    caption: "Trinity college library, Dublin, Image from marouh via Pixabay" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
@@ -55,5 +55,12 @@ I am frequently using Git Fork. Here are some commands I think help me be more p
 
 | Command | Description |
 | --- | --- |
+| `Ctrl + P` | Show Quick launch window |
+| `Ctrl + Enter` | Commit |
+| `Ctrl + Shift + Enter` | Commit and push |
+| `Ctrl + Tab / Shift Tab` | Next tab / previous tab |
+| `Ctrl + Shift + B` | New branch |
+| `Ctrl + Shift + T`  | New tag |
+| `Ctrl + Shift + H`  | Create stash |
 
 See all the shortcuts at [https://github.com/fork-dev/TrackerWin/issues/333](https://github.com/fork-dev/TrackerWin/issues/333).
