@@ -5,7 +5,7 @@ date: 2024-09-30T16:42:32+02:00
 publishdate: 2024-09-30T16:42:32+02:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
+tags: ["Visual Studio", "Visual Studio Code", "Git Fork", "cheatsheet"]
 summary: "Get the most out of tooling using Mart's cheatsheet."
 # Toc
 ShowToc: true

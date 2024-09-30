@@ -5,7 +5,7 @@ date: 2024-09-30T16:42:43+02:00
 publishdate: 2024-09-30T16:42:43+02:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
+tags: ["habit", "github copilot", "ai", "tools"]
 summary: "Now with the capabilities of AI, we code on steroids. Let's make it a habit to use it the right way."
 # Toc
 ShowToc: true
@@ -107,7 +107,9 @@ The software engineers of the next years are going to tell the story using their
 
 ## Conclusion and discussion
 
-I Like to have focus and not be distracted by the chat window. I think you should use the feature that suits your case best. For generating tests
+I Like to have focus and not be distracted by the chat window. I think you should use the feature that suits your case best. For generating tests for example i think its best to do it inline, and accept the completion afterwards instead of copy pasting parts of the code.
+
+I also think you should be reading release notes of GitHub Copilot. It's a tool that is constantly evolving. It's good to know what the changes are.
 
 ## References
 
