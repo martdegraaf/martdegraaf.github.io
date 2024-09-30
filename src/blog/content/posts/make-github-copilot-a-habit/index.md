@@ -6,7 +6,7 @@ publishdate: 2024-09-30T16:42:43+02:00
 draft: true
 author: ["Mart de Graaf"]
 tags: []
-summary: "Now with the capabilities of AI, we code on steroids. Let's make it a habit."
+summary: "Now with the capabilities of AI, we code on steroids. Let's make it a habit to use it the right way."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -19,8 +19,8 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    alt: "Copilot helping a developer" # alt text
+    caption: "Copilot helping a developer" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
