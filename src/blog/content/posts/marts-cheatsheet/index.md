@@ -26,6 +26,19 @@ cover:
 ---
 
 
+## Visual Studio Code
+
+| Command | Description |
+| --- | --- |
+| `Ctrl + Shift + P` or `F1` | Open command palette |
+| `Ctrl + i` | Open GitHub Copilot inline |
+| `Ctrl + Shift + i` | Open GitHub Copilot |
+| `F2` | Rename variables and methods |
+| `Alt + Shift + F` | Format document |
+| `Ctrl + /` | Comment out code |
+| `Ctrl + Shift + O` | Remove unused usings |
+
+If you want a one-page cheatsheet, check [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf).
 
 ## Visual Studio
 
@@ -35,19 +48,11 @@ cover:
 | `Ctrl + = / Ctrl + Shift -` | Navigating Backward / Forward |
 | `Alt + /` | Open GitHub Copilot |
 | `Ctrl + R, Ctrl + R` | Rename variables and methods |
+| `Ctrl + K, Ctrl + D` | Format document |
+| `Ctrl + K, Ctrl + C` | Comment out code |
+| `Ctrl + R, Ctrl + G` | Remove and sort usings |
 
 If you want all from Microsoft, check their cheatsheet for Visual Studio at [https://visualstudio.microsoft.com/keyboard-shortcuts.pdf](https://visualstudio.microsoft.com/keyboard-shortcuts.pdf).
-
-## Visual Studio Code
-
-| Command | Description |
-| --- | --- |
-| `Ctrl + Shift + P` | Open command palette |
-| `Ctrl + i` | Open GitHub Copilot inline |
-| `Ctrl + Shift + i` | Open GitHub Copilot |
-| `F2` | Rename variables and methods |
-
-If you want a one-page cheatsheet, check [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf).
 
 ## Git Fork
 
@@ -63,4 +68,32 @@ I am frequently using Git Fork. Here are some commands I think help me be more p
 | `Ctrl + Shift + T`  | New tag |
 | `Ctrl + Shift + H`  | Create stash |
 
+## Windows
+
+I am frequently using Git Fork. Here are some commands I think help me be more productive.
+
+| Command | Description |
+| --- | --- |
+| `Windows + L` | Windows lunch, lock your PC when you 're away. |
+| `Windows + Shift + S` | Screenshot via snipping tool |
+| `Windows + Shift + R` | Video snip via snipping tool |
+| `Windows + Plus (+)` | Zoom in using magnifier |
+
 See all the shortcuts at [https://github.com/fork-dev/TrackerWin/issues/333](https://github.com/fork-dev/TrackerWin/issues/333).
+
+## Git
+
+Fix an casing issue in your files.
+```bash 
+git mv --force address.cs Address.cs
+git mv --force <old_file> <new_file>
+```
+
+
+## NPM
+
+Update multiple packages at once using the scope.
+
+```bash
+npx update-by-scope "@angular"
+```
