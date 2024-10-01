@@ -45,11 +45,11 @@ If you want a one-page cheatsheet, check [https://code.visualstudio.com/shortcut
 | Command | Description |
 | --- | --- |
 | `Ctrl + Q` | Visual Studio search |
-| `Ctrl + = / Ctrl + Shift -` | Navigating Backward / Forward |
+| `Ctrl + -` <br> `Ctrl + Shift -` | Navigating Backward <br> Navigating Forward |
 | `Alt + /` | Open GitHub Copilot |
 | `Ctrl + R, Ctrl + R` | Rename variables and methods |
 | `Ctrl + K, Ctrl + D` | Format document |
-| `Ctrl + K, Ctrl + C` | Comment out code |
+| `Ctrl + K, Ctrl + C` <br> `Ctrl + K, Ctrl + U` | Comment out code <br> Uncomment code |
 | `Ctrl + R, Ctrl + G` | Remove and sort usings |
 
 If you want all from Microsoft, check their cheatsheet for Visual Studio at [https://visualstudio.microsoft.com/keyboard-shortcuts.pdf](https://visualstudio.microsoft.com/keyboard-shortcuts.pdf).
@@ -89,6 +89,10 @@ git mv --force address.cs Address.cs
 git mv --force <old_file> <new_file>
 ```
 
+Creating an annotated tag using the `-a` flag.
+```bash
+git tag -a v1.4 -m "my version 1.4"
+```
 
 ## NPM
 
