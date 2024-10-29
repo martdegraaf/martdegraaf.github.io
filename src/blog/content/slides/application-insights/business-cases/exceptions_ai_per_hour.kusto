@@ -1,0 +1,7 @@
+exceptions
+| summarize
+    uniqueOperations=dcount(operation_Id)
+    by bin(timestamp, 1h), problemId, cloud_RoleName
+| render columnchart with (title= "Exceptions per uur split by problemId")
+
+// Renders a columnchart per hour for exceptions, split by problem.

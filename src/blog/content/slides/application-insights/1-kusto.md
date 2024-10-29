@@ -12,6 +12,7 @@ weight = 1
 A Log Analytics Workspace has upstream connectors and can be used to write diagnostics to by Application Insights and azure resources
 
 Some upstream resources:
+
 - Power BI
 - Grafana
 - Azure Defender for Cloud
@@ -20,6 +21,8 @@ Some upstream resources:
 - Azure Workbooks
 
 Costs are per Gb in the LAW, so scaling AI will not affect costs.
+
+see also: https://blog.martdegraaf.nl/posts/azure-application-insights-in-control-of-costs/
 
 {{% /reveal/note %}}
 
@@ -41,7 +44,7 @@ Deze tabellen vertalen in Log Analytics Workspace naar andere tabelnamen.
 
 ## Azure Log Analytics workspace
 
-| AI | LAW |
+| appi | LAW |
 |---|---|
 | requests | AppRequests   |
 | traces | AppTraces |

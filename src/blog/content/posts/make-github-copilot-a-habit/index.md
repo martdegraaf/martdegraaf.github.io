@@ -87,7 +87,6 @@ Use the `@` prefix to reference a file in your prompt.
 
 ![GitHub Copilot scopes](scopes.png)
 
-
 ### Prompting
 
 Your prompt is is key for good results. You should be clear in what you want to achieve.
