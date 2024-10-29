@@ -20,4 +20,10 @@ weight = 7
 AzureFunctionsJobHost__logging__applicationInsights__samplingSettings__isEnabled: false
 ```
 
+{{% reveal/note %}}
+
+De __ tekens zijn om aan te duiden dat er in een je dieper in de structuur zit.
+
+{{% /reveal/note %}}
+
 {{% /reveal/section %}}

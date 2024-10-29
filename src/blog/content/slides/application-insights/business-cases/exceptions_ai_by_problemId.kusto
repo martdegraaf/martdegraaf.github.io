@@ -1,0 +1,10 @@
+exceptions
+| summarize
+    AnyOuterMessage = take_any(outerMessage),
+    AnyOuterMethod = take_any(outerMethod),
+    OperationIds= make_list(operation_Id, 5),
+    uniqueOperations=dcount(operation_Id)
+    by appName, cloud_RoleName, problemId
+| order by uniqueOperations desc, cloud_RoleName
+
+// Gets the exceptions by uniqueOperations grouped on problemId
