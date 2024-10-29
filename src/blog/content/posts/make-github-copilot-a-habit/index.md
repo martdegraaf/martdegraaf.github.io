@@ -2,8 +2,8 @@
 title: "Make Github Copilot a Habit"
 slug: "make-github-copilot-a-habit"
 date: 2024-09-30T16:42:43+02:00
-publishdate: 2024-09-30T16:42:43+02:00
-draft: true
+publishdate: 2024-10-29T21:42:43+02:00
+draft: false
 author: ["Mart de Graaf"]
 tags: ["habit", "github copilot", "ai", "tools"]
 summary: "Now with the capabilities of AI, we code on steroids. Let's make it a habit to use it the right way."

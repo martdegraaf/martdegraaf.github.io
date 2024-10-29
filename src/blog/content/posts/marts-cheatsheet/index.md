@@ -2,8 +2,8 @@
 title: "Marts Cheatsheet"
 slug: "marts-cheatsheet"
 date: 2024-09-30T16:42:32+02:00
-publishdate: 2024-09-30T16:42:32+02:00
-draft: true
+publishdate: 2024-10-28T16:42:32+02:00
+draft: false
 author: ["Mart de Graaf"]
 tags: ["Visual Studio", "Visual Studio Code", "Git Fork", "cheatsheet"]
 summary: "Get the most out of tooling using Mart's cheatsheet."
