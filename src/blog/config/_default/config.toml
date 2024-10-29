@@ -40,6 +40,7 @@ showCodeCopyButtons = true
 showShareButtons = true
 showReadingTime = true
 comments = true
+social = true
 
 TocOpen= true
 enableGitInfo = true
