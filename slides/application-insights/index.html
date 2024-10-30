@@ -1,7 +1,7 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><title>Observability of your cloud software using Azure Application Insights</title>
 <meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.css><link rel=stylesheet href=/_.min.003ae097b902d49b67a44ff773fea1b7643d2cfea99aad916697c2d49adb241d.css id=theme><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/color-brewer.min.css><meta name=robots content="noindex"></head><body><style>#logo{position:absolute;top:2%;right:2%;width:15%}</style><img id=logo src=/images/4dotnet_logo.png alt><div class=reveal><div class=slides><section><h1 id=application-insights>Application insights</h1><h4 id=guide-overview-tips-and-tricks>Guide, overview, tips and tricks</h4><p>by Mart de Graaf</p><aside class=notes><p>&rsquo;s&rsquo; - type &rsquo;s&rsquo; to enter speaker mode, which opens a separate window with a time and speaker notes
 &lsquo;o&rsquo; - type &lsquo;o&rsquo; to enter overview mode and scroll through slide thumbnails
-&lsquo;f&rsquo; - type &lsquo;f&rsquo; to go into full-screen mode</p><p>Practice via Azure Data Explorer. see</p><ul><li><a href=https://dataexplorer.azure.com/ target=_blank rel=noopener>https://dataexplorer.azure.com/</a></li><li><a href=https://dataexplorer.azure.com/clusters/help/databases/Samples target=_blank rel=noopener>https://dataexplorer.azure.com/clusters/help/databases/Samples</a></li><li><a href=https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation</a></li><li><a href=https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true target=_blank rel=noopener>https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true</a></li></ul></aside></section><section><section data-shortcode-section><p><img loading=eager src=law.drawio.png alt="Log Analytics Workspace in Azure"></p><aside class=notes><p>A Log Analytics Workspace has upstream connectors and can be used to write diagnostics to by Application Insights and azure resources</p><p>Some upstream resources:</p><ul><li>Power BI</li><li>Grafana</li><li>Azure Defender for Cloud</li><li>Azure Sentinel</li><li>Azure Dashboards</li><li>Azure Workbooks</li></ul><p>Costs are per Gb in the LAW, so scaling AI will not affect costs.</p></aside></section><section><h2 id=basic-azure-application-insights>Basic Azure Application Insights</h2><ol><li>requests</li><li>traces</li><li>exceptions</li><li>dependencies</li><li>pageViews</li></ol><aside class=notes><p>Deze tabellen vertalen in Log Analytics Workspace naar andere tabelnamen.</p></aside></section><section><h2 id=azure-log-analytics-workspace>Azure Log Analytics workspace</h2><table><thead><tr><th style=text-align:left>AI</th><th style=text-align:left>LAW</th></tr></thead><tbody><tr><td style=text-align:left>requests</td><td style=text-align:left>AppRequests</td></tr><tr><td style=text-align:left>traces</td><td style=text-align:left>AppTraces</td></tr><tr><td style=text-align:left>exceptions</td><td style=text-align:left>AppExceptions</td></tr><tr><td style=text-align:left>dependencies</td><td style=text-align:left>AppDependencies</td></tr><tr><td style=text-align:left>pageViews</td><td style=text-align:left>AppPageViews</td></tr></tbody></table><aside class=notes><p><a href=https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category</a></p></aside></section><section><h2 id=kusto-in-microsoft-azure>Kusto in Microsoft Azure</h2><ol><li>Azure Application Insights and Log Analytics</li><li>Azure Monitor</li><li>Azure Resource Graph Explorer</li></ol><aside class=notes><p><a href=https://en.wikipedia.org/wiki/Azure_Data_Explorer target=_blank rel=noopener>https://en.wikipedia.org/wiki/Azure_Data_Explorer</a>
+&lsquo;f&rsquo; - type &lsquo;f&rsquo; to go into full-screen mode</p><p>Practice via Azure Data Explorer. see</p><ul><li><a href=https://dataexplorer.azure.com/ target=_blank rel=noopener>https://dataexplorer.azure.com/</a></li><li><a href=https://dataexplorer.azure.com/clusters/help/databases/Samples target=_blank rel=noopener>https://dataexplorer.azure.com/clusters/help/databases/Samples</a></li><li><a href=https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/azure-monitor/app/correlation</a></li><li><a href=https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true target=_blank rel=noopener>https://portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade/aiDemo/true</a></li></ul></aside></section><section><section data-shortcode-section><p><img loading=eager src=law.drawio.png alt="Log Analytics Workspace in Azure"></p><aside class=notes><p>A Log Analytics Workspace has upstream connectors and can be used to write diagnostics to by Application Insights and azure resources</p><p>Some upstream resources:</p><ul><li>Power BI</li><li>Grafana</li><li>Azure Defender for Cloud</li><li>Azure Sentinel</li><li>Azure Dashboards</li><li>Azure Workbooks</li></ul><p>Costs are per Gb in the LAW, so scaling AI will not affect costs.</p><p>see also: <a href=https://blog.martdegraaf.nl/posts/azure-application-insights-in-control-of-costs/ target=_blank rel=noopener>https://blog.martdegraaf.nl/posts/azure-application-insights-in-control-of-costs/</a></p></aside></section><section><h2 id=basic-azure-application-insights>Basic Azure Application Insights</h2><ol><li>requests</li><li>traces</li><li>exceptions</li><li>dependencies</li><li>pageViews</li></ol><aside class=notes><p>Deze tabellen vertalen in Log Analytics Workspace naar andere tabelnamen.</p></aside></section><section><h2 id=azure-log-analytics-workspace>Azure Log Analytics workspace</h2><table><thead><tr><th>appi</th><th>LAW</th></tr></thead><tbody><tr><td>requests</td><td>AppRequests</td></tr><tr><td>traces</td><td>AppTraces</td></tr><tr><td>exceptions</td><td>AppExceptions</td></tr><tr><td>dependencies</td><td>AppDependencies</td></tr><tr><td>pageViews</td><td>AppPageViews</td></tr></tbody></table><aside class=notes><p><a href=https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category</a></p></aside></section><section><h2 id=kusto-in-microsoft-azure>Kusto in Microsoft Azure</h2><ol><li>Azure Application Insights and Log Analytics</li><li>Azure Monitor</li><li>Azure Resource Graph Explorer</li></ol><aside class=notes><p><a href=https://en.wikipedia.org/wiki/Azure_Data_Explorer target=_blank rel=noopener>https://en.wikipedia.org/wiki/Azure_Data_Explorer</a>
 Wikipedia says Kusto from 2014, and names after the person Cousteau, as a reference to searching in the ocean of data.</p></aside></section><section><h2 id=azure-data-explorer>Azure Data Explorer</h2><h3 id=kusto-query-language-kql>Kusto Query Language (KQL)</h3><ol><li><a href=https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/ target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/</a></li><li><a href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet?source=recommendations" target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet?source=recommendations</a></li></ol></section></section><section><section data-shortcode-section><h1 id=rendering-kql>Rendering KQL</h1><aside class=notes><p><a href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer" target=_blank rel=noopener>https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer</a></p></aside></section><section><h2 id=linechart>linechart</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
 | summarize Count()
 | render linechart</code></pre></section><section><h2 id=stackedareachart>stackedareachart</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
@@ -54,11 +54,11 @@ logger.VerifyLogged(LogLevel.Error, &#34;Already cancelled 1&#34;);</code></pre>
     }
   }
 }
-</code></pre></section><section><h1 id=disable-sampling>Disable sampling</h1><pre><code class=language-text data-line-numbers data-ln-start-from=1>AzureFunctionsJobHost__logging__applicationInsights__samplingSettings__isEnabled: false</code></pre></section></section><section><section data-shortcode-section><h1 id=business-cases>Business cases</h1><aside class=notes><p>Business cases where KQL mega helped me.</p></aside></section><section><h2 id=find-broken-queries>Find broken queries</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>dependencies
+</code></pre></section><section><h1 id=disable-sampling>Disable sampling</h1><pre><code class=language-text data-line-numbers data-ln-start-from=1>AzureFunctionsJobHost__logging__applicationInsights__samplingSettings__isEnabled: false</code></pre><aside class=notes><p>De __ tekens zijn om aan te duiden dat er in een je dieper in de structuur zit.</p></aside></section></section><section><section data-shortcode-section><h1 id=business-cases>Business cases</h1><aside class=notes><p>Business cases where KQL mega helped me.</p></aside></section><section><h2 id=find-broken-queries>Find broken queries</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>dependencies
 | where type == &#34;SQL&#34;
 | where data contains &#34;1 = 0&#34;
-| summarize Occurances=count(), OpertationIds=make_list(operation_Id,5) by data
-| project  Occurances, OpertationIds, data
+| summarize Occurances=count(), OperationIds=make_list(operation_Id,5) by data
+| project  Occurances, OperationIds, data
 
 
 // gives every SQL-query that contains 1 = 0, which is insane.
@@ -84,7 +84,7 @@ logger.VerifyLogged(LogLevel.Error, &#34;Already cancelled 1&#34;);</code></pre>
 // tostring is important on customDimensions
 // I wanted to know what endpoints GET /{id} where called with an error.
 // Then i communicated those Ids to the person who could fix the data.
-</code></pre><aside class=notes><p>Kusto level 2</p><p>Business case: Data is wrong, some ids fail, which ones?</p></aside></section><section><h2 id=exceptions-by-occurrence-with-multiple-ai-resources>Exceptions by occurrence with multiple AI-resources</h2><pre><code class=language-sql data-line-numbers=1-13|14-16|17-22|23-31 data-ln-start-from=1>(
+</code></pre><aside class=notes><p>Kusto level 2</p><p>Business case: Data is wrong, some ids fail, which ones?</p></aside></section><section><h2 id=exceptions-by-occurrence-with-multiple-ai-resources-law>Exceptions by occurrence with multiple AI-resources (LAW)</h2><pre><code class=language-sql data-line-numbers=1-13|14-16|17-22|23-31 data-ln-start-from=1>(
 AppExceptions
 | parse _ResourceId with * &#39;/components/&#39; ServiceName
 | project
@@ -98,7 +98,7 @@ AppExceptions
     OuterMethod
 )
 | where ServiceName in (
-    &#34;mart-ai&#34;
+    &#34;mart-appi&#34;
     )
 | summarize
     AnyOuterMessage = take_any(OuterMessage),
@@ -114,7 +114,22 @@ AppExceptions
     AnyOuterMessage,
     AnyOuterMethod,
     ProblemId,
-    OperationIds</code></pre><aside class=notes><p>Kusto level 4</p><p>Business case: What exceptions occur the most where?</p></aside></section><section><h2 id=performance-by-callname>Performance by callname</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>requests
+    OperationIds</code></pre><aside class=notes><p>Kusto level 4</p><p>Business case: What exceptions occur the most where?</p></aside></section><section><h2 id=exceptions-by-occurrence-appi>Exceptions by occurrence (APPI)</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
+| summarize
+    AnyOuterMessage = take_any(outerMessage),
+    AnyOuterMethod = take_any(outerMethod),
+    OperationIds= make_list(operation_Id, 5),
+    uniqueOperations=dcount(operation_Id)
+    by appName, cloud_RoleName, problemId
+| order by uniqueOperations desc, cloud_RoleName
+
+// Gets the exceptions by uniqueOperations grouped on problemId</code></pre><aside class=notes><p>Kusto level 4</p><p>Business case: What exceptions occur the most where?</p></aside></section><section><h2 id=exceptions-per-hour-appi>Exceptions per hour (APPI)</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>exceptions
+| summarize
+    uniqueOperations=dcount(operation_Id)
+    by bin(timestamp, 1h), problemId, cloud_RoleName
+| render columnchart with (title= &#34;Exceptions per uur split by problemId&#34;)
+
+// Renders a columnchart per hour for exceptions, split by problem.</code></pre><aside class=notes><p>Kusto level 3</p><p>Business case: When do exceptions occur?</p></aside></section><section><h2 id=performance-by-callname>Performance by callname</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>requests
 | where cloud_RoleName == &#34;p-wapp-mart&#34;
 | where duration &gt; 5000
 | summarize amount=dcount(operation_Id), operationIds = make_list(operation_Id, 5) by name, Date=bin( timestamp, 1h)
@@ -136,7 +151,7 @@ AppExceptions
 | where operation_Name == &#34;BookingPlaced&#34; or message has &#34;Sent e-mail BookingReceived for reservation&#34;
 | extend reservationNumber = iff(isnull(customDimensions.prop__bookingNumber), customDimensions.prop__reservation, customDimensions.prop__bookingNumber)
 | where not(isnull(reservationNumber))
-| summarize Min = min(timestamp), Max = max(timestamp), Duration = (max(timestamp) - min(timestamp))  by tostring(reservationNumber)
+| summarize Min = min(timestamp), Max = max(timestamp), Duration = (max(timestamp) - min(timestamp)) by tostring(reservationNumber)
 | order by Duration asc
 | extend ResponseTime = tolong(Duration) / 10000000
 | extend ResponseTimeMinutes = ResponseTime / 60
@@ -145,7 +160,20 @@ AppExceptions
 
 // renders scatterchart with dots and information.
 // Important is the tostring() op customDimensions en andere nested properties.
-</code></pre><aside class=notes><p>Kusto level 4</p></aside></section></section><section><h2 id=azure-resources-with-tags>Azure resources with tags</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>resources
+</code></pre><aside class=notes><p>Kusto level 4</p></aside></section></section><section><section data-shortcode-section><h2 id=azure-diagnostic-settings>Azure Diagnostic Settings</h2></section><section><h2 id=azure-synapse-failed-trigger-runs>Azure Synapse failed trigger runs</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>SynapseIntegrationTriggerRuns 
+| search &#34;/company/domain/1076064/mart&#34;
+| where TriggerName  == &#39;Event_EGT_Shared&#39;
+| extend d=parse_json(Parameters)
+| extend payload=parse_json(d.EventPayload)
+| extend data=parse_json(tostring(payload))
+| extend subject=tostring(data.subject)
+| project subject</code></pre><aside class=notes><p>Before you see this logging you will need to enable diagnostics settings on your azure synapse workspace.</p></aside></section><section><h2 id=azure-event-grid-failed-events>Azure Event Grid failed events</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>AegDeliveryFailureLogs 
+| order by TimeGenerated desc
+| search &#34;/company/domain/1076064/mart_test_18_&#34;</code></pre><aside class=notes><p>Before you see this logging you will need to enable diagnostics settings on your azure Event Grid resource.</p></aside></section><section><h2 id=azure-application-gateway-firewall-logs>Azure Application Gateway Firewall logs</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>AzureDiagnostics
+| where ResourceType == &#34;APPLICATIONGATEWAYS&#34; and OperationName == &#34;ApplicationGatewayFirewallLog&#34;
+| where action_s == &#34;Blocked&#34;
+| project TimeGenerated, clientIP_s, requestUri_s, ruleSetType_s, ruleSetVersion_s, ruleId_s, message_s
+| order by TimeGenerated desc</code></pre><aside class=notes><p>Before you see this logging you will need to enable diagnostics settings on your azure Application Gateway resource.</p></aside></section></section><section><h2 id=azure-resources-with-tags>Azure resources with tags</h2><pre><code class=language-sql data-line-numbers data-ln-start-from=1>resources
     | where isnotempty(tags)
     | extend teamTag = tostring(tags[&#34;team&#34;])
     | extend serviceTag = tostring(tags[&#34;Service&#34;])

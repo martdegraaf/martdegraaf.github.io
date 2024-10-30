@@ -1,8 +1,8 @@
 dependencies
 | where type == "SQL"
 | where data contains "1 = 0"
-| summarize Occurances=count(), OpertationIds=make_list(operation_Id,5) by data
-| project  Occurances, OpertationIds, data
+| summarize Occurances=count(), OperationIds=make_list(operation_Id,5) by data
+| project  Occurances, OperationIds, data
 
 
 // gives every SQL-query that contains 1 = 0, which is insane.

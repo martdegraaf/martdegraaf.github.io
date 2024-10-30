@@ -1,0 +1,5 @@
+AzureDiagnostics
+| where ResourceType == "APPLICATIONGATEWAYS" and OperationName == "ApplicationGatewayFirewallLog"
+| where action_s == "Blocked"
+| project TimeGenerated, clientIP_s, requestUri_s, ruleSetType_s, ruleSetVersion_s, ruleId_s, message_s
+| order by TimeGenerated desc

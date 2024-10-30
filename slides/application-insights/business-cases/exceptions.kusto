@@ -12,7 +12,7 @@ AppExceptions
     OuterMethod
 )
 | where ServiceName in (
-    "mart-ai"
+    "mart-appi"
     )
 | summarize
     AnyOuterMessage = take_any(OuterMessage),
