@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/martdegraaf/martdegraaf.github.io#readme",
   "devDependencies": {
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.49.0",
     "@types/node": "^22.8.7"
   },
   "dependencies": {
