@@ -210,7 +210,7 @@ git push origin main
 
 - [Git LFS Documentation](https://git-lfs.github.com/)
 - [Git LFS Tutorial](https://www.atlassian.com/git/tutorials/git-lfs)
-
+- [Why no Git LFS](https://gregoryszorc.com/blog/2021/05/12/why-you-shouldn't-use-git-lfs/)
 
 
 {{% /reveal/section %}}
@@ -537,5 +537,104 @@ To abort a cherry-pick in progress:
 ```sh
 git cherry-pick --abort
 ```
+
+{{% /reveal/section %}}
+
+---
+
+# Update git for windows
+
+```sh
+git update-git-for-windows
+```
+
+---
+    
+{{% reveal/section %}}
+
+## Git Configuration
+
+---
+
+### What is Git Configuration?
+
+Git Configuration allows you to customize Git settings and behavior.
+
+---
+
+### Viewing Configuration
+
+To view the current configuration settings:
+```sh
+git config --list
+```
+
+---
+
+### Setting User Information
+
+Set your name and email for commits:
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+
+---
+
+### Configuring Aliases
+
+Create shortcuts for Git commands:
+```sh
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+```
+
+---
+
+### Configuring Line Endings
+
+Ensure consistent line endings across different operating systems:
+```sh
+git config --global core.autocrlf true  # For Windows
+git config --global core.autocrlf input # For macOS and Linux
+```
+
+---
+
+### Configuring Default Editor
+
+Set the default text editor for Git:
+```sh
+git config --global core.editor "code --wait"  # VS Code
+git config --global core.editor "nano"         # Nano
+git config --global core.editor "vim"          # Vim
+```
+
+---
+
+### Configuring Merge Tool
+
+Set the default merge tool:
+```sh
+git config --global merge.tool vimdiff
+```
+
+---
+
+### Configuring Diff Tool
+
+Set the default diff tool:
+```sh
+git config --global diff.tool vimdiff
+```
+
+---
+
+### Resources
+
+- [Git Configuration Documentation](https://git-scm.com/docs/git-config)
+- [Pro Git Book: Customizing Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 {{% /reveal/section %}}
