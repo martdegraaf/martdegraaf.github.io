@@ -47,26 +47,13 @@ Business case: Data is wrong, some ids fail, which ones?
 
 ---
 
-## Exceptions by occurrence with multiple AI-resources (LAW)
-
-```sql {file="business-cases/exceptions.kusto",highlightjs="1-13|14-16|17-22|23-31"}
-```
-
-{{% reveal/note %}}
-Kusto level 4
-
-Business case: What exceptions occur the most where?
-{{% /reveal/note %}}
-
----
-
 ## Exceptions by occurrence (APPI)
 
 ```sql {file="business-cases/exceptions_ai_by_problemId.kusto"}
 ```
 
 {{% reveal/note %}}
-Kusto level 4
+Kusto level 3
 
 Business case: What exceptions occur the most where?
 {{% /reveal/note %}}
@@ -82,6 +69,19 @@ Business case: What exceptions occur the most where?
 Kusto level 3
 
 Business case: When do exceptions occur?
+{{% /reveal/note %}}
+
+---
+
+## Exceptions with multiple AI-resources (LAW)
+
+```sql {file="business-cases/exceptions.kusto",highlightjs="1-13|14-16|17-22|23-31"}
+```
+
+{{% reveal/note %}}
+Kusto level 4
+
+Business case: What exceptions occur the most where?
 {{% /reveal/note %}}
 
 ---
