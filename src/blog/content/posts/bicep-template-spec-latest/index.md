@@ -3,7 +3,7 @@ title: "Bicep Template Spec Latest"
 slug: "bicep-template-spec-latest"
 date: 2024-12-02T23:40:20+01:00
 publishdate: 2024-12-02T23:40:20+01:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: ["bicep", "azure", "template spec"]
 summary: "When using template specs in your organization you should think about how you want to handle the versioning of these template specs. Read it in this blog post."
