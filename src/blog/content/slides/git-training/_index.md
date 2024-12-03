@@ -632,6 +632,41 @@ git config --global diff.tool vimdiff
 
 ---
 
+## .gitattributes
+
+---
+
+### Project-Specific Control
+
+- `.gitattributes` is part of the repository, so it provides consistent behavior for all contributors.
+- Relying solely on `core.autocrlf` assumes everyone has configured their Git client correctly, which can lead to inconsistencies.
+
+---
+
+### Cross-Platform Consistency
+
+- Different platforms handle line endings differently:
+    - **Linux/macOS**: LF (`\n`)
+    - **Windows**: CRLF (`\r\n`)
+- `.gitattributes` allows you to enforce LF or CRLF universally, independent of contributors' systems.
+
+---
+
+### Binary Files Protection
+
+- `.gitattributes` can explicitly mark certain files (e.g., images, archives) as binary, preventing Git from attempting any normalization.
+
+---
+
+### Example `.gitattributes` File
+
+```sh
+# https://code.visualstudio.com/docs/remote/troubleshooting#_resolving-git-line-ending-issues-in-wsl-resulting-in-many-modified-files
+* text=auto eol=lf # Ensure consistent line endings
+*.{cmd,[cC][mM][dD]} text eol=crlf # Windows batch files
+*.{bat,[bB][aA][tT]} text eol=crlf # Windows batch files
+```
+
 ### Resources
 
 - [Git Configuration Documentation](https://git-scm.com/docs/git-config)
