@@ -35,6 +35,8 @@ diag = "2%"
 
 {{% /reveal/section %}}
 
+---
+
 {{% reveal/section %}}
 
 ## Commit ethiek
@@ -665,6 +667,21 @@ git config --global diff.tool vimdiff
 * text=auto eol=lf # Ensure consistent line endings
 *.{cmd,[cC][mM][dD]} text eol=crlf # Windows batch files
 *.{bat,[bB][aA][tT]} text eol=crlf # Windows batch files
+```
+
+---
+
+## Apply changes
+
+```sh
+# Remove cached files
+git rm --cached -r .
+
+# Re-add files
+git add .
+
+# Commit the changes
+git commit -m "Normalize line endings using .gitattributes"
 ```
 
 ---
