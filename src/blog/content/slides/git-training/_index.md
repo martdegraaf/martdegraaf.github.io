@@ -667,6 +667,8 @@ git config --global diff.tool vimdiff
 *.{bat,[bB][aA][tT]} text eol=crlf # Windows batch files
 ```
 
+---
+
 ### Resources
 
 - [Git Configuration Documentation](https://git-scm.com/docs/git-config)
