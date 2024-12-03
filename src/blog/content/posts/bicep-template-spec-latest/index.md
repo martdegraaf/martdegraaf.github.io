@@ -5,8 +5,8 @@ date: 2024-11-02T23:40:20+01:00
 publishdate: 2024-11-02T23:40:20+01:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
-summary: "TODO You should fill this ..."
+tags: ["bicep", "azure", "template spec"]
+summary: "When using template specs in your organization you should think about how you want to handle the versioning of these template specs. Read it in this blog post."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -19,8 +19,8 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    alt: ""An abstract digital artwork representing versioning in cloud infrastructure. The design features dynamic swirling shapes and layered gradients in azure and teal tones. Stacked blocks and branching pathways subtly symbolize version control and progressive changes. The composition is minimalist and futuristic, evoking fluidity and modern technology." # alt text
+    #caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
