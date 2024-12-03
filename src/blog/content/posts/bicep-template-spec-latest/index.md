@@ -1,8 +1,8 @@
 ---
 title: "Bicep Template Spec Latest"
 slug: "bicep-template-spec-latest"
-date: 2024-11-02T23:40:20+01:00
-publishdate: 2024-11-02T23:40:20+01:00
+date: 2024-12-02T23:40:20+01:00
+publishdate: 2024-12-02T23:40:20+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["bicep", "azure", "template spec"]
@@ -19,7 +19,7 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: ""An abstract digital artwork representing versioning in cloud infrastructure. The design features dynamic swirling shapes and layered gradients in azure and teal tones. Stacked blocks and branching pathways subtly symbolize version control and progressive changes. The composition is minimalist and futuristic, evoking fluidity and modern technology." # alt text
+    alt: "An abstract digital artwork representing versioning in cloud infrastructure. The design features dynamic swirling shapes and layered gradients in azure and teal tones. Stacked blocks and branching pathways subtly symbolize version control and progressive changes. The composition is minimalist and futuristic, evoking fluidity and modern technology." # alt text
     #caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
