@@ -38,6 +38,14 @@ cover:
 | `Ctrl + /` | Comment out code |
 | `Ctrl + Shift + O` | Remove unused usings |
 
+### Navigation
+| `Ctrl + B` | Open / Close sidebar |
+| `Ctrl + 1` | Focus on first editor group |
+| `Ctrl + 2` | Focus on second editor group |
+| `Ctrl + Shift + E` | Open editor |
+| `Ctrl + Shift + G` | Open source control |
+
+
 If you want a one-page cheatsheet, check [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf).
 
 ## Visual Studio
