@@ -51,7 +51,7 @@ private handleRouterEvent(): void {
 
 # Solution
 
-The solution was found using the `APP_INITIALIZER` token. This token is used to run a function before the application is bootstrapped. When usng this method we can create a global singleton that does not need to be depended upon in the constructor of the components.
+The solution was found using the `APP_INITIALIZER` token. This token is used to run a function before the application is bootstrapped. When using this method we can create a singleton service that does not need to be depended upon in the constructor of the components.
 
 ## The root listener
 
