@@ -170,7 +170,7 @@ This allows even consumers to hook into those events and write their own subserv
 
 Please don't use this as an golden hammer. Normally you would want to be as explicit as possible when subscrbing to route events. In our case we removed complexity and variations in our codebase. Also i am not sure what kind of performance impact this has on applicattions. We use these subscriptions at root level, so it was a good fit for us.
 
-Also if you are using my code here, please note it only supports NavigationEnd events. If you want to support more events, you should edit the design to support a method to in the service if it handles the event type. You could use the `Event`type from `@angular/router` to do this. 
+Also if you are using my code here, please note it only supports NavigationEnd events. If you want to support more events, you should edit the design to support a method to in the service if it handles the event type. You could use the `Event` type from `@angular/router` to do this.
 
 ```ts
 public startListening(): void {
@@ -194,7 +194,13 @@ The drawback is that we have a global singleton that listens to router events. T
 
 We also made it very easy to add more services to the route handling. It still can be possible to create duplicate own implementations and when updating the package, the application will break. This is a risk we took and we are aware of it.
 
-# endnotes
+# References
+
+- [Angular Router](https://angular.io/api/router/Router)
+- [provideRouter](https://angular.dev/api/router/provideRouter)
+- [APP_INITIALIZER](https://angular.io/api/core/APP_INITIALIZER)
+
+# Endnotes
 
 This design was my idea but i implemented it with a colleague, so he has some of the credit of the code in this post. Jarco, thanks a lot!
 
