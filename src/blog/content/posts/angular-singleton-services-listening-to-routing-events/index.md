@@ -1,6 +1,6 @@
 ---
-title: "Angular Global Singleton"
-slug: "angular-global-singleton"
+title: "Unlocking Angular Potential: Provide Root Services That Listen to Routing Events"
+slug: "angular-singleton-services-listening-to-routing-events"
 date: 2024-12-12T22:00:00+01:00
 publishdate: 2024-12-12T22:00:00+01:00
 draft: false
@@ -41,8 +41,7 @@ public constructor(private router: Router, private titleService: Title) {
 private handleRouterEvent(): void {
   this.router.events.pipe(
     takeUntill(this.destroy$),
-    filter((event) => event instanceof NavigationEnd),
-    map((event) => event as NavigationEnd)
+    filter((event) : event is NavigationEnd => event instanceOf NavigationEnd)
   ).subscribe((event) => {
       this.titleService.setTitle(this.getTitle(event.url));
     });
@@ -197,6 +196,6 @@ We also made it very easy to add more services to the route handling. It still c
 
 # endnotes
 
-This design was my idea but i implemented it with a colleague, so he has some of the credit of the code in this post. Thanks to him.
+This design was my idea but i implemented it with a colleague, so he has some of the credit of the code in this post. Jarco, thanks a lot!
 
 __This blogpost is the first blog post using my new Dygma Defy keyboard. I did not edit the layers yet just trying to get used to the keyboard.__
