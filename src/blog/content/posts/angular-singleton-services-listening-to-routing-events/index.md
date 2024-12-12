@@ -188,6 +188,8 @@ public startListening(): void {
 
 The move of this duplicate code over all projects also resulted in a higher code coverage and less stress to test the same code over and over again, and creating variants of the same code. It feels a lot like the Loki show of Disney+ where there are multiple Lokis in the same universe. We just restored the sacred timeline by implementing and using the package.
 
+We are flexible in the use of the provide method. Let's say only one service does not want to log page views in the same way, we can just remove the `withPageViewLogger` method from the `provideRouteHandler` method. A concrete example may be when logging to application insights in 90% of the projects and 10% of the projects want to log to a different service like Google Analytics or New Relic.
+
 ## Drawbacks
 
 The drawback is that we have a global singleton that listens to router events. This can be a performance issue when you have a lot of subscriptions. Also the code is not as explicit as it was before. This can be a problem when you are debugging the application. You will have to look at the `provideRouteHandler` method to see what is happening.
