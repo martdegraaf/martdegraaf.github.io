@@ -1,12 +1,12 @@
 ---
 title: "Angular Global Singleton"
 slug: "angular-global-singleton"
-date: 2024-12-07T00:25:40+01:00
-publishdate: 2024-12-07T00:25:40+01:00
-draft: true
+date: 2024-12-12T22:00:00+01:00
+publishdate: 2024-12-12T22:00:00+01:00
+draft: false
 author: ["Mart de Graaf"]
-tags: []
-summary: ""
+tags: ["angular", "typescript", "singleton", "design pattern", "router", "npm"]
+summary: "Lets create a global singleton that listens to router events in Angular. Is it a good idea? Let's find out."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -19,8 +19,8 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    alt: "Image featuring Angular" # alt text
+    #caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
