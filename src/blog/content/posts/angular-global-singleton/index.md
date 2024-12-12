@@ -185,4 +185,18 @@ public startListening(): void {
 }
 ```
 
+## Benefits
+
+The move of this duplicate code over all projects also resulted in a higher code coverage and less stress to test the same code over and over again, and creating variants of the same code. It feels a lot like the Loki show of Disney+ where there are multiple Lokis in the same universe. We just restored the sacred timeline by implementing and using the package.
+
+## Drawbacks
+
+The drawback is that we have a global singleton that listens to router events. This can be a performance issue when you have a lot of subscriptions. Also the code is not as explicit as it was before. This can be a problem when you are debugging the application. You will have to look at the `provideRouteHandler` method to see what is happening.
+
+We also made it very easy to add more services to the route handling. It still can be possible to create duplicate own implementations and when updating the package, the application will break. This is a risk we took and we are aware of it.
+
+# endnotes
+
+This design was my idea but i implemented it with a colleague, so he has some of the credit of the code in this post. Thanks to him.
+
 __This blogpost is the first blog post using my new Dygma Defy keyboard. I did not edit the layers yet just trying to get used to the keyboard.__
