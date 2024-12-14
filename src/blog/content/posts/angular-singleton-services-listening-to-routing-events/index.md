@@ -5,7 +5,7 @@ date: 2024-12-12T22:00:00+01:00
 publishdate: 2024-12-12T22:00:00+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["angular", "typescript", "singleton", "design pattern", "router", "npm"]
+tags: ["Angular", "typescript", "singleton", "design pattern", "router", "npm"]
 summary: "Lets create a global singleton that listens to router events in Angular. Is it a good idea? Let's find out."
 # Toc
 ShowToc: true
@@ -25,12 +25,12 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-__In a project with over 50 angular projects we had quite some duplicate code. The first thing you will think of is putting code in a NPM package. But that can be a challenge when some of the 50 had a different implementation.__
+__In a project with over 50 Angular projects we had quite some duplicate code. The first thing you will think of is putting code in a NPM package. But that can be a challenge when some of the 50 had a different implementation.__
 
 # System context
 
 The applications we make are wizard like applications. We update the title on a route change. This is done by subscribing to the router events.
-In the angular projects we had this code sample in the `app.component.ts`:
+In the Angular projects we had this code sample in the `app.component.ts`:
 
 ```ts {linenos=table}
 public AppComponent{
@@ -151,7 +151,7 @@ export function withPageViewLogger(): Provider[] {
 
 ## Implementing in your application
 
-By creating a provide method, we can configure any behaviour that is needed for that specific project. And by allowing parameters to implement this method we can extend even for specific business logic for that project. I got this idea when we migrated to a newer version of Angular and i saw the `provideRoutes` method. This method is used to provide routes to the application. My solution is based on this method but implemented generic and simple.
+By creating a provide method, we can configure any behaviour that is needed for that specific project. And by allowing parameters to implement this method we can extend even for specific business logic for that project. I got this idea when we migrated to a newer version of Angular and my eye fell on the `provideRoutes` method. This method is used to provide routes to the application. My solution is based on this method but implemented generic and simple.
 
 So in your `main.ts`, you can now register the route handler like this:
 
@@ -168,9 +168,9 @@ This allows even consumers to hook into those events and write their own subserv
 
 # Conclusion and discussion
 
-Please don't use this as an golden hammer. Normally you would want to be as explicit as possible when subscrbing to route events. In our case we removed complexity and variations in our codebase. Also i am not sure what kind of performance impact this has on applicattions. We use these subscriptions at root level, so it was a good fit for us.
+Please don't use this as an golden hammer. Normally you would want to be as explicit as possible when subscribing to route events. In our case we removed complexity and variations in our codebase. Also I am not sure what kind of performance impact this has on applications. We use these subscriptions at root level, so it was a good fit for us.
 
-Also if you are using my code here, please note it only supports NavigationEnd events. If you want to support more events, you should edit the design to support a method to in the service if it handles the event type. You could use the `Event` type from `@angular/router` to do this.
+Also if you are using my code here, please note it only supports `NavigationEnd` events. If you want to support more events, you should edit the design to support a method to in the service if it handles the event type. You could use the `Event` type from `@Angular/router` to do this.
 
 ```ts
 public startListening(): void {
