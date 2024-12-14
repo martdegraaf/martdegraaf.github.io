@@ -156,7 +156,7 @@ By creating a provide method, we can configure any behaviour that is needed for 
 So in your `main.ts`, you can now register the route handler like this:
 
 ```ts {linenos=table}
-bootstapApplicaiton(AppComponent, {
+bootstapApplication(AppComponent, {
     providers: [
         ...
         provideRouteHandler(withTitleService(), withPageViewLogger())
@@ -204,6 +204,6 @@ We also made it very easy to add more services to the route handling. It still c
 
 # Endnotes
 
-This design was my idea but i implemented it with a colleague, so he has some of the credit of the code in this post. Jarco, thanks a lot!
+This design was my idea but I implemented it with a colleague, so he has some of the credit of the code in this post. Jarco, thanks a lot!
 
 __This blogpost is the first blog post using my new Dygma Defy keyboard. I did not edit the layers yet just trying to get used to the keyboard.__
