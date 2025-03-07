@@ -9,8 +9,11 @@ hidemeta: true
 ---
 
 I am a seasoned speaker passionate about sharing knowledge with the tech community. I've spoken at various events and specialize in topics like Git, cloud software observability, and the optimization of daily work for software engineers. If you are interested in having me as a speaker at your event, please reach out!
-<!-- 
-## Upcoming engagements -->
+
+## Upcoming engagements
+
+- 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
+- 8 May 2025 - Azure Community Day Köln x Global Azure 2025
 
 ## Current sessions
 
