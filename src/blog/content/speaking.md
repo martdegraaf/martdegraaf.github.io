@@ -20,7 +20,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 For bookings, feel free to contact me directly or via [Sessionize](https://sessionize.com/mart-de-graaf/). Here are the sessions that I can deliver on short notice:
 
 1. **Advanced git and git workflows** - A deep dive into advanced Git concepts and workflows to streamline your version control processes.
-1. **Guide to Application Insights, Lag Analytics and KQL** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
+1. **Guide to Application Insights, Log Analytics and KQL** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
 1. **Observability of your cloud Software - Application Insights deep dive** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
 1. **Improve your daily work using habits for Software Engineers (New)** - Boost your productivity by integrating these proven habits into your daily routine as a software engineer.
 
