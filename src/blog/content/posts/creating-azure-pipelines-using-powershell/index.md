@@ -18,7 +18,7 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.jpeg" # image path/url
+    image: "cover.jpg" # image path/url
     alt: "Super hero that automates stuff" # alt text
     caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
