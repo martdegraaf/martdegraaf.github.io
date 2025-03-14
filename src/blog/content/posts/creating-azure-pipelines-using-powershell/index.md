@@ -5,7 +5,7 @@ date: 2025-03-07T22:22:58+01:00
 publishdate: 2025-03-07T22:22:58+01:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
+tags: ["powershell", "azure devops", "automation", "pipelines"]
 summary: "Have you ever created a new project and had code and pipelines and such ready to go, but still need to manually create the pipelines in Azure DevOps? Annoying, right? The flow is so simple it does not allow you to select folders or name your pipelines. This post will show you how to create Azure Pipelines using PowerShell."
 # Toc
 ShowToc: true
@@ -18,9 +18,9 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "cover.jpeg" # image path/url
+    alt: "Super hero that automates stuff" # alt text
+    caption: "" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
