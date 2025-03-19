@@ -13,7 +13,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 ## Upcoming engagements
 
 - 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
-- 8 May 2025 - Azure Community Day Köln x Global Azure 2025
+- 9 May 2025 - [Azure Community Day Köln x Global Azure 2025](https://azure-community-day.de/)
 
 ## Current sessions
 
