@@ -29,7 +29,6 @@ Have you ever created a new project and had code and pipelines and such ready to
 
 And if thats possible, why not automate more, like giving permissions to the pipelines and creating branchpolices? Let's dive in!
 
-
 # Solution
 
 To script the code i am using a mix of the Az CLI and the Azure DevOps REST API. The Az CLI is used to get the repo id and getting the authorization token. The REST API is used to create the pipeline, and more.
@@ -164,5 +163,7 @@ Write-Host "Policy created with id $($policy.id)"
 # Conclusion and discussion
 
 Having a script do the work can help you deliver consistent pipelines and policies. It can also help you to automate the creation of pipelines and policies in a new project. This can be useful when you have a lot of projects to manage.
+
+I will continue on this topic in a later blogpost using a different view. But as an addition to these scripts.
 
 Let's automate more together!
