@@ -3,7 +3,7 @@ title: "Creating Azure Pipelines Using PowerShell"
 slug: "creating-azure-pipelines-using-powershell"
 date: 2025-03-07T22:22:58+01:00
 publishdate: 2025-03-07T22:22:58+01:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: ["powershell", "azure devops", "automation", "pipelines"]
 summary: "Have you ever created a new project and had code and pipelines and such ready to go, but still need to manually create the pipelines in Azure DevOps? Annoying, right? The flow is so simple it does not allow you to select folders or name your pipelines. This post will show you how to create Azure Pipelines using PowerShell."
