@@ -8,9 +8,9 @@ disableShare: true
 hidemeta: true
 
 cover:
-    hidden: false # hide everywhere but not in structured data
-    hiddenInList: false # hide on list pages and home
-    hiddenInSingle: false # hide on single page
+  hidden: true # hide everywhere but not in structured data
+  hiddenInList: true # hide on list pages and home
+  hiddenInSingle: true # hide on single page
 ---
 
 I am a seasoned speaker passionate about sharing knowledge with the tech community. I've spoken at various events and specialize in topics like Git, cloud software observability, and the optimization of daily work for software engineers. If you are interested in having me as a speaker at your event, please reach out!
