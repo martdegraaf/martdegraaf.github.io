@@ -18,9 +18,8 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "cover.png" # image path/url
+    alt: "Accessable websites" # alt text
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
@@ -29,7 +28,7 @@ Nobody wants to make websites accessible, but it is essential. This post will sh
 
 ## Obvious but important
 
-The html should be correct and in the same order as you read the elements on the screen
+The html should be correct and in the same order as you read the elements on the screen.
 
 ## Custom components should be accessible
 
@@ -38,6 +37,8 @@ If you create custom components, make sure they are accessible. It can be done b
 ## Use Tooling
 
 There are tools available that can help you make your frontend accessible.
+
+[TODO screenies]
 
 ### Manual testing
 
@@ -51,7 +52,7 @@ Another good practice can be to run Google Lighthouse in your browser. This tool
 
 There are tools available that can help you find accessibility issues in your frontend.
 
-- [axe-core](
+- [axe-core](https://www.deque.com/axe/)
 - [pa11y](https://pa11y.org/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
@@ -59,3 +60,4 @@ For teams that already use PlayWright, Axe-core can be integrated into your test
 
 ## Conclusion
 
+You should be testing your frontend for accessibility. It is important to make your frontend accessible for everyone. And you should not only rely on automated testing, but also manual testing.
