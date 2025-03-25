@@ -13,7 +13,7 @@ baseUrl = "http://localhost:1313"
 pygmentsUseClasses = true
 pygmentsCodefences = true
 
-paginate = 12 # articles per page
+pagination.pagerSize = 12 # articles per page
 
 [languages.en-us]
 title = "Mart's blog"
