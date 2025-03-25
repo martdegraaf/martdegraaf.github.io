@@ -6,7 +6,7 @@ publishdate: 2025-03-19T17:37:16+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: []
-summary: "TODO You should fill this ..."
+summary: "Read how i use Copier as a boilerplate tool to create new projects based on existing projects."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -52,7 +52,7 @@ pip install copier
 After you have installed Copier, you can use it to copy files from one place to another. Here is an example of how you can use Copier to create a new project based on an existing project:
 
 ```bash
-copier path/to/boilerplate path/to/new/project --trust
+copier copy path/to/boilerplate path/to/new/project --trust
 ```
 
 This command will copy all the files from the `path/to/boilerplate` directory to the `path/to/new/project` directory.
@@ -82,6 +82,22 @@ variables:
 ### .copier-answers.yml
 
 The `.copier-answers.yml` file is a file that contains the answers to the questions that Copier asks when copying files from one place to another. You have to create this file yourself in your template.
+
+### Copy from remote
+
+You may want to copy files from a remote repository. You can do this by using the `git+` prefix in the `copier.yml` file. Here is an example of how you can copy files from a remote repository:
+
+```yaml
+# This is a comment
+files:
+  - src: "git+
+
+```
+
+
+## Some pains
+
+It's not easy to regonize the difference between tasks and migrations. 
 
 ## Conclusion
 
