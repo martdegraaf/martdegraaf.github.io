@@ -18,7 +18,7 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
+    image: "cover.png" # image path/url
     alt: "File icon with title log masking" # alt text
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
