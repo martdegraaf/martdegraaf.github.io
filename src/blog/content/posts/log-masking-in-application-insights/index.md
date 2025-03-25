@@ -6,7 +6,7 @@ publishdate: 2025-03-19T17:27:38+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["Application Insights", "Azure", "Logging"]
-summary: "TODO You should fill this ..."
+summary: "In this post, we will discuss the methods to mask data in Azure Application Insights."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -19,8 +19,7 @@ ShowWordCount: true
 
 cover:
     image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    alt: "File icon with title log masking" # alt text
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
@@ -29,9 +28,9 @@ For building good and reliable software, logging is essential. But not every typ
 
 By default you should not expose data in your logging. But sometimes it can be handy to see your objects in the logs. This post will discuss methods and show you how to mask data in Azure Application Insights.
 
-## .NET 8+ 
+## Log masking in .NET 8
 
-There are serveral ways to do Log masking in .NET 8.
+There are serveral ways to do Log masking in .NET since version 6. Now let's look what is available for us for .NET 8 and higher.
 
 ### Logging source generation
 
@@ -183,7 +182,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Personally i am most charmed by the source generation method of logging. The logging is clean and simple enough to use. The redaction package is a more complex way of masking your logs, but has more capabilities to mask and classify different types of data.
 
-## .NET Framework 4.8
+## Log masking in .NET Framework 4.8
 
 So you are still using .NET Framework 4.8? No worries, you can still mask data in your logs. You are entitled to use build your own TelemetryInitializer. This way you can mask data in your logs.
 
