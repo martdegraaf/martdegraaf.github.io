@@ -14,6 +14,8 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 - 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
 - 9 May 2025 - [Azure Community Day Köln x Global Azure 2025](https://azure-community-day.de/)
+- 17 May 2025 - [DOTNED SATURDAY 2025](https://dotnedsaturday.nl/)
+- 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
 
 ## Current sessions
 
