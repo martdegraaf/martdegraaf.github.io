@@ -1,12 +1,12 @@
 ---
 title: "Log Masking in Application Insights"
 slug: "log-masking-in-application-insights"
-date: 2025-03-19T17:27:38+01:00
-publishdate: 2025-03-19T17:27:38+01:00
-draft: true
+date: 2025-05-08T17:27:38+01:00
+publishdate: 2025-05-08T17:27:38+01:00
+draft: false
 author: ["Mart de Graaf"]
 tags: ["Application Insights", "Azure", "Logging"]
-summary: "In this post, we will discuss the methods to mask data in Azure Application Insights."
+summary: "In this post, we will discuss the methods to mask log data in Azure Application Insights."
 # Toc
 ShowToc: true
 TocOpen: true

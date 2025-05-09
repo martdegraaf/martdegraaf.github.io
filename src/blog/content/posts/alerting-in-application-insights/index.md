@@ -1,8 +1,8 @@
 ---
 title: "Alerting in Application Insights"
 slug: "alerting-in-application-insights"
-date: 2025-03-19T17:36:54+01:00
-publishdate: 2025-03-19T17:36:54+01:00
+date: 2025-05-08T17:11:54+01:00
+publishdate: 2025-05-01T17:11:54+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["Bicep", "Azure", "Application Insights", "Alerting"]
