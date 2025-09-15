@@ -18,14 +18,14 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "cover.png" # image path/url
+    alt: "Computer on fire - pixel art" # alt text
+    caption: "Computer on fire - pixel art" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
 
-On my presentation for the APE Meetup on the 11th of September, I had a demo prepared to show how easy you could build stuff using bicep and Visual Studio Code. A week before i deployed a Application Gateway with a Web Application Firewall (WAF) in front of a simple web app. I had a budget of 150 euro's to spend on Azure credit. And it was all gone just before the demo. Luckily I had a backup subscription with some credit left. But it was nerve wrecking.
+On my presentation for the APE Meetup on the 11th of September, I had a demo prepared to show how easy you could build stuff using bicep and Visual Studio Code. A week before i deployed a Application Gateway with a Web Application Firewall (WAF) in front of a simple web app. I have a monthly budget of 150 euro's to spend on Azure credit. And it was all gone just before the demo. Luckily I had a backup subscription with some credit left, but it was nerve wrecking.
 
 ## Blog down
 
