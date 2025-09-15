@@ -15,17 +15,21 @@ cover:
 
 I am a seasoned speaker passionate about sharing knowledge with the tech community. I've spoken at various events and specialize in topics like Git, cloud software observability, and the optimization of daily work for software engineers. If you are interested in having me as a speaker at your event, please reach out!
 
-## Upcoming engagements
+## This Year's Engagements
 
 - 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
 - 9 May 2025 - [Azure Community Day Köln x Global Azure 2025](https://azure-community-day.de/)
 - 17 May 2025 - [DOTNED SATURDAY 2025](https://dotnedsaturday.nl/)
 - 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
+- 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
+- 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events)
+- 
 
 ## Current sessions
 
 For bookings, feel free to contact me directly or via [Sessionize](https://sessionize.com/mart-de-graaf/). Here are the sessions that I can deliver on short notice:
 
+1. **Azure Web Application Firewall in ACTION!** - A live demo about the Web application firewall in Application Gateway and Front Door.
 1. **Advanced git and git workflows** - A deep dive into advanced Git concepts and workflows to streamline your version control processes.
 1. **Guide to Application Insights, Log Analytics and KQL** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
 1. **Observability of your cloud Software - Application Insights deep dive** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
