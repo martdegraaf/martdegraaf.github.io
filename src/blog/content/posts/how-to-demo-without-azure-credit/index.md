@@ -33,6 +33,10 @@ After the demo i realized that my blog was down too because the subscription was
 
 So here are some tips to avoid this happening to you.
 
+## Separate demo from production
+
+So I had a production resource, my blog deployed in the same subscription I play around in with my demos. Not really smart, learn from my mistake and always separate production from demo/test/dev environments. Use different subscriptions if possible.
+
 ## Setup a budget and alerts
 
 In the Azure portal you can setup a budget for your subscription. You can set alerts to be send when you reach 50%, 75% and 90% of your budget. This way you will be warned in time.
