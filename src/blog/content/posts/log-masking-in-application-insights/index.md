@@ -92,7 +92,7 @@ public class MyController : ControllerBase
 
         [LoggerMessage(
             Level = LogLevel.Information,
-            Message = "Logging Sesnsitive model")]
+            Message = "Logging Sensitive model")]
         private static partial void LogMySensitiveModel(ILogger logger, [LogProperties] MyModel model);
 }
 ```
