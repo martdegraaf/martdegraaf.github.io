@@ -29,7 +29,7 @@ On my presentation for the APE Meetup on the 11th of September, I had a demo pre
 
 ## Blog down
 
-After the demo i realized that my blog was down too because the subscription was disabled. I had to move my blog to another subscription and do change the CNAME to the new Static Web App.
+After the demo I realized that my blog was down too because the subscription was disabled. I had to move my blog to another subscription and did change the CNAME to the new Static Web App. I just created a new Static Web App in the backup subscription and deployed my blog there. It took 5 minutes to change, but my blog was down for a weekend because you first need to do this.
 
 So here are some tips to avoid this happening to you.
 
