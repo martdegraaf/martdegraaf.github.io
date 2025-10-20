@@ -18,9 +18,9 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "cover.png" # image path/url
+    alt: "A towed car, ready to be diagnosed" # alt text
+    #caption: "Mart de Graaf - cartoon style." # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
