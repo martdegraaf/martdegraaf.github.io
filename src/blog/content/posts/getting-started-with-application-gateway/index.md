@@ -25,11 +25,15 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-Do you 
+How secure are your web applications? Deploy an Azure Application Gateway with Web Application Firewall (WAF). This is a powerful tool to protect your applications while ensuring seamless performance. Let's dive in and explore how you can get started!
 
 ## Why deploy an Application Gateway?
 
-Have you ever heard about the OWASP Top 10? It is a list of the most common web application security risks. Could you even name all ten risks? If not, you are not alone. But you want to protect against these risks, right? An Application Gateway with Web Application Firewall (WAF) can help you with that. It is a managed service that provides a web application firewall to protect your web applications from common threats and vulnerabilities.
+Have you ever heard about the [OWASP Top 10](https://owasp.org/www-project-top-ten/)? It is a list of the most common web application security risks. Could you even name all ten risks? If not, you are not alone. But you want to protect against these risks, right? An Application Gateway with Web Application Firewall (WAF) can help you with that. It is a managed service that provides a web application firewall to protect your web applications from common threats and vulnerabilities.
+
+### Alternatives
+
+An alternative is using the Azure FrontDoor service. Or look outside of Azure, but I will not discuss those options in this blog. Frontdoor has some additional features like CDN and global load balancing.
 
 ## How to migrate to an Application Gateway?
 
