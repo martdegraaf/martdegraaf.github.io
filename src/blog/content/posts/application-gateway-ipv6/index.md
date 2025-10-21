@@ -47,6 +47,29 @@ If you need to do this i recommend:
 2. Reconsider if you need zones for your Application Gateway. Those also require a full redeployment.
 
 ```bicep {linenos=table}
+module waf 'br/public:avm/res/network/application-gateway-web-application-firewall-policy:0.5.0' = {
+  name: '${deployment().name}-waf-policy'
+  scope: resourceGroup()
+  params: {
+    name: 'wafpolicy-${region}-${environment}'
+    policySettings: {
+        enabledState: 'Enabled'
+        mode: 'Detection'
+        requestBodyCheck: true
+        maxRequestBodySizeInKb: 128
+        fileUploadLimitInMb: 100
+    }
+    managedRules: {
+        managedRuleSets: [
+            {
+                ruleSetType: 'OWASP'
+                ruleSetVersion: '3.2'
+            }
+        ]
+    }
+  }
+}
+
 module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   name: '${deployment().name}-agw'
   scope: resourceGroup()
@@ -79,7 +102,7 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
 }
 ```
 
-See https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway for more details.
+See https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway and https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy for more details.
 
 ## Traffic Manager
 
@@ -154,8 +177,6 @@ I initially attempted to use nested endpoints, but they were incompatible with t
 
 As a result, we switched to using external endpoints that pointed to the FQDNs of the nested Traffic Manager profiles. This allowed us to stay within the subscription limits while still achieving the desired failover behavior.
 
-// TODO CONCLUSIE EXTERNAL
-
 ```bicep {linenos=table}
 param region string
 param environment string
@@ -208,8 +229,20 @@ module serviceTrafficManagerFailover 'br/public:avm/res/network/trafficmanagerpr
 }
 ```
 
-# Conclusion and discussion
-__Solution explained__
-```cs {linenos=table}
-__insert code here__
+## Update DNS records
+
+If you are using a Traffic Manager profile to expose your application gateway you can update your CNAME record to point to the Traffic Manager FQDN. This way both IPv4 and IPv6 traffic will be routed correctly.
+
+If you are routing directly to the Application Gateway you will need to update both the A record (IPv4) and the AAAA record (IPv6) in your DNS settings to point to the respective IP addresses of the Application Gateway.
+
+After updating the DNS records, it may take some time for the changes to propagate. You can use tools like `nslookup` or online DNS checkers to verify that the records have been updated correctly.
+
+```cmd
+nslookup yourapp.yourdomain.com
 ```
+
+## Conclusion and discussion
+
+It has consequences to enable IPv6 on your Application Gateway. You have to redeploy the Application Gateway which can be complex depending on your current setup. Also for every listener you will need two listeners (one for IPv4 and one for IPv6). The limit of active listeners is 100 so keep that in mind for your architecture. with two listeners for each application you can only have 50 applications behind one Application Gateway.
+
+Now you have dual stack support. Your Application Gateway is available over both IPv4 and IPv6. Make sure to test your setup thoroughly to ensure that everything is working as expected.
