@@ -1,5 +1,5 @@
 ---
-title: "Use IPV6 in Azure behind the Application Gateway"
+title: "Use IPV6 in Azure with the Application Gateway"
 slug: "application-gateway-ipv6"
 date: 2025-10-17T10:55:50+02:00
 publishdate: 2025-10-17T10:55:50+02:00
@@ -37,7 +37,7 @@ The system was geo redundant with two Application Gateways in different regions,
 
 A traffic manager profile is used to distribute traffic between the two Application Gateways based on priority. A common Active passive setup.
 
-## Dual band
+## Dual stack
 
 To make the Application Gateway available over IPv6, we needed to configure dual stack support. This means you have to **redeploy** the Application Gateway. This has a massive impact because of our current strategy with multiple listeners and rules. We had to make sure that all configurations were preserved during the redeployment.
 
