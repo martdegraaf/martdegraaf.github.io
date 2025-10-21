@@ -176,12 +176,11 @@ I recommend starting with Detection mode to understand the traffic patterns and 
 
 See my next blog post on how to find false positives and tune your WAF rules.
 
-# Next steps
+## Next steps
 
 We now got an Application gateway before your application. Your next steps could be:
 
 - Configure custom WAF rules to tailor the security settings to your specific application needs.
 - Set up monitoring and alerting to keep an eye on the WAF logs and performance metrics. ( see [WAF monitoring]({{< ref "monitor-your-waf/index.md" >}}))
-
-- If you see no false positives you can switch from Detection to Prevention mode. (see blogpost xx )
-- Implement ip restrictions for your Application gateway on Staging or acceptance environments. (see blogpost xx )
+- If you see no false positives you can switch from Detection to Prevention mode. (see [Troubleshoot Application Gateway in Production]({{< ref "troubleshoot-application-gateway-in-production/index.md" >}}))
+- Implement ip restrictions for your Application gateway on Staging or acceptance environments. (see [Implement IP Restrictions]({{< ref "apply-ip-restrictions-application-firewall/index.md" >}}))
