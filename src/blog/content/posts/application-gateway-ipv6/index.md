@@ -47,28 +47,6 @@ If you need to do this i recommend:
 2. Reconsider if you need zones for your Application Gateway. Those also require a full redeployment.
 
 ```bicep {linenos=table}
-module waf 'br/public:avm/res/network/application-gateway-web-application-firewall-policy:0.5.0' = {
-  name: '${deployment().name}-waf-policy'
-  scope: resourceGroup()
-  params: {
-    name: 'wafpolicy-${region}-${environment}'
-    policySettings: {
-        enabledState: 'Enabled'
-        mode: 'Detection'
-        requestBodyCheck: true
-        maxRequestBodySizeInKb: 128
-        fileUploadLimitInMb: 100
-    }
-    managedRules: {
-        managedRuleSets: [
-            {
-                ruleSetType: 'OWASP'
-                ruleSetVersion: '3.2'
-            }
-        ]
-    }
-  }
-}
 
 module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   name: '${deployment().name}-agw'
@@ -102,7 +80,9 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
 }
 ```
 
-See https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway and https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy for more details.
+{{< quoteblock >}}
+:robot: In the example 'Azure Verified Modules' Are used, see the documentation of these components here: https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway and https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy.
+{{</ quoteblock >}}
 
 ## Traffic Manager
 
