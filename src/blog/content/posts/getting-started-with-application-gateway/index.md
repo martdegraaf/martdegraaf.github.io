@@ -1,12 +1,12 @@
 ---
 title: "Getting Started With Application Gateway"
 slug: "getting-started-with-application-gateway"
-date: 2025-10-17T14:16:30+02:00
-publishdate: 2025-10-17T14:16:30+02:00
+date: 2025-10-21T14:16:30+02:00
+publishdate: 2025-10-21T14:16:30+02:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
-summary: "TODO You should fill this ..."
+tags: ["application gateway", "waf", "azure", "bicep", "getting started", "security"]
+summary: "How secure are your web applications? Deploy an Azure Application Gateway with Web Application Firewall (WAF). This is a powerful tool to protect your applications while ensuring seamless performance. Let's dive in and explore how you can get started!"
 # Toc
 ShowToc: true
 TocOpen: true
@@ -48,7 +48,8 @@ Let's say you have a web application running on Azure App Service. You want to m
 
 I assume you have a Key Vault and know how to provide it with an SSL/TLS certificate. Let's combine the 2,3, 4, and 5 steps in a Bicep deployment.
 
-## Bicep code
+### Deploy Application gateway using bicep
+
 Let's deploy an Application Gateway with a backend pool pointing to an Azure App Service.
 
 ```bicep {linenos=table}
@@ -167,6 +168,14 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   }
 }
 ```
+
+### Configure DNS for Application Gateway
+
+After deploying the Application Gateway, you need to update your DNS settings to point to the Application Gateway's public IP address. This ensures that all incoming traffic to your web application is routed through the Application Gateway, allowing it to provide the necessary security and performance enhancements.
+
+{{< quoteblock >}}
+:notebook: See also my other blog post on [Dual stack support with Application Gateway and IPv6](https://martdegraaf.github.io/blog/content/posts/application-gateway-ipv6/) for more details on updating DNS for dual stack support.
+{{</ quoteblock >}}
 
 ## Detection vs Prevention mode
 
