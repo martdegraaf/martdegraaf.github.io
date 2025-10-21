@@ -184,3 +184,4 @@ We now got an Application gateway before your application. Your next steps could
 - Set up monitoring and alerting to keep an eye on the WAF logs and performance metrics. ( see [WAF monitoring]({{< ref "monitor-your-waf/index.md" >}}))
 - If you see no false positives you can switch from Detection to Prevention mode. (see [Troubleshoot Application Gateway in Production]({{< ref "troubleshoot-application-gateway-in-production/index.md" >}}))
 - Implement ip restrictions for your Application gateway on Staging or acceptance environments. (see [Implement IP Restrictions]({{< ref "apply-ip-restrictions-application-firewall/index.md" >}}))
+- Learn more about ipv6. (see [Application Gateway with IPv6 support]({{< ref "application-gateway-ipv6/index.md" >}})).
