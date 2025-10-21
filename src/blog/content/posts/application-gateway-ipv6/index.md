@@ -150,7 +150,9 @@ There are three different endpoint types in Traffic Manager:
 2. External endpoints
 3. Nested endpoints
 
-I first tried to use nested endpoints, but that did not work with the health probes. Therefore we used external endpoints pointing to the FQDN of the nested traffic manager profiles. I could make 3 traffic managers per application. We actually thought that was a good idea, until we hit the limit of Traffic Manager profiles per subscription (200).
+I initially attempted to use nested endpoints, but they were incompatible with the health probes. This could be fixed by creating a nested traffic manager profile for each application instead of per Application Gateway. This approach allowed us to create three Traffic Manager profiles per application, which seemed like a good solution until we encountered the subscription limit of 200 Traffic Manager profiles.
+
+As a result, we switched to using external endpoints that pointed to the FQDNs of the nested Traffic Manager profiles. This allowed us to stay within the subscription limits while still achieving the desired failover behavior.
 
 // TODO CONCLUSIE EXTERNAL
 
