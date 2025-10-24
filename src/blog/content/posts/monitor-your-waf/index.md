@@ -6,7 +6,7 @@ publishdate: 2025-10-17T16:12:14+02:00
 draft: true
 author: ["Mart de Graaf"]
 tags: []
-summary: "TODO You should fill this ..."
+summary: "Small blog on how to monitor your WAF using Azure Workbooks."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -25,26 +25,16 @@ cover:
     hidden: false # only hide on current single page
 ---
 
+You can monitor your WAF using Azure Monitor. In this blog post, I will share my insights on how to set up monitoring for your WAF using workbooks.
+
+## Set up Azure Workbook
+
 Verhaal over monitoring the waf via de standaard workbook
 
-Refereer naar blog over troubleshooten en de workbook blog post
+IMG here
 
-__Intro to the problem__
+https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook%20-%20WAF%20Monitor%20Workbook
 
-# System context
-__System explained__
-```cs {linenos=table}
-__insert code here__
-```
+# Further Reading
 
-# Solution
-__Solution explained__
-```cs {linenos=table}
-__insert code here__
-```
-
-# Conclusion and discussion
-__Solution explained__
-```cs {linenos=table}
-__insert code here__
-```
+Refer to the blog about troubleshooting and the workbook blog post

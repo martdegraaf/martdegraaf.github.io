@@ -6,7 +6,7 @@ publishdate: 2025-10-17T14:41:57+02:00
 draft: true
 author: ["Mart de Graaf"]
 tags: []
-summary: "TODO You should fill this ..."
+summary: "How do you troubleshoot an Application Gateway in production? How can you find false positives?"
 # Toc
 ShowToc: true
 TocOpen: true
@@ -51,50 +51,16 @@ AzureDiagnostics
 
 Once you have identified the blocked requests, look for the `ruleId_s` field in the logs. This field indicates which WAF rule blocked the request. You can then look up this rule in the [OWASP ModSecurity Core Rule Set](https://coreruleset.org/) to understand why it was triggered.
 
+To know more about the specific rule that was triggered, you can see the list on [Microsoft Docs](https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules?tabs=drs21%2Cowasp32).
+
 ## Create an exclusion rule
 
 If you determine that the blocking rule is causing false positives, you can create an exclusion rule in your WAF policy. This allows you to exclude specific requests from being evaluated by certain rules.
 
-```bicep {linenos=table}
-module appGatewayWafPolicy 'br/public:avm/res/network/application-gateway/waf-policy:0.7.1' = {
-  name: '${deployment().name}-agw-waf-policy'
-  scope: resourceGroup()
-  params: {
-    name: 'agw-waf-policy-${region}-${environment}'
-    policySettings: {
-      mode: 'Prevention' // 'Detection' or 'Prevention'
-      state: 'Enabled'
-    }
-    exclusionRules: [
-      {
-        ruleSetType: 'OWASP'
-        ruleSetVersion: '3.2'
-        ruleGroupName: 'SQLI'
-        ruleIds: [942440]
-        matchVariable: 'RequestArgNames'
-        selectorMatchOperator: 'Equals'
-        selector: 'exampleParam'
-      }
-    ]
-  }
-}
-```
-__Intro to the problem__
-
-# System context
-__System explained__
-```cs {linenos=table}
-__insert code here__
+```bicep {linenos=table,file="waf.bicep"}
 ```
 
-# Solution
-__Solution explained__
-```cs {linenos=table}
-__insert code here__
-```
+## More reading
 
-# Conclusion and discussion
-__Solution explained__
-```cs {linenos=table}
-__insert code here__
-```
+- https://alanta.nl/posts/2021/04/manage-waf-rules-for-appgateway
+- https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/custom-waf-rules-overview
