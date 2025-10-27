@@ -3,7 +3,7 @@ title: "Use IPV6 in Azure with the Application Gateway"
 slug: "application-gateway-ipv6"
 date: 2025-10-17T10:55:50+02:00
 publishdate: 2025-10-17T10:55:50+02:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: ["application-gateway", "ipv6", "azure", "WAF"]
 summary: "Learn how to configure an Azure Application Gateway to support IPv6 in Azure."
@@ -14,7 +14,7 @@ UseHugoToc: false
 
 # Meta settings
 ShowReadingTime: true
-ShowLastModified: true
+ShowLastModified: false
 ShowWordCount: true
 
 cover:

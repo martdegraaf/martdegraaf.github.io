@@ -14,7 +14,7 @@ UseHugoToc: false
 
 # Meta settings
 ShowReadingTime: true
-ShowLastModified: true
+ShowLastModified: false
 ShowWordCount: true
 
 cover:
