@@ -45,8 +45,9 @@ To make the Application Gateway available over IPv6, we needed to configure dual
 
 If you need to do this i recommend:
 
-1. Use an AVM module to build your new Application Gateway with dual stack support.
-2. Reconsider if you need zones for your Application Gateway. Those also require a full redeployment.
+1. Add Ipv6 address prefixes to your virtual network.
+2. Use an AVM module to build your new Application Gateway with dual stack support.
+3. Reconsider if you need zones for your Application Gateway. Those also require a full redeployment.
 
 ```bicep {linenos=table,file="application-gateway-ipv6.bicep"}
 ```
