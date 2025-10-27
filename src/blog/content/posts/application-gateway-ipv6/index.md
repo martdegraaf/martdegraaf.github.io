@@ -80,7 +80,7 @@ Because we want to serve traffic over both IPv4 and IPv6, we had to create a tra
 
 This can be achieved with the following Bicep code:
 
-```bicep {linenos=table,file="traffic-manager.bicep"}
+```bicep {linenos=table,file="traffic-manager-multivalue.bicep"}
 ```
 
 ### Parent profile for failover
@@ -97,7 +97,7 @@ I initially attempted to use nested endpoints, but they were incompatible with t
 
 As a result, we switched to using external endpoints that pointed to the FQDNs of the nested Traffic Manager profiles. This allowed us to stay within the subscription limits while still achieving the desired failover behavior.
 
-```bicep {linenos=table,file="ag-ipv6.bicep"}
+```bicep {linenos=table,file="traffic-manager-priority.bicep"}
 ```
 
 ## Update DNS records
