@@ -52,7 +52,9 @@ If you need to do this i recommend:
 ```
 
 {{< quoteblock >}}
-:robot: In the example 'Azure Verified Modules' Are used, see the documentation of these components here: https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway and https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy.
+:robot: In the example 'Azure Verified Modules' are used, see the documentation of these components here:
+- https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway
+- https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy
 {{</ quoteblock >}}
 
 ### Result
