@@ -37,7 +37,7 @@ The system was geo redundant with two Application Gateways in different regions,
 
 A traffic manager profile is used to distribute traffic between the two Application Gateways based on priority. A common Active passive setup.
 
-![Architecture v1 - Application gateway behind an Traffic Manager](appgateway.drawio.svg)
+![Architecture v1 - Application gateway behind an Traffic Manager](appgateway.drawio.svg#center "Architecture v1 - Application gateway behind an Traffic Manager")
 
 ## Dual stack
 
@@ -57,11 +57,11 @@ If you need to do this i recommend:
 - https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy
 {{</ quoteblock >}}
 
-### Result
+### public ip addresses connected
 
-Let's take a look what this means for our architecture. For each Application Gateway we have now two public ip addresses.
+Let's take a look what this means for our architecture. For each Application Gateway we have now two public ip addresses. We just need to configure that the DNS can find this new IPV6 address.
 
-![Architecture v2 - added IPV6 support](appgateway-dualstack.drawio.svg)
+![Architecture v2 - added IPV6 support](appgateway-dualstack.drawio.svg#center "Architecture v2 - Added Public ip addresses for IPV6")
 
 ## Traffic Manager
 
@@ -75,7 +75,7 @@ Thereby the Traffic manager routing method priority only supports one endpoint p
 
 Because we want to serve traffic over both IPv4 and IPv6, we had to create a traffic manager profile with the routing method 'MultiValue'. This profile contains two external endpoints, one for the IPv4 address and one for the IPv6 address of the Application Gateway.
 
-![Architecture v3 - added trafficmanager with MultiValue support](appgateway-dualstack-nested.drawio.svg)
+![Architecture v3 - added trafficmanager with MultiValue support](appgateway-dualstack-nested.drawio.svg#center "Architecture v3 - Added trafficmanager with MultiValue support")
 
 This can be achieved with the following Bicep code:
 

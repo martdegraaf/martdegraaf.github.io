@@ -1,8 +1,12 @@
+param region string
+param environment string
+param applicationGatewayNr int
+
 module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   name: '${deployment().name}-agw'
   scope: resourceGroup()
   params: {
-    name: 'ag-${applicationGatewaySequence}-${region}-${environment}'
+    name: 'ag-${applicationGatewayNr}-${region}-${environment}'
     sku: 'WAF_v2'
     availabilityZones: [1,2,3] //TODO: Remove this line if you don't need zones
     frontendIpConfigurations: [
