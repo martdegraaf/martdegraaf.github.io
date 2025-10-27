@@ -3,10 +3,10 @@ title: "Troubleshoot Application Gateway in Production"
 slug: "troubleshoot-application-gateway-in-production"
 date: 2025-10-17T14:41:57+02:00
 publishdate: 2025-10-17T14:41:57+02:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: []
-summary: "How do you troubleshoot an Application Gateway in production? How can you find false positives?"
+summary: "How do you troubleshoot an Application Gateway in production? How can you find false positives? In this blog I will share some tips and tricks."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -14,7 +14,7 @@ UseHugoToc: false
 
 # Meta settings
 ShowReadingTime: true
-ShowLastModified: true
+ShowLastModified: false
 ShowWordCount: true
 
 cover:
