@@ -1,12 +1,12 @@
 ---
-title: "Troubleshoot Application Gateway in Production"
-slug: "troubleshoot-application-gateway-in-production"
+title: "Troubleshoot Web Application Firewall in Production"
+slug: "troubleshoot-web-application-firewall-in-production"
 date: 2025-10-17T14:41:57+02:00
 publishdate: 2025-10-17T14:41:57+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: []
-summary: "How do you troubleshoot an Application Gateway in production? How can you find false positives? In this blog I will share some tips and tricks."
+tags: ["waf", "application gateway", "troubleshooting", "azure", "security"]
+summary: "How do you troubleshoot a Web Application Firewall in production? How can you find false positives? In this blog I will share some tips and tricks."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -40,6 +40,35 @@ Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want 
 When users report that they receive a 403 Forbidden error when trying to access the application, it is often due to WAF rules blocking legitimate traffic.
 
 ![403](403.gif)
+
+### Application Insights doesn't know
+
+When a request is blocked by the WAF, it may not be logged in Application Insights. This can make it difficult to troubleshoot issues, as you won't see any telemetry for the blocked requests. To get around this, you can enable diagnostic logging for your Application Gateway. This will log all requests, including those blocked by the WAF, to your Log Analytics workspace. You will need to search on the log analytics workspace and not in the application insights resource to get a full picture of the situation.
+
+{{< quoteblock >}}
+🤓 The Log Analytics workspace is your friend here. it contains all the logs you need to troubleshoot WAF issues.
+{{</ quoteblock >}}
+
+### Watch out for generalisation
+
+In a project there was builtin that when the frontend received a 403 on *any* request it would redirect to the login page. It was extremely frustrating because the page it happened on was anonymous. After investigation we found out that the WAF was blocking some requests because of false positives. The redirection to the login page made it seem like an authentication issue, while it was actually a WAF issue.
+
+If you have this aswell, you can edit the code to show a specific error message when a 403 is received from the Application. Here is an example of how to do this in bicep for the WAF policy. Let's make it more fun by changing the status code to 418 (I'm a teapot) instead of the standard 403.
+
+```bicep
+policySettings: {
+  resource applicationGatewayWAFPolicy 'Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies@2024-10-01' = {
+  name: 'WafPolicy'
+  location: 'West Europe'
+  properties: {
+    policySettings: {
+      customBlockResponseStatusCode: 418
+      customBlockResponseBody: 'Oops! Your request was blocked by the WAF. But don\'t worry, I\'m just a teapot!'
+      mode: 'Prevention'
+    }
+  }
+}
+```
 
 ## Investigate in your log analytics workspace
 
