@@ -46,38 +46,7 @@ If you need to do this i recommend:
 1. Use an AVM module to build your new Application Gateway with dual stack support.
 2. Reconsider if you need zones for your Application Gateway. Those also require a full redeployment.
 
-```bicep {linenos=table}
-
-module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
-  name: '${deployment().name}-agw'
-  scope: resourceGroup()
-  params: {
-    name: 'ag-${applicationGatewaySequence}-${region}-${environment}'
-    sku: 'WAF_v2'
-    availabilityZones: [1,2,3] //TODO: Remove this line if you don't need zones
-    frontendIpConfigurations: [
-        {
-            name: 'appGwFrontendIPv4'
-            properties: {
-                publicIPAddress: {
-                    id: publicIpV4.id
-                }
-                privateAllocationMethod: 'Dynamic'
-            }
-        }
-        {
-            name: 'appGwFrontendIPv6'
-            properties: {
-                publicIPAddress: {
-                    id: publicIpV6.id
-                }
-                privateAllocationMethod: 'Dynamic'
-            }
-        }
-    ]
-    // Other parameters...
-  }
-}
+```bicep {linenos=table,file="application-gateway-ipv6.bicep"}
 ```
 
 {{< quoteblock >}}
@@ -97,51 +66,7 @@ Thereby the Traffic manager routing method priority only supports one endpoint p
 
 Because we want to serve traffic over both IPv4 and IPv6, we had to create a traffic manager profile with the routing method 'MultiValue'. This profile contains two external endpoints, one for the IPv4 address and one for the IPv6 address of the Application Gateway.
 
-```bicep {linenos=table}
-param region string
-param environment string
-param applicationGatewaySequence string
-
-resource publicIpV4 'Microsoft.Network/publicIPAddresses@2023-11-01' existing = {
-  name: 'pip-ag-${applicationGatewaySequence}-${region}-${environment}-v4'
-}
-
-resource publicIpV6 'Microsoft.Network/publicIPAddresses@2023-11-01' existing = {
-  name: 'pip-ag-${applicationGatewaySequence}-${region}-${environment}-v6'
-}
-
-module agTrafficManager 'br/public:avm/res/network/trafficmanagerprofile:0.3.0' = {
-  name: '${deployment().name}-tm'
-  scope: resourceGroup()
-  params: {
-    name: 'tm-ag-${applicationGatewaySequence}-${region}-${environment}'
-    ttl: 15
-    trafficRoutingMethod: 'MultiValue'  
-    maxReturn: 2
-    endpoints: [
-      {
-        name: 'ag-${applicationGatewaySequence}-${region}-${environment}-v4'
-        type: 'Microsoft.Network/trafficManagerProfiles/externalEndpoints'
-        properties: {
-            target: publicIpV4.properties.ipAddress
-            endpointStatus: 'Enabled'
-            endpointMonitorStatus: 'Unmonitored'
-            alwaysServe: 'Enabled'
-        }
-      }
-      {
-        name: 'ag-${applicationGatewaySequence}-${region}-${environment}-v6'
-        type: 'Microsoft.Network/trafficManagerProfiles/externalEndpoints'
-        properties: {
-            target: publicIpV6.properties.ipAddress
-            endpointStatus: 'Enabled'
-            endpointMonitorStatus: 'Unmonitored'
-            alwaysServe: 'Enabled'
-        }
-      }
-    ]
-  }
-}
+```bicep {linenos=table,file="traffic-manager.bicep"}
 ```
 
 ### Parent profile for failover
