@@ -29,12 +29,17 @@ You implemented an Application Gateway with Web Application Firewall (WAF) in fr
 
 ## Mr Havinga
 
-Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want to buy a new phone, but when you try to access the online store, you get a 403 Forbidden error. You are blocked! The firewall blocked you because the request matched a WAF rule. HAVING is a SQL keyword the WAF triggered a SQL Injection rule. Mr. Havinga is not having a good day. It is extremely important to identify false positives and tune your WAF rules accordingly to prevent blocking legitimate traffic.
+Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want to buy a new phone, but when you try to access the online store, you get a 403 Forbidden error. You are blocked! The firewall blocked you because the request matched a WAF rule. HAVING is a SQL keyword the WAF triggered a SQL Injection rule.It is extremely important to identify false positives and tune your WAF rules accordingly to prevent blocking legitimate traffic.
+
+{{< quoteblock >}}
+:face_with_peeking_eyes: "Mr Havinga is not *having* a good day."
+{{</ quoteblock >}}
 
 ## 403 Forbidden
 
-When users report that they receive a 403 Forbidden error when trying to access the application, it is often due to WAF rules blocking legitimate traffic. 
+When users report that they receive a 403 Forbidden error when trying to access the application, it is often due to WAF rules blocking legitimate traffic.
 
+![403](403.gif)
 
 ## Investigate in your log analytics workspace
 
@@ -59,6 +64,10 @@ If you determine that the blocking rule is causing false positives, you can crea
 
 ```bicep {linenos=table,file="waf.bicep"}
 ```
+
+## Conclusion
+
+By identifying false positives and creating exclusion rules, you can ensure that legitimate traffic is not blocked while still protecting your applications from threats. This is also the reason why I always recommend starting with a WAF in detection mode first, to monitor and tune the rules before enforcing them via prevention mode.
 
 ## More reading
 
