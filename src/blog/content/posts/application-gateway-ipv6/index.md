@@ -27,7 +27,7 @@ cover:
 
 Dutch governments need to be available over IPv6 according to [this mandate](https://www.forumstandaardisatie.nl/ipv6/). Therefore I had to make sure my Application Gateway with Web Application Firewall (WAF) is also available over IPv6. In this blog I will explain some of the challenges we faced and how we solved them.
 
-# System context
+## System context
 
 In the existing system we have multiple apps running on Azure App Services behind an Application Gateway with WAF. The Application Gateway is currently only available over IPv4.
 
@@ -36,6 +36,8 @@ We have a listener and rule in place for each app. Each app is configured with i
 The system was geo redundant with two Application Gateways in different regions, each with its own public IP address.
 
 A traffic manager profile is used to distribute traffic between the two Application Gateways based on priority. A common Active passive setup.
+
+![Architecture v1 - Application gateway behind an Traffic Manager](appgateway.drawio.svg)
 
 ## Dual stack
 
@@ -53,6 +55,12 @@ If you need to do this i recommend:
 :robot: In the example 'Azure Verified Modules' Are used, see the documentation of these components here: https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway and https://github.com/Azure/bicep-registry-modules/tree/main/avm/res/network/application-gateway-web-application-firewall-policy.
 {{</ quoteblock >}}
 
+### Result
+
+Let's take a look what this means for our architecture. For each Application Gateway we have now two public ip addresses.
+
+![Architecture v2 - added IPV6 support](appgateway-dualstack.drawio.svg)
+
 ## Traffic Manager
 
 We had a traffic manager profile in place to distribute traffic between the two Application Gateways. The traffic manager profile also needed to be updated to support IPv6.
@@ -61,10 +69,13 @@ This was actually really complex because Traffic Manager does not support dual s
 
 Thereby the Traffic manager routing method priority only supports one endpoint per target. So we had to create three traffic manager profiles to achieve the desired failover behavior. One with the routing method priority with two external endpoints pointing to the nested traffic manager profiles. Each nested traffic manager profile with routing method 'MultiValue' had one endpoint for IPv4 and one for IPv6.
 
-// IMG Traffic Manager setup
 ### Serve traffic over IPv4 and IPv6
 
 Because we want to serve traffic over both IPv4 and IPv6, we had to create a traffic manager profile with the routing method 'MultiValue'. This profile contains two external endpoints, one for the IPv4 address and one for the IPv6 address of the Application Gateway.
+
+![Architecture v3 - added trafficmanager with MultiValue support](appgateway-dualstack-nested.drawio.svg)
+
+This can be achieved with the following Bicep code:
 
 ```bicep {linenos=table,file="traffic-manager.bicep"}
 ```
@@ -74,6 +85,7 @@ Because we want to serve traffic over both IPv4 and IPv6, we had to create a tra
 To achieve failover between the two Application Gateways in different regions, we created a parent traffic manager profile with the routing method 'Priority'. This profile contains two external endpoints, each pointing to one of the nested traffic manager profiles.
 
 There are three different endpoint types in Traffic Manager:
+
 1. Azure endpoints
 2. External endpoints
 3. Nested endpoints
@@ -102,3 +114,7 @@ nslookup yourapp.yourdomain.com
 It has consequences to enable IPv6 on your Application Gateway. You have to redeploy the Application Gateway which can be complex depending on your current setup. Also for every listener you will need two listeners (one for IPv4 and one for IPv6). The limit of active listeners is 100 so keep that in mind for your architecture. with two listeners for each application you can only have 50 applications behind one Application Gateway.
 
 Now you have dual stack support. Your Application Gateway is available over both IPv4 and IPv6. Make sure to test your setup thoroughly to ensure that everything is working as expected.
+
+## Further reading
+
+- [Microsoft Docs: Configure an Application Gateway to use IPv6](https://learn.microsoft.com/en-us/azure/application-gateway/ipv6-application-gateway-portal)

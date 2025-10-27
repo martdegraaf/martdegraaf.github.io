@@ -1,4 +1,3 @@
-
 module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   name: '${deployment().name}-agw'
   scope: resourceGroup()
