@@ -43,7 +43,7 @@ A traffic manager profile is used to distribute traffic between the two Applicat
 
 To make the Application Gateway available over IPv6, we needed to configure dual stack support. This means you have to **redeploy** the Application Gateway. This has a massive impact because of our current strategy with multiple listeners and rules. We had to make sure that all configurations were preserved during the redeployment.
 
-If you need to do this i recommend:
+If you need to do this I recommend:
 
 1. Add Ipv6 address prefixes to your virtual network.
 2. Use an AVM module to build your new Application Gateway with dual stack support.
