@@ -60,7 +60,7 @@ If you need to do this i recommend:
 
 ### public ip addresses connected
 
-Let's take a look what this means for our architecture. For each Application Gateway we have now two public ip addresses. We just need to configure that the DNS can find this new IPV6 address.
+Let's take a look what this means for our architecture. For each Application Gateway we now have two public ip addresses. We just need to configure that the DNS can find this new IPV6 address.
 
 ![Architecture v2 - added IPV6 support](appgateway-dualstack.drawio.svg#center "Architecture v2 - Added Public ip addresses for IPV6")
 
@@ -93,9 +93,24 @@ There are three different endpoint types in Traffic Manager:
 2. External endpoints
 3. Nested endpoints
 
-I initially attempted to use nested endpoints, but they were incompatible with the health probes. This could be fixed by creating a nested traffic manager profile for each application instead of per Application Gateway. This approach allowed us to create three Traffic Manager profiles per application, which seemed like a good solution until we encountered the subscription limit of 200 Traffic Manager profiles.
+#### Azure endpoints
 
-As a result, we switched to using external endpoints that pointed to the FQDNs of the nested Traffic Manager profiles. This allowed us to stay within the subscription limits while still achieving the desired failover behavior.
+Azure endpoints point directly to Azure resources. However, in our case, we are not directly refering to one Web App or one Public IP address. Therefore, Azure endpoints are not suitable for our scenario here.
+
+#### Nested endpoints
+
+I initially attempted to use nested endpoints, but they were incompatible with the health probes.
+
+A solution for the healthchecks to work was to create a nested traffic manager profile for each application instead of per Application Gateway. This approach forced us to create three Traffic Manager profiles per application, which seemed like a good solution until we encountered the subscription limit of 200 Traffic Manager profiles.
+
+#### External endpoints
+
+Another solution for the healthchecks to work was to use external endpoints instead of nested endpoints in the parent Traffic Manager profile.
+When we switched to using external endpoints that pointed to the FQDNs of the nested Traffic Manager profiles, this had some major advantages.
+
+- It allowed us to stay within the subscription limits while still achieving the desired failover behavior.
+- It simplified the overall architecture by reducing the number of Traffic Manager profiles needed.
+- It ensured that the health probes functioned correctly, providing reliable monitoring of the Application Gateways' availability.
 
 ```bicep {linenos=table,file="traffic-manager-priority.bicep"}
 ```
