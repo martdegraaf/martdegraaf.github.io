@@ -28,7 +28,7 @@ module publicIpV4 'br/public:avm/res/network/public-ip-address:0.9.0' = {
     name: 'pip-v4-mart'
     // Non-required parameters
     availabilityZones: [1, 2, 3]
-    publicIPAddressVersion: 'IPv6'
+    publicIPAddressVersion: 'IPv4'
     publicIPAllocationMethod: 'Static'
   }
 }
@@ -96,7 +96,7 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
             id: resourceId('Microsoft.Network/applicationGateways/frontendPorts', agName, 'port_443')
           }
           protocol: 'Https'
-          hostname: 'tm.martdegraaf.nl'
+          hostname: 'ag.martdegraaf.nl'
           sslCertificate: {
             id: resourceId('Microsoft.Network/applicationGateways/sslCertificates', agName, 'sslCert')
           }

@@ -35,7 +35,7 @@ We have a listener and rule in place for each app. Each app is configured with i
 
 The system was geo redundant with two Application Gateways in different regions, each with its own public IP address.
 
-A traffic manager profile is used to distribute traffic between the two Application Gateways based on priority. A common Active passive setup.
+A traffic manager profile is used to distribute traffic between the two Application Gateways based on priority. A common active-passive setup.
 
 ![Architecture v1 - Application gateway behind an Traffic Manager](appgateway.drawio.svg#center "Architecture v1 - Application gateway behind an Traffic Manager")
 
