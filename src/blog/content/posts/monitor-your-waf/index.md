@@ -38,4 +38,4 @@ https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook
 
 ## Further Reading
 
-Refer to the blog about troubleshooting and the workbook blog post
+- Troubleshoot your Application gateway's WAF. (see [Troubleshoot Application Gateway in Production]({{< ref "troubleshoot-application-gateway-in-production/index.md" >}}))

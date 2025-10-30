@@ -53,6 +53,10 @@ When a request is blocked by the WAF, it may not be logged in Application Insigh
 🤓 The Log Analytics workspace is your friend here. it contains all the logs you need to troubleshoot WAF issues.
 {{</ quoteblock >}}
 
+You can enable diagnostic logging in the Azure portal by navigating to your Application Gateway, selecting "Diagnostics settings," and configuring a new diagnostic setting to send logs to your Log Analytics workspace.
+
+![Diagnostic settings](diagnosticssettings.png#center "Diagnostic settings")
+
 ### Watch out for generalisation
 
 In a project there was builtin that when the frontend received a 403 on *any* request it would redirect to the login page. It was extremely frustrating because the page it happened on was anonymous. After investigation we found out that the WAF was blocking some requests because of false positives. The redirection to the login page made it seem like an authentication issue, while it was actually a WAF issue.
@@ -87,7 +91,7 @@ AzureDiagnostics
 
 It is important to know that the WAF logs are logging Matches and Blocked actions together and will Block if the after 'Inbound Anomaly Score Exceeded (Total Score: 5)'.
 
-![Found the ruleId 942230 in the Log analytics workspace](found-rule.png)
+![Found the ruleId 942230 in the Log analytics workspace](found-rule.png#center "Found the ruleId 942230 in the Log analytics workspace")
 
 ## Identify the blocking rule
 
