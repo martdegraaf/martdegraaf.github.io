@@ -30,7 +30,7 @@ resource applicationGatewayWAFPolicy 'Microsoft.Network/ApplicationGatewayWebApp
                   ruleGroupName: 'REQUEST-942-APPLICATION-ATTACK-SQLI'
                   rules: [
                     {
-                      ruleId: '942430'
+                      ruleId: '942230'
                     }
                   ]
                 }
@@ -38,7 +38,7 @@ resource applicationGatewayWAFPolicy 'Microsoft.Network/ApplicationGatewayWebApp
             }
           ]
           matchVariable: 'RequestArgNames'
-          selector: 'naam'
+          selector: 'email'
           selectorMatchOperator: 'Contains'
         }
         {
@@ -76,6 +76,7 @@ resource applicationGatewayWAFPolicy 'Microsoft.Network/ApplicationGatewayWebApp
     policySettings: {
       mode: 'Prevention' // 'Detection' or 'Prevention'
       state: 'Enabled'
+      customBlockResponseBody: 
     }
   }
 }

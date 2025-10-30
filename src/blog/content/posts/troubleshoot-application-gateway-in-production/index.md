@@ -27,12 +27,16 @@ cover:
 
 You implemented an Application Gateway with Web Application Firewall (WAF) in front of your web applications in Azure. Everything seems to be working fine, but suddenly you notice some issues. Maybe some users report that they cannot access the application, or you see unusual traffic patterns in your logs. In this blog, we will discuss how to troubleshoot common issues with Application Gateway in production.
 
+{{< quoteblock >}}
+:door: All the things mentioned are closely related to the WAF used for Azure Front Door.
+{{</ quoteblock >}}
+
 ## Mr Havinga
 
 Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want to buy a new phone, but when you try to access the online store, you get a 403 Forbidden error. You are blocked! The firewall blocked you because the request matched a WAF rule. HAVING is a SQL keyword the WAF triggered a SQL Injection rule.It is extremely important to identify false positives and tune your WAF rules accordingly to prevent blocking legitimate traffic.
 
 {{< quoteblock >}}
-:face_with_peeking_eyes: "Mr Havinga is not *having* a good day."
+:face_with_peeking_eye: "Mr Havinga is not *having* a good day."
 {{</ quoteblock >}}
 
 ## 403 Forbidden
@@ -76,10 +80,14 @@ First, check the logs in your Log Analytics workspace. Look for entries that ind
 
 ```kusto
 AzureDiagnostics
-| where ResourceType == "APPLICATIONGATEWAYS"
-| where httpStatus_d == "403"
-| sort by TimeGenerated desc
+| where Category == "ApplicationGatewayFirewallLog"
+| where action_s == "Blocked" or action_s == "Matched"
+| order by TimeGenerated
 ```
+
+It is important to know that the WAF logs are logging Matches and Blocked actions together and will Block if the after 'Inbound Anomaly Score Exceeded (Total Score: 5)'.
+
+![Found the ruleId 942230 in the Log analytics workspace](found-rule.png)
 
 ## Identify the blocking rule
 

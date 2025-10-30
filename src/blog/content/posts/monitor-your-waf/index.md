@@ -29,12 +29,13 @@ You can monitor your WAF using Azure Monitor. In this blog post, I will share my
 
 ## Set up Azure Workbook
 
-Verhaal over monitoring the waf via de standaard workbook
+You can use the Azure WAF Monitor Workbook to monitor your WAF. This workbook provides insights into the WAF logs and helps you identify potential issues.
 
-IMG here
+![Workbook for WAF, application gateway sample](workbook.png)
 
+Get the workbook here:
 https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook%20-%20WAF%20Monitor%20Workbook
 
-# Further Reading
+## Further Reading
 
 Refer to the blog about troubleshooting and the workbook blog post
