@@ -1,8 +1,8 @@
 ---
 title: "Troubleshoot Web Application Firewall in Production"
 slug: "troubleshoot-web-application-firewall-in-production"
-date: 2025-11-03T14:41:57+02:00
-publishdate: 2025-11-03T18:13:48+01:00
+date: 2025-10-28T14:41:57+02:00
+publishdate: 2025-10-28T18:13:48+01:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["waf", "application gateway", "troubleshooting", "azure", "security"]
