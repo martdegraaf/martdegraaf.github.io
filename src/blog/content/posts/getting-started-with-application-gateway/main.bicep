@@ -1,8 +1,46 @@
 param location string = resourceGroup().location
 param region string
 param environment string
+param tags object
 
-module keyvault 'br/public:avm/res/security/keyvault:0.9.0' = {
+resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-09-01' = {
+  name: 'vnet-${region}-${environment}'
+  location: location
+  tags: tags
+  properties: {
+    addressSpace: {
+      addressPrefixes: [
+        '10.0.0.0/16'
+      ]
+    }
+    subnets: [
+      {
+        name: 'snet-agw'
+        properties: {
+          addressPrefix: '10.0.1.0/24'
+          privateEndpointNetworkPolicies: 'Disabled'
+          privateLinkServiceNetworkPolicies: 'Disabled'
+        }
+      }
+      { // Sample for if your backends are in Azure Container apps
+        name: 'snet-containerapp'
+        properties: {
+          addressPrefix: '10.0.2.0/23'
+          delegations: [
+            {
+              name: 'Microsoft.App/environments'
+              properties: {
+                serviceName: 'Microsoft.App/environments'
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+
+module keyvault 'br/public:avm/res/key-vault/vault:0.13.3' = {
   name: '${deployment().name}-kv'
   scope: resourceGroup()
   params: {
@@ -11,7 +49,7 @@ module keyvault 'br/public:avm/res/security/keyvault:0.9.0' = {
   }
 }
 
-module wafPolicy 'br/public:avm/res/network/application-gateway-web-application-firewall-policy:<version>' = {
+module wafPolicy 'br/public:avm/res/network/application-gateway-web-application-firewall-policy:0.2.0' = {
   name: 'applicationGatewayWebApplicationFirewallPolicyDeployment'
   params: {
     // Required parameters
@@ -49,18 +87,29 @@ module publicIp 'br/public:avm/res/network/public-ip-address:0.6.0' = {
   }
 }
 
+var gatewayId = resourceId('Microsoft.Network/applicationGateways/probes', 'ag-${region}-${environment}')
 module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
   name: '${deployment().name}-agw'
   scope: resourceGroup()
   params: {
     name: 'ag-${region}-${environment}'
     sku: 'WAF_v2'
-    frontendIpConfigurations: [
+    gatewayIPConfigurations: [
+      {
+        name: 'appGatewayIpConfig'
+        properties: {
+          subnet: {
+            id: virtualNetwork.properties.subnets[0].id
+          }
+        }
+      }
+    ]
+    frontendIPConfigurations: [
         {
             name: 'appGwFrontend'
             properties: {
                 publicIPAddress: {
-                    id: publicIp.id
+                    id: publicIp.outputs.resourceId
                 }
                 privateAllocationMethod: 'Dynamic'
             }
@@ -85,10 +134,10 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
             name: 'appGwHttpListener'
             properties: {
                 frontendIpConfiguration: {
-                    id: '${module.appGateway.id}/frontendIpConfigurations/appGwFrontend'
+                    id: '${gatewayId}/frontendIpConfigurations/appGwFrontend'
                 }
                 frontendPort: {
-                    id: '${module.appGateway.id}/frontendPorts/appGwFrontendPort'
+                    id: '${gatewayId}/frontendPorts/appGwFrontendPort'
                 }
                 protocol: 'Http'
             }
@@ -99,13 +148,13 @@ module appGateway 'br/public:avm/res/network/application-gateway:0.7.1' = {
             name: 'appGwRoutingRule'
             properties: {
                 httpListener: {
-                    id: '${module.appGateway.id}/httpListeners/appGwHttpListener'
+                    id: '${gatewayId}/httpListeners/appGwHttpListener'
                 }
                 backendAddressPool: {
-                    id: '${module.appGateway.id}/backendAddressPools/appGwBackendPool'
+                    id: '${gatewayId}/backendAddressPools/appGwBackendPool'
                 }
                 backendHttpSettings: {
-                    id: '${module.appGateway.id}/backendHttpSettings/appGwBackendHttpSettings'
+                    id: '${gatewayId}/backendHttpSettings/appGwBackendHttpSettings'
                 }
             }
         }

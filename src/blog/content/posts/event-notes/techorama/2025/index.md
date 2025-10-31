@@ -1,6 +1,6 @@
 ---
 title: "Techorama 2025 notes and personal learnings"
-slug: "2025"
+slug: "techorama-2025"
 date: 2025-10-30T22:13:48+01:00
 publishdate: 2025-10-30T22:13:48+01:00
 draft: false

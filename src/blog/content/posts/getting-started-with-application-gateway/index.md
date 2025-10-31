@@ -40,11 +40,12 @@ An alternative is using the Azure FrontDoor service. Or look outside of Azure, b
 Let's say you have a web application running on Azure App Service. You want to migrate this application to use an Application Gateway with WAF. Here are the steps you need to take:
 
 1. Create a Key Vault to store the SSL/TLS certificates.
-2. Create a Public IP Address for the Application Gateway.
-3. Create a new Application Gateway with WAF enabled.
-4. Configure the backend pool to point to your Azure App Service.
-5. Create a new routing rule to forward traffic to the backend pool.
-6. Update your DNS settings to point to the Application Gateway.
+2. Create a Vnet and subnet for the Application Gateway.
+3. Create a Public IP Address for the Application Gateway.
+4. Create a new Application Gateway with WAF enabled.
+5. Configure the backend pool to point to your Azure App Service.
+6. Create a new routing rule to forward traffic to the backend pool.
+7. Update your DNS settings to point to the Application Gateway.
 
 I assume you have a Key Vault and know how to provide it with an SSL/TLS certificate. Let's combine the 2,3, 4, and 5 steps in a Bicep deployment.
 
