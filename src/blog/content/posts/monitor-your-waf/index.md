@@ -5,7 +5,7 @@ date: 2025-10-17T16:12:14+02:00
 publishdate: 2025-10-17T16:12:14+02:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
+tags: ["waf", "application gateway", "monitoring", "azure", "workbooks", "application gateway", "frontdoor"]
 summary: "Small blog on how to monitor your WAF using Azure Workbooks."
 # Toc
 ShowToc: true
@@ -35,6 +35,10 @@ You can use the Azure WAF Monitor Workbook to monitor your WAF. This workbook pr
 
 Get the workbook here:
 https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook%20-%20WAF%20Monitor%20Workbook
+
+You can deploy the workbook using the 'Deploy to Azure' button in the GitHub repository.
+
+You can use this as a base for your custom Workbook.
 
 ## Further Reading
 
