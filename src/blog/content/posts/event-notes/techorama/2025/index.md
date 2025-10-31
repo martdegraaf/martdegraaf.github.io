@@ -5,7 +5,7 @@ date: 2025-10-30T22:13:48+01:00
 publishdate: 2025-10-30T22:13:48+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: []
+tags: ["techorama", "conference", "notes"]
 summary: "My notes and personal learnings from Techorama 2025 in Utrecht."
 # Toc
 ShowToc: true
@@ -14,7 +14,7 @@ UseHugoToc: false
 
 # Meta settings
 ShowReadingTime: true
-ShowLastModified: true
+ShowLastModified: false
 ShowWordCount: true
 
 cover:
