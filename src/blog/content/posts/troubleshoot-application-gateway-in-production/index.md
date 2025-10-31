@@ -1,7 +1,7 @@
 ---
 title: "Troubleshoot Web Application Firewall in Production"
 slug: "troubleshoot-web-application-firewall-in-production"
-date: 2025-10-17T14:41:57+02:00
+date: 2025-11-03T14:41:57+02:00
 publishdate: 2025-11-03T18:13:48+01:00
 draft: false
 author: ["Mart de Graaf"]
@@ -33,7 +33,7 @@ You implemented an Application Gateway with Web Application Firewall (WAF) in fr
 
 ## Mr Havinga
 
-Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want to buy a new phone, but when you try to access the online store, you get a 403 Forbidden error. You are blocked! The firewall blocked you because the request matched a WAF rule. HAVING is a SQL keyword the WAF triggered a SQL Injection rule.It is extremely important to identify false positives and tune your WAF rules accordingly to prevent blocking legitimate traffic.
+Imagine you are Mr. Havinga, a normal Dutch person. You want to buy a new phone, but when you try to access the online store, you get a 403 Forbidden error. You are blocked! The firewall blocked you because the request matched a WAF rule. HAVING is a SQL keyword the WAF triggered a SQL Injection rule. What if this would happen if you do this during more general processes like paying your taxes or applying for a loan? It is extremely important to identify false positives and tune your WAF rules accordingly to prevent blocking legitimate traffic.
 
 {{< quoteblock >}}
 :face_with_peeking_eye: "Mr Havinga is not *having* a good day."
@@ -41,9 +41,9 @@ Imagine you are Mr. Havinga, the IT manager of a medium-sized company. You want 
 
 ## 403 Forbidden
 
-When users report that they receive a 403 Forbidden error when trying to access the application, it is often due to WAF rules blocking legitimate traffic.
+When users report that they receive a 403 Forbidden error when trying to access the application, it is often due to WAF rules blocking legitimate traffic. You should be aware that the WAF is a different layer than your application.
 
-![403](403.gif)
+![403 Forbidden](403.gif#center)
 
 ### Application Insights doesn't know
 
@@ -63,19 +63,7 @@ In a project there was builtin that when the frontend received a 403 on *any* re
 
 If you have this aswell, you can edit the code to show a specific error message when a 403 is received from the Application. Here is an example of how to do this in bicep for the WAF policy. Let's make it more fun by changing the status code to 418 (I'm a teapot) instead of the standard 403.
 
-```bicep
-policySettings: {
-  resource applicationGatewayWAFPolicy 'Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies@2024-10-01' = {
-  name: 'WafPolicy'
-  location: 'West Europe'
-  properties: {
-    policySettings: {
-      customBlockResponseStatusCode: 418
-      customBlockResponseBody: 'Oops! Your request was blocked by the WAF. But don\'t worry, I\'m just a teapot!'
-      mode: 'Prevention'
-    }
-  }
-}
+```bicep {linenos=table,file="policysettings.bicep"}
 ```
 
 ## Investigate in your log analytics workspace
