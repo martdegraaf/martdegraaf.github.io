@@ -23,7 +23,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 - 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
 - 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
 - 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events)
-- 
+- 7 November 2025 - Ilionx DevDays for Cloud Applications
 
 ## Current sessions
 
