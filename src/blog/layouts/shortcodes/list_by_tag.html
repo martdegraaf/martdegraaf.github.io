@@ -1,0 +1,6 @@
+{{ $tag := index .Params 0 }}
+<ul>
+  {{ range where .Site.RegularPages "Params.tags" "intersect" (slice $tag) }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
