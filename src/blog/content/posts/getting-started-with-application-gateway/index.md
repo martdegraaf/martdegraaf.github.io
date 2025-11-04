@@ -5,7 +5,7 @@ date: 2025-10-21T14:16:30+02:00
 publishdate: 2025-10-21T14:16:30+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["application gateway", "waf", "azure", "bicep", "getting started", "security"]
+tags: ["application gateway", "WAF", "azure", "bicep", "getting started", "security"]
 summary: "How secure are your web applications? Deploy an Azure Application Gateway with Web Application Firewall (WAF). This is a powerful tool to protect your applications while ensuring seamless performance. Let's dive in and explore how you can get started!"
 # Toc
 ShowToc: true

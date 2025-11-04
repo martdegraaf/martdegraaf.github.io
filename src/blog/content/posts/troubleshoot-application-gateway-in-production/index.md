@@ -5,7 +5,7 @@ date: 2025-10-28T14:41:57+02:00
 publishdate: 2025-10-28T18:13:48+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["waf", "application gateway", "troubleshooting", "azure", "security"]
+tags: ["WAF", "application gateway", "troubleshooting", "azure", "security"]
 summary: "How do you troubleshoot a Web Application Firewall in production? How can you find false positives? In this blog I will share some tips and tricks."
 # Toc
 ShowToc: true

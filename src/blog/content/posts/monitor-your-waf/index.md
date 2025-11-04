@@ -5,7 +5,7 @@ date: 2025-10-31T11:12:14+02:00
 publishdate: 2025-10-31T11:12:14+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["waf", "application gateway", "monitoring", "azure", "workbooks", "application gateway", "frontdoor"]
+tags: ["WAF", "application gateway", "monitoring", "azure", "workbooks", "application gateway", "frontdoor"]
 summary: "Small blog on how to monitor your WAF using Azure Workbooks."
 # Toc
 ShowToc: true
