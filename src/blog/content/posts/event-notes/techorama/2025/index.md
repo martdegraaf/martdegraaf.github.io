@@ -138,7 +138,7 @@ Wednesday was starting early, we had to vote for the Dutch elections first befor
      | What alternative behaviour **wanted** is expected| Why |
      | Clarify expectations |
 
-### **4. Avoiding common pitfalls with async/await** by Stephen Cleary
+### **Avoiding common pitfalls with async/await** by Stephen Cleary
 **Session abstract:** *"Did you know that most async/await mistakes are the result of misconceptions? Join this talk to discover how to detect common async/await mistakes, and how to fix them! We'll be covering What You Need To Know about async/await in C#, including several different correct conceptual models of async/await that you can switch between at will. We will take a look at the common async pitfalls, best practices, and guidelines along with a careful examination of when to ignore the best practices. We'll be including some semi-advanced topics (specifically ValueTasks and Channels) to round out techniques for modern asynchronous development. While this talk is geared towards developers who already use async and await, it would also be appropriate for those who do not (yet). Feel free to bring questions!"*
     - Key takeaways:
       - USE ASYNC and AWAIT keywords always. Dont run in to deadlocks.

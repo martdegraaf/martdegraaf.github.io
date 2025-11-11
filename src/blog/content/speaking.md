@@ -22,7 +22,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 - 17 May 2025 - [DOTNED SATURDAY 2025](https://dotnedsaturday.nl/)
 - 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
 - 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
-- 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events)
+- 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events) - Recording available upon request
 - 7 November 2025 - Ilionx DevDays for Cloud Applications
 
 ## Current sessions
@@ -33,7 +33,7 @@ For bookings, feel free to contact me directly or via [Sessionize](https://sessi
 1. **Advanced git and git workflows** - A deep dive into advanced Git concepts and workflows to streamline your version control processes.
 1. **Guide to Application Insights, Log Analytics and KQL** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
 1. **Observability of your cloud Software - Application Insights deep dive** - Learn how to monitor, debug, and control your cloud-based software with Microsoft's Application Insights.
-1. **Improve your daily work using habits for Software Engineers (New)** - Boost your productivity by integrating these proven habits into your daily routine as a software engineer.
+1. **Improve your daily work using habits for Software Engineers** - Boost your productivity by integrating these proven habits into your daily routine as a software engineer.
 
 ## Previous engagements
 
