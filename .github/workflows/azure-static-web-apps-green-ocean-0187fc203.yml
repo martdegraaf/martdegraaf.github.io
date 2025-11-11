@@ -63,7 +63,7 @@ jobs:
     needs: build_and_deploy_job
     steps:
     - uses: actions/checkout@v5
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v6
       with:
         node-version: 16
     - name: Install dependencies
@@ -76,7 +76,7 @@ jobs:
         PLAYWRIGHT_TEST_BASE_URL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
         PLAYWRIGHT_TESTS_PRODUCTION: ${{ env.IS_PRODUCTION == 'true'}}
         PASSWORD: ${{ secrets.AZURE_STATIC_WEBAPP_PASSWORD }}
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: always()
       with:
         name: playwright-report
