@@ -24,7 +24,7 @@ cover:
     caption: "Image to show a process for git push and pull requests" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
-    hiddenInList: true
+    hiddenInList: false
 ---
 
 For a client, we manage over 60 repositories with frontends and an API behind them. To realize some features, we need to update all repositories with the same change. That seems like a lot of work doesn't it?
