@@ -17,13 +17,14 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 ## This Year's Engagements
 
-- 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
-- 9 May 2025 - [Azure Community Day Köln x Global Azure 2025](https://azure-community-day.de/)
-- 17 May 2025 - [DOTNED SATURDAY 2025](https://dotnedsaturday.nl/)
-- 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
-- 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
+- 20 November 2025 - [DevNetNoord 2025](https://devnetnoord.nl/)
+- 7 November 2025 - [Ilionx DevDays for Cloud Applications](https://www.ilionxdevdays.com/)
 - 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events) - Recording available upon request
-- 7 November 2025 - Ilionx DevDays for Cloud Applications
+- 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
+- 3 Jun 2025 - [Experts Live Netherlands 2025](https://www.expertslive.nl/)
+- 17 May 2025 - [DOTNED SATURDAY 2025](https://dotnedsaturday.nl/)
+- 9 May 2025 - [Azure Community Day Köln x Global Azure 2025](https://azure-community-day.de/)
+- 16 April 2025 - [RDW Techday](https://techday.rdw.nl)
 
 ## Current sessions
 
