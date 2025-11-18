@@ -12,7 +12,7 @@ cover:
   hiddenInSingle: true # hide on single page
 ---
 
-Thank you for attending my session "Azure Web Application Firewall in ACTION!" at 4Dotnet's Move Up event on 6 november 2025!
+Thank you for attending my session "Azure Web Application Firewall in ACTION!" at 4Dotnet's Move Up event on 6 november 2025 or devNetNoord on 20 November 2025!
 
 ## Web Application Firewall 🔥 (WAF) related Blog posts
 
