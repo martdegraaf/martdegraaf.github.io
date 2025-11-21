@@ -1,0 +1,91 @@
+{
+    "Blog Post Header": {
+        "prefix": "blog-header",
+        "body": [
+            "---",
+            "title: \"${1:Blog Post Title}\"",
+            "date: ${2:2024-01-01}",
+            "tags: [${3:\"tag1\", \"tag2\"}]",
+            "description: \"${4:Short description}\"",
+            "---",
+            "",
+            "# ${1:Blog Post Title}",
+            "",
+            "${5:Blog content starts here...}"
+        ],
+        "description": "Complete blog post header with frontmatter"
+    },
+    "Code Block": {
+        "prefix": "code",
+        "body": [
+            "```${1:language}",
+            "${2:code here}",
+            "```"
+        ],
+        "description": "Code block with syntax highlighting"
+    },
+    "Image with Caption": {
+        "prefix": "img",
+        "body": [
+            "![${1:Alt text}](${2:image-url})",
+            "*${3:Caption text}*"
+        ],
+        "description": "Image with alt text and caption"
+    },
+    "Quote Block": {
+        "scope": "markdown",
+        "prefix": "quote",
+        "body": [
+            "> ${1:Quote text}",
+            "> ",
+            "> — ${2:Author}"
+        ],
+        "description": "Blockquote with author"
+    },
+    "Table": {
+        "scope": "markdown",
+        "prefix": "table",
+        "body": [
+            "| ${1:Header 1} | ${2:Header 2} | ${3:Header 3} |",
+            "|-------------|-------------|-------------|",
+            "| ${4:Row 1 Col 1} | ${5:Row 1 Col 2} | ${6:Row 1 Col 3} |",
+            "| ${7:Row 2 Col 1} | ${8:Row 2 Col 2} | ${9:Row 2 Col 3} |"
+        ],
+        "description": "Basic markdown table"
+    },
+    "Alert Box": {
+        "prefix": "alert",
+        "body": [
+            "> **${1|Note,Warning,Important,Tip}:** ${2:Alert message}"
+        ],
+        "description": "Alert/notification box"
+    },
+    "Read More Section": {
+        "scope": "Markdown",
+        "prefix": "readmore",
+        "body": [
+            "<!-- more -->",
+            "",
+            "${1:Content after the break...}"
+        ],
+        "description": "Read more break for blog excerpts"
+    },
+    "Link with Title": {
+        "scope": "Markdown",
+        "prefix": "link",
+        "body": [
+            "[${1:Link text}](${2:URL} \"${3:Title}\")"
+        ],
+        "description": "Link with hover title"
+    },
+    "Task List": {
+        "scope": "Markdown",
+        "prefix": "tasks",
+        "body": [
+            "- [x] ${1:Completed task}",
+            "- [ ] ${2:Pending task}",
+            "- [ ] ${3:Another task}"
+        ],
+        "description": "Checkbox task list"
+    }
+}
