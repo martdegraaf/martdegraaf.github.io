@@ -13,6 +13,52 @@
 				"panel": "shared"
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "Hugo: New code post",
+			"type": "shell",
+			"command": "hugo new --kind code-post posts/${input:postName}; code ${workspaceFolder}/src/blog/content/posts/${input:postName}/index.md",
+			"options": {
+				"cwd": "${workspaceFolder}/src/blog"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Hugo: New book review",
+			"type": "shell",
+			"command": "hugo",
+			"args": [
+				"new",
+				"--kind",
+				"book-review",
+				"reviews/books/${input:bookName}.md"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/src/blog"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "postName",
+			"type": "promptString",
+			"description": "Post name (e.g., my-new-post)",
+			"default": "new-post"
+		},
+		{
+			"id": "bookName",
+			"type": "promptString",
+			"description": "Book name (e.g., cool-book)",
+			"default": "new-book"
 		}
 	]
 }
