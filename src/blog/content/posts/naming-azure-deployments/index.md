@@ -61,12 +61,10 @@ To avoid overwriting deployments and to keep track of changes, it's a good pract
 When deploying from a CI/CD pipeline, you can generate a unique deployment name using the pipeline's built-in variables. For example, in Azure DevOps, you can use the build ID or timestamp to create a unique name.
 
 ```yaml {linenos=table}
-variables:
-  deploymentName: 'myDeployment_$(Build.BuildId)'
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
-    deploymentName: '$(deploymentName)'
+    deploymentName: '$(Build.BuildId)'
     # Other deployment inputs
 ```
 
@@ -75,7 +73,15 @@ Or via Az cli in yaml:
 steps:
 - script: |
     az deployment group create --resource-group myResourceGroup --template-file main.bicep
-        --name "myDeployment_$(Date:yyyyMMddTHHmmss)"
+        --name "$(Date:yyyyMMddTHHmmss)"
+```
+
+Or via Az cli in yaml:
+```yaml {linenos=table}
+steps:
+- script: |
+    az deployment group create --resource-group myResourceGroup --template-file main.bicep
+        --name "$(Build.BuildId)"
 ```
 
 In Github Actions, you can use the `github.run_id` or `github.run_number` to create a unique deployment name.
@@ -88,7 +94,7 @@ jobs:
     - name: Deploy to Azure
       run: |
         az deployment group create --resource-group myResourceGroup --template-file main.bicep
-            --name "myDeployment_${{ github.run_id }}"
+            --name "${{ github.run_id }}"
 ```
 
 ### Bicep sample for timestamp naming
@@ -109,22 +115,27 @@ resource deployment 'Microsoft.Resources/deployments@2021-04-01' = {
 ### User defined function for naming
 You can create a user-defined function in Bicep to generate a unique deployment name based on your preferred strategy.
 
+This example function creates a prefixed name and ensures it does not exceed 64 characters:
+If it exceeds it will still encounter the error during deployment, but you can adjust the logic as needed.
+
 ```bicep {linenos=table}
-function generateDeploymentName(baseName: string): string {
-  return '${baseName}_${utcNow('yyyyMMddTHHmmss')}'
-}
-param baseDeploymentName string = 'myDeployment'
-param deploymentName string = generateDeploymentName(baseDeploymentName)
-resource deployment 'Microsoft.Resources/deployments@2021-04-01' = {
-  name: deploymentName
-  properties: {
-    mode: 'Incremental'
-    template: {
-      // Your template content here
-    }
-  }
+@export()
+@description('Returns a module name with a prefix and ensures the name is at most 64 characters')
+func prefixedName(suffix string) string => length('${az.deployment().name}-${suffix}') > 64 ? substring('${az.deployment().name}-${suffix}', 0, 64) : '${az.deployment().name}-${suffix}'
+```
+
+So to fix it we want a scrolling suffix that makes sure the name is unique but also fits within the constraints.
+
+```bicep {linenos=table}
+@export()
+@description('Returns a module name with a prefix and ensures the name is at most 64 characters')
+func prefixedName(suffix string) string {
+  var baseName = '${az.deployment().name}-${suffix}'
+  var maxLength = 64
+  return length(baseName) > maxLength ? substring(baseName, 0, maxLength) : baseName
 }
 ```
+
 
 # Conclusion and discussion
 
