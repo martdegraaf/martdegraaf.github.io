@@ -25,9 +25,9 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-For my presentation 'Visual Studio Code: One Tool to Rule Them All?' I created two characters: Ryan and Eric. Both are software developers but they have completely different approaches to their work.
+For my presentation 'Visual Studio Code: One Tool to Rule Them All?' I created two fictional characters: Ryan and Eric. Both are software developers but they have completely different approaches to their work.
 
-A colleague of mine suggested I write a blog post to introduce them properly. Everyone who heard my story about them, immediately recognized those two archetypes. Even other presenters after my session started using Ryan and Eric in their talks! So let's give them the spotlight they deserve, right?
+A colleague of mine suggested that I should write a blog post to introduce them properly. Everyone who heard my story about them, immediately recognized those two archetypes. Even other presenters after my session started using Ryan and Eric in their talks! So let's give them the spotlight they deserve, right?
 
 ## Meet Ryan
 
@@ -47,18 +47,18 @@ Eric is a seasoned developer with years of experience. He is pragmatic, values s
 
 ![Eric](Eric.png#right "Eric")
 
-When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize dicisions beforehand knowing that changing things later will be costly.
+When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize decisions beforehand knowing that changing things later will be costly. Why change when you have also worked this way for years?
 
 ## Ryan and Eric
 
 There two fictional characters represent two extreme different behavior patterns in software development teams. You can act like Ryan or Eric, you should use both to balance innovation and stability.
 
-Let's introduce a example i myself encounter often: My colleague acts like Eric. He locks his computer using `Ctrl+Alt+Del` and selects 'Lock' from the menu. I think he should use Ryan to optimize his workflow. I, on the other hand, use `Windows+L` to lock my computer instantly. This by the way is a concrete example that also counts for formatting, selecting duplicate screens.
+Let's introduce an example I myself encounter often: My colleague acts like Eric. He locks his computer using `Ctrl+Alt+Del` and selects 'Lock' from the menu. I think he should use Ryan to optimize his workflow. I, on the other hand, use `Windows+L` to lock my computer instantly. This by the way is a concrete example that also counts for formatting, selecting duplicate screens.
 
-On the other hand the same colleague criticizes me for when i get distracted for finding out the fastest way to do my current task. He would rather click trough instead of using keyboard shortcuts. Maybe faster for one task, but slower if used multiple times a day.
+On the other hand the same colleague criticizes me for when I get distracted for finding out the fastest way to do my current task. He would rather click trough instead of using keyboard shortcuts. Maybe faster for one task, but slower if used multiple times a day.
 
 ## Conclusion and discussion
 
-Ryan and Eric are two fictional characters that represent two extreme different behavior patterns in software development teams. You can act like Ryan or Eric, you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well.
+Ryan and Eric are two fictional characters that represent two extreme different behavior patterns in software development teams. You can act like Ryan or Eric, you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well. If you want to refer to them, you are welcome to do so, please link back to this post.
 
 > What about you? Are you more like Ryan or Eric? Or do you have another archetype in mind? Let me know in the comments!
