@@ -5,7 +5,7 @@ date: 2025-11-21T21:41:58+01:00
 publishdate: 2025-11-21T21:41:58+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["Ryan", "Eric"]
+tags: ["Ryan", "Eric", "keyboard-shortcuts", "visual-studio-code", "developer-archetypes"]
 summary: "Meet Ryan and Eric, two software developers but completely different."
 # Toc
 ShowToc: false
@@ -62,3 +62,7 @@ The tension between Ryan and Eric is useful. Ryan pulls the team toward new tool
 Ryan and Eric are two fictional characters that represent two extreme different behavior patterns in software development teams. You can act like Ryan or Eric, you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well. If you want to refer to them, you are welcome to do so, please link back to this post.
 
 > What about you? Are you more like Ryan or Eric? Or do you have another archetype in mind? Let me know in the comments!
+
+### Further reading
+
+I wrote an Ryan-like article before read it here: [Mart's Cheatsheet]({{< ref "marts-cheatsheet/index.md" >}})
