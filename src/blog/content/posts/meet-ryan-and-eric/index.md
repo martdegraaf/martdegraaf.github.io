@@ -25,29 +25,29 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-For my presentation 'Visual Studio Code: One Tool to Rule Them All?' I created two fictional characters: Ryan and Eric. Both are software developers but they have completely different approaches to their work.
+For my presentation "Visual Studio Code: One Tool to Rule Them All?" I created two fictional characters: Ryan and Eric. Both are software developers, but they take very different approaches to their work.
 
-A colleague of mine suggested that I should write a blog post to introduce them properly. Everyone who heard my story about them, immediately recognized those two archetypes. Even other presenters after my session started using Ryan and Eric in their talks! So let's give them the spotlight they deserve, right?
+A colleague of mine suggested I write a blog post to introduce them properly. Everyone who heard my story about them immediately recognized these two archetypes. Even presenters who spoke after my session started using Ryan and Eric in their talks. So let's give them the spotlight they deserve, right?
 
 ## Meet Ryan
 
 Have you met Ryan? Ryan is a young developer, fresh out of college. He has a couple of core qualities: he learns fast, is curious and loves new technologies. Ryan probably has more unfinished projects on his laptop than finished ones.
 
-> :robot: The images of Ryan and Eric are AI generated using Sora, by providing my own image as input and describing the character traits.
+> :robot: The images of Ryan and Eric are AI-generated using Sora, by providing my own image as input and describing the character traits.
 
 ![Ryan](Ryan.png#right "Ryan - fast, experimental, shortcut-obsessed")
 
-Ryan is the kind of guy that uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, when watching his favorite series on Netflix.
+Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, when watching his favorite series on Netflix.
 
 When you have a Ryan on your team, you will notice that he will run before thinking his actions through. He will push fast to production, only to find out later that something is broken. But hey, at least he tried, right? And if he is just as fast to fix it again, everything is fine.
 
 ## Meet Eric
 
-Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start up Notepad++ to quickly format his XML or JSON or compare files. Can't write any good code in Visual Studio Code, because where is the 'Play button' to start the project?
+Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He jokes that you cannot write any good code in Visual Studio Code, because where is the Play" button to start the project?
 
 ![Eric](Eric.png#right "Eric - stable, cautious, prefers proven tools")
 
-When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize decisions beforehand knowing that changing things later will be costly. Why change when you have also worked this way for years?
+When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize decisions beforehand knowing that changing things later will be costly. Why change when you have worked this way for years?
 
 ## Ryan and Eric
 
@@ -59,7 +59,7 @@ The tension between Ryan and Eric is useful. Ryan pulls the team toward new tool
 
 ## Conclusion and discussion
 
-Ryan and Eric are two fictional characters that represent two extreme different behavior patterns in software development teams. You can act like Ryan or Eric, you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well. If you want to refer to them, you are welcome to do so, please link back to this post.
+Ryan and Eric are two fictional characters that represent two extremely different behavior patterns in software development teams. You can act like Ryan or Eric, but you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well. If you want to refer to them, you are welcome to do so. Please link back to this post.
 
 > What about you? Are you more like Ryan or Eric? Or do you have another archetype in mind? Let me know in the comments!
 
