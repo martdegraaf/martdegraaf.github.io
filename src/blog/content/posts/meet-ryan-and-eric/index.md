@@ -37,13 +37,13 @@ Have you met Ryan? Ryan is a young developer, fresh out of college. He has a cou
 
 ![Ryan](Ryan.png#right "Ryan - fast, experimental, shortcut-obsessed")
 
-Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, when watching his favorite series on Netflix.
+Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, while watching his favorite series on Netflix.
 
 When you have a Ryan on your team, you will notice that he will run before thinking his actions through. He will push fast to production, only to find out later that something is broken. But hey, at least he tried, right? And if he is just as fast to fix it again, everything is fine.
 
 ## Meet Eric
 
-Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He jokes that you cannot write any good code in Visual Studio Code, because where is the Play" button to start the project?
+Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He jokes that you cannot write any good code in Visual Studio Code, because where is the "Play" button to start the project?
 
 ![Eric](Eric.png#right "Eric - stable, cautious, prefers proven tools")
 
