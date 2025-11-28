@@ -35,7 +35,7 @@ Have you met Ryan? Ryan is a young developer, fresh out of college. He has a cou
 
 > :robot: The images of Ryan and Eric are AI-generated using Sora, by providing my own image as input and describing the character traits.
 
-{{< figure src="Ryan.png" alt="Ryan - fast, experimental, shortcut-obsessed" caption="Ryan - fast, experimental, shortcut-obsessed" align="right" height="300">}}
+{{< figure src="Ryan.png" alt="Ryan - fast, experimental, shortcut-obsessed" caption="Ryan - fast, experimental, shortcut-obsessed" align="center" height="300">}}
 
 Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, while watching his favorite series on Netflix.
 
