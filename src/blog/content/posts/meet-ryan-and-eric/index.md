@@ -35,7 +35,7 @@ Have you met Ryan? Ryan is a young developer, fresh out of college. He has a cou
 
 > :robot: The images of Ryan and Eric are AI-generated using Sora, by providing my own image as input and describing the character traits.
 
-![Ryan](Ryan.png#right "Ryan - fast, experimental, shortcut-obsessed")
+{{< figure src="Ryan.png" alt="Ryan - fast, experimental, shortcut-obsessed" caption="Ryan - fast, experimental, shortcut-obsessed" align="right" height="300">}}
 
 Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, while watching his favorite series on Netflix.
 
@@ -45,7 +45,7 @@ When you have a Ryan on your team, you will notice that he will run before think
 
 Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He jokes that you cannot write any good code in Visual Studio Code, because where is the "Play" button to start the project?
 
-![Eric](Eric.png#right "Eric - stable, cautious, prefers proven tools")
+{{< figure src="Eric.png" alt="Eric - stable, cautious, prefers proven tools" caption="Eric - stable, cautious, prefers proven tools" align="center" height="300">}}
 
 When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize decisions beforehand knowing that changing things later will be costly. Why change when you have worked this way for years?
 
