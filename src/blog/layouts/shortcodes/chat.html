@@ -1,0 +1,10 @@
+{{- $speaker := .Get "speaker" -}}
+{{- $position := .Get "position" | default "left" -}}
+{{- $content := .Inner | markdownify -}}
+
+<div class="chat-row {{ $position }}">
+  <div class="chat-bubble {{ $speaker }}">
+    <div class="chat-name">{{ $speaker | title }}</div>
+    {{ $content }}
+  </div>
+</div>
