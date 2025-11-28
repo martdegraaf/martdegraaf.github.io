@@ -1,4 +1,4 @@
----
+﻿---
 title: "Meet Ryan and Eric"
 slug: "meet-ryan-and-eric"
 date: 2025-11-21T21:41:58+01:00
@@ -39,6 +39,8 @@ Have you met Ryan? Ryan is a young developer, fresh out of college. He has a cou
 
 Ryan is the kind of person who uses hip IDEs like Visual Studio Code, because it is lightweight and fast. Ideally Ryan would like to use his phone to code on the go, while watching his favorite series on Netflix.
 
+> “Move fast and fix things later.” - Ryan
+
 When you have a Ryan on your team, you will notice that he will run before thinking his actions through. He will push fast to production, only to find out later that something is broken. But hey, at least he tried, right? And if he is just as fast to fix it again, everything is fine.
 
 ## Meet Eric
@@ -48,6 +50,89 @@ Eric is a seasoned developer with years of experience. He is pragmatic, values s
 {{< figure src="Eric.png" alt="Eric - stable, cautious, prefers proven tools" caption="Eric - stable, cautious, prefers proven tools" align="center" height="300">}}
 
 When you have an Eric on your team, you will notice that he will take his time to think things through. He will criticize decisions beforehand knowing that changing things later will be costly. Why change when you have worked this way for years?
+
+> “If it ain't broke, don't fix it.” - Eric
+
+## A conversation between Ryan and Eric
+
+If Ryan and Eric were to have a conversation, it might go something like this:
+
+
+### Having multiple PR's open
+
+> **Context:** Eric leans back.
+
+{{< chat-start >}}
+
+{{< chat speaker="eric" position="left" >}}
+We’re going to make some rules. Ready?
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+Is “no” an acceptable answer?
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+No.  
+**Rule 1:** No more than two open PRs at a time.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+What if I have three great ideas?
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+Write them down. Ship two. The third can wait.
+{{< /chat >}}
+
+{{< chat-end >}}
+
+
+### Writing an ADR
+
+> **Context:** A new framework is being discussed. Ryan is already prototyping.  
+
+{{< chat-start >}}
+
+{{< chat speaker="eric" position="left" >}}
+Before we change the framework, we write an ADR.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+Can't we just try it first and see what happens?
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+We can try it. But we still write an ADR.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+What do you even want in there? "Ryan had a feeling"?
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+No.<br/>
+**ADR Rule 1:** Capture the problem, the options, and why we picked this one.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+That sounds like homework.
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+It's future-you cheating on future-homework. You won't remember why you did this in six months.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+Fine. I'll write the ADR. Short one.
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+Short is okay. Undocumented is not.
+{{< /chat >}}
+
+{{< chat-end >}}
+
 
 ## Ryan and Eric
 
@@ -60,6 +145,12 @@ The tension between Ryan and Eric is useful. Ryan pulls the team toward new tool
 ## Conclusion and discussion
 
 Ryan and Eric are two fictional characters that represent two extremely different behavior patterns in software development teams. You can act like Ryan or Eric, but you should use both to balance innovation and stability. I hope Ryan and Eric will return in future blog posts as well. If you want to refer to them, you are welcome to do so. Please link back to this post.
+
+Let's set the mode accordingly:
+
+```javascript
+var mode = DeadlineIsToday ? Ryan : Eric;
+```
 
 > What about you? Are you more like Ryan or Eric? Or do you have another archetype in mind? Let me know in the comments!
 
