@@ -45,7 +45,7 @@ When you have a Ryan on your team, you will notice that he will run before think
 
 ## Meet Eric
 
-Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He jokes that you cannot write any good code in Visual Studio Code, because where is the "Play" button to start the project?
+Eric is a seasoned developer with years of experience. He is pragmatic, values stability and prefers to stick to tried-and-true tools. Eric will start Notepad++ to quickly format his XML or JSON or compare files. He has been using and running projects in Visual Studio for years. He jokes that you cannot write any good code in Visual Studio Code, because where is the "Play" button to start the project? Not to mention how do you debug without it?
 
 {{< figure src="Eric.png" alt="Eric - stable, cautious, prefers proven tools" caption="Eric - stable, cautious, prefers proven tools" align="center" height="300">}}
 
@@ -56,7 +56,6 @@ When you have an Eric on your team, you will notice that he will take his time t
 ## A conversation between Ryan and Eric
 
 If Ryan and Eric were to have a conversation, it might go something like this:
-
 
 ### Having multiple PR's open
 
@@ -86,7 +85,6 @@ Write them down. Ship two. The third can wait.
 {{< /chat >}}
 
 {{< chat-end >}}
-
 
 ### Writing an ADR
 
@@ -133,6 +131,53 @@ Short is okay. Undocumented is not.
 
 {{< chat-end >}}
 
+### Setting up SQL Server
+
+> **Context:** Eric is setting up his new development machine and needs SQL Server.
+
+{{< chat-start >}}
+
+{{< chat speaker="eric" position="left" >}}
+I'm downloading the SQL Server installer. This should take about an hour to set up properly.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+An hour? Just run `docker run -d -p 1433:1433 mcr.microsoft.com/mssql/server`
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+I don't trust containers for database work. What if something goes wrong?
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+*types command* Done. SQL Server is running. Took 30 seconds.
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+Wait, my installer failed. Compatibility issues with my Windows version.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+That's why I use containers. Same environment everywhere.
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+Fine. But what happens when I need to upgrade? Or backup? Or configure security?
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+Docker Compose file. Version control your entire database setup.
+{{< /chat >}}
+
+{{< chat speaker="ryan" position="right" >}}
+Plus, you can automate the whole thing in your CI/CD pipeline. Database provisioning becomes part of your deployment process.
+{{< /chat >}}
+
+{{< chat speaker="eric" position="left" >}}
+*sighs* Show me this Docker thing. But I'm keeping the installer just in case.
+{{< /chat >}}
+
+{{< chat-end >}}
 
 ## Ryan and Eric
 
