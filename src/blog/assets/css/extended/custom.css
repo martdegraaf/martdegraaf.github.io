@@ -81,3 +81,60 @@ img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
     border-radius: 8px;
     padding:20px;
 }
+
+/* Chat conversation styles for Ryan and Eric */
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px 0;
+    max-width: 600px;
+    background-color: #e5ddd5;
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(255,255,255,0.15) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(255,255,255,0.1) 2%, transparent 0%);
+    background-size: 100px 100px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.chat-row {
+    display: flex;
+    width: 100%;
+}
+
+.chat-row.left {
+    justify-content: flex-start;
+}
+
+.chat-row.right {
+    justify-content: flex-end;
+}
+
+.chat-bubble code{
+    color: var(--content);
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 6px 16px;
+    border-radius: 18px;
+    position: relative;
+}
+
+.chat-bubble.eric {
+    background-color: #bbdefb;
+    color: #0d47a1;
+}
+
+.chat-bubble.ryan {
+    background-color: #e1bee7;
+    color: #4a148c;
+}
+
+.chat-name {
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 0px;
+    opacity: 0.8;
+}
