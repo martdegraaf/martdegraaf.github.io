@@ -111,6 +111,10 @@ img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
     justify-content: flex-end;
 }
 
+.chat-bubble code{
+    color: var(--content);
+}
+
 .chat-bubble {
     max-width: 70%;
     padding: 6px 16px;
@@ -118,12 +122,12 @@ img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
     position: relative;
 }
 
-.chat-bubble.eric:not(.code) {
+.chat-bubble.eric {
     background-color: #bbdefb;
     color: #0d47a1;
 }
 
-.chat-bubble.ryan:not(.code) {
+.chat-bubble.ryan {
     background-color: #e1bee7;
     color: #4a148c;
 }
