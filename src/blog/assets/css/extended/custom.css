@@ -118,12 +118,12 @@ img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
     position: relative;
 }
 
-.chat-bubble.eric {
+.chat-bubble.eric:not(.code) {
     background-color: #bbdefb;
     color: #0d47a1;
 }
 
-.chat-bubble.ryan {
+.chat-bubble.ryan:not(.code) {
     background-color: #e1bee7;
     color: #4a148c;
 }
