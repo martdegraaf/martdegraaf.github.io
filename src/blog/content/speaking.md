@@ -15,6 +15,10 @@ cover:
 
 I am a seasoned speaker passionate about sharing knowledge with the tech community. I've spoken at various events and specialize in topics like Git, cloud software observability, and the optimization of daily work for software engineers. If you are interested in having me as a speaker at your event, please reach out!
 
+## Next Year's Engagements
+
+- 16 April 2026 - MC2MC Live
+
 ## This Year's Engagements
 
 - 20 November 2025 - [DevNetNoord 2025](https://devnetnoord.nl/)
