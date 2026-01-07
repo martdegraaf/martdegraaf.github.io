@@ -88,7 +88,7 @@ So my new workflow for creating a new blog post is:
 
 This will setup a test environment in Azure Static Web Apps and allow me to preview the blog post before merging it to main.
 
-```json {file=tasks.json}
+```json
 {
 	"version": "2.0.0",
 	"tasks": [
