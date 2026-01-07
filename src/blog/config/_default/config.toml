@@ -41,6 +41,7 @@ showShareButtons = true
 showReadingTime = true
 comments = true
 social = true
+ShowRssButtonInSectionTermList = true
 
 TocOpen= true
 enableGitInfo = true
