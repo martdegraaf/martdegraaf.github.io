@@ -3,10 +3,10 @@ title: "2026 A New Year, New Workflows"
 slug: "2026-new-year-workflows"
 date: 2026-01-07T10:49:12+01:00
 publishdate: 2026-01-07T10:49:12+01:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
-tags: ["code", "csharp"]
-summary: "In 2026, I started podcasting and optimized my blogging workflow. Read about the tools and processes I used to get started."
+tags: ["podcast", "workflow", "blogging"]
+summary: "In 2026, I started podcasting and optimized my blogging workflow. Read about the tools and processes I used to get started. And more small improvements for 2026."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -18,8 +18,8 @@ ShowLastModified: false
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "2026 New Year" # alt text
+    image: "cover.png" # image path/url
+    alt: "Pancakes stack with icons of microphone code, blog, headphones and calender" # alt text
     caption: "2026 New Year" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
@@ -150,7 +150,7 @@ For the setup of our podcast we needed to make it available for multiple platfor
 
 Earlier I just used Spotify to listen to podcasts. Annoying because when you listen to music via Spotify it is difficult to find and continue the right podcast while in car. Or just always.
 
-I can recommend listening to the podcasts: Darknet Diaries and How to take over the World. If you are Dutch, take our podcast Oogkleppen! 😉
+> I can recommend listening to the podcasts: Darknet Diaries and How to take over the World. If you are Dutch, take our podcast Oogkleppen! 😉
 
 My colleague Peter recommended using Antennapod on Android. Jan uses Pocket Casts on iOS.
 I installed both on Android, i am going to test both, and let you know. A big plus would be if a Android Auto integration is available.
