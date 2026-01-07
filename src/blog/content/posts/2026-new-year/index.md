@@ -25,15 +25,15 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉
+I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉 The podcast is called Oogkleppen and is recorded in Dutch.
 
 ## Workflows
 
-To get started with podcasting Peter and I discussed how to start and what tools to use. Peter tended to act a lot more like Eric, hold back and rethink everthing. I was more of a Ryan "let's just do it" kind of person. I want to share with you how we set up our podcasting workflow.
-
-It is just like Agile, start with something small and improve it over time. And focussing on the most important parts first.
+Let's talk about workflows. I have optimized my workflows for podcasting and blogging. It is just like Agile, start with something small and improve it over time. And focussing on the most important parts first. In this article I will share with you how I set up my podcasting and blogging workflows.
 
 ### Podcast
+
+To get started with podcasting Peter and I discussed how to start and what tools to use. Peter tended to act a lot more like Eric, hold back and rethink everthing. I was more of a Ryan "let's just do it" kind of person. I want to share with you how we set up our podcasting workflow.
 
 #### Recording
 
@@ -73,12 +73,9 @@ To create a catchy intro for our podcast, we searched for royalty-free music onl
 
 ### Blogging
 
-After optimizing our podcasting workflow, I decided to optimize my blogging workflow as well. I mainly blog in markdown in Visual Studio Code. To streamline the process of creating new blog posts, I created a custom VS Code snippet that generates the front matter for new blog posts. This snippet includes fields for the title, date, tags, summary, and cover image.
+After optimizing our podcasting workflow, I decided to optimize my blogging workflow as well. I mainly blog in markdown in Visual Studio Code. To streamline the process of creating new blog posts, I created a custom task in VS Code.
 
-```json {file=blogPostSnippet.json}
-```
-
-And by using the `tasks.json` file I automated the process of creating a new blog post file using the hugo cli, so I only have to provide the post name and it will create the file and open it in VS Code.
+By using the `tasks.json` file I automated the process of creating a new blog post file using the hugo cli, so I only have to provide the post name and it will create the file and open it in VS Code.
 
 So my new workflow for creating a new blog post is:
 
@@ -162,7 +159,13 @@ I installed both on Android, i am going to test both, and let you know. A big pl
 
 I earlier just checked content reguraly but from now on will organise blogs via Readly. RSS feeds mostly are available via /index.xml on most blogs. Some are available via /feed or /feed.rss. With Readly I can organise blogs into categories and read them when I want to.
 
+### Making the right tactical switch
 
+I am using a Dygma Defy keyboard for my daily work. It is a split keyboard that allows me to type more ergonomically. The keyboard has hot swappable switches. And i used the keyboard a year using linear switches. As of 2026 I have switched my right half to tactile switches. Let's see what half i am most comfortable with.
+
+Checkout this video about the switch choice: https://www.youtube.com/watch?v=noUj7uUyIk4
+
+> I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
 
 ## All the pancakes in the world
 
