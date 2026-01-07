@@ -1,6 +1,6 @@
 ---
-title: "2026 A New Year"
-slug: "2026-new-year"
+title: "2026 A New Year, New Workflows"
+slug: "2026-new-year-workflows"
 date: 2026-01-07T10:49:12+01:00
 publishdate: 2026-01-07T10:49:12+01:00
 draft: true
@@ -33,25 +33,27 @@ To get started with podcasting Peter and I discussed how to start and what tools
 
 It is just like Agile, start with something small and improve it over time. And focussing on the most important parts first.
 
-### Recording
+### Podcast
+
+#### Recording
 
 We wanted to keep things simple and use tools we already had. So we used what we had available:
 
 - **Microphones**: Two sets of Rode Wireless GO II
 - **Recording Software**: Rode Connect
 
-### Editing
+#### Editing
 
 For editing, we decided to use Audacity, a free and open-source audio editing software. It offers all the basic features we needed to clean up our recordings, add intros/outros, and adjust audio levels. But to edit a full episode using audacity is still quite a bit of work. That is why we we looked into alternatives.
 
-#### AI-Powered Transcription
+##### AI-Powered Transcription
 
 To streamline the editing process, we explored AI-powered transcription services. To do this i created a .NET console application that used Whisper.Net to transcribe our recordings. This allowed us to quickly identify sections that needed editing without having to listen to the entire recording.
 
 ```csharp {file=transcribePodcast.cs}
 ```
 
-#### Online AI powered services
+##### Online AI powered services
 
 We also experimented with online AI-powered services that offer podcast editing features. These platforms can automatically remove filler words, background noise, and even suggest improvements to the audio quality. This significantly reduced the time we spent on manual editing.
 
@@ -60,12 +62,12 @@ The tools we used for this were:
 - **Auphonic**: For automatic audio post-production.
 - **Trebble.fm**: For AI-driven podcast editing and enhancements.
 
-### Podcast naming
+#### Podcast naming
 
 We prioritized recording over naming our podcast. So we decided to come up with a name after recording the first episode.
 We decided to name our podast "Oogkleppen" which translates to "Blinders" in English. The name reflects our focus on discussing topics from a unique perspective, challenging conventional wisdom, and exploring new ideas.
 
-### Podcast Intro
+#### Podcast Intro
 
 To create a catchy intro for our podcast, we searched for royalty-free music online. We searched on https://pixabay.com/ and editted music in our spoken intro and field tested it with some friends and colleagues. The feedback was positive, and we felt the intro set the right tone for our podcast.
 
@@ -143,8 +145,25 @@ Our current workflow was to navigate to AdGuard, go to Filters > Block Services 
 
 I wanted to have this in our dashboard with a toggle switch. So I searched for solutions and found out that AdGuard has an API that can be used to toggle services. see: https://community.home-assistant.io/t/toggling-adguard-services-from-ha-dashboard/719007
 
+### Consuming Blog posts and podcasts
+
+For the setup of our podcast we needed to make it available for multiple platforms. Such as Spotify and Apple podcasts. Most other platforms work with RSS Feeds. So when we make the RSS Feed from Spotify available other third party platforms can also use it.
+
+#### Consuming podcasts
+
+Earlier I just used Spotify to listen to podcasts. Annoying because when you listen to music via Spotify it is difficult to find and continue the right podcast while in car. Or just always.
+
+I can recommend listening to the podcasts: Darknet Diaries and How to take over the World. If you are Dutch, take our podcast Oogkleppen! 😉
+
+My colleague Peter recommended using Antennapod on Android. Jan uses Pocket Casts on iOS.
+I installed both on Android, i am going to test both, and let you know. A big plus would be if a Android Auto integration is available.
+
+#### Consuming blog posts
+
+I earlier just checked content reguraly but from now on will organise blogs via Readly. RSS feeds mostly are available via /index.xml on most blogs. Some are available via /feed or /feed.rss. With Readly I can organise blogs into categories and read them when I want to.
 
 
-### All the pancakes in the world
+
+## All the pancakes in the world
 
 Let us be better in 2026 by optimizing our workflows and embracing new technologies. Whether it's podcasting or blogging, finding efficient ways to create and share content can lead to greater productivity and enjoyment. I wish you all the pancakes in the world in 2026! 🥞🎉
