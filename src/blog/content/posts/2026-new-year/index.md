@@ -72,12 +72,12 @@ To get started with podcasting Peter and I discussed how to start and what tools
 
 We wanted to keep things simple and use tools we already had. So we used what we had available:
 
-{{< figure src="rode_mics.jpeg" alt="Rode mics used for podcasting" caption="Rode mics used for podcasting" align="center" height="200">}}
+{{< figure src="rode_mics.jpeg" alt="Rode mics used for podcasting" caption="Rode mics used for podcasting" align="center" height="300">}}
 
 - **Microphones**: Two sets of Rode Wireless GO II
 - **Recording Software**: Rode Connect
 
-{{< figure src="Rode_connect.jpeg" alt="Connecting to Rode Connect" caption="Connecting to Rode Connect" align="center" height="200">}}
+{{< figure src="Rode_connect.jpeg" alt="Connecting to Rode Connect" caption="Connecting to Rode Connect" align="center" height="300">}}
 
 #### Editing
 
