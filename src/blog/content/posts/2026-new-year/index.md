@@ -37,7 +37,7 @@ I want to share some numbers here to give some insights in my 2025.
 
 I read multiple books in 2025. The most impactful book was "Verbaal meesterschap" by Remco Claassen. It helped me to develop my Web Application Firewall session. I used magic tricks during the talk to engage the audience. I recommend reading this book if you want to improve your speaking skills.
 
-![Speaking with fire](speaking_with_fire.jpeg#center "Spoke at Move Up with wallet full of fire")
+{{< figure src="speaking_with_fire.jpeg" alt="Spoke at Move Up with wallet full of fire" caption="Spoke at Move Up with wallet full of fire" align="center" height="300">}}
 
 The company i work for 4Dotnet celebrated its 20th anniversary in 2025. I have been working there for 5 years now. We went on a trip to Lisbon with the team. Some of the cover images of the blog posts were taken there.
 
@@ -72,12 +72,12 @@ To get started with podcasting Peter and I discussed how to start and what tools
 
 We wanted to keep things simple and use tools we already had. So we used what we had available:
 
-![Rode mics](rode_mics.jpeg#center "Rode mics used for podcasting")
+{{< figure src="rode_mics.jpeg" alt="Rode mics used for podcasting" caption="Rode mics used for podcasting" align="center" height="200">}}
 
 - **Microphones**: Two sets of Rode Wireless GO II
 - **Recording Software**: Rode Connect
 
-![Rode Connect](Rode_connect.jpeg#center "Connecting to Rode Connect")
+{{< figure src="Rode_connect.jpeg" alt="Connecting to Rode Connect" caption="Connecting to Rode Connect" align="center" height="200">}}
 
 #### Editing
 
@@ -187,7 +187,7 @@ I am using a Dygma Defy keyboard for my daily work. It is a split keyboard that 
 
 Checkout this video about the switch choice: https://www.youtube.com/watch?v=noUj7uUyIk4
 
-![Dygma Defy switches](defy_switches.jpeg#center "Dygma Defy - the right half. Brown are tactile, Yellow are linear.")
+{{< figure src="defy_switches.jpeg" alt="Dygma Defy - the right half. Brown are tactile, Yellow are linear." caption="Dygma Defy - the right half. Brown are tactile, Yellow are linear." align="center" height="300">}}
 
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
 
