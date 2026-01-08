@@ -84,6 +84,10 @@ mainSections = [ "posts", "reviews" ]
   name = "twitter"
   url = "https://twitter.com/martdegraaf"
 
+  [[params.socialIcons]]
+  name = "rss"
+  url = "https://blog.martdegraaf.nl/index.xml"
+
 [outputs]
 home = [ "HTML", "RSS", "JSON" ]
 
