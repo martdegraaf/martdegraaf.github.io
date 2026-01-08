@@ -35,6 +35,8 @@ I want to share some numbers here to give some insights in my 2025.
 - Spoken on stage: 8
 - Active Microsoft certifications: 5
 
+I read multiple books in 2025. The most impactful book was "Verbaal meesterschap" by Remco Claassen. It helped me to develop my Web Application Firewall session. I used magic tricks during the talk to engage the audience. I recommend reading this book if you want to improve your speaking skills.
+
 The company i work for 4Dotnet celebrated its 20th anniversary in 2025. I have been working there for 5 years now. We went on a trip to Lisbon with the team. Some of the cover images of the blog posts were taken there.
 
 ## Setting goals for 2026
