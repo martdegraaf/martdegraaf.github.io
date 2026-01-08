@@ -181,6 +181,8 @@ I am using a Dygma Defy keyboard for my daily work. It is a split keyboard that 
 
 Checkout this video about the switch choice: https://www.youtube.com/watch?v=noUj7uUyIk4
 
+![Dygma Defy switches](defy_switches.jpeg)
+
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
 
 ## All the pancakes in the world
