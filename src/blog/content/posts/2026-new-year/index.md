@@ -5,7 +5,7 @@ date: 2026-01-07T10:49:12+01:00
 publishdate: 2026-01-07T10:49:12+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["podcast", "workflow", "blogging"]
+tags: ["podcast", "workflow", "blogging", "personal"]
 summary: "In 2026, I started podcasting and optimized my blogging workflow. Read about the tools and processes I used to get started. And more small improvements for 2026."
 # Toc
 ShowToc: true
@@ -27,6 +27,33 @@ cover:
 
 I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉 The podcast is called Oogkleppen and is recorded in Dutch.
 
+## Wrapping up 2025
+
+I want to share some numbers here to give some insights in my 2025.
+
+- Blog posts: 10
+- Spoken on stage: 8
+- Active Microsoft certifications: 5
+
+The company i work for 4Dotnet celebrated its 20th anniversary in 2025. I have been working there for 5 years now. We went on a trip to Lisbon with the team. Some of the cover images of the blog posts were taken there.
+
+## Setting goals for 2026
+
+As we step into 2026, it's a great time to set some personal and professional goals. Here are a few goals I have set for myself this year:
+
+- Speaking: give 6 talks, develop 1 new talk, speak at 2 new events (never spoken at before).
+- Podcast: release 6 episodes, have 6 guests, decide if Peter and I want to continue.
+- Health : Lose some kg, strength training 2x/week.
+- Blog: Publish 12 blog posts, every last Friday of the month at 16:00.
+
+### Anti-goal 2026: Only "Fun" or "Promised"
+
+In 2026, I commit to only engaging in activities that I either genuinely enjoy (≥7/10 energy) or have explicitly promised (clear agreement/expectation). Anything outside of that: don't do it or renegotiate.
+
+### Review
+
+I reviewed my goals with a peer and he asked me what my personal goals were for 2026 especially for my family. I tought about this throughly and decided to book a vacation with my family for our wedding anniversary. Thanks Peter for the great question!
+
 ## Workflows
 
 Let's talk about workflows. I have optimized my workflows for podcasting and blogging. It is just like Agile, start with something small and improve it over time. And focussing on the most important parts first. In this article I will share with you how I set up my podcasting and blogging workflows.
@@ -34,6 +61,8 @@ Let's talk about workflows. I have optimized my workflows for podcasting and blo
 ### Podcast
 
 To get started with podcasting Peter and I discussed how to start and what tools to use. Peter tended to act a lot more like Eric, hold back and rethink everthing. I was more of a Ryan "let's just do it" kind of person. I want to share with you how we set up our podcasting workflow.
+
+> Read about Eric and Ryan in my blog post: [Meet Ryan and Eric]({{< ref "meet-ryan-and-eric/index.md" >}})
 
 #### Recording
 
@@ -117,28 +146,13 @@ This will setup a test environment in Azure Static Web Apps and allow me to prev
 }
 ```
 
-### Setting goals for 2026
-
-As we step into 2026, it's a great time to set some personal and professional goals. Here are a few goals I have set for myself this year:
-
-- Speaking: give 6 talks, develop 1 new talk, speak at 2 new events (never spoken at before).
-- Podcast: release 6 episodes, have 6 guests, decide if Peter and I want to continue.
-- Health : Lose some kg, strength training 2x/week.
-- Blog: Publish 12 blog posts, every last Friday of the month at 16:00.
-
-#### Anti-goal 2026: Only "Fun" or "Promised"
-
-In 2026, I commit to only engaging in activities that I either genuinely enjoy (≥7/10 energy) or have explicitly promised (clear agreement/expectation). Anything outside of that: don't do it or renegotiate.
-
-#### Review
-
-I reviewed my goals with a peer and he asked me what my personal goals were for 2026 especially for my family. I tought about this throughly and decided to book a vacation with my family for our wedding anniversary. Thanks Peter for the great question!
-
 ### Blocking YouTube
 
-We have kids at home. And they love YouTube. But I tell them the so-called 'Shorts' are videos that make them bumb. So to help them focus on better content I have blocked YouTube  on our home network using AdGuard within home assistant. This helped us as parents to have more control over what content our kids can access.
+We have kids at home. And they love YouTube. But I tell them the so-called 'Shorts' are videos that make them dumb. So to help them focus on better content I have blocked YouTube  on our home network using AdGuard within home assistant. This helped us as parents to have more control over what content our kids can access.
 
-Our current workflow was to navigate to AdGuard, go to Filters > Block Services and search youtube in the list and disable it.
+> Basically we as parents have been framing short videos as 'dumb videos' or 'videos that make you dumb'
+
+Our current workflow was to navigate to AdGuard, go to Filters > Block Services and search youtube in the list and disable it. But, we all know, that blocking youtube completely is not always desired. That is why I want to improve this workflow.
 
 I wanted to have this in our dashboard with a toggle switch. So I searched for solutions and found out that AdGuard has an API that can be used to toggle services. see: https://community.home-assistant.io/t/toggling-adguard-services-from-ha-dashboard/719007
 
