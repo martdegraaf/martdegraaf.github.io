@@ -37,6 +37,8 @@ I want to share some numbers here to give some insights in my 2025.
 
 I read multiple books in 2025. The most impactful book was "Verbaal meesterschap" by Remco Claassen. It helped me to develop my Web Application Firewall session. I used magic tricks during the talk to engage the audience. I recommend reading this book if you want to improve your speaking skills.
 
+![Speaking with fire](speaking_with_fire.jpeg#center "Spoke at Move Up with wallet full of fire")
+
 The company i work for 4Dotnet celebrated its 20th anniversary in 2025. I have been working there for 5 years now. We went on a trip to Lisbon with the team. Some of the cover images of the blog posts were taken there.
 
 ## Setting goals for 2026
@@ -70,8 +72,12 @@ To get started with podcasting Peter and I discussed how to start and what tools
 
 We wanted to keep things simple and use tools we already had. So we used what we had available:
 
+![Rode mics](rode_mics.jpeg#center "Rode mics used for podcasting")
+
 - **Microphones**: Two sets of Rode Wireless GO II
 - **Recording Software**: Rode Connect
+
+![Rode Connect](Rode_connect.jpeg#center "Connecting to Rode Connect")
 
 #### Editing
 
@@ -169,7 +175,7 @@ Earlier I just used Spotify to listen to podcasts. Annoying because when you lis
 > I can recommend listening to the podcasts: Darknet Diaries and How to take over the World. If you are Dutch, take our podcast Oogkleppen! 😉
 
 My colleague Peter recommended using Antennapod on Android. Jan uses Pocket Casts on iOS.
-I installed both on Android, i am going to test both, and let you know. A big plus would be if a Android Auto integration is available.
+I installed both apps on Android, i am going to test both, and let you know. A big plus would be if a Android Auto integration is available.
 
 #### Consuming blog posts
 
@@ -181,7 +187,7 @@ I am using a Dygma Defy keyboard for my daily work. It is a split keyboard that 
 
 Checkout this video about the switch choice: https://www.youtube.com/watch?v=noUj7uUyIk4
 
-![Dygma Defy switches](defy_switches.jpeg)
+![Dygma Defy switches](defy_switches.jpeg#center "Dygma Defy - the right half. Brown are tactile, Yellow are linear.")
 
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
 
