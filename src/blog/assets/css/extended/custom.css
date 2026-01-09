@@ -27,8 +27,10 @@ div.codecontainer .highlight{
     border-radius: 0px 0px 5px 5px;
 }
 
-
-
+/* Show cover images on all list pages including tags and series */
+.tag-entry .entry-cover {
+    display: block;
+}
 
 /* Put blog cover image left of the contents */
 .main:has(> article.post-entry){
@@ -61,7 +63,7 @@ div.codecontainer .highlight{
 
 
 /* Make sure the blog post is forced 16:9 */
-article.post-single .entry-cover {
+/* article.post-single .entry-cover {
     width: 100%;
     overflow: hidden;
     margin: 0;
@@ -74,7 +76,7 @@ article.post-single .entry-cover img {
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
-}
+} */
 
 img[src$=".drawio.svg"], img[src$=".drawio.svg#center"]{
     background-color: #FFF;

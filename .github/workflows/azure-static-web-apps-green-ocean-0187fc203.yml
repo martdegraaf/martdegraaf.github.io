@@ -50,7 +50,7 @@ jobs:
           HUGO_BASEURL: "${{ env.IS_PRODUCTION == 'true' && env.PRODUCTION_URL || env.STAGING_URL }}"
           HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == 'false' }}"
           HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == 'false' }}"
-          HUGO_VERSION: 0.145.0
+          HUGO_VERSION: v0.154.0
   test:
     env:
       working-directory: ./src/e2e

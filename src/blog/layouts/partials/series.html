@@ -9,8 +9,8 @@
         {{ range $num,$post := $seriesPages.ByDate }}
             {{ if eq $post.Permalink $.Page.Permalink }}
                 <li class="list-group-item active">
-                    {{ emojify ":backhand_index_pointing_down:" }} <i>currently reading</i>
-                    <br>
+                    <!-- {{ emojify ":backhand_index_pointing_down:" }} <i>currently reading</i>
+                    <br> -->
                     <span class="title">
                         Part {{ add $num 1 }}: {{ $post.Params.title}}{{- if $post.Params.Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
                     </span>

@@ -2,8 +2,8 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 timeZone = "Europe/Amsterdam"
 title = "Mart de Graaf"
-googleAnalytics = "G-ZFQGR29JJQ"
-theme = "PaperMod"
+
+theme = ["PaperMod"]
 enableRobotsTXT = true
 disqusShortname = "martdegraaf"
 enableEmoji = true
@@ -15,6 +15,9 @@ pygmentsCodefences = true
 
 
 pagination.pagerSize = 12 # articles per page
+
+[services.googleAnalytics]
+id = "G-ZFQGR29JJQ"
 
 [languages.en-us]
 title = "Mart's blog"
@@ -127,9 +130,9 @@ name = "Speaking"
 unsafe = true
 
 [outputFormats.Reveal]
-baseName = "index"
-mediaType = "text/html"
-isHTML = true
+  baseName = "index"
+  mediaType = "text/html"
+  isHTML = true
 
 [markup]
   [markup.highlight]

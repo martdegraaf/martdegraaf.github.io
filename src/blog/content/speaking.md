@@ -6,6 +6,7 @@ draft: false
 comments: false
 disableShare: true
 hidemeta: true
+excludeFromRSS: true
 
 cover:
   hidden: true # hide everywhere but not in structured data
@@ -18,10 +19,6 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 ## This Year's Engagements
 
 - 16 April 2026 - MC2MC Live
-
-## This Year's Engagements
-
-
 
 ## Current sessions
 

@@ -5,6 +5,7 @@ draft: false
 comments: false
 
 disableShare: true
+excludeFromRSS: true
 
 cover:
   hidden: true # hide everywhere but not in structured data

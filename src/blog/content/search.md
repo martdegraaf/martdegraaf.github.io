@@ -6,4 +6,5 @@ layout: "search" # is necessary
 # description: "Description for Search"
 summary: "search"
 placeholder: "What are you looking for?"
+excludeFromRSS: true
 ---
