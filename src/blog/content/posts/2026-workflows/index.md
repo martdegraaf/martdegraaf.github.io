@@ -16,6 +16,7 @@ UseHugoToc: false
 ShowReadingTime: true
 ShowLastModified: false
 ShowWordCount: true
+series: ['2026 New Year']
 
 cover:
     image: "cover.webp" # image path/url
@@ -24,7 +25,6 @@ cover:
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 
-series: ['2026 New Year']
 ---
 
 Workflows are important

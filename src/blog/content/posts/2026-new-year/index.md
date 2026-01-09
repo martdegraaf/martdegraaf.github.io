@@ -7,6 +7,8 @@ draft: false
 author: ["Mart de Graaf"]
 tags: ["podcast", "workflow", "blogging", "personal"]
 summary: "In 2026, I started podcasting and optimized my blogging workflow. Read about the tools and processes I used to get started. And more small improvements for 2026."
+series: ['2026 New Year']
+
 # Toc
 ShowToc: true
 TocOpen: true
@@ -24,7 +26,6 @@ cover:
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
     
-series: ['2026 New Year']
 ---
 
 I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉 The podcast is called Oogkleppen and is recorded in Dutch.
