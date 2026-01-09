@@ -27,6 +27,11 @@ cover:
 
 I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉 The podcast is called Oogkleppen and is recorded in Dutch.
 
+> "I can't believe how much you get done" - a few colleagues
+
+
+In this article I want to tell you about the workflows and habits that got me started with podcasting and how to keep blogging regularly. I will also share some of my personal goals for 2026 and new workflows I have or will adopt.
+
 ## Wrapping up 2025
 
 I want to share some numbers here to give some insights in my 2025.
