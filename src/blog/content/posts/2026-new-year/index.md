@@ -24,7 +24,7 @@ cover:
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
     
-series: ["2026 New Year"]
+series: ['2026 New Year']
 ---
 
 I want you to know I started podcasting last year and the first episode went live on January 1st, 2026! 🎉 The podcast is called Oogkleppen and is recorded in Dutch.

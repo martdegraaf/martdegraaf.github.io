@@ -3,7 +3,7 @@ title: "2026 Workflows"
 slug: "2026-workflows"
 date: 2026-01-09T11:14:19+01:00
 publishdate: 2026-01-09T11:14:19+01:00
-draft: true
+draft: false
 author: ["Mart de Graaf"]
 tags: ["workflows", "podcast", "blogging", "productivity"]
 summary: "TODO You should fill this ..."
@@ -24,7 +24,7 @@ cover:
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 
-series: ["2026 New Year"]
+series: ['2026 New Year']
 ---
 
 Workflows are important
