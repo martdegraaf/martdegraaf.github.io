@@ -19,9 +19,9 @@ ShowWordCount: true
 series: ['2026 New Year']
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "2026 Workflows" # alt text
-    caption: "2026 Workflows" # display caption under cover
+    image: "cover.jpg" # image path/url
+    alt: "Laptop, Reminders, Post-it image. Do it now!" # alt text
+    caption: "Image by [Roy Buri](https://pixabay.com/users/royburi-3128024/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3406961) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3406961)" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 

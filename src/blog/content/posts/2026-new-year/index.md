@@ -1,12 +1,12 @@
 ---
-title: "2026 A New Year, New Workflows"
+title: "2026 A New Year, New Goals"
 slug: "2026-new-year-workflows"
 date: 2026-01-07T10:49:12+01:00
 publishdate: 2026-01-07T10:49:12+01:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["podcast", "workflow", "blogging", "personal"]
-summary: "In 2026, I started podcasting and optimized my blogging workflow. Read about the tools and processes I used to get started. And more small improvements for 2026."
+tags: ["podcast", "goals", "blogging", "personal"]
+summary: "Kicking off 2026 with new goals and workflows for podcasting and blogging."
 series: ['2026 New Year']
 
 # Toc
@@ -39,7 +39,7 @@ I want to share some numbers here to give some insights in my 2025.
 - Spoken on stage: 8
 - Active Microsoft certifications: 5
 
-If you think, how can this Mart do this much? Stay tuned for my next blog post about my workflows for blogging, speaking and more.
+If you think, how can this Mart do this much? Stay tuned for my next blog post in this series about my workflows for blogging, speaking and more.
 
 ### Books
 

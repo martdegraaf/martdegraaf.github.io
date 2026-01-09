@@ -4,7 +4,7 @@
 {{ $seriesPages := (index .Site.Taxonomies.series $seriesKey).Pages }}
 {{ if gt (len $seriesPages) 1 }}
 <div class="series">
-    <h4>This article is part of the series '{{ $seriesName }}'.</h4>
+    <h4>This article is part of the series '<a href="/series/{{ $seriesKey | urlize }}">{{ $seriesName }}</a>'.</h4>
     <ul class="list-group">
         {{ range $num,$post := $seriesPages.ByDate }}
             {{ if eq $post.Permalink $.Page.Permalink }}

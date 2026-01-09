@@ -120,8 +120,8 @@ url = "/speaking"
 name = "Speaking"
 
 [taxonomies]
-series = "series"
-tag = "tags"
+  series = "series"
+  tag = "tags"
 
 [markup.goldmark.renderer]
 unsafe = true
