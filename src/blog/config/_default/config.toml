@@ -44,12 +44,12 @@ weight = 1
 env = "production"
 showPostNavLinks = true
 showCodeCopyButtons = true
-showShareButtons = true
+showShareButtons = false
 showReadingTime = true
 comments = true
 social = true
 ShowRssButtonInSectionTermList = true
-ShowFullTextInRSS = true
+ShowFullTextInRSS = false
 
 TocOpen= true
 enableGitInfo = true
@@ -75,7 +75,7 @@ mainSections = [ "posts", "reviews" ]
 
   [params.profileMode]
   enabled = false
-  imageUrl = "https://en.gravatar.com/userimage/91624600/299941bdca005e043f382073dfb1d71c.jpg?size=200"
+  imageUrl = "https://gravatar.com/userimage/91624600/fb51d6d9172e5043a1e59d59f3f84e62.jpeg?v=1666815123000&size=200"
   imageWidth = 200
   imageHeight = 200
 

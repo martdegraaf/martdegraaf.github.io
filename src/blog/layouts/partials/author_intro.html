@@ -1,3 +1,4 @@
+{{- if not (.Param "hideAuthorIntro") }}
 <div class="author-intro">
   <img src="{{ .Site.Params.profileMode.imageUrl }}" alt="Mart de Graaf" class="author-avatar" />
   <div class="author-intro-content">
@@ -27,6 +28,9 @@
              title="Microsoft Certified: Azure Security Engineer Associate"
              class="cert-badge" />
       </div>
+      
+      <a href="/about" class="author-read-more">READ MORE</a>
     </div>
   </div>
 </div>
+{{- end }}

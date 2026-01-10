@@ -39,8 +39,7 @@
   {{- end }}
 
   {{- if .Content }}
-  <div class="post-content">
-    
+  <div class="post-content">    
     {{ partial "series.html" . }}
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
@@ -64,6 +63,7 @@
     {{- end }}
   </footer>
 
+  {{- partial "author_intro.html" . -}}
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
