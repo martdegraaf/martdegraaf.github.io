@@ -2,7 +2,6 @@
 title: "Beat your excuses and start blogging"
 slug: "start-blogging-today"
 date: 2022-11-21T17:35:37+02:00
-draft: true
 author: ["Mart de Graaf"]
 tags: ["blogging", "inspirational", "mermaid"]
 summary: "How to start with your blog. The main focus should be content, starting and moving forward."

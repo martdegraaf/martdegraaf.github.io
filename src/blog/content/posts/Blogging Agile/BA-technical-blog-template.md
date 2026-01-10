@@ -2,7 +2,6 @@
 title: "Technical Blog template using Hugo"
 slug: "technical-blog-template-using-hugo"
 date: 2022-11-22T17:35:37+02:00
-draft: true
 author: ["Mart de Graaf"]
 tags: ["blogging", "inspirational", "hugo"]
 summary: "A template with a guided step by step tutorial to getting started with Hugo."
