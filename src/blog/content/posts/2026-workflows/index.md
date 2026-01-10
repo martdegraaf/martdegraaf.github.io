@@ -68,6 +68,10 @@ For editing, we decided to use Audacity, a free and open-source audio editing so
 
 To streamline the editing process, we explored AI-powered transcription services. To do this i created a .NET console application that used Whisper.Net to transcribe our recordings. This allowed us to quickly identify sections that needed editing without having to listen to the entire recording.
 
+> See the code on GitHub:https://github.com/martdegraaf/TranscribePodcast/blob/master/TranscribePodcast/Program.cs
+
+The output was good enough but not good enough to use for a workflow within Audacity.
+
 ##### Online AI powered services
 
 We also experimented with online AI-powered services that offer podcast editing features. These platforms can automatically remove filler words, background noise, and even suggest improvements to the audio quality. This significantly reduced the time we spent on manual editing.
