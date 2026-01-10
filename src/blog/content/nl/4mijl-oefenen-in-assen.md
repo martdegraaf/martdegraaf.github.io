@@ -16,7 +16,6 @@ comments: false
 description: "Alle 4mijl routes in Assen uitgelegd met routes."
 disableHLJS: true ## to disable highlightjs
 disableShare: false
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: true
