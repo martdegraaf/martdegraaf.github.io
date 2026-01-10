@@ -27,7 +27,7 @@ cover:
 
 ---
 
-> "I can't believe how much you get done,and running your family with children." - a few colleagues
+> "I can't believe how much you get done, and running your family with children." - a few colleagues
 
 In this article I want to tell you about the workflows and habits that got me started with podcasting and how to keep blogging regularly. I will also share some of my personal goals for 2026 and new workflows I have or will adopt.
 
@@ -132,6 +132,10 @@ This will setup a test environment in Azure Static Web Apps and allow me to prev
 }
 ```
 
+This post was made using this workflow and i can tell you it works great! After creating the post I also wanted to be up to date with hugo and my theme. So I Updated Hugo to the latest version and my theme to the latest version as well, this took me longer than expected but now everything is up to date.
+
+I have many uncommitted open changes in this repository because i tend to expiriment a lot with new ideas. I fixed some issues with the latest hugo version locally but did not commit these changes, it took me **2 hours** to debug and find out what was wrong. The lesson for me is to commit things more quickly and make PR's small. Updating a theme should be a seperate pull request if you would be normally working in a team. Why would I do this differently for my own blog?
+
 ### Blocking YouTube
 
 We have kids at home. And they love YouTube. But I tell them the so-called 'Shorts' are videos that make them dumb. So to help them focus on better content I have blocked YouTube  on our home network using AdGuard within home assistant. This helped us as parents to have more control over what content our kids can access.
@@ -168,3 +172,8 @@ Checkout this video about the switch choice: https://www.youtube.com/watch?v=noU
 {{< figure src="defy_switches.jpeg" alt="Dygma Defy - the right half. Brown are tactile, Yellow are linear." caption="Dygma Defy - the right half. Brown are tactile, Yellow are linear." align="center" height="300">}}
 
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
+
+
+## Conclusion
+
+There will be more workflows to talk about, I am curious what workflows you have optimized. Please share them with me on LinkedIn or in the comments below.
