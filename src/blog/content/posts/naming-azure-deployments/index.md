@@ -1,12 +1,12 @@
 ---
 title: "Naming Azure Deployments"
 slug: "naming-azure-deployments"
-date: 2025-11-19T07:54:28+01:00
-publishdate: 2025-11-19T07:54:28+01:00
+date: 2026-01-30T07:54:28+01:00
+publishdate: 2026-01-30T07:54:28+01:00
 draft: true
 author: ["Mart de Graaf"]
-tags: []
-summary: "TODO You should fill this ..."
+tags: ["azure", "bicep", "infrastructure-as-code"]
+summary: "Best practices for naming Bicep deployments and Bicep modules to avoid overwriting and ensure uniqueness."
 # Toc
 ShowToc: true
 TocOpen: true
@@ -18,14 +18,12 @@ ShowLastModified: true
 ShowWordCount: true
 
 cover:
-    image: "cover.webp" # image path/url
-    alt: "Mart de Graaf - cartoon style." # alt text
-    caption: "Mart de Graaf - cartoon style." # display caption under cover
+    image: "cover.jpg" # image path/url
+    alt: "Strategy, chess pieces on a board" # alt text
+    caption: "Image by [Michal Jarmoluk](https://pixabay.com/users/jarmoluk-143740/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1080527) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1080527)" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
-
-__Intro to the problem__
 
 ## Azure overwrites deployments
 
@@ -33,11 +31,12 @@ When you deploy with the same name in Azure Resource Manager (ARM) or Bicep, Azu
 
 Some people encountered a limit on the number of deployments you can have in a resource group. This limit is 800 deployments. When you reached this limit before 2020, you had to delete old deployments manually. However, since 2020, Azure automatically cleans up old deployments, so this is less of a concern now.
 
-https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history-deletions?tabs=azure-powershell
+> https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history-deletions?tabs=azure-powershell
 
 ## Constraints
 
 When naming your deployments, keep in mind the following constraints:
+
 - Deployment names must be unique within a resource group.
 - Deployment names can contain alphanumeric characters, hyphens, and underscores.
 - Deployment names cannot exceed 64 characters in length.
@@ -47,6 +46,7 @@ When using modules you want to make sure the deployment names are also unique wi
 ## Naming strategy
 
 To avoid overwriting deployments and to keep track of changes, it's a good practice to use a unique naming strategy for each deployment. Here are some common approaches:
+
 1. **Timestamp**: Append a timestamp to the deployment name. This ensures that each deployment has a unique name based on the date and time it was created.
    Example: `myDeployment_20231119T075428`
 2. **Versioning**: Use a version number in the deployment name. Increment the version number with each deployment.
@@ -69,6 +69,7 @@ steps:
 ```
 
 Or via Az cli in yaml:
+
 ```yaml {linenos=table}
 steps:
 - script: |
@@ -77,6 +78,7 @@ steps:
 ```
 
 Or via Az cli in yaml:
+
 ```yaml {linenos=table}
 steps:
 - script: |
@@ -113,6 +115,7 @@ resource deployment 'Microsoft.Resources/deployments@2021-04-01' = {
 ```
 
 ### User defined function for naming
+
 You can create a user-defined function in Bicep to generate a unique deployment name based on your preferred strategy.
 
 This example function creates a prefixed name and ensures it does not exceed 64 characters:
