@@ -51,6 +51,7 @@ jobs:
           HUGO_BUILDDRAFTS: "${{ env.IS_PRODUCTION == 'false' }}"
           HUGO_BUILDFUTURE: "${{ env.IS_PRODUCTION == 'false' }}"
           HUGO_VERSION: v0.154.3
+          HUGO_EXTENDED: true
   test:
     env:
       working-directory: ./src/e2e
