@@ -28,12 +28,20 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      # ---- Install compatible Hugo (glibc-safe) ----
-      - name: Install Hugo
+      # ---- Build latest Hugo from source (glibc-safe) ----
+      - name: Install dependencies for Hugo build
         run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.120.4/hugo_extended_0.120.4_Linux-64bit.tar.gz
-          tar -xzf hugo_extended_0.120.4_Linux-64bit.tar.gz
-          sudo mv hugo /usr/local/bin/hugo
+          sudo apt-get update
+          sudo apt-get install -y git golang-go build-essential
+
+      - name: Build latest Hugo from source
+        run: |
+          git clone --depth=1 https://github.com/gohugoio/hugo.git /tmp/hugo
+          cd /tmp/hugo
+          go install --tags extended
+
+      - name: Add Hugo to PATH
+        run: echo "${HOME}/go/bin" >> $GITHUB_PATH
 
       # ---- Build site ----
       - name: Build site
@@ -46,8 +54,8 @@ jobs:
           cd src/blog
           hugo
 
-      # ---- Deploy only (no build in Azure) ----
-      - name: Build And Deploy
+      # ---- Deploy artifacts ----
+      - name: Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
