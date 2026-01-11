@@ -1,14 +1,18 @@
 {{- /* 
 	Attributes: 
       file            : The code file to display
-	  highlightjs     : A highlight.js compatible highlight range. 1,2-3|4-5 -> | is for animation.
+	    highlightjs     : A highlight.js compatible highlight range. 1,2-3|4-5 -> | is for animation.
       downloadAs      : The name that the file should be given on download
       allowdownload   : True if a download link should be shown 
       fileLines       : Range. Starting line, optional ending line (or eof by default) string "linenumber" / "linenumber-linenumber"
 		Docs about hugo code block render hooks: https://gohugo.io/templates/render-hooks/#render-hooks-for-code-blocks
 */ -}}
+{{- $isRSS := eq .Page.OutputFormat.Name "RSS" -}}
 {{- $filePath:= "" -}}
 {{- $adjustedOptions:= .Options -}}
+{{- if $isRSS -}}
+{{-   $adjustedOptions = merge $adjustedOptions (dict "linenos" false) -}}
+{{- end -}}
 {{- $startIndex:= 1 -}}
 {{- $prefaceLen:= 0 -}}
 {{- $lineStart:= 1 -}}
