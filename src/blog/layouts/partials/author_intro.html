@@ -1,5 +1,6 @@
 {{- $page := .Page | default . }}
-{{- if not ($page.Param "hideAuthorIntro") }}
+{{- $ignoreHide := .ignoreHide | default false }}
+{{- if or $ignoreHide (not ($page.Param "hideAuthorIntro")) }}
 <div class="author-intro">
   <img src="{{ $page.Site.Params.profileMode.imageUrl }}" alt="Mart de Graaf" class="author-avatar" />
   <div class="author-intro-content">
