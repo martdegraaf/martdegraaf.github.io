@@ -49,7 +49,7 @@ showReadingTime = true
 comments = true
 social = true
 ShowRssButtonInSectionTermList = true
-ShowFullTextInRSS = false
+ShowFullTextInRSS = true
 
 TocOpen= true
 enableGitInfo = true
