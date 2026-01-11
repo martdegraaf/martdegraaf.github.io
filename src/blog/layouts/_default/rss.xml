@@ -81,12 +81,7 @@
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ printf "<![CDATA[" | safeHTML }}
-        {{- with .Resources.GetMatch "cover.*" -}}
-          <img src="{{ .Permalink }}" alt="{{ $.Title }}" /><br/>
-        {{- end -}}
-        {{- if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end -}}
-      {{ printf "]]>" | safeHTML }}</description>
+      <description>{{ (printf "<![CDATA[%s]]>" .Summary) | safeHTML }}</description>
       {{- with .Resources.GetMatch "cover.*" }}
       <enclosure url="{{ .Permalink }}" type="{{ .MediaType.Type }}" />
       <media:content url="{{ .Permalink }}" medium="image">
@@ -95,6 +90,9 @@
       {{- end }}
       {{- if and site.Params.ShowFullTextinRSS .Content }}
       {{- $content := .Content -}}
+      {{- with .Resources.GetMatch "cover.*" -}}
+        {{- $content = printf "<img src=\"%s\" alt=\"%s\" /><br/><br/>%s" .Permalink $.Title $content -}}
+      {{- end -}}
       {{- $content = replaceRE `<span class="lnt"[^>]*>.*?</span>` "" $content -}}
       <content:encoded>{{ (printf "<![CDATA[%s]]>" $content) | safeHTML }}</content:encoded>
       {{- end }}
