@@ -7,29 +7,45 @@
     
     <div class="author-certifications-wrapper">
       <div class="author-certifications">
-        <img src="/images/cert-azure-administrator-associate-600x600.png" 
+        {{- $adminCert := resources.Get "images/cert-azure-administrator-associate-600x600.png" }}
+        {{- $adminCertResized := $adminCert.Resize "80x" }}
+        <img src="{{ $adminCertResized.RelPermalink }}" 
              alt="Microsoft Certified: Azure Administrator Associate" 
              title="Microsoft Certified: Azure Administrator Associate"
+             width="{{ $adminCertResized.Width }}" height="{{ $adminCertResized.Height }}"
              class="cert-badge" />
-        <img src="/images/cert-azure-solutions-architect-expert-600x600.png" 
+        {{- $architectCert := resources.Get "images/cert-azure-solutions-architect-expert-600x600.png" }}
+        {{- $architectCertResized := $architectCert.Resize "80x" }}
+        <img src="{{ $architectCertResized.RelPermalink }}" 
              alt="Microsoft Certified: Azure Solutions Architect Expert" 
              title="Microsoft Certified: Azure Solutions Architect Expert"
+             width="{{ $architectCertResized.Width }}" height="{{ $architectCertResized.Height }}"
              class="cert-badge" />
-        <img src="/images/azure-developer-associate-600x600.png" 
+        {{- $devCert := resources.Get "images/azure-developer-associate-600x600.png" }}
+        {{- $devCertResized := $devCert.Resize "80x" }}
+        <img src="{{ $devCertResized.RelPermalink }}" 
              alt="Microsoft Certified: Azure Developer Associate" 
              title="Microsoft Certified: Azure Developer Associate"
+             width="{{ $devCertResized.Width }}" height="{{ $devCertResized.Height }}"
              class="cert-badge" />
-        <img src="/images/CERT-Expert-DevOps-Engineer-600x600.png" 
+        {{- $devopsCert := resources.Get "images/CERT-Expert-DevOps-Engineer-600x600.png" }}
+        {{- $devopsCertResized := $devopsCert.Resize "80x" }}
+        <img src="{{ $devopsCertResized.RelPermalink }}" 
              alt="Microsoft Certified: DevOps Engineer Expert" 
              title="Microsoft Certified: DevOps Engineer Expert"
+             width="{{ $devopsCertResized.Width }}" height="{{ $devopsCertResized.Height }}"
              class="cert-badge" />
-        <img src="/images/azure-security-engineer-associate600x600.png" 
+        {{- $secCert := resources.Get "images/azure-security-engineer-associate600x600.png" }}
+        {{- $secCertResized := $secCert.Resize "80x" }}
+        <img src="{{ $secCertResized.RelPermalink }}" 
              alt="Microsoft Certified: Azure Security Engineer Associate" 
              title="Microsoft Certified: Azure Security Engineer Associate"
+             width="{{ $secCertResized.Width }}" height="{{ $secCertResized.Height }}"
              class="cert-badge" />
       </div>
-      
+      {{- if .showReadMore }}
       <a href="/about" class="author-read-more">READ MORE</a>
+      {{- end }}
     </div>
   </div>
 </div>

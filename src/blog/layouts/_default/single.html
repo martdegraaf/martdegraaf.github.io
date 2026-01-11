@@ -63,7 +63,7 @@
     {{- end }}
   </footer>
 
-  {{- partial "author_intro.html" . -}}
+  {{- partial "author_intro.html" (dict "Page" . "showReadMore" true) -}}
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}

@@ -68,7 +68,7 @@ For editing, we decided to use Audacity, a free and open-source audio editing so
 
 To streamline the editing process, we explored AI-powered transcription services. To do this i created a .NET console application that used Whisper.Net to transcribe our recordings. This allowed us to quickly identify sections that needed editing without having to listen to the entire recording.
 
-> See the code on GitHub:https://github.com/martdegraaf/TranscribePodcast/blob/master/TranscribePodcast/Program.cs
+> See the code on GitHub: [https://github.com/martdegraaf/TranscribePodcast](https://github.com/martdegraaf/TranscribePodcast/blob/master/TranscribePodcast/Program.cs)
 
 The output was good enough but not good enough to use for a workflow within Audacity.
 
@@ -176,7 +176,6 @@ Checkout this video about the switch choice: https://www.youtube.com/watch?v=noU
 {{< figure src="defy_switches.jpeg" alt="Dygma Defy - the right half. Brown are tactile, Yellow are linear." caption="Dygma Defy - the right half. Brown are tactile, Yellow are linear." align="center" height="300">}}
 
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
-
 
 ## Conclusion
 
