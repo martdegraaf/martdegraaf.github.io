@@ -1,6 +1,7 @@
-{{- if not (.Param "hideAuthorIntro") }}
+{{- $page := .Page | default . }}
+{{- if not ($page.Param "hideAuthorIntro") }}
 <div class="author-intro">
-  <img src="{{ .Site.Params.profileMode.imageUrl }}" alt="Mart de Graaf" class="author-avatar" />
+  <img src="{{ $page.Site.Params.profileMode.imageUrl }}" alt="Mart de Graaf" class="author-avatar" />
   <div class="author-intro-content">
     <h2 class="author-name">Mart de Graaf</h2>
     <p class="author-tagline">Microsoft Certified Azure Solutions Architect & DevOps Engineer specializing in .NET and Azure cloud solutions.</p>
