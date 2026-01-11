@@ -88,7 +88,7 @@
         {{- if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end -}}
       {{ printf "]]>" | safeHTML }}</description>
       {{- with .Resources.GetMatch "cover.*" }}
-      <enclosure url="{{ .Permalink }}" length="{{ .Size }}" type="{{ .MediaType.Type }}" />
+      <enclosure url="{{ .Permalink }}" type="{{ .MediaType.Type }}" />
       <media:content url="{{ .Permalink }}" medium="image">
         <media:title>{{ $.Title }}</media:title>
       </media:content>
