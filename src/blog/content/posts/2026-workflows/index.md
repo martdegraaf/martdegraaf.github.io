@@ -107,33 +107,7 @@ So my new workflow for creating a new blog post is:
 
 This will setup a test environment in Azure Static Web Apps and allow me to preview the blog post before merging it to main.
 
-```json
-{
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Hugo: New code post",
-			"type": "shell",
-			"command": "hugo new --kind code-post posts/${input:postName}; code ${workspaceFolder}/src/blog/content/posts/${input:postName}/index.md",
-			"options": {
-				"cwd": "${workspaceFolder}/src/blog"
-			},
-			"presentation": {
-				"reveal": "always",
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		}
-	],
-	"inputs": [
-		{
-			"id": "postName",
-			"type": "promptString",
-			"description": "Post name (e.g., my-new-post)",
-			"default": "new-post"
-		}
-	]
-}
+```json {linenos=table,file="tasks.json"}
 ```
 
 This post was made using this workflow and i can tell you it works great! After creating the post I also wanted to be up to date with hugo and my theme. So I Updated Hugo to the latest version and my theme to the latest version as well, this took me longer than expected but now everything is up to date.

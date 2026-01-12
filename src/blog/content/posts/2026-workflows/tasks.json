@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hugo: New code post",
+      "type": "shell",
+      "command": "hugo new --kind code-post posts/${input:postName}; code ${workspaceFolder}/src/blog/content/posts/${input:postName}/index.md",
+      "options": {
+        "cwd": "${workspaceFolder}/src/blog"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postName",
+      "type": "promptString",
+      "description": "Post name (e.g., my-new-post)",
+      "default": "new-post"
+    }
+  ]
+}
