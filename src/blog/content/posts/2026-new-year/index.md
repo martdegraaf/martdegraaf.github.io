@@ -45,7 +45,7 @@ If you think, how can this Mart do this much? Stay tuned for my next blog post i
 
 I read multiple books in 2025. The most impactful book was "Verbaal meesterschap" by Remco Claassen. It helped me to develop my Web Application Firewall session. I used magic tricks during the talk to engage the audience. I recommend reading this book if you want to improve your speaking skills.
 
-{{< figure src="speaking_with_fire.jpeg" alt="Spoke at Move Up with wallet full of fire" caption="Spoke at Move Up with wallet full of fire" align="center" height="300">}}
+{{< fig src="speaking_with_fire.jpeg" alt="Spoke at Move Up with wallet full of fire" caption="Spoke at Move Up with wallet full of fire" align="center" height="300">}}
 
 The company i work for 4Dotnet celebrated its 20th anniversary in 2025. I have been working there for 5 years now. We went on a trip to Lisbon with the team. Some of the cover images of the blog posts were taken there.
 

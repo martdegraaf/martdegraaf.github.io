@@ -53,12 +53,12 @@ To get started with podcasting Peter and I discussed how to start and what tools
 
 We wanted to keep things simple and use tools we already had. So we used what we had available:
 
-{{< figure src="rode_mics.jpeg" alt="Rode mics used for podcasting" caption="Rode mics used for podcasting" align="center" height="300">}}
+{{< fig src="rode_mics.jpeg" alt="Rode mics used for podcasting" caption="Rode mics used for podcasting" align="center" height="300">}}
 
 - **Microphones**: Two sets of Rode Wireless GO II
 - **Recording Software**: Rode Connect
 
-{{< figure src="Rode_connect.jpeg" alt="Connecting to Rode Connect" caption="Connecting to Rode Connect" align="center" height="300">}}
+{{< fig src="Rode_connect.jpeg" alt="Connecting to Rode Connect" caption="Connecting to Rode Connect" align="center" height="300">}}
 
 #### Editing
 
@@ -167,13 +167,15 @@ I installed both apps on Android, i am going to test both, and let you know. A b
 
 I earlier just checked content reguraly but from now on will organise blogs via Readly. RSS feeds mostly are available via /index.xml on most blogs. Some are available via /feed or /feed.rss. With Readly I can organise blogs into categories and read them when I want to.
 
+After typing this i went on and tested my own blog to see if the feed is working. But i saw many improvements. I also tested it in Inoreader and discovered that my blog images are not showing up in the feed. So I have fixed that as well. Also my relative images in blog text were not showing up correctly so i made sure they are now absolute urls.
+
 ### Making the right tactical switch
 
 I am using a Dygma Defy keyboard for my daily work. It is a split keyboard that allows me to type more ergonomically. The keyboard has hot swappable switches. And i used the keyboard a year using linear switches. As of 2026 I have switched my right half to tactile switches. Let's see what half i am most comfortable with.
 
 Checkout this video about the switch choice: https://www.youtube.com/watch?v=noUj7uUyIk4
 
-{{< figure src="defy_switches.jpeg" alt="Dygma Defy - the right half. Brown are tactile, Yellow are linear." caption="Dygma Defy - the right half. Brown are tactile, Yellow are linear." align="center" height="300">}}
+{{< fig src="defy_switches.jpeg" alt="Dygma Defy - the right half. Brown are tactile, Yellow are linear." caption="Dygma Defy - the right half. Brown are tactile, Yellow are linear." align="center" height="300">}}
 
 > I was using Gateron G Pro 2.0 Yellow (linear) switches. I have just installed Kailh Silent Brown switches on the right half of my keyboard.
 

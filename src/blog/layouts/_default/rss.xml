@@ -84,7 +84,7 @@
       <description>{{ (printf "<![CDATA[%s]]>" .Summary) | safeHTML }}</description>
       {{- with .Resources.GetMatch "cover.*" }}
       <enclosure url="{{ .Permalink }}" type="{{ .MediaType.Type }}" />
-      <media:content url="{{ .Permalink }}" medium="image">
+      <media:content url="{{ .Permalink }}" medium="image" type="{{ .MediaType.Type }}">
         <media:title>{{ $.Title }}</media:title>
       </media:content>
       {{- end }}
