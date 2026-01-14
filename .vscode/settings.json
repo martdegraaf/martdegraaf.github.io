@@ -13,6 +13,9 @@
     "grammarly.config.suggestions.InformalPronounsAcademic": false,
     "grammarly.config.suggestions.ConjunctionAtStartOfSentence": true,
     "grammarly.config.documentDomain": "business",
+    "[json]": {
+        "editor.tabSize": 2
+    },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#1f6fd0",
         "activityBar.background": "#1f6fd0",

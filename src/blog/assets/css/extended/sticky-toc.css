@@ -5,8 +5,9 @@
 .toc-container.wide {
     position: absolute;
     height: 100%;
-    border-right: 1px solid var(--border);
-    left: calc((var(--toc-width) + var(--gap)) * -1);
+    border-left: 1px solid var(--border);
+    padding-left: 3px;
+    left: calc((var(--main-width) + var(--gap)));
     top: calc(var(--gap) * 2);
     width: var(--toc-width);
 }

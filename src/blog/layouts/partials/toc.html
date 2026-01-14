@@ -133,14 +133,13 @@
         })
     }, false);
 
-    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--main-width'), 10);
     const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
     const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
 
     function checkTocPosition() {
         const width = document.body.scrollWidth;
-
-        if (width - main - (toc * 2) - (gap * 4) > 0) {
+        if (width - main - (toc * 2) - (gap * 2) > 0) {
             document.getElementById("toc-container").classList.add("wide");
         } else {
             document.getElementById("toc-container").classList.remove("wide");

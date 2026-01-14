@@ -1,0 +1,54 @@
+{{- $page := .Page | default . }}
+{{- $ignoreHide := .ignoreHide | default false }}
+{{- if or $ignoreHide (not ($page.Param "hideAuthorIntro")) }}
+<div class="author-intro">
+  <img src="{{ $page.Site.Params.profileMode.imageUrl }}" alt="Mart de Graaf" class="author-avatar" />
+  <div class="author-intro-content">
+    <h2 class="author-name">Mart de Graaf</h2>
+    <p class="author-tagline">Microsoft Certified Azure Solutions Architect & DevOps Engineer specializing in .NET and Azure cloud solutions.</p>
+    
+    <div class="author-certifications-wrapper">
+      <div class="author-certifications">
+        {{- $adminCert := resources.Get "images/cert-azure-administrator-associate-600x600.png" }}
+        {{- $adminCertResized := $adminCert.Resize "80x" }}
+        <img src="{{ $adminCertResized.RelPermalink }}" 
+             alt="Microsoft Certified: Azure Administrator Associate" 
+             title="Microsoft Certified: Azure Administrator Associate"
+             width="{{ $adminCertResized.Width }}" height="{{ $adminCertResized.Height }}"
+             class="cert-badge" />
+        {{- $architectCert := resources.Get "images/cert-azure-solutions-architect-expert-600x600.png" }}
+        {{- $architectCertResized := $architectCert.Resize "80x" }}
+        <img src="{{ $architectCertResized.RelPermalink }}" 
+             alt="Microsoft Certified: Azure Solutions Architect Expert" 
+             title="Microsoft Certified: Azure Solutions Architect Expert"
+             width="{{ $architectCertResized.Width }}" height="{{ $architectCertResized.Height }}"
+             class="cert-badge" />
+        {{- $devCert := resources.Get "images/azure-developer-associate-600x600.png" }}
+        {{- $devCertResized := $devCert.Resize "80x" }}
+        <img src="{{ $devCertResized.RelPermalink }}" 
+             alt="Microsoft Certified: Azure Developer Associate" 
+             title="Microsoft Certified: Azure Developer Associate"
+             width="{{ $devCertResized.Width }}" height="{{ $devCertResized.Height }}"
+             class="cert-badge" />
+        {{- $devopsCert := resources.Get "images/CERT-Expert-DevOps-Engineer-600x600.png" }}
+        {{- $devopsCertResized := $devopsCert.Resize "80x" }}
+        <img src="{{ $devopsCertResized.RelPermalink }}" 
+             alt="Microsoft Certified: DevOps Engineer Expert" 
+             title="Microsoft Certified: DevOps Engineer Expert"
+             width="{{ $devopsCertResized.Width }}" height="{{ $devopsCertResized.Height }}"
+             class="cert-badge" />
+        {{- $secCert := resources.Get "images/azure-security-engineer-associate600x600.png" }}
+        {{- $secCertResized := $secCert.Resize "80x" }}
+        <img src="{{ $secCertResized.RelPermalink }}" 
+             alt="Microsoft Certified: Azure Security Engineer Associate" 
+             title="Microsoft Certified: Azure Security Engineer Associate"
+             width="{{ $secCertResized.Width }}" height="{{ $secCertResized.Height }}"
+             class="cert-badge" />
+      </div>
+      {{- if .showReadMore }}
+      <a href="/about" class="author-read-more">READ MORE</a>
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{- end }}

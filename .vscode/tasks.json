@@ -45,6 +45,16 @@
 				"panel": "shared"
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "Upgrade Hugo",
+			"type": "shell",
+			"command": "winget install Hugo.Hugo.Extended",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
 		}
 	],
 	"inputs": [

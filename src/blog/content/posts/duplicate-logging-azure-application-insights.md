@@ -2,7 +2,6 @@
 title: "Duplicate Logging Azure Application Insights"
 date: 2022-11-04T12:35:37+02:00
 publishdate: 2022-11-04T12:35:37+02:00
-draft: true
 author: ["Mart de Graaf"]
 tags: ["application insights", "loganalytics workspace", "Azure", "logging", "monitoring", "problemsolving"]
 summary: "Save troubles and money fixing duplicate logging in your Azure Application Insights, and Log Analytics Workspace."

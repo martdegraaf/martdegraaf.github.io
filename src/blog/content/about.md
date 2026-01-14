@@ -3,8 +3,12 @@ title: "About Mart"
 date: 2022-06-30T13:41:39+02:00
 draft: false
 comments: false
+hidemeta: true
+
+hideAuthorIntro: true
 
 disableShare: true
+excludeFromRSS: true
 
 cover:
   hidden: true # hide everywhere but not in structured data
@@ -12,11 +16,15 @@ cover:
   hiddenInSingle: true # hide on single page
 ---
 
-
 {{< profile >}}
 
-Mart de Graaf is a hardworking software geek sharing his ideas, solutions, and hobbies. He is enthusiastic about .NET solutions, Azure DevOps, and Azure solutions. Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home, he is a father to his four children.
-{{</ profile >}}
+## Introduction
+
+Hi, I'm Mart de Graaf, a passionate software engineer and cloud architect specializing in Microsoft technologies. With years of experience in building scalable and secure cloud solutions, I've dedicated my career to mastering the Azure ecosystem and modern DevOps practices.
+
+I share my knowledge and experiences through this blog, where I write about technical challenges, solutions, and best practices I encounter in my daily work. Whether it's troubleshooting complex Azure issues, implementing new features, or exploring innovative approaches to software development, I believe in learning by doing and sharing those learnings with you.
+
+> Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home, he is a father to his four children.
 
 ## Core values
 
@@ -26,10 +34,6 @@ If you ask some of my previous coworkers, what defines Mart? They will tell you 
 
 Sharing makes me so happy that I try to share my knowledge through [speaking](/speaking). See how I planned for that using some lessons I learned from the book: [Eat that frog](/reviews/books/eat-that-frog).
 
-## Certifications
-
-Here are some of my active certifications I am very proud of:
 
 {{< credly >}}
 
-Microsoft's certifications can be found at [Transcript - Mart de Graaf Microsoft Learn](https://learn.microsoft.com/en-us/users/martdegraaf/transcript/v2z4kf4kggnkl0e?tab=credentials-tab)

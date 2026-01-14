@@ -2,8 +2,8 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 timeZone = "Europe/Amsterdam"
 title = "Mart de Graaf"
-googleAnalytics = "G-ZFQGR29JJQ"
-theme = "PaperMod"
+
+theme = ["PaperMod"]
 enableRobotsTXT = true
 disqusShortname = "martdegraaf"
 enableEmoji = true
@@ -13,7 +13,11 @@ baseUrl = "http://localhost:1313"
 pygmentsUseClasses = true
 pygmentsCodefences = true
 
+
 pagination.pagerSize = 12 # articles per page
+
+[services.googleAnalytics]
+id = "G-ZFQGR29JJQ"
 
 [languages.en-us]
 title = "Mart's blog"
@@ -21,6 +25,9 @@ weight = 1
 
   [languages.en-us.params]
   languageAltTitle = "English"
+
+# Add image
+
 
 # [languages.nl]
 # title = "Mart's blog"
@@ -37,16 +44,21 @@ weight = 1
 env = "production"
 showPostNavLinks = true
 showCodeCopyButtons = true
-showShareButtons = true
+showShareButtons = false
 showReadingTime = true
 comments = true
 social = true
+ShowRssButtonInSectionTermList = true
+ShowFullTextInRSS = true
 
 TocOpen= true
 enableGitInfo = true
 avatar = "mart@martdegraaf.nl"
 name = "Mart de Graaf"
 
+  [params.author]
+  name = "Mart de Graaf"
+  email = "blog@martdegraaf.nl"
 
 mainSections = [ "posts", "reviews" ]
   [params.assets]
@@ -63,7 +75,7 @@ mainSections = [ "posts", "reviews" ]
 
   [params.profileMode]
   enabled = false
-  imageUrl = "https://en.gravatar.com/userimage/91624600/299941bdca005e043f382073dfb1d71c.jpg?size=200"
+  imageUrl = "https://gravatar.com/userimage/91624600/fb51d6d9172e5043a1e59d59f3f84e62.jpeg?v=1666815123000&size=200"
   imageWidth = 200
   imageHeight = 200
 
@@ -82,6 +94,10 @@ mainSections = [ "posts", "reviews" ]
   [[params.socialIcons]]
   name = "twitter"
   url = "https://twitter.com/martdegraaf"
+
+  [[params.socialIcons]]
+  name = "rss"
+  url = "https://blog.martdegraaf.nl/index.xml"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON" ]
@@ -107,16 +123,16 @@ url = "/speaking"
 name = "Speaking"
 
 [taxonomies]
-series = "series"
-tag = "tags"
+  series = "series"
+  tag = "tags"
 
 [markup.goldmark.renderer]
 unsafe = true
 
 [outputFormats.Reveal]
-baseName = "index"
-mediaType = "text/html"
-isHTML = true
+  baseName = "index"
+  mediaType = "text/html"
+  isHTML = true
 
 [markup]
   [markup.highlight]
