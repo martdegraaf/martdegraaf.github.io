@@ -2,7 +2,7 @@
 title: "Update dependencies using Renovate CLI in Azure Devops"
 slug: "renovate-in-azure-devops"
 date: 2026-01-22T23:14:42+01:00
-publishdate: 2026-01-22T23:14:42+01:00
+publishdate: 2026-02-27T23:14:42+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["azure-devops", "ci-cd", "renovate", "dependency-management", "yaml", "automation"]
