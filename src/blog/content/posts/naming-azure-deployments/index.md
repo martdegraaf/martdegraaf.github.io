@@ -139,7 +139,8 @@ func prefixedName(suffix string) string {
 }
 ```
 
+## Conclusion and discussion
 
-# Conclusion and discussion
+Make sure deployment names are unique. Modules don't require a name anymore to be unique, but can be preferred when you want to easily see wich build belongs to wich deployment. Using timestamps or build IDs from your CI/CD pipeline can help ensure uniqueness and avoid overwriting deployments.
 
-TODO
+Let's be happy to know you don't hit the deployment limit anymore :tada:.
