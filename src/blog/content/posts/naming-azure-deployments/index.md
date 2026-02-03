@@ -1,8 +1,8 @@
 ---
 title: "Naming Azure Deployments to avoid overwriting"
 slug: "naming-azure-deployments"
-date: 2026-02-03T20:54:28+01:00
-publishdate: 2026-02-03T20:54:28+01:00
+date: 2026-02-03T19:54:28+01:00
+publishdate: 2026-02-03T19:54:28+01:00
 draft: true
 author: ["Mart de Graaf"]
 tags: ["azure", "bicep", "infrastructure-as-code", "naming", "devops"]
