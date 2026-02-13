@@ -60,7 +60,7 @@ Also if you are an engineer and looking to save some money on your application i
 
 I learned three key lessons from this hackathon:
 
-1. **Non-production environments can be a significant cost driver**: It's important to regularly review and optimize non-production environments to avoid unnecessary costs.
+1. Non-production environments can be a significant cost driver: It's important to regularly review and optimize non-production environments to avoid unnecessary costs. If nobody is using the resources, isn't it a waste of money and energy to keep them running?
 2. You think you are doing well, but there is always room for improvement: Even though we had already implemented some cost-saving measures, we still found significant opportunities for further optimization.
 3. Quantifying costs by using a relatable metric (like meatballs) can help to communicate the impact of cost-saving measures in a more engaging way.
 
@@ -74,7 +74,7 @@ The FinOps Framework also has an assesment tool and it has 5 lenses to look at y
 4. Adoption: Is the mindset of cost optimization adopted across the organization?
 5. Automation: Are there automated processes in place to optimize cloud costs?
 
-see https://www.finops.org/wg/finops-assessment/ for the full assesment tool and more details on the 5 lenses. They apply a scoring system to assess the maturity of an organization's FinOps practices across these lenses.
+See https://www.finops.org/wg/finops-assessment/ for the full assesment tool and more details on the 5 lenses. They apply a scoring system to assess the maturity of an organization's FinOps practices across these lenses.
 
 In our presentation at the end of the day we shared our findings using these 5 lenses, which helped to structure our learnings and recommendations for future improvements.
 
