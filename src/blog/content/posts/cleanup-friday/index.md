@@ -92,7 +92,8 @@ The day after I think i also saved an extra 214 monthly meatballs by deleting pr
 
 Let's make Cleanup Friday a tradition!
 
-# References
+## References
+
 - https://www.finops.org/framework/
 
 > The price of the client's meatball in their cafetaria is €2,33. I can recommend the meatballs, however they are hybrid balls, so half meat half vegan. Still delicious though, but honerable mention to the other half of the meatball, the vegan part.
