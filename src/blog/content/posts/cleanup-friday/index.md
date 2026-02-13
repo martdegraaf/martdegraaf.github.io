@@ -19,8 +19,8 @@ ShowWordCount: true
 
 cover:
     image: "cover.jpg" # image path/url
-    alt: "Image by [Alexa](https://safesearch.pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597) from [Pixabay](https://safesearch.pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597)" # alt text
-    caption: "Image by <a href="https://safesearch.pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597">Alexa</a> from <a href="https://safesearch.pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597">Pixabay</a>" # display caption under cover
+    alt: "The last shirt, Euro bill, 20 euro image." # alt text
+    caption: "Image by [Alexa](https://safesearch.pixabay.com/users/alexas_fotos-686414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597) from [Pixabay](https://safesearch.pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1510597)" # display caption under cover
     relative: true # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
@@ -85,10 +85,14 @@ Let's take this habit of cleaning up non-production environments to the next lev
 I think it will be perfect to establish a "Cleanup Friday" routine. Clean your desk, clean your cloud environment. Every Friday, we can dedicate time to review and clean up our non-production resources. This can include:
 
 - Deleting unused resources
-- Scaling down resources that are not needed at full capacity
-- Clean up old deployments and resource groups
+- Automating scaling down resources that are not needed at full capacity
 - Reviewing and optimizing resource configurations for cost savings
+
+The day after I think i also saved an extra 214 monthly meatballs by deleting proof of concept resources nobody looked at for months.
 
 Let's make Cleanup Friday a tradition!
 
+# References
 - https://www.finops.org/framework/
+
+> The price of the client's meatball in their cafetaria is €2,33. I can recommend the meatballs, however they are hybrid balls, so half meat half vegan. Still delicious though, but honerable mention to the other half of the meatball, the vegan part.
