@@ -53,8 +53,8 @@ We investigated our log analytics workspaces and found that there was already ah
 
 Also if you are an engineer and looking to save some money on your application insights. I blogged about this topic before:
 
-- [Learn how to verify the biggest costs of your Log Analytics workspace]({{< ref "clean-up-application-insights/index.md" >}}).
-- [Duplicate logging in Azure Log Analytics / Application Insights]({{< ref "duplicate-logging-in-azure-application-insights.md" >}}).
+- [Learn how to verify the biggest costs of your Log Analytics workspace]({{< ref "clean-up-appplication-insights/index.md" >}}).
+- [Duplicate logging in Azure Log Analytics / Application Insights]({{< ref "duplicate-logging-azure-application-insights.md" >}}).
 
 ## Learnings
 
