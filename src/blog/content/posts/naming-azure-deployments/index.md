@@ -29,7 +29,7 @@ cover:
 
 Azure Resource Manager (ARM) is the control plane of Azure that executes all deployments, regardless of whether you use Bicep or ARM templates to describe your desired state. When you deploy with the same name, ARM treats it as an update to the existing deployment. This means that if you use a static name for your deployments, each new deployment will overwrite the previous one. This can lead to confusion and makes it difficult to track changes over time.
 
-Some people encountered a limit on the number of deployments you can have in a resource group. This limit is 800 deployments. When you reached this limit before 2020, you had to delete old deployments manually. However, since 2020, Azure automatically cleans up old deployments, so this is less of a concern now.
+You may encounter a limit on the number of deployments you can have in a resource group. This limit is 800 deployments. When you reached this limit before 2020, you had to delete old deployments manually. However, since 2020, Azure automatically cleans up old deployments, so this is less of a concern now.
 
 > https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-history-deletions?tabs=azure-powershell
 
@@ -142,7 +142,7 @@ module keyvault 'modules/keyvault.bicep' = {
 You can create a user-defined function in Bicep to generate a unique deployment name based on your preferred strategy.
 
 This example function creates a prefixed name and ensures it does not exceed 64 characters:
-If it exceeds it will still encounter the error during deployment, but you can adjust the logic as needed.
+If the name exceeds 64 characters, the deployment will still fail, but you can adjust the logic as needed.
 
 ```bicep {linenos=table}
 @export()
@@ -150,7 +150,7 @@ If it exceeds it will still encounter the error during deployment, but you can a
 func prefixedName(suffix string) string => length('${az.deployment().name}-${suffix}') > 64 ? substring('${az.deployment().name}-${suffix}', 0, 64) : '${az.deployment().name}-${suffix}'
 ```
 
-So to fix it we want a scrolling suffix that makes sure the name is unique but also fits within the constraints. When the base name exceeds the max length, we truncate it to fit.
+So to fix this, we want a suffix that ensures the name is unique and fits within the constraints. When the base name exceeds the max length, we truncate it to fit.
 
 ```bicep {linenos=table}
 @export()
@@ -164,6 +164,6 @@ func prefixedName(suffix string) string {
 
 ## Conclusion and discussion
 
-Make sure deployment names are unique. Modules don't require a name anymore to be unique, but can be preferred when you want to easily see which build belongs to which deployment. Using timestamps or build IDs from your CI/CD pipeline can help ensure uniqueness and avoid overwriting deployments.
+Make sure deployment names are unique. Module names no longer need to be unique, but using unique names can be preferred when you want to easily see which build belongs to which deployment. Using timestamps or build IDs from your CI/CD pipeline can help ensure uniqueness and avoid overwriting deployments.
 
-Let's be happy to know you don't hit the deployment limit anymore :tada:.
+Let's be happy to know you don't hit the deployment limit anymore 🎉.
