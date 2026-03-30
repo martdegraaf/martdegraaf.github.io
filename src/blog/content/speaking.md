@@ -18,7 +18,8 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 ## This Year's Engagements
 
-- 16 April 2026 - MC2MC Live
+- 26 June 2026 - Ilionx DevDays
+- 10 September 2026 - MC2MC Live
 
 ## Current sessions
 
