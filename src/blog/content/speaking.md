@@ -18,6 +18,8 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 ## This Year's Engagements
 
+- 21 May 2026 - Move Up with 4Dotnet
+- 19 June 2026 - Agile Congress 2026 - (Samenwerkingnoord)
 - 26 June 2026 - Ilionx DevDays
 - 10 September 2026 - MC2MC Live
 
