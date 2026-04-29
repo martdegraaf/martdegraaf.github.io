@@ -25,11 +25,11 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-At a project i was working on we have had some stale branches. And if i say stale, i mean really stale. Some branches were existing for over 8 years. And they were still there, not deleted, not merged, just there. Everybody hated them for years but could not delete them. Every now and then in a meeting someone would ask about them, but nobody had the rights to delete branches of other people. So the subject faded away untill the next time someone would ask about them. And this went on for years. I have seen this in multiple projects and it is a common problem. In this blog post, We can solve this problem now!
+At a project I was working on we have had some stale branches. And if I say stale, I mean really stale. Some branches were existing for over 8 years. And they were still there, not deleted, not merged, just there. Everybody hated them for years but could not delete them. Every now and then during a meeting someone would mention the acient branches, but nobody had the rights to delete branches of people who had left the company. So the subject faded away untill the next time someone would ask about them. And this went on for years. I have seen this in multiple projects and it is a common problem. In this blog post, We can solve this problem now!
 
 ## The Branch Awards
 
-The last and final meeting were thse stale branches were discussed, a team member came up with a AI generated powershell script to give insight in the amount of stale branches. The default threshold was set to 6 months. The company had managed to collect 1337 stale branches. The script would give a report of the amount of stale branches per person and the oldest branch per person. If you have read some of my previous blog posts, you know i scripted something like this in PowerShell as well. So I arrogantly spoke up and said:
+The last and final meeting were thse stale branches were discussed, a team member came up with a AI generated powershell script to give insight in the amount of stale branches. The default threshold was set to 6 months. The company had managed to collect 1337 stale branches. The script would give a report of the amount of stale branches per person and the oldest branch per person. If you have read some of my previous blog posts, you know I scripted something like this in PowerShell as well. So I arrogantly spoke up and said:
 
 > "You are telling us the known issue here!"
 
@@ -44,6 +44,9 @@ And then she scrolled up and revealed the top 10 one by one, and came with funny
 
 The Branch Awards were born and it was a huge success. The team loved it and it was a great way to bring attention to the problem of stale branches. After the branch awards I managed to get the rights to delete branches and started to clean up stale branches of people who had left the company. And checked with the team for their branches. We ended up with only 21 branches that were stale for more than 6 months.
 
+## Tension
+
+You could imagine that this would create some tension in the team, but it did not. The team took it with humor and it was a great way to bring attention to the problem. It was a fun way to bring up the problem. If you have a issue that you think will bring tension in the team, try to make it fun and bring attention to it in a positive way. Also make sure to stay factual and not personal.
 
 ## Conclusion
 
