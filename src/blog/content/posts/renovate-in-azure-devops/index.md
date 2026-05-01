@@ -31,7 +31,7 @@ In this blog post, we will explore how we can use Renovate CLI, an open-source t
 
 ## Other mentionable tools
 
-Renovate Enterprise is a commercial version of Renovate that offers additional features and support for larger teams and organizations. This is a SaaS offering. Wich means your code is sent to 3rd party servers, if this is a concern you should consider using Renovate CLI or Dependabot.
+Renovate Enterprise is a commercial version of Renovate that offers additional features and support for larger teams and organizations. This is a SaaS offering. Which means your code is sent to 3rd party servers, if this is a concern you should consider using Renovate CLI or Dependabot.
 
 - Dependabot: A GitHub-native tool that automatically creates pull requests to update dependencies.
 - Trivy: A comprehensive security scanner for containers and other artifacts, which can also scan for vulnerabilities in dependencies.
@@ -70,7 +70,7 @@ Before we dive into the pipeline, we have to address the authentication part. Re
 
 There is a so called Azure Devops token (PAT) that you can create in your Azure Devops profile settings. This token should have at least read and write permissions for code and pull requests.
 
-As a best practice, we should never use PERSONAL tokens in our pipelines. Instead, we can use a service connection, this can be done by using the System Access Token that is available in Azure Devops pipelines.
+As a best practice, we should never use PERSONAL tokens in our pipelines. Instead, we can use a service connection, this can be done by using the System Access Token `$(System.AccessToken)` that is available in Azure Devops pipelines.
 
 ### Azure pipeline configuration
 
@@ -95,9 +95,9 @@ Another option is to run it hourly to catch updates as soon as possible. And rat
 
 Let's refer to a book I read last year: "The Goal" by Eliyahu M. Goldratt. In this book, the author emphasizes the importance of focusing on the overall system's performance rather than individual tasks. Applying this principle to our situation, we should aim to optimize our dependency update process as a whole, rather than trying to address every single update immediately.
 
-In a metaphore used by Goldratt, we would be busy creating inventory we cannot process, instead of focusing on the bottleneck that limits our throughput. In our case, the bottleneck is the build agent running all the validations and the team's capacity to review and merge pull requests. By controlling the flow of updates hourly, we can ensure that we are not overwhelming our system and team, thus improving our overall efficiency theoratically.
+In a metaphor used by Goldratt, we would be busy creating inventory we cannot process, instead of focusing on the bottleneck that limits our throughput. In our case, the bottleneck is the build agent running all the validations and the team's capacity to review and merge pull requests. By controlling the flow of updates hourly, we can ensure that we are not overwhelming our system and team, thus improving our overall efficiency theoretically.
 
-Also consider if there are multiple updates for the same repository, it could case conflicts. Renovate can rebase or merge branches automatically, but not if it runs only once a day. Then you might need to trigger renovate manually to resolve conflicts, wich I think should be avoided.
+Also consider if there are multiple updates for the same repository, it could case conflicts. Renovate can rebase or merge branches automatically, but not if it runs only once a day. Then you might need to trigger renovate manually to resolve conflicts, which I think should be avoided.
 
 ### Onboarding and autodiscovery
 
@@ -113,7 +113,7 @@ Another useful feature of Renovate CLI is the ability to group updates. This mea
 
 ## Limitations
 
-- bicep registry support is limited
+- bicep registry support is limited, shameful when using AVM templates. I hope this will be improved in the future.
 - .NET framework support is not working. If you are in a .NET Framework project you might consider migrating to .NET 10 already! Binding redirects are giving me bad vibes anyway.
 
 ## Conclusion and discussion
