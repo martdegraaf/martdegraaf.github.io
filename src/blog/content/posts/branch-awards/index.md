@@ -25,7 +25,7 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-At a project I was working on we have had some stale branches. And if I say stale, I mean really stale. Some branches were existing for over 8 years. And they were still there, not deleted, not merged, just there. Everybody hated them for years but could not delete them. Every now and then during a meeting someone would mention the ancient branches, but nobody had the rights to delete branches of people who had left the company. So the subject faded away until the next time someone would ask about them and this went on for years. I have seen this in multiple projects and it is a common problem. In this blog post, We can solve this problem now!
+At a project I was working on we have had some stale branches. And if I say stale, I mean really stale. Some branches were existing for over 8 years. And they were still there, not deleted, not merged, just there. Everybody wanted to do something about them, but wasn't able to. Every now and then during a meeting someone would mention the ancient branches, but nobody had the rights to delete branches of people who had left the company. So the subject faded away until the next time someone would ask about them and this went on for years. I have seen this in multiple projects and it is a common problem. In this blog post, We can solve this problem now!
 
 ## The Branch Awards
 
