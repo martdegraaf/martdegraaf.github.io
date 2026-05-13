@@ -1,12 +1,12 @@
 {
     "recommendations": [
-        "znck.grammarly",
         "akmittal.hugofy",
         "christian-kohler.npm-intellisense",
         "ms-playwright.playwright",
         "redhat.vscode-yaml",
         "shinotatwu-ds.file-tree-generator",
         "davidanson.vscode-markdownlint",
-        "tamasfe.even-better-toml"
+        "tamasfe.even-better-toml",
+        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
     ]
 }
