@@ -1,8 +1,8 @@
 ---
 title: "The Stale Branch Awards"
 slug: "branch-awards"
-date: 2026-04-16T22:35:02+02:00
-publishdate: 2026-04-16T22:35:02+02:00
+date: 2026-05-13T21:35:02+02:00
+publishdate: 2026-05-13T21:35:02+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["git", "branches", "devops", "cleanup", "leading", "teamwork"]
