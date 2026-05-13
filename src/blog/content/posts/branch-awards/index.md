@@ -61,4 +61,4 @@ Or the dutch version: [https://suno.com/s/mpDUvCwVbWojo9Vb](https://suno.com/s/m
 
 Just like with the 'FinOps' making fun of the savings by calling it meatballs saved. My coworker managed to make fun of the stale branches and bring attention to the problem by creating the Branch Awards. And it worked! We managed to clean up a lot of stale branches and bring attention to the problem. So if you have a problem with stale branches, create your own Branch Awards and see how it works for you!
 
-> If you do not want to generate your script and use ours, you can find it here: [Branch Awards Script TODO]().
+> If you do not want to generate your script and use ours, you can find it here: [Branch Awards on my Github](https://github.com/martdegraaf/azuredevops).
