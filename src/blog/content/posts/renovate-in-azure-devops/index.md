@@ -80,7 +80,167 @@ main challenges:
 - Making it work on a windows based build agent
 
 ```yaml {linenos=table}
-# TODO Hier komt de laatste pipeline config
+schedules:
+  - cron: '0 3 * * *'
+    displayName: 'Every day at 3am (UTC)'
+    branches:
+      include: [ main ]
+    always: true
+
+trigger: none
+
+parameters:
+  - name: logLevel
+    displayName: "The loglevel to use for renovate"
+    type: string
+    default: "info"
+    values:
+      - info
+      - debug
+  - name: nodeVersion
+    displayName: "The Node.js version to use"
+    type: string
+    default: '22.19'
+
+variables:
+  logLevel: ${{ parameters.logLevel }}
+
+pool: default
+
+steps:
+  - checkout: self
+    fetchDepth: 1
+    clean: true
+    persistCredentials: true
+  - task: UseNode@1
+    displayName: 'Use Node ${{ parameters.nodeVersion }}'
+    inputs:
+      version: ${{ parameters.nodeVersion }}
+  - task: npmAuthenticate@0
+    inputs:
+      workingFile: .npmrc
+  - powershell: |
+      git config --global user.email 'bot@renovateapp.com'
+      git config --global user.name 'Renovate Bot'
+      npx --userconfig .npmrc renovate
+    displayName: 'Run Renovate'
+    env:
+      RENOVATE_PLATFORM: "azure"
+      RENOVATE_ENDPOINT: $(System.CollectionUri)
+      RENOVATE_TOKEN: $(System.AccessToken)
+      AZURE_DEVOPS_PAT: $(System.AccessToken)
+      AZURE_DEVOPS_ORGANIZATION: $(System.CollectionUri)
+      AZURE_DEVOPS_PROJECT: $(System.TeamProject)
+      RENOVATE_GITHUB_COM_TOKEN: $(GITHUB_TOKEN) # See https://docs.renovatebot.com/mend-hosted/github-com-token/#step-1-acquire-a-githubcom-token and save it as secret variable in the pipeline
+      LOG_LEVEL: $(logLevel)
+```
+
+### Timeouts
+
+We ran the script for 80 repositories, and it hit the job timeout of 1 hour. After trying 3 hours, it also hit the timeout. So I editted the pipeline to use a matrix strategy, a job for every repository. To get all matching repositories Renovate does have an argument `--write-discovered-repos=discovered-repos.json` to only write the discovered repositories to JSON. I read them and put them into a variable to put into the matrix.
+
+```yaml {linenos=table}
+schedules:
+  - cron: '0 3 * * *'
+    displayName: 'Every day at 3am (UTC)'
+    branches:
+      include: [ main ]
+    always: true
+
+trigger: none
+
+parameters:
+  - name: logLevel
+    displayName: "The loglevel to use for renovate"
+    type: string
+    default: "info"
+    values:
+      - info
+      - debug
+  - name: nodeVersion
+    displayName: "The Node.js version to use"
+    type: string
+    default: '22.19'
+
+variables:
+  logLevel: ${{ parameters.logLevel }}
+
+jobs:
+  - job: Discover
+    displayName: 'Discover Repositories'
+    pool: default
+    steps:
+      - checkout: self
+        fetchDepth: 1
+        clean: true
+        persistCredentials: true
+      - task: UseNode@1
+        displayName: 'Use Node ${{ parameters.nodeVersion }}'
+        inputs:
+          version: ${{ parameters.nodeVersion }}
+      - task: npmAuthenticate@0
+        inputs:
+          workingFile: .npmrc
+      - powershell: |
+          npx --userconfig .npmrc renovate --write-discovered-repos=discovered-repos.json
+        displayName: 'Discover Repos with Renovate'
+        env:
+          RENOVATE_PLATFORM: "azure"
+          RENOVATE_ENDPOINT: $(System.CollectionUri)
+          RENOVATE_TOKEN: $(System.AccessToken)
+          AZURE_DEVOPS_PAT: $(System.AccessToken)
+          AZURE_DEVOPS_ORGANIZATION: $(System.CollectionUri)
+          AZURE_DEVOPS_PROJECT: $(System.TeamProject)
+          RENOVATE_GITHUB_COM_TOKEN: $(GITHUB_TOKEN)
+          LOG_LEVEL: $(logLevel)
+      - powershell: |
+          $repos = Get-Content -Raw 'discovered-repos.json' | ConvertFrom-Json
+          $matrix = @{}
+          foreach ($repo in $repos) {
+            # Use the repo name (after the last /) as matrix key, replace dots with underscores for Azure DevOps compatibility
+            $repoName = ($repo -split '/')[-1] -replace '\.', '_'
+            $matrix[$repoName] = @{ repoFilter = $repo }
+          }
+          $matrixJson = $matrix | ConvertTo-Json -Compress
+          Write-Host "Generated matrix: $matrixJson"
+          Write-Host "##vso[task.setvariable variable=matrix;isOutput=true]$matrixJson"
+        displayName: 'Generate Matrix'
+        name: discoverRepos
+
+  - job: RunRenovate
+    displayName: 'Run Renovate'
+    dependsOn: Discover
+    pool: default
+    strategy:
+      maxParallel: 1
+      matrix: $[ dependencies.Discover.outputs['discoverRepos.matrix'] ]
+    steps:
+      - checkout: self
+        fetchDepth: 1
+        clean: true
+        persistCredentials: true
+      - task: UseNode@1
+        displayName: 'Use Node ${{ parameters.nodeVersion }}'
+        inputs:
+          version: ${{ parameters.nodeVersion }}
+      - task: npmAuthenticate@0
+        inputs:
+          workingFile: .npmrc
+      - powershell: |
+          git config --global user.email 'bot@renovateapp.com'
+          git config --global user.name 'Renovate Bot'
+          npx --userconfig .npmrc renovate
+        displayName: 'Run Renovate'
+        env:
+          RENOVATE_PLATFORM: "azure"
+          RENOVATE_ENDPOINT: $(System.CollectionUri)
+          RENOVATE_TOKEN: $(System.AccessToken)
+          AZURE_DEVOPS_PAT: $(System.AccessToken)
+          AZURE_DEVOPS_ORGANIZATION: $(System.CollectionUri)
+          AZURE_DEVOPS_PROJECT: $(System.TeamProject)
+          RENOVATE_GITHUB_COM_TOKEN: $(GITHUB_TOKEN)
+          RENOVATE_AUTODISCOVER_FILTER: $(repoFilter)
+          LOG_LEVEL: $(logLevel)
 ```
 
 ### Run strategy
@@ -91,7 +251,7 @@ A other colleague of mine, also inspired by the same pizza session, runs it ever
 
 Another option is to run it hourly to catch updates as soon as possible. And rate limit the number of PRs created per hour using the `prHourlyLimit` configuration option.
 
-> "Updates are work too, but the goal should not be to have all pull requests ready." - Mart de Graaf, 2026
+> "Updates are work too, but the goal should not be to have many open pull requests. Only updates that went to production do actually prevent against a vulnerability." - Mart de Graaf, 2026
 
 Let's refer to a book I read last year: "The Goal" by Eliyahu M. Goldratt. In this book, the author emphasizes the importance of focusing on the overall system's performance rather than individual tasks. Applying this principle to our situation, we should aim to optimize our dependency update process as a whole, rather than trying to address every single update immediately.
 
