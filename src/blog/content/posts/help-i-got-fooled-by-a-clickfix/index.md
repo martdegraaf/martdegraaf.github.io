@@ -1,8 +1,8 @@
 ---
 title: "Help I Got Fooled by a Clickfix"
 slug: "help-i-got-fooled-by-a-clickfix"
-date: 2026-05-21T20:48:44+02:00
-publishdate: 2026-05-21T20:48:44+02:00
+date: 2026-05-20T20:48:44+02:00
+publishdate: 2026-05-20T20:48:44+02:00
 draft: false
 author: ["Mart de Graaf"]
 tags: ["code", "csharp"]
