@@ -5,7 +5,7 @@ date: 2026-05-20T20:48:44+02:00
 publishdate: 2026-05-20T20:48:44+02:00
 draft: false
 author: ["Mart de Graaf"]
-tags: ["code", "csharp"]
+tags: ["Security", "Cybersecurity", "ClickFix", "AdGuard Home", "HaGezi"]
 summary: "In this blog post, I share my experience of falling victim to a ClickFix attack and how to protect yourself and your family from similar threats."
 # Toc
 ShowToc: true
