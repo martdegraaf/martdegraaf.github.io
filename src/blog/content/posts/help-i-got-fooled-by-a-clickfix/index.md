@@ -51,4 +51,6 @@ The security engineer noticed that the domain even changed every day, HaGezi's l
 
 ## Conclusion
 
-I learned a lot, wasting 6 hours on letting the laptop reinstall and feeling stupid. Let's make sure that you don't put anything in the Run window you don't trust and block those domains. 
+I learned a lot, wasting 6 hours on letting the laptop reinstall and feeling stupid. Let's make sure that you don't put anything in the Run window you don't trust and block those domains.
+
+- [HaGezi DNS Blocklists on GitHub](https://github.com/hagezi/dns-blocklists)
