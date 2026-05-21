@@ -1,6 +1,6 @@
 ---
-title: "Move Up 2026 - Determin"
-date: 2022-11-03T13:41:39+02:00
+title: "Move Up 2026 - Chiseled images zijn klein en veilig, maar zijn ze ook deterministisch?"
+date: 2026-05-16T13:41:39+02:00
 draft: false
 comments: false
 
@@ -17,6 +17,8 @@ Thank you for attending my session "Chiseled images zijn klein en veilig, maar z
 
 
 ## Blog posts about building OCI images
+
+If this list is empty, the blog will come this month, so stay tuned for more content about building OCI images using Apko and Melange.
 
 {{< list_by_tag oci >}}
 
