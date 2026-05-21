@@ -15,6 +15,9 @@ cover:
 
 Thank you for attending my session "Chiseled images zijn klein en veilig, maar zijn ze ook deterministisch?" at 4Dotnet's Move Up event on 21 May 2026!
 
+## For more information about what a container image is
+
+A coworker of mine, did a presentation on the[History of containers](https://www.cs-library.com/blog/the-history-of-containers/). You can read his blog and watch his presentation to learn more about what a container image is and how it works. And all the history combined to get to where we are now with containers and container images.
 
 ## Blog posts about building OCI images
 
