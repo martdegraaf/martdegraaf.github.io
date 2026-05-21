@@ -34,7 +34,7 @@ If you liked my session and content, please consider following me on LinkedIn:
 
 ## Apko melange demo
 
-You can find the demo code on GitHub: [GitHub - martdegraaf/waf-in-action](https://github.com/martdegraaf/waf-in-action)
+You can find the demo code on GitHub: [GitHub - martdegraaf/apko-melange](https://github.com/martdegraaf/apko-melange)
 Presentation can be found in the same repository.
 
 ## QR code to share
