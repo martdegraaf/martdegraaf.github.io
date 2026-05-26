@@ -18,7 +18,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 
 ## This Year's Engagements
 
-- 21 May 2026 - Move Up with 4Dotnet
+- 21 May 2026 - Move Up with 4Dotnet - Recording available upon request
 - 19 June 2026 - Agile Congress 2026 - (Samenwerkingnoord) Together with Peter Kamphuis
 - 26 June 2026 - Ilionx DevDays
 - 10 September 2026 - MC2MC Live
@@ -41,7 +41,7 @@ Here are some of the events where I had the privilege to share my knowledge:
 
 ![DevCampNoord](/images/devCampNoord.jpg#right "DevCampNoord")
 
-- 20 November 2025 - [DevNetNoord 2025](https://devnetnoord.nl/)
+- 20 November 2025 - [DevNetNoord 2025](https://devnetnoord.nl/) - Recording available upon request
 - 7 November 2025 - [Ilionx DevDays for Cloud Applications](https://www.ilionxdevdays.com/)
 - 6 November 2025 - [MoveUp with 4Dotnet](https://www.4dotnet.nl/onze-events) - Recording available upon request
 - 11 September 2025 - [Azure Platform Engineers MeetUp](https://www.meetup.com/nl-NL/azure-platform-engineering/)
