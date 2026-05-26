@@ -4,6 +4,7 @@ date: 2026-05-16T13:41:39+02:00
 draft: false
 comments: false
 
+hidemeta: true
 disableShare: true
 excludeFromRSS: true
 

@@ -23,6 +23,8 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 - 26 June 2026 - Ilionx DevDays
 - 10 September 2026 - MC2MC Live
 
+![Move Up](/images/moveup.webp#right "Move Up")
+
 ## Current sessions
 
 For bookings, feel free to contact me directly or via [Sessionize](https://sessionize.com/mart-de-graaf/). Here are the sessions that I can deliver on short notice:
