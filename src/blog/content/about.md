@@ -24,7 +24,7 @@ Hi, I'm Mart de Graaf, a passionate software engineer and cloud architect specia
 
 I share my knowledge and experiences through this blog, where I write about technical challenges, solutions, and best practices I encounter in my daily work. Whether it's troubleshooting complex Azure issues, implementing new features, or exploring innovative approaches to software development, I believe in learning by doing and sharing those learnings with you.
 
-> Mart is working for [4Dotnet](https://www.4dotnet.nl/), a consulting company in the Netherlands. At home, he is a father to his four children.
+> Mart is working for [Vitas](https://www.vitas.nl/), a consulting company in the Netherlands. At home, he is a father to his four children.
 
 ## Core values
 
