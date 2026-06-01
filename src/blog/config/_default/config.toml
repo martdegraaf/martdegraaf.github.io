@@ -65,7 +65,7 @@ mainSections = [ "posts", "reviews" ]
   disableHLJS = true
 
   [params.homeInfoParams]
-  title = "Thoughts of a Software Emgineer and architect"
+  title = "Thoughts of a Software Engineer and architect"
   content = "Blogging about Azure, .NET, Git and architecture."
 
   [params.cover]
