@@ -21,7 +21,8 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 - 21 May 2026 - Move Up with 4Dotnet - Recording available upon request
 - 19 June 2026 - Agile Congress 2026 - (Samenwerkingnoord) Together with Peter Kamphuis
 - 26 June 2026 - Ilionx DevDays
-- 10 September 2026 - MC2MC Live
+- 4 September 2026 - [Azure Community Day 2026, Köln](https://azure-community-day.de/sessions/)
+- 10 September 2026 - [MC2MC Live Deinze](https://mc2mc.be/sponsors/)
 
 ![Move Up](/images/moveup.webp#right "Move Up")
 
