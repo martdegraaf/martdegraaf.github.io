@@ -15,8 +15,10 @@ cover:
 
 Thank you for attending one of my sessions "Azure Web Application Firewall in ACTION!" at:
 - 4Dotnet's Move Up event 
-- devNetNoord 
+- devNetNoord
 - Ilionx DevDays for Cloud applications
+- Azure Community Day Cologne 2026
+- MC2MC Live Deinze
 
 ## Web Application Firewall 🔥 (WAF) related Blog posts
 

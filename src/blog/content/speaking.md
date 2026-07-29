@@ -23,6 +23,7 @@ I am a seasoned speaker passionate about sharing knowledge with the tech communi
 - 26 June 2026 - Ilionx DevDays
 - 4 September 2026 - [Azure Community Day 2026, Köln](https://azure-community-day.de/sessions/)
 - 10 September 2026 - [MC2MC Live Deinze](https://mc2mc.be/sponsors/)
+- 1 October 2026 - [.NET Assemble! 2026](https://netassemble.mstack.nl/)
 
 ![Move Up](/images/moveup.webp#right "Move Up")
 
